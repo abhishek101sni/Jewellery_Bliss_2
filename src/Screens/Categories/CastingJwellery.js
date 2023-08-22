@@ -29,7 +29,7 @@ const CastingJwellery = ({ navigation }) => {
             <View style={styles.View2}>
               <TouchableOpacity onPress={() => { navigation.navigate('LadiesRing') }} >
                 <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/ladiesRings.jpg")} />
                   {/* <Text style={styles.View5}>LADIES RING</Text> */}
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
                     <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>LADIES RING</Text>
@@ -41,7 +41,7 @@ const CastingJwellery = ({ navigation }) => {
             <View style={styles.View2}>
               <TouchableOpacity onPress={() => { navigation.navigate('GentsRing') }}>
                 <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/gentsRings.jpg")} />
                   {/* <Text style={styles.View5}>GENTS RING</Text> */}
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
                     <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>GENTS RING</Text>
@@ -56,7 +56,7 @@ const CastingJwellery = ({ navigation }) => {
             <View style={styles.View2}>
               <TouchableOpacity onPress={() => { navigation.navigate('Pendents') }}>
                 <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/pendents.jpg")} />
                   {/* <Text style={styles.View5}>PENDENTS</Text> */}
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
                     <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>PENDENTS</Text>
@@ -67,7 +67,7 @@ const CastingJwellery = ({ navigation }) => {
             <View style={styles.View2}>
               <View style={styles.View3}>
                 <TouchableOpacity onPress={() => { navigation.navigate('Tops') }}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/tops.jpg")} />
                   {/* <Text style={styles.View5}>TOPS</Text> */}
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
                     <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>TOPS</Text>

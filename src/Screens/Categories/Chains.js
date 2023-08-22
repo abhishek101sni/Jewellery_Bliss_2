@@ -205,28 +205,28 @@ const Chains = ({ navigation }) => {
               <TouchableOpacity onPress={() => { navigation.navigate('SilkyC') }}>
                 <View style={styles.View3}>
                   <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/silky/silky.jpg")} />
-                  {/* <Text style={styles.View5}>MADRASI CHAINS</Text> */}
+                  {/* <Text style={styles.View5}>INDO CHOCO CHAINS</Text> */}
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
                     <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>SILKY</Text>
                   </ImageBackground>
                 </View>
               </TouchableOpacity>
             </View>
-
-            <View style={styles.alignment}>
+            <TouchableOpacity>
               <View style={styles.View2}>
                 <TouchableOpacity onPress={() => { navigation.navigate('IndoChocoC') }}>
                   <View style={styles.View3}>
                     <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/indochoco/indochoco.jpg")} />
-                    {/* <Text style={styles.View5}>MADRASI CHAINS</Text> */}
+                    {/* <Text style={styles.View5}>SOLID NAWABI</Text> */}
                     <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
                       <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>INDO CHOCO</Text>
                     </ImageBackground>
                   </View>
                 </TouchableOpacity>
               </View>
-            </View>
+            </TouchableOpacity>
           </View>
+
 
           <View style={styles.alignment}>
             <View style={styles.View2}>
