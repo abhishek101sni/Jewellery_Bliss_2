@@ -11,7 +11,7 @@ const AllNawabiC = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const getAPIDATA = async () => {
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Choco%20Chains";
+    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=All%20Nawabi";
 
     let result = await fetch(url);
     result = await result.json();

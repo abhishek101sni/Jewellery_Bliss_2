@@ -13,7 +13,7 @@ const SilkyC = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const getAPIDATA = async () => {
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=madrasi%20chain";
+    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Silky%20Rope";
 
     let result = await fetch(url);
     result = await result.json();

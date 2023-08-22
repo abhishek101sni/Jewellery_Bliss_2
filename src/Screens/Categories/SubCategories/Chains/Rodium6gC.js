@@ -13,7 +13,7 @@ const Rodium6gC = ({ navigation }) => {
 
   const getAPIDATA = async () => {
     // const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=18";
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Silky%20rope";
+    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Rodium%206g";
     let result = await fetch(url);
     result = await result.json();
     setData(result);

@@ -7,56 +7,56 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const Rodium7gC  = ({ navigation }) => {
-    const [data, setData] = useState([]);
-    const dispatch = useDispatch();
+const Rodium7gC = ({ navigation }) => {
+  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
 
-    const getAPIDATA = async () => {
-      const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=solid%20nawabi";
+  const getAPIDATA = async () => {
+    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Rodium%207g";
 
-      let result = await fetch(url);
-      result = await result.json();
-      setData(result);
-    }
-
-    useEffect(() => {
-      getAPIDATA();
-    }, []);
-
-    const handlePress = (item) => {
-      dispatch(setActiveItem(item));
-      navigation.navigate('singleproduct');
-    };
-
-    return (
-      <ImageBackground style={{ flex: 1 }} source={require("../../../../assets/background-image2.png")}>
-        <View style={{ top: height - 938, }}>
-          <Image source={require("../../../../assets/GOLDEN-STRIP.png")} style={{ borderWidth: 3, width: 1090, alignSelf: "center" }} />
-        </View>
-
-        <FlatList contentContainerStyle={{ alignItems: "center" }}
-          data={data}
-          numColumns={2}
-          renderItem={({ item, index }) => <View key={index} style={styles.View1}>
-
-            <View style={styles.View2}>
-              <TouchableOpacity onPress={() => handlePress(item)}>
-                <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={{ uri: item.images[0] }} />
-                  <ImageBackground style={styles.View5} imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} source={require("../../../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", }}>{item?.name}</Text>
-                  </ImageBackground>
-
-                </View>
-              </TouchableOpacity>
-            </View>
-
-          </View>}
-        />
-      </ImageBackground>
-
-    )
+    let result = await fetch(url);
+    result = await result.json();
+    setData(result);
   }
+
+  useEffect(() => {
+    getAPIDATA();
+  }, []);
+
+  const handlePress = (item) => {
+    dispatch(setActiveItem(item));
+    navigation.navigate('singleproduct');
+  };
+
+  return (
+    <ImageBackground style={{ flex: 1 }} source={require("../../../../assets/background-image2.png")}>
+      <View style={{ top: height - 938, }}>
+        <Image source={require("../../../../assets/GOLDEN-STRIP.png")} style={{ borderWidth: 3, width: 1090, alignSelf: "center" }} />
+      </View>
+
+      <FlatList contentContainerStyle={{ alignItems: "center" }}
+        data={data}
+        numColumns={2}
+        renderItem={({ item, index }) => <View key={index} style={styles.View1}>
+
+          <View style={styles.View2}>
+            <TouchableOpacity onPress={() => handlePress(item)}>
+              <View style={styles.View3}>
+                <Image style={styles.ImageView} source={{ uri: item.images[0] }} />
+                <ImageBackground style={styles.View5} imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} source={require("../../../../assets/CompressedTexture3.jpg")}>
+                  <Text style={{ color: "black", fontWeight: "600", }}>{item?.name}</Text>
+                </ImageBackground>
+
+              </View>
+            </TouchableOpacity>
+          </View>
+
+        </View>}
+      />
+    </ImageBackground>
+
+  )
+}
 
 export default Rodium7gC
 
