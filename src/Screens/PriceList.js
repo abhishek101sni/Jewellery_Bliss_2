@@ -64,7 +64,7 @@ const DropDown2 = ({ navigation }) => {
 
 
       {/* <View style={{ flex: 1 }}> */}
-      <View style={{ top: height - 938, }}>
+      <View style={{ }}>
         <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
       </View>
 
@@ -124,7 +124,7 @@ const DropDown2 = ({ navigation }) => {
       </View>
 
       {/* Whatsapp */}
-      <View style={{ bottom: -90, position: "absolute", right: 20 }}>
+      <View style={{ bottom: -40, position: "absolute", right: 5 }}>
         <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
           <View style={styles.icontextAlignment}>
             <Image source={require("../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
@@ -145,6 +145,22 @@ const DropDown2 = ({ navigation }) => {
       </View>
       {/* Whatsapp */}
 
+      <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{position:"absolute" , backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: moderateScaleVertical(748), }}>
+            <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
+                <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
+                    <Image source={require("../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                </TouchableOpacity>
+
+                {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>
+                    <Image source={require("../assets/cart-filled.png")} style={{ width: 40, height: 40 }} />
+                </TouchableOpacity> */}
+
+                <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
+                    <Image source={require("../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                </TouchableOpacity>
+            </View>
+        </ImageBackground>
+
     </ImageBackground>
   )
 }
@@ -153,9 +169,8 @@ export default DropDown2
 
 const styles = StyleSheet.create({
   goldenStrip: {
-    borderWidth: 3,
-    width: moderateScale(1100),
-    alignSelf: "center"
+      width: "100%",
+      height:3,
   },
   dropDownStyle: {
     width: "90%",
@@ -273,7 +288,9 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: textScale(13),
     fontWeight: "bold",
-  }
+  },
+  // Whatsapp
+  
 })
 
 // import { SelectList } from 'react-native-dropdown-select-list'

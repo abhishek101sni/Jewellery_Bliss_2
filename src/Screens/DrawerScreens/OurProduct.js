@@ -5,6 +5,7 @@ import { height, moderateScale, moderateScaleVertical, textScale } from '../../u
 import SimpleModal from '../SimpleModal';
 
 const OurProduct = ({ navigation }) => {
+
     // WhatsApp
     const [isModalVisible, setisModalVisible] = useState(false)
     const [chooseData, setChooseData] = useState();
@@ -62,14 +63,17 @@ const OurProduct = ({ navigation }) => {
                 </ScrollView>
             </View> */}
 
-            <View style={{ backgroundColor: "#181818", flex: 1 }}>
+            <View style={{ backgroundColor: "#1A2228", flex: 1 }}>
+                <View style={{}}>
+                    <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
+                </View>
                 <ScrollView>
                     <View style={styles.alignment}>
 
                         <View style={styles.View2}>
                             <TouchableOpacity onPress={() => { navigation.navigate('chains') }}>
                                 <View style={styles.View3}>
-                                    <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                                    <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/Handmadeandhollow/handmadeandhollow.jpg")} />
                                     <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
                                         <Text style={{ color: "black", fontWeight: "600", }}>CHAINS</Text>
                                     </ImageBackground>
@@ -81,9 +85,9 @@ const OurProduct = ({ navigation }) => {
                         <View style={styles.View2}>
                             <TouchableOpacity onPress={() => { navigation.navigate('PlainJwellery') }}>
                                 <View style={styles.View3}>
-                                    <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                                    <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/plainjewellery/plain.jpg")} />
                                     <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                                        <Text style={{ color: "black", fontWeight: "600", }}>PLAIN JWELLERY</Text>
+                                        <Text style={{ color: "black", fontWeight: "600", }}>PLAIN JEWELLERY</Text>
                                     </ImageBackground>
                                 </View>
                             </TouchableOpacity>
@@ -95,9 +99,9 @@ const OurProduct = ({ navigation }) => {
                         <View style={styles.View2}>
                             <TouchableOpacity onPress={() => { navigation.navigate('CastingJwellery') }}>
                                 <View style={styles.View3}>
-                                    <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                                    <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/casting.jpg")} />
                                     <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                                        <Text style={{ color: "black", fontWeight: "600", }}>CASTING JWELLERY</Text>
+                                        <Text style={{ color: "black", fontWeight: "600", }}>CASTING JEWELLERY</Text>
                                     </ImageBackground>
                                 </View>
                             </TouchableOpacity>
@@ -107,13 +111,45 @@ const OurProduct = ({ navigation }) => {
                                 <TouchableOpacity onPress={() => { navigation.navigate('CastingCzJwellery') }}>
                                     <Image style={styles.ImageView} source={require("../../assets/czParent.jpg")} />
                                     <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                                        <Text style={{ color: "black", fontWeight: "600", }}>CASTING CZ JWELLERY</Text>
+                                        <Text style={{ color: "black", fontWeight: "600", }}>CASTING CZ JEWELLERY</Text>
                                     </ImageBackground>
                                 </TouchableOpacity>
                             </View>
                         </View>
                     </View>
                 </ScrollView>
+                {/* Whatsapp */}
+                <View style={{ bottom: -40, position: "absolute", right: 5 }}>
+                    <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
+                        <View style={styles.icontextAlignment}>
+                            <Image source={require("../../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
+                            <Text style={styles.helpText}>Help</Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <Modal
+                        transparent={true}
+                        animationType='fade'
+                        visible={isModalVisible}
+                        nRequestClose={() => changeModalVisible(false)}
+                    >
+                        <SimpleModal changeModalVisible={changeModalVisible}
+                            setData={setData}
+                        />
+                    </Modal>
+                </View>
+                <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ position: "absolute", backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: moderateScaleVertical(748), }}>
+                    <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
+                        <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
+                            <Image source={require("../../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                        </TouchableOpacity>
+
+
+                        <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
+                            <Image source={require("../../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                        </TouchableOpacity>
+                    </View>
+                </ImageBackground>
             </View>
         </>
     )
@@ -122,6 +158,10 @@ const OurProduct = ({ navigation }) => {
 export default OurProduct
 
 const styles = StyleSheet.create({
+    goldenStrip: {
+        width: "100%",
+        height: 3,
+    },
     alignment: {
         flexDirection: "row",
         alignItems: "center",
@@ -131,10 +171,8 @@ const styles = StyleSheet.create({
     },
 
     View2: {
-        // marginBottom: moderateScale(-20),
         backgroundColor: 'white',
         justifyContent: 'space-around',
-        // marginRight: moderateScale(10),
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         borderBottomLeftRadius: 20,
@@ -145,7 +183,6 @@ const styles = StyleSheet.create({
         marginHorizontal: moderateScale(20)
     },
     View3: {
-        // marginTop:moderateScaleVertical(0),
         backgroundColor: 'white',
         borderRadius: 35
     },

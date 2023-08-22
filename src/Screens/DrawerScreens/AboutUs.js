@@ -6,6 +6,9 @@ import { height, moderateScale, moderateScaleVertical, textScale } from '../../u
 const AboutUs = () => {
   return (
     <ImageBackground style={{ flex: 1 }} source={require("../../assets/background-image2.png")}>
+      <View style={{}}>
+        <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
+      </View>
       <ScrollView>
         <View style={styles.AboutUsContentAlignment2}>
           <Text style={styles.AboutUsContent}>
@@ -57,6 +60,9 @@ const AboutUs = () => {
           </View>
         </View>
       </ScrollView>
+      <View style={{}}>
+        <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
+      </View>
     </ImageBackground>
 
   )
@@ -65,6 +71,10 @@ const AboutUs = () => {
 export default AboutUs
 
 const styles = StyleSheet.create({
+  goldenStrip: {
+    width: "100%",
+    height: 3,
+},
   AboutUsAlignment: {
     marginTop: moderateScaleVertical(20),
     marginLeft: moderateScale(18),

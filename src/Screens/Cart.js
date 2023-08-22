@@ -1,7 +1,6 @@
 import { View, Text, Image, TouchableOpacity, TextInput, Button, ScrollView, StyleSheet, Modal, ImageBackground, Dimensions } from "react-native";
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { addToCart } from "../redux/action";
 import { addToCart, removeFromCart } from "../redux/action";
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
 import FlashMessage, { showMessage, hideMessage } from "react-native-flash-message";
@@ -62,11 +61,12 @@ const Cart = ({ navigation }) => {
 
     return (
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
+            <View style={{}}>
+                <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
+            </View>
             <ScrollView>
                 <View>
-                    <View style={{ top: height - 940, }}>
-                        <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
-                    </View>
+
                     <ScrollView>
                         {
                             cart.length ? cart.map(cartItem => (
@@ -81,9 +81,9 @@ const Cart = ({ navigation }) => {
 
                                                 <Text style={styles.CartItemName}>{cartItem.item.name}</Text>
                                                 <Text style={styles.CartItemPrice}>RS. {cartItem.item.price}</Text>
-                                                <View style={{ backgroundColor: "black", borderRadius: 20, width: moderateScale(100), height: moderateScaleVertical(30) }}>
-                                                    <View style={{ flexDirection: "row", justifyContent: "space-evenly" , marginTop:moderateScaleVertical(2) }}>
-                                                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={{ height: moderateScaleVertical(23), width: moderateScale(23), justifyContent: "center", alignSelf: "center", marginTop:0 }} imageStyle={{ borderRadius: 15 }}>
+                                                <View style={{ backgroundColor: "black", borderRadius: 20, width: moderateScale(85), height: moderateScaleVertical(30) }}>
+                                                    <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(2) }}>
+                                                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={{ height: moderateScaleVertical(23), width: moderateScale(23), justifyContent: "center", alignSelf: "center", marginTop: 0 }} imageStyle={{ borderRadius: 15 }}>
                                                             <TouchableOpacity onPress={() => decreaseCount(cartItem.item)}>
                                                                 <Image source={require("../assets/minus.png")} style={{ width: moderateScale(23), height: moderateScaleVertical(23) }} />
                                                             </TouchableOpacity>
@@ -148,40 +148,14 @@ const Cart = ({ navigation }) => {
                                         </ImageBackground>
                                     </TouchableOpacity>
                                 </View>
-
-
-
                             </View>
                         </View>
-
-
-
-                        {/* ------------------------------------------------------- */}
-                        <Modal Modal visible={showModal} animationType="slide" onRequestClose={() => setShowModal(false)} >
-
-
-                            <ImageBackground source={require("../assets/texture.png")} style={styles.goldenback} imageStyle={{ borderRadius: 40 }}>
-                                <Text style={{ alignItems: "center", fontFamily: "Poppins-Medium", textAlign: "center", fontSize: 23, color: "black", justifyContent: "center" }}>Order Placed Successfully!!</Text>
-                            </ImageBackground>
-
-                            <View style={styles.View18}>
-                                <View style={{ flexDirection: "row", marginHorizontal: -10, justifyContent: 'space-around', }}>
-                                    <TouchableOpacity onPress={() => navigation.navigate('product')}>
-                                        <View style={styles.signInbutton}>
-                                            <Text style={styles.signInText}>Go Back</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-
-                        </Modal>
                     </ScrollView>
-
                 </View>
             </ScrollView>
 
             {/* Whatsapp */}
-            <View View style={{ bottom: -90, position: "absolute", right: 20 }}>
+            <View View style={{ bottom: -40, position: "absolute", right: 20 }}>
                 <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
                     <View style={styles.icontextAlignment}>
                         <Image source={require("../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
@@ -200,6 +174,21 @@ const Cart = ({ navigation }) => {
                     />
                 </Modal>
             </View>
+            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: 0, }}>
+                <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
+                        <Image source={require("../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                    </TouchableOpacity>
+
+                    {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>
+                    <Image source={require("../assets/cart-filled.png")} style={{ width: 40, height: 40 }} />
+                </TouchableOpacity> */}
+
+                    <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
+                        <Image source={require("../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                    </TouchableOpacity>
+                </View>
+            </ImageBackground>
             {/* Whatsapp */}
 
         </ImageBackground>
@@ -238,9 +227,9 @@ const styles = StyleSheet.create({
         height: moderateScaleVertical(100)
     },
     goldenStrip: {
-        borderWidth: moderateScale(3),
-        width: moderateScale(1100),
-        alignSelf: "center"
+        width: "100%",
+        // marginBottom:10,
+        height: 3,
     },
     MainBackGroundImage: {
         marginTop: moderateScaleVertical(15),

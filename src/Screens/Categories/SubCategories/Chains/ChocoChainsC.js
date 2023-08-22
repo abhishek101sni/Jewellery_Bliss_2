@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react'
 import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, ImageBackground } from 'react-native'
 import { useDispatch } from 'react-redux'
@@ -6,13 +7,13 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const MachineChainsC = ({ navigation }) => {
+const ChocoChainsC = ({ navigation }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
   const getAPIDATA = async () => {
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Choco%20Chains";
-
+    // const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=18";
+    // const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=handmade";
     let result = await fetch(url);
     result = await result.json();
     setData(result);
@@ -45,7 +46,6 @@ const MachineChainsC = ({ navigation }) => {
                 <ImageBackground style={styles.View5} imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} source={require("../../../../assets/CompressedTexture3.jpg")}>
                   <Text style={{ color: "black", fontWeight: "600", }}>{item?.name}</Text>
                 </ImageBackground>
-
               </View>
             </TouchableOpacity>
           </View>
@@ -57,7 +57,7 @@ const MachineChainsC = ({ navigation }) => {
   )
 }
 
-export default MachineChainsC
+export default ChocoChainsC
 
 const styles = StyleSheet.create({
   View1: {

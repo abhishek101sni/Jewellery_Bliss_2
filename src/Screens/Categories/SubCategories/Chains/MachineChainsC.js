@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react'
 import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, ImageBackground } from 'react-native'
 import { useDispatch } from 'react-redux'

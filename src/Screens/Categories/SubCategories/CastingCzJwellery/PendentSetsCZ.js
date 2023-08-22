@@ -7,10 +7,10 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const MachineChainsC = ({ navigation }) => {
+const PendentSetsCZ = ({ navigation }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
-  
+
   const getAPIDATA = async () => {
     const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Pendent%20Set";
 
@@ -58,7 +58,7 @@ const MachineChainsC = ({ navigation }) => {
   )
 }
 
-export default MachineChainsC
+export default PendentSetsCZ
 
 const styles = StyleSheet.create({
   View1: {

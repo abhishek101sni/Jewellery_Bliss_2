@@ -87,18 +87,16 @@ const GetStarted = ({ navigation }) => {
                 <View style={{ flex: 0.5}}>
 
                     <TouchableOpacity onPress={() => { navigation.navigate('loginsignup') }} style={{ alignItems: "center" }}>
-                        <ImageBackground source={require("../assets/texture.png")} style={styles.GetStartedButton} imageStyle={{ borderRadius: 80 }}>
+                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={styles.GetStartedButton} imageStyle={{ borderRadius: 80 }}>
                             <Text style={styles.signuptext2}>Get Started</Text>
                         </ImageBackground>
                     </TouchableOpacity>
                 </View>
 
-                <View style={{ position: "absolute", top: height - 7, }}>
+                <View >
                     <Image source={require("../assets/GOLDEN-STRIP.png")} style={{
-                        borderWidth: 3,
-                        width: 431,
-                        // borderColor: 'gold',
-                        // marginBottom:200
+                         width: "100%",
+        height: 6,
                     }} />
                 </View>
             </View>

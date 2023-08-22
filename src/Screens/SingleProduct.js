@@ -98,13 +98,14 @@ const SingleProduct = ({ navigation }) => {
 
 
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
+            <View style={{}}>
+                <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
+            </View>
             <ScrollView>
-                <View style={{ top: height - 938, }}>
-                    <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
-                </View>
-
-                <View style={styles.singleProductImageAlignmnet}>
-                    <Image style={styles.singleProductImageStyle} source={{ uri: activeItem.images[0] }} />
+                <View>
+                    <ImageBackground style={styles.MainBackGroundImage1} imageStyle={{ borderRadius: 20 }} source={require("../assets/CompressedTexture3.jpg")} >
+                        <Image style={styles.singleProductImageStyle} source={{ uri: activeItem.images[0] }} />
+                    </ImageBackground>
                 </View>
 
                 <View >
@@ -185,8 +186,8 @@ const SingleProduct = ({ navigation }) => {
                         <Text style={{ color: "black", alignSelf: "center", padding: 5, fontSize: textScale(18), fontWeight: "600" }}>Product Specification</Text>
                     </View>
                 </View>
- 
-                <View style={{ backgroundColor: "#fff", width: "100%", height: moderateScale(150) }}>
+
+                <View style={{ backgroundColor: "#fff", width: "100%", height: moderateScale(150), marginBottom: moderateScaleVertical(52) }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: 0 }}>
                         <View style={{ flexDirection: "column" }}>
                             <Text style={{ fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), }}>Gross Weight</Text>
@@ -205,19 +206,11 @@ const SingleProduct = ({ navigation }) => {
                     </View>
                 </View>
                 {/* </View> */}
-
-
-                <View style={{ top: height - 100, }}>
-                    <Image source={require("../assets/GOLDEN-STRIP.png")} style={{
-                        borderWidth: 3,
-                        width: moderateScale(431),
-                    }} />
-                </View>
             </ScrollView>
 
             {/* Whatsapp */}
 
-            <View style={{ bottom: 70, position: "absolute", right: 7 }}>
+            <View style={{ bottom: -40, position: "absolute", right: 7 }}>
                 <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
                     <View style={styles.icontextAlignment}>
                         <Image source={require("../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
@@ -236,19 +229,21 @@ const SingleProduct = ({ navigation }) => {
                     />
                 </Modal>
             </View>
-            {/* <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: 400, }}>
-                        <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-                            <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                                <Image source={require("../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                            </TouchableOpacity>
+            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: 0, }}>
+                <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
+                        <Image source={require("../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                    </TouchableOpacity>
 
-                            <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-                                <Image source={require("../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                            </TouchableOpacity>
-                        </View>
-                    </ImageBackground> */}
-            {/* Whatsapp */}
+                    {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>
+                    <Image source={require("../assets/cart-filled.png")} style={{ width: 40, height: 40 }} />
+                </TouchableOpacity> */}
 
+                    <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
+                        <Image source={require("../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                    </TouchableOpacity>
+                </View>
+            </ImageBackground>
         </ImageBackground>
     )
 }
@@ -256,19 +251,31 @@ const SingleProduct = ({ navigation }) => {
 export default SingleProduct;
 
 const styles = StyleSheet.create({
+    goldenStrip: {
+        width: "100%",
+        height: 3,
+    },
     singleProductImageAlignmnet: {
+        alignItems: "center",
         marginTop: moderateScaleVertical(5),
-        marginBottom: moderateScaleVertical(20)
+        marginBottom: moderateScaleVertical(20),
+        height: moderateScaleVertical(325),
+        width: moderateScale(354),
     },
     singleProductImageStyle: {
-        borderWidth: 1,
-        borderColor: "black",
         height: moderateScaleVertical(320),
-        width: moderateScale(350),
+        width: moderateScale(352),
         justifyContent: 'center',
         alignSelf: 'center',
         borderRadius: 15,
-        marginBottom: moderateScaleVertical(2)
+        marginBottom: moderateScaleVertical(3),
+        marginTop:moderateScaleVertical(2.5)
+    },
+    MainBackGroundImage1: {
+        marginTop: moderateScaleVertical(15),
+        width: moderateScale(358),
+        height: moderateScaleVertical(325),
+        alignSelf: "center"
     },
     ProductLogoBackground: {
         backgroundColor: 'white',
@@ -292,6 +299,7 @@ const styles = StyleSheet.create({
         fontSize: textScale(12),
         fontWeight: "400"
     },
+
     MainBackGroundImage: {
         marginTop: moderateScaleVertical(15),
         width: moderateScale(350),

@@ -49,12 +49,12 @@ const FormDetails = ({ navigation }) => {
             gpsLocation,
         };
         dispatch(fillDetails(userToken, userDetails));
-        navigation.navigate('tabs');
+        navigation.navigate('Drawer');
     };
     useEffect(() => {
         if (userDetails && !userDetails.brandName) {
             dispatch(getUserDetailsActionCreator(userInfo._id, userToken));
-            navigation.navigate('tabs');
+            navigation.navigate('Drawer');
             console.log(userDetails);
         }
     }, []);

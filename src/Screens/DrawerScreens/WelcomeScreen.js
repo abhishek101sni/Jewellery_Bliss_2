@@ -133,7 +133,7 @@ const WelcomeScreen = () => {
 
     return (
         <ImageBackground style={{ flex: 1 }} source={require("../../assets/background-image2.png")}>
-            <View style={{ top: height - 938, }}>
+            <View >
                 <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
             </View>
             <ScrollView>
@@ -149,7 +149,7 @@ const WelcomeScreen = () => {
                             <Text style={styles.UserName}>{userInfo?.name}</Text>
                             <Text style={styles.UserBrandName}>{userDetails?.brandName}</Text>
                             <View style={styles.userCountStyle}>
-                                <Text style={styles.UserCount}>JB 00{userInfo?.userCount}</Text>
+                                <Text style={styles.UserCount}>JB00{userInfo?.userCount}</Text>
                             </View>
                             <View style={{ marginTop: moderateScaleVertical(5) }}>
                                 <Text style={styles.GoldenScreenBelowText}>Welcome to our app! We have thrilled to have you here.</Text>
@@ -163,7 +163,7 @@ const WelcomeScreen = () => {
                 </View>
 
                 <View style={styles.wholeAlignment}>
-                    <View style={{ backgroundColor: "#F0F0F0", height: moderateScaleVertical(20), marginTop: moderateScaleVertical(20), alignItems: "center" }}>
+                    <View style={{ backgroundColor: "#F0F0F0", height: moderateScaleVertical(20), marginTop: moderateScaleVertical(10), alignItems: "center" }}>
                         <TouchableOpacity onPress={() => { setVisible(true) }} >
                             <MarqueeView>
                                 <View style={styles.MarqueeAlignment}>
@@ -238,25 +238,25 @@ const WelcomeScreen = () => {
                     paginationBoxVerticalPadding={20}
                     dotStyle={{
                         width: moderateScale(7),
-                        height: moderateScaleVertical(7),
+                        // height: moderateScaleVertical(7),
                         borderRadius: 20,
                         marginHorizontal: moderateScale(-3),
                         padding: 0,
-                        margintTop: moderateScaleVertical(400)
+                        // margintTop: moderateScaleVertical(400)
                     }}
                     ImageComponentStyle={{ borderRadius: 30, width: '90%', marginTop: 15 }}
                 />
 
                 {/* // Parallax */}
 
-                {/* <Carousel
+                <Carousel
                     data={entries2}
                     renderItem={renderItem2}
                     sliderWidth={width}
                     itemWidth={300}
                     loop
                     firstItem={1}
-                /> */}
+                />
 
                 {/* Banner */}
                 <Carousel
@@ -269,7 +269,7 @@ const WelcomeScreen = () => {
                 />
 
 
-                <View style={styles.line}></View>
+                {/* <View style={styles.line}></View> */}
 
 
                 <View style={styles.logosAlignment}>
@@ -280,11 +280,13 @@ const WelcomeScreen = () => {
                     <Image source={require("../../assets/5.png")} style={styles.imgsize5} />
                     <Image source={require("../../assets/6.png")} style={styles.imgsize6} />
                 </View>
-                
+
+       
+
             </ScrollView>
 
             {/* Whatsapp */}
-            <View View style={{ bottom: moderateScaleVertical(-90), position: "absolute", right: moderateScale(20) }}>
+            <View View style={{ bottom: moderateScaleVertical(-95), position: "absolute", right: moderateScale(5) }}>
                 <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
                     <View style={styles.icontextAlignment}>
                         <Image source={require("../../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
@@ -302,31 +304,21 @@ const WelcomeScreen = () => {
                         setData={setData}
                     />
                 </Modal>
-                <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ borderWidth:3, borderColor:'red' ,backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: 400, }}>
-            <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-                <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                    <Image source={require("../../assets/home-animated.gif")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                </TouchableOpacity>
-
-                {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>
-                    <Image source={require("../assets/cart-filled.png")} style={{ width: 40, height: 40 }} />
-                </TouchableOpacity> */}
-
-                <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-                    <Image source={require("../../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                </TouchableOpacity>
-            </View>
-        </ImageBackground>
             </View>
             {/* Whatsapp */}
 
-            {/* <View View style={{ top: height - 890, }}>
-                <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
-            </View> */}
+            {/* <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop:0, }}>
+                    <View style={{ marginTop: moderateScaleVertical(15), flexDirection: "row", justifyContent: "space-around" }}>
+                        <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
+                            <Image source={require("../../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                        </TouchableOpacity>
 
-            {/* <CustomTabNavigator /> */}
-            {/* <CustomTabNavigator navigation={navigation}/> */}
-            
+                        <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
+                            <Image source={require("../../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                        </TouchableOpacity>
+                    </View>
+                </ImageBackground> */}
+
         </ImageBackground>
     )
 }
@@ -337,9 +329,11 @@ export default WelcomeScreen
 const styles = StyleSheet.create({
     goldenStrip: {
         width: "100%",
+        // marginBottom:10,
+        height:3,
     },
     MainBackGroundImage: {
-        marginTop: moderateScaleVertical(0),
+        marginTop: moderateScaleVertical(10),
         width: moderateScale(355),
         height: moderateScaleVertical(170),
         alignSelf: "center",
@@ -357,24 +351,25 @@ const styles = StyleSheet.create({
         fontSize: textScale(20),
         fontWeight: "400",
         marginLeft: moderateScale(0),
-        fontFamily: "HurmeGeometricSans1SemiBoldOblique"
+        fontFamily: "HurmeGeometricSans1"
     },
     UserName: {
         color: "black",
         fontSize: textScale(23),
-        fontWeight: "600"
+        fontWeight: "700",
+        fontFamily:"HurmeGeometricSans1Bold"
     },
     UserBrandName: {
         color: "black",
         fontSize: textScale(14),
-        fontWeight: "500"
+        fontWeight: "500",
+        fontFamily:"HurmeGeometricSans1"
     },
     UserCount: {
         color: "black",
         fontSize: textScale(12),
         fontWeight: "500",
         marginLeft: moderateScale(2),
-        // textAlign:"center"
     },
     userCountStyle: {
         // backgroundColor: "black",
@@ -394,7 +389,8 @@ const styles = StyleSheet.create({
     GoldenScreenBelowText: {
         color: "black",
         fontSize: textScale(10),
-        fontWeight: "600"
+        fontWeight: "600", 
+        fontFamily:"HurmeGeometricSans1"
     },
     smileyEmoji: {
         width: moderateScale(14),
@@ -408,7 +404,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: 'space-evenly',
         paddingHorizontal: moderateScale(0),
-        marginTop:moderateScaleVertical(15)
+        marginTop: moderateScaleVertical(10)
     },
     GoldenCategoriesButtonsStyle: {
         alignItems: "center",
@@ -418,6 +414,7 @@ const styles = StyleSheet.create({
         height: moderateScaleVertical(60),
         marginTop: moderateScaleVertical(10),
         alignSelf: 'center',
+        // elevation:120,
     },
     GoldenCategoriesButtonsText: {
         fontSize: textScale(12),
@@ -447,8 +444,9 @@ const styles = StyleSheet.create({
     line: {
         width: moderateScale("80%"),
         height: moderateScaleVertical(2),
-        backgroundColor: "#a4a4a4",
+        backgroundColor: "black",
         marginTop: moderateScaleVertical(10),
+        marginBottom:20,
         alignSelf: 'center'
     },
     logosAlignment: {
@@ -458,7 +456,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         marginHorizontal: moderateScale(10),
         marginVertical: moderateScaleVertical(-5),
-        marginBottom: moderateScaleVertical(70),
+        marginBottom: moderateScaleVertical(50),
     },
     // logosAlignment2: {
     //     marginTop: moderateScaleVertical(25),
@@ -524,6 +522,7 @@ const styles = StyleSheet.create({
         fontSize: textScale(13),
         fontWeight: "bold",
     },
+    
     // bottomSheet
 
     wholeAlignment: {

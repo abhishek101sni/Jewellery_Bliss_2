@@ -73,75 +73,75 @@ const Chains = ({ navigation }) => {
         <ScrollView>
           <View style={styles.alignment}>
             <View style={styles.View2}>
-              <TouchableOpacity onPress={() => { navigation.navigate('MachineChains') }}>
+              <TouchableOpacity onPress={() => { navigation.navigate('AllNawabiC') }}>
                 <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/AllNawabi/allnawabi.jpg")} />
+                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>ALL NAWABI</Text>
+                  </ImageBackground>
+                </View>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.View2}>
+              <TouchableOpacity onPress={() => { navigation.navigate('DoubleMarutiC') }}>
+                <View style={styles.View3}>
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/DoubleMaruti/doublemaruti.jpg")} />
+                  {/* <Text style={styles.View5}>SILKY ROPE</Text> */}
+                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>DOUBLE MARUTI</Text>
+                  </ImageBackground>
+                </View>
+              </TouchableOpacity>
+            </View>
+
+          </View>
+          <View style={styles.alignment}>
+            <View style={styles.View2}>
+              <TouchableOpacity onPress={() => { navigation.navigate('HandmadeAndHollowC') }} >
+                <View style={styles.View3}>
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/Handmadeandhollow/handmadeandhollow.jpg")} />
+                  {/* <Text style={styles.View5}>HAND MADE</Text> */}
+                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>HANDMADE AND HOLLOW</Text>
+                  </ImageBackground>
+
+                </View>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.View2}>
+              <TouchableOpacity onPress={() => { navigation.navigate('KajuKatliC') }}>
+                <View style={styles.View3}>
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/kajuKatli/kajukatli.jpg")} />
+                  {/* <Text style={styles.View5}>HOLLOW FANCY</Text> */}
+                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>KAJU KATLI</Text>
+                  </ImageBackground>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={styles.alignment}>
+            <View style={styles.View2}>
+              <TouchableOpacity onPress={() => { navigation.navigate('MachineChainsC') }}>
+                <View style={styles.View3}>
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/machinechains/machinechains.jpg")} />
+                  {/* <Text style={styles.View5}>HOLLOW NAWABI</Text> */}
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
                     <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>MACHINE CHAINS</Text>
                   </ImageBackground>
                 </View>
               </TouchableOpacity>
             </View>
-
             <View style={styles.View2}>
-              <TouchableOpacity onPress={() => { navigation.navigate('SilkyRope') }}>
+              <TouchableOpacity onPress={() => { navigation.navigate('Nawabi') }}>
                 <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                  {/* <Text style={styles.View5}>SILKY ROPE</Text> */}
-                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>SILKY ROPE</Text>
-                  </ImageBackground>
-                </View>
-              </TouchableOpacity>
-            </View>
-
-          </View>
-          <View style={styles.alignment}>
-            <View style={styles.View2}>
-              <TouchableOpacity onPress={() => { navigation.navigate('HandMade') }} >
-                <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                  {/* <Text style={styles.View5}>HAND MADE</Text> */}
-                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>HAND MADE</Text>
-                  </ImageBackground>
-
-                </View>
-              </TouchableOpacity>
-            </View>
-
-            <View style={styles.View2}>
-              <TouchableOpacity onPress={() => { navigation.navigate('HollowFancy') }}>
-                <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                  {/* <Text style={styles.View5}>HOLLOW FANCY</Text> */}
-                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>HOLLOW FANCY</Text>
-                  </ImageBackground>
-                </View>
-              </TouchableOpacity>
-            </View>
-          </View>
-
-          <View style={styles.alignment}>
-            <View style={styles.View2}>
-              <TouchableOpacity onPress={() => { navigation.navigate('HollowNawabi') }}>
-                <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                  {/* <Text style={styles.View5}>HOLLOW NAWABI</Text> */}
-                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>HOLLOW NAWABI</Text>
-                  </ImageBackground>
-                </View>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.View2}>
-              <TouchableOpacity onPress={() => { navigation.navigate('SumoChains') }}>
-                <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/nawabi/nawabi.jpg")} />
                   {/* <Text style={styles.View5}>SUMO CHAINS</Text> */}
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>SUMO CHAINS</Text>
+                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>NAWABI</Text>
                   </ImageBackground>
                 </View>
               </TouchableOpacity>
@@ -150,23 +150,23 @@ const Chains = ({ navigation }) => {
 
           <View style={styles.alignment}>
             <View style={styles.View2}>
-              <TouchableOpacity onPress={() => { navigation.navigate('IndoChains') }}>
+              <TouchableOpacity onPress={() => { navigation.navigate('Rodium6gC') }}>
                 <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/rodium6g/rodium6g.jpg")} />
                   {/* <Text style={styles.View5}>INDO CHAINS</Text> */}
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>INDO CHAINS</Text>
+                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>RODIUM 6G</Text>
                   </ImageBackground>
                 </View>
               </TouchableOpacity>
             </View>
             <View style={styles.View2}>
-              <TouchableOpacity onPress={() => { navigation.navigate('ChocoChains') }}>
+              <TouchableOpacity onPress={() => { navigation.navigate('Rodium7gC') }}>
                 <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/rodium7g/7g.jpg")} />
                   {/* <Text style={styles.View5}>CHOCO CHAINS</Text> */}
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>CHOCO CHAINS</Text>
+                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>RODIUM 7G</Text>
                   </ImageBackground>
                 </View>
               </TouchableOpacity>
@@ -175,24 +175,24 @@ const Chains = ({ navigation }) => {
 
           <View style={styles.alignment}>
             <View style={styles.View2}>
-              <TouchableOpacity onPress={() => { navigation.navigate('IndoChocoChains') }}>
+              <TouchableOpacity onPress={() => { navigation.navigate('RodiumChainsC') }}>
                 <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/rodiumChains/rodiumchains.jpg")} />
                   {/* <Text style={styles.View5}>INDO CHOCO CHAINS</Text> */}
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>INDO CHOCO CHAINS</Text>
+                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>RODIUM CHAINS</Text>
                   </ImageBackground>
                 </View>
               </TouchableOpacity>
             </View>
             <TouchableOpacity>
               <View style={styles.View2}>
-                <TouchableOpacity onPress={() => { navigation.navigate('SolidNawabi') }}>
+                <TouchableOpacity onPress={() => { navigation.navigate('Rodium10gC') }}>
                   <View style={styles.View3}>
-                    <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                    <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/rodium10g/rodium10g.jpg")} />
                     {/* <Text style={styles.View5}>SOLID NAWABI</Text> */}
                     <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                      <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>SOLID NAWABI</Text>
+                      <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>RODIUM 10G</Text>
                     </ImageBackground>
                   </View>
                 </TouchableOpacity>
@@ -202,29 +202,57 @@ const Chains = ({ navigation }) => {
 
           <View style={styles.alignment}>
             <View style={styles.View2}>
-              <TouchableOpacity onPress={() => { navigation.navigate('MadrasiChains') }}>
+              <TouchableOpacity onPress={() => { navigation.navigate('SilkyC') }}>
                 <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/silky/silky.jpg")} />
                   {/* <Text style={styles.View5}>MADRASI CHAINS</Text> */}
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>MADRASI CHAINS</Text>
+                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>SILKY</Text>
                   </ImageBackground>
                 </View>
               </TouchableOpacity>
             </View>
-            {/* <TouchableOpacity> */}
-              {/* <View style={styles.View2}>
-              <TouchableOpacity onPress={() => { navigation.navigate('SolidNawabi') }}>
+
+            <View style={styles.alignment}>
+              <View style={styles.View2}>
+                <TouchableOpacity onPress={() => { navigation.navigate('IndoChocoC') }}>
+                  <View style={styles.View3}>
+                    <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/indochoco/indochoco.jpg")} />
+                    {/* <Text style={styles.View5}>MADRASI CHAINS</Text> */}
+                    <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                      <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>INDO CHOCO</Text>
+                    </ImageBackground>
+                  </View>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+
+          <View style={styles.alignment}>
+            <View style={styles.View2}>
+              <TouchableOpacity onPress={() => { navigation.navigate('ChocoChainsC') }}>
                 <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                  <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/chocoChains/chocochains.jpg")} />
                   {/* <Text style={styles.View5}>MADRASI CHAINS</Text> */}
-                  {/* <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}> */}
-                    {/* <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>SOLID NAWABI</Text> */}
-                  {/* </ImageBackground> */}
-                {/* </View> */}
-              {/* </TouchableOpacity> */}
-            {/* </View>  */}
-            {/* </TouchableOpacity> */}
+                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>CHOCO CHAINS</Text>
+                  </ImageBackground>
+                </View>
+              </TouchableOpacity>
+            </View>
+
+            {/* <View style={styles.alignment}>
+              <View style={styles.View2}>
+                <TouchableOpacity onPress={() => { navigation.navigate('IndoChocoC') }}>
+                  <View style={styles.View3}>
+                    <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                    <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                      <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>INDO CHOCO</Text>
+                    </ImageBackground>
+                  </View>
+                </TouchableOpacity>
+              </View>
+            </View> */}
           </View>
 
         </ScrollView>

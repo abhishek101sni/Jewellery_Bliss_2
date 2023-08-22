@@ -7,7 +7,7 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const MachineChainsC = ({ navigation }) => {
+const BraceletsPJ = ({ navigation }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
@@ -58,7 +58,7 @@ const MachineChainsC = ({ navigation }) => {
   )
 }
 
-export default MachineChainsC
+export default BraceletsPJ
 
 const styles = StyleSheet.create({
   View1: {

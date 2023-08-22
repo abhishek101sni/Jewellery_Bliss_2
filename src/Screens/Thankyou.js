@@ -19,17 +19,6 @@ const Thankyou = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-      <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: 170, }}>
-                        <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-                            <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                                <Image source={require("../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                            </TouchableOpacity>
-
-                            <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-                                <Image source={require("../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                            </TouchableOpacity>
-                        </View>
-                    </ImageBackground>
     </ImageBackground>
   )
 }

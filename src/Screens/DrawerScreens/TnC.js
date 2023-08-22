@@ -4,6 +4,9 @@ import { height, moderateScale, moderateScaleVertical, textScale } from '../../u
 const TnC = () => {
   return (
     <ImageBackground style={{ flex: 1 }} source={require("../../assets/background-image2.png")}>
+      <View style={{}}>
+        <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
+      </View>
       <View>
         <TouchableOpacity onPress={() => { Linking.openURL('https://www.demo.janusalive.com/jewellery-bliss/about-us.html') }} style={styles.logInButtonAlignment}>
           <ImageBackground source={require("../../assets/texture.png")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
@@ -17,6 +20,9 @@ const TnC = () => {
           }} />
         </View>
       </View>
+      <View style={{ marginTop: moderateScaleVertical(400) }}>
+        <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} />
+      </View>
     </ImageBackground>
   )
 }
@@ -24,6 +30,14 @@ const TnC = () => {
 export default TnC;
 
 const styles = StyleSheet.create({
+  goldenStrip: {
+    width: "100%",
+    height: 3,
+  },
+  goldenStripBottom: {
+    width: "100%",
+    height: 3,
+  },
   logInButtonAlignment: {
     alignItems: "center",
     marginBottom: moderateScaleVertical(10),

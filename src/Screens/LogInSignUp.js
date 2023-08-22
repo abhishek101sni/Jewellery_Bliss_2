@@ -11,15 +11,17 @@ function LogInSignUp({ navigation }) {
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <View style={{ flex: 1 }} >
 
-                <View
-                    style={styles.logoAlignment}>
-                    <Image style={styles.logoSize} source={require('../assets/logo.png')} />
-                </View>
 
-                <View style={{ flex: 1, alignItems: "center", marginTop: 100 }}>
 
+                <View style={{ flex: 1, alignItems: "center"}}>
+
+                    <View style={styles.logoAlignment}>
+                        <Image style={styles.logoSize} source={require('../assets/logo.png')} />
+                    </View>
+
+                    <View style={{marginTop:moderateScaleVertical(140)}}>
                     <TouchableOpacity onPress={() => { navigation.navigate('login') }} style={styles.loginButtonAlignment}>
-                        <ImageBackground source={require("../assets/texture.png")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
+                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
                             <Text style={styles.loginButtonText}>LOGIN</Text>
                         </ImageBackground>
                     </TouchableOpacity>
@@ -29,15 +31,12 @@ function LogInSignUp({ navigation }) {
                             <Text style={styles.signupText}>SIGNUP</Text>
                         </View>
                     </TouchableOpacity>
+                    </View>
 
                 </View>
-
-                <View style={{ position: "absolute", top: height - 7, }}>
-                    <Image source={require("../assets/GOLDEN-STRIP.png")} style={{
-                        borderWidth: 3,
-                        width: 431,
-                    }} />
-                </View>
+            </View>
+            <View style={{ marginTop: moderateScaleVertical(400) }}>
+                <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} />
             </View>
 
             {/* modal--------------------- */}
@@ -64,6 +63,7 @@ function LogInSignUp({ navigation }) {
                     </View>
                 </View>
             </Modal>
+
         </ImageBackground>
     );
 }
@@ -72,12 +72,17 @@ export default LogInSignUp;
 
 
 const styles = StyleSheet.create({
+    goldenStripBottom: {
+        width: "100%",
+        height: 6,
+    },
     logoAlignment: {
         flex: 0.3,
         alignSelf: "center",
         alignItems: "center",
         padding: moderateScale(130),
         justifyContent: "center",
+        marginTop:moderateScaleVertical(80)
         // backgroundColor:"red"
     },
     logoSize: {

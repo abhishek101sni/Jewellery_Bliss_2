@@ -2,13 +2,12 @@ import { View, Text, Image, ImageBackground, TouchableOpacity } from 'react-nati
 import React from 'react'
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
 
-
 const CustomTabNavigator = ({ navigation }) => {
     return (
-        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ borderWidth:3, borderColor:'red' ,backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: 400, }}>
+        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ position: "absolute", backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: 0, }}>
             <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
                 <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                    <Image source={require("../assets/home-animated.gif")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                    <Image source={require("../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
                 </TouchableOpacity>
 
                 {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>

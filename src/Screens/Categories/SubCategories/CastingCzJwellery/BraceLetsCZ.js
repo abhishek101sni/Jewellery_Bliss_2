@@ -6,10 +6,10 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const MachineChainsC = ({ navigation }) => {
+const BraceLetsCZ = ({ navigation }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
-  
+
   const getAPIDATA = async () => {
     const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Bracelets";
 
@@ -57,7 +57,7 @@ const MachineChainsC = ({ navigation }) => {
   )
 }
 
-export default MachineChainsC
+export default BraceLetsCZ
 
 const styles = StyleSheet.create({
   View1: {

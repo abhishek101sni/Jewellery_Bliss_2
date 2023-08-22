@@ -29,6 +29,22 @@ const DropdownComponent = () => {
 
   return (
     <View style={styles.container}>
+      <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", position: "absolute", marginBottom: 20, }}>
+        <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
+          <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
+            <Image source={require("../../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+          </TouchableOpacity>
+
+          {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>
+                    <Image source={require("../assets/cart-filled.png")} style={{ width: 40, height: 40 }} />
+                </TouchableOpacity> */}
+
+          <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
+            <Image source={require("../../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
+
       <View style={styles.Dropdowncontainer}>
         <View style={{ backgroundColor: "#fff", borderRadius: 15, backgroundColor: "black", color: "#eec06b" }}>
           <Dropdown
@@ -74,6 +90,7 @@ const DropdownComponent = () => {
           />
         </Modal>
       </View>
+
       {/* Whatsapp */}
 
     </View>

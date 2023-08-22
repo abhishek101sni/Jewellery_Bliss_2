@@ -30,7 +30,7 @@ const SignUp = ({ navigation }) => {
   return (
     <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
       <ScrollView>
-        <View>
+        <View style={{ flex: 1 }}>
           <View style={styles.logoAlignment}>
             <Image source={require("../assets/logo.png")} style={styles.logoSize} />
           </View>
@@ -38,82 +38,89 @@ const SignUp = ({ navigation }) => {
           <View style={styles.SignUpTitle}>
             <Text style={styles.SignUpText}>Sign Up</Text>
           </View>
+          <View style={{marginTop:moderateScaleVertical(-30)}}>
+            {/* name */}
+            <TextInput
+              style={styles.NameInputbotton}
+              autoCapitalize
+              autoCorrect={false}
+              placeholder="Name"
+              onChangeText={setName}
+              placeholderTextColor="#C7C7CD"
+            />
 
-          {/* name */}
-          <TextInput
-            style={styles.NameInputbotton}
-            autoCapitalize
-            autoCorrect={false}
-            placeholder="Name"
-            onChangeText={setName}
-            placeholderTextColor="#C7C7CD"
-          />
+            {/* Mobile No */}
+            <TextInput
+              style={styles.MobileNoInputbotton}
+              autoCapitalize
+              autoCorrect={false}
+              placeholder="Mobile No."
+              keyboardType='numeric'
+              onChangeText={setMobile}
+              placeholderTextColor="#C7C7CD"
+            />
 
-          {/* Mobile No */}
-          <TextInput
-            style={styles.MobileNoInputbotton}
-            autoCapitalize
-            autoCorrect={false}
-            placeholder="Mobile No."
-            keyboardType = 'numeric'
-            onChangeText={setMobile}
-            placeholderTextColor="#C7C7CD"
-          />
+            {/* Email Id */}
+            <TextInput
+              style={styles.EmailIdInputbotton}
+              autoCapitalize
+              autoCorrect={false}
+              placeholder="Email Id"
+              onChangeText={setEmail}
+              placeholderTextColor="#C7C7CD"
+            />
 
-          {/* Email Id */}
-          <TextInput
-            style={styles.EmailIdInputbotton}
-            autoCapitalize
-            autoCorrect={false}
-            placeholder="Email Id"
-            onChangeText={setEmail}
-            placeholderTextColor="#C7C7CD"
-          />
+            {/* password*/}
+            <TextInput
+              style={styles.PasswordInputbotton}
+              autoCapitalize
+              autoCorrect={false}
+              placeholder="Password"
+              // value={password}
+              secureTextEntry
+              placeholderTextColor="#C7C7CD"
+            />
 
-          {/* password*/}
-          <TextInput
-            style={styles.PasswordInputbotton}
-            autoCapitalize
-            autoCorrect={false}
-            placeholder="Password"
-            // value={password}
-            secureTextEntry
-            placeholderTextColor="#C7C7CD"
-          />
-
-          {/* Confirm Password*/}
-          <TextInput
-            style={styles.ConfirmPasswordInputbotton}
-            autoCapitalize
-            autoCorrect={false}
-            placeholder="Confirm password"
-            onChangeText={setPassword}
-            secureTextEntry
-            placeholderTextColor="#C7C7CD"
-          />
+            {/* Confirm Password*/}
+            <TextInput
+              style={styles.ConfirmPasswordInputbotton}
+              autoCapitalize
+              autoCorrect={false}
+              placeholder="Confirm password"
+              onChangeText={setPassword}
+              secureTextEntry
+              placeholderTextColor="#C7C7CD"
+            />
+          </View>
 
           <TouchableOpacity onPress={handleRegister} style={styles.logInButtonAlignment}>
-            <ImageBackground source={require("../assets/texture.png")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
+            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
               <Text style={styles.logInButtonText}>SIGN UP</Text>
             </ImageBackground>
           </TouchableOpacity>
 
-          {/* <TouchableOpacity>
+          <TouchableOpacity>
             <Text style={styles.ForgotPasswordText}>Forgot password?</Text>
-          </TouchableOpacity> */}
+          </TouchableOpacity>
 
-          <View style={styles.line}></View>
+          <View style={{ flex: 1, marginTop: moderateScaleVertical(20) }}>
+            <View style={styles.line}></View>
+            <View style={styles.ExistingCustomer}>
+              <Text style={styles.ExistingCustomerText}>Are you Existing customer Click </Text>
+              <TouchableOpacity onPress={() => navigation.navigate('login')}>
+                <Text style={styles.ExistingCustomerHereText}> here </Text>
+              </TouchableOpacity>
+            </View>
 
-          <View style={styles.ExistingCustomer}>
-            <Text style={styles.ExistingCustomerText}>Are you Existing customer Click </Text>
-            <TouchableOpacity onPress={() => navigation.navigate('login')}>
-              <Text style={styles.ExistingCustomerHereText}> here </Text>
-            </TouchableOpacity>
           </View>
         </View>
         {/* </View> */}
 
       </ScrollView>
+      <View >
+        <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} />
+      </View>
+
 
     </ImageBackground>
   );
@@ -122,6 +129,10 @@ const SignUp = ({ navigation }) => {
 export default SignUp;
 
 const styles = StyleSheet.create({
+  goldenStripBottom: {
+    width: "100%",
+    height: 6,
+  },
   logoAlignment: {
     alignSelf: 'center',
     margintop: moderateScaleVertical(0),
@@ -218,7 +229,7 @@ const styles = StyleSheet.create({
   logInButtonAlignment: {
     alignItems: "center",
     fontFamily: "Poppins-Medium",
-    marginBottom: moderateScaleVertical(10),
+    marginBottom: moderateScaleVertical(-3),
   },
   logInButtonText: {
     fontSize: textScale(23),
@@ -226,7 +237,7 @@ const styles = StyleSheet.create({
     marginLeft: moderateScale(0),
     borderRadius: 40,
     paddingTop: moderateScaleVertical(5),
-    fontFamily: "Poppins-Medium"
+    fontFamily: "Poppins-Medium",
   },
   ImageBackgroundStyle: {
     alignItems: "center",
@@ -246,7 +257,8 @@ const styles = StyleSheet.create({
   },
   ExistingCustomer: {
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "center",
+
   },
   ExistingCustomerText: {
     textAlign: "center",
@@ -261,12 +273,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: "#404040",
 
+
   },
   line: {
     width: "80%",
     height: moderateScaleVertical(1.5),
     backgroundColor: "#a4a4a4",
-    alignSelf: 'center'
+    alignSelf: 'center',
+    marginBottom: moderateScaleVertical(10)
   },
 });
 

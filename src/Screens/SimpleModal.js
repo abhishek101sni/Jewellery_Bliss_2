@@ -2,8 +2,8 @@ import { View, Text, StyleSheet, TouchableOpacity, Dimensions, ImageBackground, 
 import React from 'react'
 import { moderateScale, moderateScaleVertical, textScale } from '../utils/responsive';
 
-const WIDTH = Dimensions.get('window').width;
-const HEIGHT_MODAL = 160;
+// const WIDTH = Dimensions.get('window').width;
+// const HEIGHT_MODAL = 160;
 
 
 const SimpleModal = (props) => {
@@ -19,25 +19,25 @@ const SimpleModal = (props) => {
     }
     return (
         <View disabled={true} style={styles.container}>
-            {/* <ImageBackground style={styles.BackgroundImagemodal} imageStyle={{ borderRadius: 20 }} source={require("../assets/texture.png")}> */}
-            <View style={styles.BackgroundColorModal}>
-                <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(10), marginHorizontal: moderateScale(-60), justifyContent: "space-around", paddingHorizontal: 30 }}>
-                    <TouchableOpacity style={{ alignItems: "center" }} onPress={() => { Linking.openURL('tel:1010101010'); }}>
-                        <Image source={require("../assets/call.png")} style={styles.Callingicon} />
-                        {/* <Text style={styles.icontext}>Call</Text> */}
-                    </TouchableOpacity>
+            <View style={styles.BackgroundColorModal1}>
+                <ImageBackground style={styles.BackgroundImagemodal} imageStyle={{ borderRadius: 20 }} source={require("../assets/texture.png")}>
+                    <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(10), marginHorizontal: moderateScale(-60), justifyContent: "space-around", paddingHorizontal: 30 }}>
+                        <TouchableOpacity style={{ alignItems: "center" }} onPress={() => { Linking.openURL('tel:1010101010'); }}>
+                            <Image source={require("../assets/call.png")} style={styles.Callingicon} />
+                            {/* <Text style={styles.icontext}>Call</Text> */}
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{ alignItems: "center" }} onPress={() => { Linking.openURL('whatsapp://send?text=Hii Jwellery Bliss&phone=9818287083') }}>
-                        <Image source={require("../assets/modal_whatsapp.png")} style={styles.Whatsappicon} />
-                        {/* <Text style={styles.icontext}>Whatsapp</Text> */}
+                        <TouchableOpacity style={{ alignItems: "center" }} onPress={() => { Linking.openURL('whatsapp://send?text=Hii Jwellery Bliss&phone=9818287083') }}>
+                            <Image source={require("../assets/modal_whatsapp.png")} style={styles.Whatsappicon} />
+                            {/* <Text style={styles.icontext}>Whatsapp</Text> */}
+                        </TouchableOpacity>
+                    </View>
+                    <TouchableOpacity style={styles.Touch} onPress={() => closeModal(false, "Cancel")}>
+                        {/* <Image source={require("../assets/cancel.png")} style={styles.Cancelicon} /> */}
+                        <Text style={styles.Cancelicontext}>CANCEL</Text>
                     </TouchableOpacity>
-                </View>
-                <TouchableOpacity style={styles.Touch} onPress={() => closeModal(false, "Cancel")}>
-                    {/* <Image source={require("../assets/cancel.png")} style={styles.Cancelicon} /> */}
-                    <Text style={styles.Cancelicontext}>CANCEL</Text>
-                </TouchableOpacity>
+                </ImageBackground>
             </View>
-            {/* </ImageBackground> */}
         </View>
     )
 }
@@ -51,23 +51,33 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     BackgroundImagemodal: {
-        height: HEIGHT_MODAL,
+        width: moderateScale(310),
+        height: moderateScaleVertical(150),
         paddingTop: 10,
         borderRadius: 10,
-        width: WIDTH - 80,
+        marginTop:moderateScaleVertical(2.5)
+    },
+    BackgroundColorModal1: {
+        backgroundColor: "#25D366",
+        width: moderateScale(315),
+        height: moderateScaleVertical(155),
+        borderRadius:20,
+        alignItems:"center",
+        
+
     },
     BackgroundColorModal: {
-        height: HEIGHT_MODAL,
+        // height: HEIGHT_MODAL,
         paddingTop: 10,
         borderRadius: 10,
-        width: WIDTH - 80,
-        backgroundColor: "#FFF",
+        // width: WIDTH - 80,
+        // backgroundColor: "#FFF",
         borderRadius: 20,
         borderWidth: 2
     },
     Touch: {
         alignItems: "center",
-        marginTop: 35,
+        marginTop: 50,
 
     },
     Whatsappicon: {

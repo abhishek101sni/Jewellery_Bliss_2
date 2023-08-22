@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useEffect } from 'react'
 import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, ImageBackground } from 'react-native'
 import { useDispatch } from 'react-redux'
@@ -9,7 +6,7 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const MachineChainsC = ({ navigation }) => {
+const GoldPendentsCJ = ({ navigation }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
@@ -60,7 +57,7 @@ const MachineChainsC = ({ navigation }) => {
   )
 }
 
-export default MachineChainsC
+export default GoldPendentsCJ
 
 const styles = StyleSheet.create({
   View1: {
