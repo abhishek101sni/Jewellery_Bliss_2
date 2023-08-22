@@ -13,7 +13,7 @@ const ChocoChainsC = ({ navigation }) => {
 
   const getAPIDATA = async () => {
     // const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=18";
-    // const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=handmade";
+    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Choco%20chains";
     let result = await fetch(url);
     result = await result.json();
     setData(result);

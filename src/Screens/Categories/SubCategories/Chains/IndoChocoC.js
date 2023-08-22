@@ -14,7 +14,7 @@ const IndoChocoC = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const getAPIDATA = async () => {
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=indo%20choco%20chains";
+    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Indo%20Choco";
 
     let result = await fetch(url);
     result = await result.json();
