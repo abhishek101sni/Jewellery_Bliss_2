@@ -77,17 +77,16 @@ const CastingJwellery = ({ navigation }) => {
             </View>
           </View>
           <View style={styles.alignment}>
-            <View style={styles.View2}>
+            {/* <View style={styles.View2}>
               <TouchableOpacity onPress={() => { navigation.navigate('GoldPendents') }}>
                 <View style={styles.View3}>
                   <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                  {/* <Text style={styles.View5}>GOLD PENDENTS</Text> */}
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
                     <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>GOLD PENDENTS</Text>
                   </ImageBackground>
                 </View>
               </TouchableOpacity>
-            </View>
+            </View> */}
             {/* <View style={styles.View2}>
               <View style={styles.View3}>
                 <Image style={styles.ImageView} source={require("../../assets/GWT-610.jpg")} />

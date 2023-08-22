@@ -12,8 +12,7 @@ const HandmadeAndHollowC = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const getAPIDATA = async () => {
-    // const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=18";
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Handmade%20Hollow";
+    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Handmade&Hollow";
     let result = await fetch(url);
     result = await result.json();
     setData(result);

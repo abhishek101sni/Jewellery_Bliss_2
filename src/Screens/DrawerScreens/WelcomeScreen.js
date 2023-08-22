@@ -456,7 +456,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         marginHorizontal: moderateScale(10),
         marginVertical: moderateScaleVertical(-5),
-        marginBottom: moderateScaleVertical(50),
+        marginBottom: moderateScaleVertical(50), 
     },
     // logosAlignment2: {
     //     marginTop: moderateScaleVertical(25),
