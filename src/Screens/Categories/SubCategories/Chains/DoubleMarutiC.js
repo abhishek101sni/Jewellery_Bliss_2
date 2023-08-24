@@ -30,9 +30,10 @@ const DoubleMarutiC = ({ navigation }) => {
 
   return (
     <ImageBackground style={{ flex: 1 }} source={require("../../../../assets/background-image2.png")}>
-      <View style={{ top: height - 938, }}>
-        <Image source={require("../../../../assets/GOLDEN-STRIP.png")} style={{ borderWidth: 3, width: 1090, alignSelf: "center" }} />
+     <View style={{ }}>
+        <Image source={require("../../../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
       </View>
+
 
       <FlatList contentContainerStyle={{ alignItems: "center" }}
         data={data}
@@ -60,6 +61,10 @@ const DoubleMarutiC = ({ navigation }) => {
 export default DoubleMarutiC
 
 const styles = StyleSheet.create({
+  goldenStrip: {
+    width: "100%",
+    height:5,
+},
   View1: {
     margin: moderateScale(10),
     flexDirection: 'row',

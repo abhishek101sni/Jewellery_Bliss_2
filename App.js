@@ -9,6 +9,7 @@ import { StyleSheet } from 'react-native'
 import { NativeBaseProvider } from 'native-base';
 import { moderateScale, moderateScaleVertical, textScale } from './src/utils/responsive';
 import CustomTabNavigator from './src/Screens/CustomTabNavigator';
+import ResetPassword from './src/Screens/ResetPassword';
 
 const App = () => {
   const { isLoading } = useContext(AuthContext);
@@ -28,6 +29,7 @@ export default () => {
       <NativeBaseProvider>
         <AuthProvider>
           <App />
+          {/* <ResetPassword/> */}
           <FlashMessage position="top" style={styles.FlashMessage} titleStyle={{ fontWeight: 'bold', fontSize: 15, color: "black", justifyContent: "center", alignItems: "center" }} />
         </AuthProvider>
       </NativeBaseProvider>

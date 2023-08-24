@@ -26,38 +26,38 @@ const LogIn = ({ navigation,
     return (
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <ScrollView>
+                <View style={{ flex: 1 }}>
+                    <View style={styles.logoAlignment}>
+                        <Image source={require("../assets/logo.png")} style={styles.logoSize} />
+                    </View>
 
-                <View style={styles.logoAlignment}>
-                    <Image source={require("../assets/logo.png")} style={styles.logoSize} />
-                </View>
+                    <View style={styles.LogInTitle}>
+                        <Text style={styles.LogInText}>Login</Text>
+                    </View>
 
-                <View style={styles.LogInTitle}>
-                    <Text style={styles.LogInText}>Login</Text>
-                </View>
-
-                <TextInput
-                    style={styles.MobileNoInput}
-                    autoCapitalize
-                    keyboardType = 'numeric'
-                    autoCorrect={false}
-                    placeholder="Mobile No."
-                    placeholderTextColor="#C7C7CD"
-                    onChangeText={(text) => setMobile(text)}
-                />
-                <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
                     <TextInput
-                        style={styles.PasswordInput}
-                        // autoCapitalize
-                        autoCapitalize='none'
+                        style={styles.MobileNoInput}
+                        autoCapitalize
+                        keyboardType='numeric'
                         autoCorrect={false}
-                        placeholder="Password"
+                        placeholder="Mobile No."
                         placeholderTextColor="#C7C7CD"
-                        // secureTextEntry={seePassword}
-                        secureTextEntry
-                        // value="password"
-                        onChangeText={(text) => setPassword(text)}
+                        onChangeText={(text) => setMobile(text)}
                     />
-                    {/* <TouchableOpacity onPress={() => setseePassword(!seePassword)}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
+                        <TextInput
+                            style={styles.PasswordInput}
+                            // autoCapitalize
+                            autoCapitalize='none'
+                            autoCorrect={false}
+                            placeholder="Password"
+                            placeholderTextColor="#C7C7CD"
+                            // secureTextEntry={seePassword}
+                            secureTextEntry
+                            // value="password"
+                            onChangeText={(text) => setPassword(text)}
+                        />
+                        {/* <TouchableOpacity onPress={() => setseePassword(!seePassword)}>
                             <Image
                                 style={{ height: 20, width: 20, marginTop: 50 }}
                                 source={
@@ -67,49 +67,46 @@ const LogIn = ({ navigation,
                                 }
                             />
                         </TouchableOpacity> */}
-                </View>
+                    </View>
 
-                <View>
-                    <TouchableOpacity onPress={checkLogin} style={styles.logInButtonAlignment}>
-                        <ImageBackground source={require("../assets/texture.png")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
-                            <Text style={styles.logInButtonText}>LOGIN</Text>
-                        </ImageBackground>
+                    <View>
+                        <TouchableOpacity onPress={checkLogin} style={styles.logInButtonAlignment}>
+                            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
+                                <Text style={styles.logInButtonText}>LOGIN</Text>
+                            </ImageBackground>
+                        </TouchableOpacity>
+                    </View>
+
+                    <TouchableOpacity onPress={() => { navigation.navigate('forgotPass') }}>
+                        <Text style={styles.ForgotPasswordText}>Forgot password?</Text>
                     </TouchableOpacity>
+
+                    <View style={styles.line}></View>
+
+                    <View style={{ flexDirection: "row", justifyContent: "center" }}>
+                        <Text style={{ textAlign: "center", paddingTop: 6, fontWeight: 'bold', fontFamily: "Poppins-Medium", color: "#404040", }}>You are not a registered user Click </Text>
+                        <TouchableOpacity onPress={() => navigation.navigate('signup')}>
+                            <Text style={{ fontWeight: 'bold', textAlign: "center", fontFamily: "Poppins-Medium", paddingTop: 6, color: "#404040", textDecorationLine: 'underline', }}> here </Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-
-                {/* <TouchableOpacity>
-                    <Text style={styles.ForgotPasswordText}>Forgot password?</Text>
-                </TouchableOpacity> */}
-
-                <View style={styles.line}></View>
-
-                <View style={{ flexDirection: "row", justifyContent: "center" }}>
-                    <Text style={{ textAlign: "center", paddingTop: 6, fontWeight: 'bold', fontFamily: "Poppins-Medium", color: "#404040", }}>You are not a registered user Click </Text>
-                    <TouchableOpacity onPress={() => navigation.navigate('signup')}>
-                        <Text style={{ fontWeight: 'bold', textAlign: "center", fontFamily: "Poppins-Medium", paddingTop: 6, color: "#404040", textDecorationLine: 'underline', }}> here </Text>
-                    </TouchableOpacity>
-                </View>
-
-
-
             </ScrollView>
-            <View style={{ top: height - 7, }}>
-                <Image source={require("../assets/GOLDEN-STRIP.png")} style={{
-                    borderWidth: 3,
-                    width: 431,
-                    // borderColor: 'gold',
-                    // marginBottom:200
-                }} />
+            <View >
+                <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} />
             </View>
         </ImageBackground>
     );
 };
 
 export default LogIn;
-
+   
 const styles = StyleSheet.create({
+    goldenStripBottom: {
+        width: "100%",
+        height: 6,
+    },
     logoAlignment: {
-        // marginTop: moderateScaleVertical(-10),
+        flex:0.3,
         alignSelf: "center",
         alignItems: "center",
         justifyContent: "center",
@@ -120,6 +117,8 @@ const styles = StyleSheet.create({
         height: moderateScaleVertical(300),
     },
     LogInTitle: {
+
+        flex:0.5,
         fontSize: textScale(18),
         alignSelf: 'center',
         marginTop: moderateScaleVertical(20)
@@ -162,7 +161,7 @@ const styles = StyleSheet.create({
     logInButtonAlignment: {
         alignItems: "center",
         fontFamily: "Poppins-Medium",
-        marginBottom: moderateScaleVertical(10),
+        // marginBottom: moderateScaleVertical(10),
     },
     logInButtonText: {
         fontSize: textScale(23),

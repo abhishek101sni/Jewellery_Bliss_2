@@ -83,6 +83,8 @@ import Rodium7gC from '../Screens/Categories/SubCategories/Chains/Rodium7gC';
 import RodiumChainsC from '../Screens/Categories/SubCategories/Chains/RodiumChainsC';
 import Rodium10gC from '../Screens/Categories/SubCategories/Chains/Rodium10gC';
 import SilkyC from '../Screens/Categories/SubCategories/Chains/SilkyC';
+import ForgotPassword from '../Screens/ForgotPassword';
+import ResetPassword from '../Screens/ResetPassword';
 
 const Stack = createNativeStackNavigator();
 
@@ -141,6 +143,27 @@ const Navigation = () => {
                                 headerTitleStyle: { color: '#bc9954' }
                             }}
                         />
+                          <Stack.Screen
+                            name="forgotPass"
+                            component={ForgotPassword}
+                            options={{
+                                title: 'Forgot Password',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                          <Stack.Screen
+                            name="resetPass"
+                            component={ResetPassword}
+                            options={{
+                                title: 'Reset Password',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
 
                     </>
                 ) : null
@@ -343,6 +366,7 @@ const Navigation = () => {
                                 headerTintColor: '#bc9954',
                                 headerTitleStyle: { color: '#bc9954' }
                             }} />
+                      
 
                         {/* Categories */}
 

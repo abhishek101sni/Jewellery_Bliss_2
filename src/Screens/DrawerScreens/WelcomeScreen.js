@@ -9,9 +9,6 @@ import { AuthContext } from '../AuthContext';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserDetailsActionCreator } from '../../redux/Formdetails/formDetails.action-creator';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
-import { SliderBox } from "react-native-image-slider-box"
-// import { Modal } from "react-native-modal"
-import CustomTabNavigator from '../CustomTabNavigator';
 
 const WelcomeScreen = () => {
     const [visible, setVisible] = useState(false)
@@ -39,7 +36,6 @@ const WelcomeScreen = () => {
     useEffect(() => {
         if (userDetails && !userDetails.brandName) {
             console.log('Welcome screen userinfo', userInfo);
-            // console.log(user);
             dispatch(getUserDetailsActionCreator(userInfo._id, userToken));
         }
     }, []);
@@ -78,19 +74,19 @@ const WelcomeScreen = () => {
     // Products Carosuel
     const entries2 = [
         {
-            img: require('../../assets/CZ_RING_1.jpg'),
+            img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/Handmadeandhollow/handmadeandhollow.jpg'),
             onPress: () => {
                 navigation.navigate("chains");
             }
         },
         {
-            img: require('../../assets/CZ_RING_2.jpg'),
+            img: require('../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/casting.jpg'),
             onPress: () => {
                 navigation.navigate("CastingJwellery");
             }
         },
         {
-            img: require('../../assets/CZ_RING_3.jpg'),
+            img: require('../../assets/czParent.jpg'),
             onPress: () => {
                 navigation.navigate("CastingCzJwellery");
             }
@@ -230,7 +226,7 @@ const WelcomeScreen = () => {
                 </TouchableOpacity>
 
 
-                <SliderBox
+                {/* <SliderBox
                     images={slides}
                     dotColor="#eec06b"
                     inactiveDotColor="black"
@@ -245,7 +241,7 @@ const WelcomeScreen = () => {
                         // margintTop: moderateScaleVertical(400)
                     }}
                     ImageComponentStyle={{ borderRadius: 30, width: '90%', marginTop: 15 }}
-                />
+                /> */}
 
                 {/* // Parallax */}
 
@@ -281,7 +277,7 @@ const WelcomeScreen = () => {
                     <Image source={require("../../assets/6.png")} style={styles.imgsize6} />
                 </View>
 
-       
+
 
             </ScrollView>
 
@@ -330,7 +326,7 @@ const styles = StyleSheet.create({
     goldenStrip: {
         width: "100%",
         // marginBottom:10,
-        height:3,
+        height: 3,
     },
     MainBackGroundImage: {
         marginTop: moderateScaleVertical(10),
@@ -357,13 +353,13 @@ const styles = StyleSheet.create({
         color: "black",
         fontSize: textScale(23),
         fontWeight: "700",
-        fontFamily:"HurmeGeometricSans1Bold"
+        fontFamily: "HurmeGeometricSans1Bold"
     },
     UserBrandName: {
         color: "black",
         fontSize: textScale(14),
         fontWeight: "500",
-        fontFamily:"HurmeGeometricSans1"
+        fontFamily: "HurmeGeometricSans1"
     },
     UserCount: {
         color: "black",
@@ -389,8 +385,8 @@ const styles = StyleSheet.create({
     GoldenScreenBelowText: {
         color: "black",
         fontSize: textScale(10),
-        fontWeight: "600", 
-        fontFamily:"HurmeGeometricSans1"
+        fontWeight: "600",
+        fontFamily: "HurmeGeometricSans1"
     },
     smileyEmoji: {
         width: moderateScale(14),
@@ -446,7 +442,7 @@ const styles = StyleSheet.create({
         height: moderateScaleVertical(2),
         backgroundColor: "black",
         marginTop: moderateScaleVertical(10),
-        marginBottom:20,
+        marginBottom: 20,
         alignSelf: 'center'
     },
     logosAlignment: {
@@ -456,7 +452,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         marginHorizontal: moderateScale(10),
         marginVertical: moderateScaleVertical(-5),
-        marginBottom: moderateScaleVertical(50), 
+        marginBottom: moderateScaleVertical(50),
     },
     // logosAlignment2: {
     //     marginTop: moderateScaleVertical(25),
@@ -522,7 +518,7 @@ const styles = StyleSheet.create({
         fontSize: textScale(13),
         fontWeight: "bold",
     },
-    
+
     // bottomSheet
 
     wholeAlignment: {

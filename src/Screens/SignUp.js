@@ -38,7 +38,7 @@ const SignUp = ({ navigation }) => {
           <View style={styles.SignUpTitle}>
             <Text style={styles.SignUpText}>Sign Up</Text>
           </View>
-          <View style={{marginTop:moderateScaleVertical(-30)}}>
+          <View style={{ marginTop: moderateScaleVertical(-30) }}>
             {/* name */}
             <TextInput
               style={styles.NameInputbotton}
@@ -99,7 +99,8 @@ const SignUp = ({ navigation }) => {
             </ImageBackground>
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          {/* <TouchableOpacity onPress={() => { navigation.navigate('confimrorder') }}> */}
+          <TouchableOpacity onPress={() => { navigation.navigate('forgotPass') }}>
             <Text style={styles.ForgotPasswordText}>Forgot password?</Text>
           </TouchableOpacity>
 
@@ -117,10 +118,14 @@ const SignUp = ({ navigation }) => {
         {/* </View> */}
 
       </ScrollView>
+
+
       <View >
         <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} />
       </View>
-
+      {/* <View style={{ top: height - 890, }}>
+        <Image source={require("../assets/GOLDEN-STRIP.png")} style={{  width: "100%", }} />
+      </View> */}
 
     </ImageBackground>
   );
@@ -132,6 +137,7 @@ const styles = StyleSheet.create({
   goldenStripBottom: {
     width: "100%",
     height: 6,
+    position: "static"
   },
   logoAlignment: {
     alignSelf: 'center',

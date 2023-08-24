@@ -57,7 +57,7 @@ const DrawerContent = (props) => {
 
                     <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("about") }} >
                         <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(10), }}>
-                            <Image source={require("../assets/drawerIcons/aboutUs.png")} style={styles.AboutUsIcon} />
+                            <Image source={require("../assets/drawerIcons/aboutus.png")} style={styles.AboutUsIcon} />
                             <Text style={styles.DrawerContentTitle}>About Us</Text>
                         </View>
                     </TouchableOpacity>

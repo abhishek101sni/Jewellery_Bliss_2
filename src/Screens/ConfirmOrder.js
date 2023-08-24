@@ -23,32 +23,32 @@ const ConfirmOrder = ({ navigation }) => {
                 <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
             </View>
             {/* <View style={styles.disclaimer}> */}
-                <ImageBackground  style={styles.disclaimer} imageStyle={{borderRadius:20}} source={require("../assets/CompressedTexture3.jpg")} >
-                    <View style={{ marginTop: moderateScaleVertical(20), marginLeft: moderateScale(20) }}>
-                        <Text style={{ fontSize: textScale(17), marginleft: moderateScale(20), fontWeight: "500", color: "black" }}>Bank Details:</Text>
-                        <View style={{ flexDirection: "row" }}>
-                            <Image source={require("../assets/standard-chartered.png")} style={styles.bankImage} />
-                            <View style={{ flexDirection: "column", marginTop: moderateScaleVertical(25), marginLeft: moderateScale(10) }}>
-                                {/* <Text style={{ fontSize: textScale(18), fontWeight: "500", color: "black" }}>STANDARD CHARTED BANK</Text> */}
-                                <Text style={{ fontSize: textScale(18), fontWeight: "500", color: "black" }}>STANDARD CHARTED BANK</Text>
-                                <Text style={{ fontSize: textScale(15), fontWeight: "500", color: "black" }}>2366 3436 7368 6333</Text>
+            <ImageBackground style={styles.disclaimer} imageStyle={{ borderRadius: 20 }} source={require("../assets/CompressedTexture3.jpg")} >
+                <View style={{ marginTop: moderateScaleVertical(20), marginLeft: moderateScale(20) }}>
+                    <Text style={{ fontSize: textScale(17), marginleft: moderateScale(25), fontWeight: "500", color: "black" }}>Bank Details :</Text>
+                    <View style={{ flexDirection: "row" }}>
+                        <Image source={require("../assets/icici.png")} style={styles.bankImage} />
+                        <View style={{ flexDirection: "column", marginTop: moderateScaleVertical(22), marginLeft: moderateScale(40) }}>
+                            {/* <Text style={{ fontSize: textScale(18), fontWeight: "500", color: "black" }}>STANDARD CHARTED BANK</Text> */}
+                            <Text style={{ fontSize: textScale(18), fontWeight: "500", color: "black" }}>ICICI BANK</Text>
+                            <Text style={{ fontSize: textScale(15), fontWeight: "500", color: "black" }}>629205034031</Text>
 
-                            </View>
                         </View>
-                        <View style={{ marginLeft:moderateScale(90), marginTop: moderateScaleVertical(15), flexDirection: "column", marginVertical: moderateScaleVertical(6) }}>
-                            <Text style={{ fontSize: textScale(15), fontWeight: "500", color: "black" }}>IFSC CODE : AXISXXX400</Text>
-                            <Text style={{ fontSize: textScale(12), fontWeight: "400", color: "black" }}>AXISXXX400</Text>
-                            <Text style={{ fontSize: textScale(15), fontWeight: "500", color: "black" }}>ACCOUNT HOLDER NAME : NIKHIL</Text>
-                            <Text style={{ fontSize: textScale(12), fontWeight: "400", color: "black" }}>NIKHIL</Text>
-                        </View>
-                        <View style={styles.line}></View>
-                        <View style={{ flexDirection: "row" }}>
-                            <Text style={styles.disclaimerText}>Disclaimer:</Text>
-                            <Text style={styles.disclaimerDummyText}>This is dummy text opens everytime </Text>
-                        </View>
-
                     </View>
-                </ImageBackground>
+                    <View style={{ marginLeft: moderateScale(120), marginTop: moderateScaleVertical(15), flexDirection: "column", marginVertical: moderateScaleVertical(6) }}>
+                        <Text style={{ fontSize: textScale(15), fontWeight: "500", color: "black" }}>IFSC CODE :</Text>
+                        <Text style={{ fontSize: textScale(12), fontWeight: "400", color: "black" }}>ICIC0006292</Text>
+                        <Text style={{ fontSize: textScale(15), fontWeight: "500", color: "black" }}>ACCOUNT HOLDER NAME :</Text>
+                        <Text style={{ fontSize: textScale(12), fontWeight: "400", color: "black" }}>NIKHIL</Text>
+                    </View>
+                    <View style={styles.line}></View>
+                    <View style={{ flexDirection: "row" }}>
+                        <Text style={styles.disclaimerText}>Disclaimer:</Text>
+                        <Text style={styles.disclaimerDummyText}>This is dummy text opens everytime </Text>
+                    </View>
+
+                </View>
+            </ImageBackground>
             {/* </View> */}
 
             <View>

@@ -54,8 +54,8 @@ const GetStarted = ({ navigation }) => {
                     <Image source={require("../assets/logo.png")} style={{ height: moderateScaleVertical(250), width: moderateScale(250), alignSelf: 'center' }} />
                 </View>
 
-                <View style={{ flex: 1}}>
-                    <View style={{alignItems:"center" , flex:0.9}}>
+                <View style={{ flex: 1 }}>
+                    <View style={{ alignItems: "center", flex: 0.9 }}>
                         <Carousel
                             ref={isCarousel}
                             data={data}
@@ -84,7 +84,7 @@ const GetStarted = ({ navigation }) => {
                     </View>
                 </View>
 
-                <View style={{ flex: 0.5}}>
+                <View style={{ flex: 0.5 }}>
 
                     <TouchableOpacity onPress={() => { navigation.navigate('loginsignup') }} style={{ alignItems: "center" }}>
                         <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={styles.GetStartedButton} imageStyle={{ borderRadius: 80 }}>
@@ -95,8 +95,8 @@ const GetStarted = ({ navigation }) => {
 
                 <View >
                     <Image source={require("../assets/GOLDEN-STRIP.png")} style={{
-                         width: "100%",
-        height: 6,
+                        width: "100%",
+                        height: 6,
                     }} />
                 </View>
             </View>
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
         fontSize: textScale(20),
         fontWeight: "400",
         color: "#eec06b",
-        fontFamily: "Poppins-Medium"
+        fontFamily: ""
     },
     SnapCarouselText2: {
         marginVertical: moderateScaleVertical(10),

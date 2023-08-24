@@ -88,7 +88,7 @@ const PlainJwellery = ({ navigation }) => {
           <View style={styles.View2}>
             <TouchableOpacity onPress={() => { navigation.navigate('Bracelets') }}>
               <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
+                <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/plainjewellery/bracelets.jpg")} />
                 {/* <Text style={styles.View5}>BRACELETS</Text> */}
                 <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
                   <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>BRACELETS</Text>
