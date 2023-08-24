@@ -50,18 +50,16 @@ const ForgotPassword = ({ navigation }) => {
     const handleForgotPassword = async () => {
         try {
             const response = await axios.post(
-                'http://localhost:5009/api/auth/forgotpassword',
+                // 'http://localhost:5009/api/auth/forgotpassword',
+                'https://bliss-app-backend-production.up.railway.app/api/auth/forgotpassword',
                 {
-                    email: email,
+                    email: `${email}`,
                 }
             );
             console.log(email)
-            // Handle success
-            console.log('Success', response.data.message);
+            console.log('Success', response.data);
         } catch (error) {
-            // Handle error
             console.error('API call error:', error);
-            // Alert.alert('Error', 'An error occurred while resetting your password.');
         }
     };
     return (
@@ -77,7 +75,7 @@ const ForgotPassword = ({ navigation }) => {
                     </View>
                     <View style={{ alignItems: "center" }}>
                         <TextInput
-                            style={{ textAlign: "left", borderColor: "black", borderWidth: 2, width: moderateScale(370), borderRadius: 20, marginTop: moderateScaleVertical(30), alignItems: "center" }}
+                            style={{ textAlign: "left", borderColor: "black",paddingLeft:20, borderWidth: 2, width: moderateScale(370), borderRadius: 20, marginTop: moderateScaleVertical(30), alignItems: "center" }}
                             autoCorrect={false}
                             placeholder="Enter your registered Email"
                             value={email}
@@ -86,7 +84,7 @@ const ForgotPassword = ({ navigation }) => {
                         />
 
                         <TouchableOpacity onPress={handleForgotPassword} >
-                            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderRadius: 20 }} style={{ width: moderateScale(370), height: moderateScaleVertical(55), borderRadius: 20, marginTop: 20 }}>
+                            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderRadius: 20 }} style={{ width: moderateScale(200), height: moderateScaleVertical(55), borderRadius: 20, marginTop: 20 }}>
                                 <Text style={{ textAlign: "center", justifyContent: "center", fontSize: textScale(20), marginTop: moderateScaleVertical(10), color: "black" }}>Send Email</Text>
                             </ImageBackground>
                         </TouchableOpacity>
@@ -116,42 +114,3 @@ const styles = StyleSheet.create({
     },
 })
 
-
-// import React, { useState } from 'react';
-// import { View, TextInput, Button, Alert } from 'react-native';
-// import axios from 'axios';
-
-// const ForgotPasswordScreen = () => {
-//     const [email, setEmail] = useState('');
-
-//     const handleForgotPassword = async () => {
-//         try {
-//             const response = await axios.post(
-//                 'http://localhost:5009/api/auth/forgotpassword',
-//                 {
-//                     email: email,
-//                 }
-//             );
-
-//             // Handle success
-//             Alert.alert('Success', response.data.message);
-//         } catch (error) {
-//             // Handle error
-//             console.error('API call error:', error);
-//             Alert.alert('Error', 'An error occurred while resetting your password.');
-//         }
-//     };
-
-//     return (
-//         <View>
-//             <TextInput
-//                 placeholder="Enter your email"
-//                 value={email}
-//                 onChangeText={(text) => setEmail(text)}
-//             />
-//             <Button title="Reset Password" onPress={handleForgotPassword} />
-//         </View>
-//     );
-// };
-
-// export default ForgotPasswordScreen;
