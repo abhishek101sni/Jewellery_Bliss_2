@@ -95,13 +95,13 @@ const styles = StyleSheet.create({
         marginBottom: moderateScaleVertical(10)
     },
     loginButtonText: {
-        fontSize: textScale(23),
+        fontSize: textScale(20),
         color: "black",
         marginLeft: moderateScale(0),
         borderRadius: 40,
         padding: moderateScale(5),
-        fontFamily: "Poppins-Medium"
-    },
+        // fontFamily: "Poppins-Medium"
+        fontFamily: "HurmeGeometricSans1",    },
     ImageBackgroundStyle: {
         alignItems: "center",
         padding: moderateScale(7),
@@ -122,10 +122,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     signupText: {
-        fontSize: textScale(23),
+        fontSize: textScale(20),
         color: "#eec06b",
         padding: moderateScale(-1),
-        fontFamily: "Poppins-Medium"
+        fontFamily: "HurmeGeometricSans1",
     },
     // MODAL
 

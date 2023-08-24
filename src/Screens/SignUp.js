@@ -11,6 +11,8 @@ import {
 } from "react-native";
 import { AuthContext } from "./AuthContext";
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
+
 
 const SignUp = ({ navigation }) => {
   const { register } = useContext(AuthContext);
@@ -38,60 +40,63 @@ const SignUp = ({ navigation }) => {
           <View style={styles.SignUpTitle}>
             <Text style={styles.SignUpText}>Sign Up</Text>
           </View>
-          <View style={{ marginTop: moderateScaleVertical(-30) }}>
-            {/* name */}
-            <TextInput
-              style={styles.NameInputbotton}
-              autoCapitalize
-              autoCorrect={false}
-              placeholder="Name"
-              onChangeText={setName}
-              placeholderTextColor="#C7C7CD"
-            />
+          
+          <KeyboardAwareScrollView>
+            <View style={{ marginTop: moderateScaleVertical(-30) }}>
+              {/* name */}
+              <TextInput
+                style={styles.NameInputbotton}
+                autoCapitalize
+                autoCorrect={false}
+                placeholder="Name"
+                onChangeText={setName}
+                placeholderTextColor="#C7C7CD"
+              />
 
-            {/* Mobile No */}
-            <TextInput
-              style={styles.MobileNoInputbotton}
-              autoCapitalize
-              autoCorrect={false}
-              placeholder="Mobile No."
-              keyboardType='numeric'
-              onChangeText={setMobile}
-              placeholderTextColor="#C7C7CD"
-            />
+              {/* Mobile No */}
+              <TextInput
+                style={styles.MobileNoInputbotton}
+                autoCapitalize
+                autoCorrect={false}
+                placeholder="Mobile No."
+                keyboardType='numeric'
+                onChangeText={setMobile}
+                placeholderTextColor="#C7C7CD"
+              />
 
-            {/* Email Id */}
-            <TextInput
-              style={styles.EmailIdInputbotton}
-              autoCapitalize
-              autoCorrect={false}
-              placeholder="Email Id"
-              onChangeText={setEmail}
-              placeholderTextColor="#C7C7CD"
-            />
+              {/* Email Id */}
+              <TextInput
+                style={styles.EmailIdInputbotton}
+                autoCapitalize
+                autoCorrect={false}
+                placeholder="Email Id"
+                onChangeText={setEmail}
+                placeholderTextColor="#C7C7CD"
+              />
 
-            {/* password*/}
-            <TextInput
-              style={styles.PasswordInputbotton}
-              autoCapitalize
-              autoCorrect={false}
-              placeholder="Password"
-              // value={password}
-              secureTextEntry
-              placeholderTextColor="#C7C7CD"
-            />
+              {/* password*/}
+              <TextInput
+                style={styles.PasswordInputbotton}
+                autoCapitalize
+                autoCorrect={false}
+                placeholder="Password"
+                // value={password}
+                secureTextEntry
+                placeholderTextColor="#C7C7CD"
+              />
 
-            {/* Confirm Password*/}
-            <TextInput
-              style={styles.ConfirmPasswordInputbotton}
-              autoCapitalize
-              autoCorrect={false}
-              placeholder="Confirm password"
-              onChangeText={setPassword}
-              secureTextEntry
-              placeholderTextColor="#C7C7CD"
-            />
-          </View>
+              {/* Confirm Password*/}
+              <TextInput
+                style={styles.ConfirmPasswordInputbotton}
+                autoCapitalize
+                autoCorrect={false}
+                placeholder="Confirm password"
+                onChangeText={setPassword}
+                secureTextEntry
+                placeholderTextColor="#C7C7CD"
+              />
+            </View>
+          </KeyboardAwareScrollView>
 
           <TouchableOpacity onPress={handleRegister} style={styles.logInButtonAlignment}>
             <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>

@@ -47,7 +47,7 @@ const LogIn = ({ navigation,
                     <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
                         <TextInput
                             style={styles.PasswordInput}
-                            // autoCapitalize
+
                             autoCapitalize='none'
                             autoCorrect={false}
                             placeholder="Password"
@@ -84,9 +84,9 @@ const LogIn = ({ navigation,
                     <View style={styles.line}></View>
 
                     <View style={{ flexDirection: "row", justifyContent: "center" }}>
-                        <Text style={{ textAlign: "center", paddingTop: 6, fontWeight: 'bold', fontFamily: "Poppins-Medium", color: "#404040", }}>You are not a registered user Click </Text>
+                        <Text style={{ textAlign: "center", paddingTop: 6, fontWeight: 'bold', fontFamily: "HurmeGeometricSans1", color: "#404040", }}>You are not a registered user Click </Text>
                         <TouchableOpacity onPress={() => navigation.navigate('signup')}>
-                            <Text style={{ fontWeight: 'bold', textAlign: "center", fontFamily: "Poppins-Medium", paddingTop: 6, color: "#404040", textDecorationLine: 'underline', }}> here </Text>
+                            <Text style={{ fontWeight: 'bold', textAlign: "center", fontFamily: "Poppins-Medium", paddingTop: 6, color: "#404040", textDecorationLine: 'underline', fontFamily: "HurmeGeometricSans1", }}> here </Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -99,14 +99,14 @@ const LogIn = ({ navigation,
 };
 
 export default LogIn;
-   
+
 const styles = StyleSheet.create({
     goldenStripBottom: {
         width: "100%",
         height: 6,
     },
     logoAlignment: {
-        flex:0.3,
+        flex: 0.3,
         alignSelf: "center",
         alignItems: "center",
         justifyContent: "center",
@@ -117,20 +117,18 @@ const styles = StyleSheet.create({
         height: moderateScaleVertical(300),
     },
     LogInTitle: {
-
-        flex:0.5,
+        flex: 0.5,
         fontSize: textScale(18),
         alignSelf: 'center',
         marginTop: moderateScaleVertical(20)
     },
     LogInText: {
-        fontSize: textScale(23),
+        fontSize: textScale(20),
         marginTop: moderateScaleVertical(10),
         marginBottom: moderateScaleVertical(20),
         textAlign: "center",
         color: "black",
-        fontFamily: "Poppins-Medium"
-
+        fontFamily: "HurmeGeometricSans1",
     },
     MobileNoInput: {
         alignSelf: 'center',
@@ -143,7 +141,8 @@ const styles = StyleSheet.create({
         borderBottomColor: "#bc9954",
         paddingBottom: moderateScaleVertical(0),
         paddingLeft: moderateScale(0),
-        // fontFamily: "Poppins-Medium"
+        fontFamily: "HurmeGeometricSans1",
+
     },
     PasswordInput: {
         alignSelf: 'center',
@@ -156,7 +155,8 @@ const styles = StyleSheet.create({
         borderBottomColor: "#bc9954",
         paddingBottom: moderateScaleVertical(0),
         paddingLeft: moderateScale(0),
-        // fontFamily: "Poppins-Medium"
+        fontFamily: "HurmeGeometricSans1",
+
     },
     logInButtonAlignment: {
         alignItems: "center",
@@ -164,12 +164,12 @@ const styles = StyleSheet.create({
         // marginBottom: moderateScaleVertical(10),
     },
     logInButtonText: {
-        fontSize: textScale(23),
+        fontSize: textScale(20),
         color: "black",
         marginLeft: moderateScale(0),
         borderRadius: 40,
-        paddingTop: moderateScaleVertical(5),
-        fontFamily: "Poppins-Medium"
+        paddingTop: moderateScaleVertical(3),
+        fontFamily: "HurmeGeometricSans1",
 
     },
     ImageBackgroundStyle: {
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
         marginBottom: moderateScaleVertical(20),
         textAlign: "center",
         marginTop: moderateScaleVertical(20),
-        fontFamily: "Poppins-Medium"
+        fontFamily: "HurmeGeometricSans1",
     },
     line: {
         width: "80%",

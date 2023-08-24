@@ -10,7 +10,7 @@ const data = [
     {
         id: 1,
         name1: "BTB E- Commerce Store",
-        name2: "Buy Attractive jewellery for Store",
+        name2: "Buy Attractive jewellery for store",
         img: require("../assets/banner-2.png"),
     },
 
@@ -120,22 +120,23 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         alignItems: "center",
         alignSelf: "center",
-        justifyContent: "cnter"
+        justifyContent: "center"
 
     },
     SnapCarouselText1: {
         marginVertical: moderateScaleVertical(10),
-        fontSize: textScale(20),
-        fontWeight: "400",
+        fontSize: textScale(17),
+        fontWeight: "bold",
         color: "#eec06b",
-        fontFamily: ""
+        fontFamily: "HurmeGeometricSans1Bold"
     },
     SnapCarouselText2: {
         marginVertical: moderateScaleVertical(10),
-        fontSize: textScale(20),
+        fontSize: textScale(16),
         fontWeight: "600",
-        fontSize: textScale(14),
-        color: "black"
+        fontSize: textScale(18),
+        color: "black",
+        fontFamily: "HurmeGeometricSans1"
     },
     GetStartedButton: {
         alignItems: "center",
@@ -148,11 +149,11 @@ const styles = StyleSheet.create({
     },
 
     signuptext2: {
-        fontSize: textScale(23),
+        fontSize: textScale(20),
         color: "black",
         marginLeft: moderateScale(0),
         borderRadius: 40,
-        fontFamily: "Poppins-Medium",
+        fontFamily: "HurmeGeometricSans1",
     },
     goldenStripAlignment: {
         flex: 0.001,
