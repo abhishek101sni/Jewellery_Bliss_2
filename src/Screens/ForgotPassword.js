@@ -50,15 +50,17 @@ const ForgotPassword = ({ navigation }) => {
     const handleForgotPassword = async () => {
         try {
             const response = await axios.post(
-                // 'http://localhost:5009/api/auth/forgotpassword',
                 'https://bliss-app-backend-production.up.railway.app/api/auth/forgotpassword',
                 {
                     email: `${email}`,
                 }
             );
+            // alert("Password Change Request has been sent to your Registered email")
             console.log(email)
             console.log('Success', response.data);
+            navigation.navigate("resetPass")
         } catch (error) {
+            alert("error")
             console.error('API call error:', error);
         }
     };
@@ -70,12 +72,12 @@ const ForgotPassword = ({ navigation }) => {
                         <Image source={require("../assets/logo.png")} style={{ width: moderateScale(300), height: moderateScaleVertical(300) }} />
                     </View>
                     <View style={{ marginTop: moderateScaleVertical(40), alignItems: "center" }}>
-                        <Text style={{ fontSize: textScale(23), marginBottom: moderateScaleVertical(15), color: "#bc9954" }}>Forgot your Password?</Text>
+                        <Text style={{ fontSize: textScale(23), marginBottom: moderateScaleVertical(15), color: "#bc9954", fontFamily: "HurmeGeometricSans1", }}>Forgot your Password?</Text>
                         <Text style={{ fontSize: textScale(15), fontFamily: "HurmeGeometricSans1", color: "#a4a4a4" }}>Enter your Email below to reset the Password</Text>
                     </View>
                     <View style={{ alignItems: "center" }}>
                         <TextInput
-                            style={{ textAlign: "left", borderColor: "black",paddingLeft:20, borderWidth: 2, width: moderateScale(370), borderRadius: 20, marginTop: moderateScaleVertical(30), alignItems: "center" }}
+                            style={{ textAlign: "left", borderColor: "black", paddingLeft: 20, borderWidth: 2, width: moderateScale(350), borderRadius: 20, marginTop: moderateScaleVertical(30), alignItems: "center", fontFamily: "HurmeGeometricSans1", }}
                             autoCorrect={false}
                             placeholder="Enter your registered Email"
                             value={email}
@@ -84,8 +86,15 @@ const ForgotPassword = ({ navigation }) => {
                         />
 
                         <TouchableOpacity onPress={handleForgotPassword} >
-                            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderRadius: 20 }} style={{ width: moderateScale(200), height: moderateScaleVertical(55), borderRadius: 20, marginTop: 20 }}>
-                                <Text style={{ textAlign: "center", justifyContent: "center", fontSize: textScale(20), marginTop: moderateScaleVertical(10), color: "black" }}>Send Email</Text>
+                            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderRadius: 80 }} style={{
+                                alignItems: "center",
+                                padding: moderateScale(9),
+                                width: moderateScale(200),
+                                height: moderateScaleVertical(60),
+                                justifyContent: 'center',
+                                marginTop: moderateScaleVertical(40),
+                            }}>
+                                <Text style={{ fontFamily: "HurmeGeometricSans1", textAlign: "center", justifyContent: "center", fontSize: textScale(20), color: "black" }}>Submit</Text>
                             </ImageBackground>
                         </TouchableOpacity>
                     </View>

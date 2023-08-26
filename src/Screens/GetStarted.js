@@ -151,8 +151,8 @@ const styles = StyleSheet.create({
     signuptext2: {
         fontSize: textScale(20),
         color: "black",
-        marginLeft: moderateScale(0),
-        borderRadius: 40,
+        // marginLeft: moderateScale(0),
+        // borderRadius: 40,
         fontFamily: "HurmeGeometricSans1",
     },
     goldenStripAlignment: {

@@ -110,11 +110,47 @@ const SingleProduct = ({ navigation }) => {
 
                 <View >
                     <ImageBackground style={styles.MainBackGroundImage} imageStyle={{ borderRadius: 20 }} source={require("../assets/texture.png")} >
-                        <Text style={styles.ProductNamesStyle}>Name : {activeItem.name}</Text>
-                        <View style={styles.line}></View>
-                        <Text style={styles.ProductWeightStyle}>Weight : {activeItem.weight} g</Text>
+                        {/* <View style={{ marginLeft: moderateScale(15), flexDirection: "row" }}>
+                            <View style={{ flexDirection: "column" }}>
+                                <Text style={styles.ProductNamesStyle}>NAME</Text>
+                                <Text style={styles.ProductNamesStyle}>PURITY</Text>
+                                <Text style={styles.ProductNamesStyle}>WEIGHT</Text>
+                            </View>
+                            <View style={{ flexDirection: "column" }}>
+                                <Text style={styles.ProductNamesStyle}>:</Text>
+                                <Text style={styles.ProductNamesStyle}>:</Text>
+                                <Text style={styles.ProductNamesStyle}>:</Text>
+                            </View>
+                            <View style={{ flexDirection: "column" }}>
+                                <Text style={styles.ProductNamesValueStyle}>{activeItem.name}</Text>
+                                <Text style={styles.ProductNamesValueStyle}>{activeItem?.purity} KT</Text>
+                                <Text style={styles.ProductNamesValueStyle}>{activeItem.weight} g</Text>
+                            </View>
+                        </View> */}
+                        <View style={{ flexDirection: "row" }}>
+                            <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(3) ,marginLeft:moderateScale(20) }}>
+                                <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
+                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Name</Text>
+                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Purity</Text>
+                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Weight</Text>
+                                </View>
+                                <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
+                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
+                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
+                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
+                                </View>
+                                <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
+                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>{activeItem.name}</Text>
+                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>{activeItem?.purity} KT</Text>
+                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>{activeItem.weight} g</Text>
+                                </View>
+                            </View>
+                        </View>
+
                     </ImageBackground>
+
                 </View>
+
 
                 <View>
                     <TouchableOpacity onPress={() => handlePress(activeItem)} style={styles.AddToCartButtonAlignment}>
@@ -269,7 +305,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         borderRadius: 15,
         marginBottom: moderateScaleVertical(3),
-        marginTop:moderateScaleVertical(2.5)
+        marginTop: moderateScaleVertical(2.5)
     },
     MainBackGroundImage1: {
         marginTop: moderateScaleVertical(15),
@@ -308,15 +344,24 @@ const styles = StyleSheet.create({
     },
     ProductNamesStyle: {
         color: 'black',
-        fontWeight: "500",
-        textAlign: "center",
         fontSize: textScale(17),
-        paddingBottom: moderateScaleVertical(20),
-        marginTop: moderateScaleVertical(14)
+        marginTop: moderateScaleVertical(10),
+        textAlign: "center",
+        alignSelf: "center",
+        fontFamily: "HurmeGeometricSans1SemiBold"
+    },
+    ProductNamesValueStyle: {
+        color: 'black',
+        textAlign: "center",
+        fontSize: textScale(15),
+        marginTop: moderateScaleVertical(10),
+        textAlign: "left",
+        fontFamily: "HurmeGeometricSans1SemiBold",
+        paddingTop: 3
     },
     line: {
         width: "100%",
-        height: moderateScaleVertical(0.5),
+        height: moderateScaleVertical(1),
         backgroundColor: "black",
         alignSelf: 'center',
         // marginTop: moderateScaleVertical(60),
@@ -324,7 +369,7 @@ const styles = StyleSheet.create({
     },
     ProductWeightStyle: {
         color: 'black',
-        fontWeight: "500",
+        // fontWeight: "500",
         textAlign: "center",
         fontSize: textScale(17),
         paddingTop: moderateScaleVertical(15),
@@ -345,7 +390,7 @@ const styles = StyleSheet.create({
         marginTop: moderateScaleVertical(20),
         alignItems: "center",
         fontFamily: "Poppins-Medium",
-        marginBottom: moderateScaleVertical(-5),
+        marginBottom: moderateScaleVertical(-20),
     },
     AddToCartImageBackgroundStyle: {
         alignItems: "center",

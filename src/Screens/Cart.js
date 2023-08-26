@@ -30,13 +30,6 @@ const Cart = ({ navigation }) => {
     const dispatch = useDispatch();
     const { total, grandTotal } = cartDetails;
 
-    function showMsg() {
-        showMessage({
-            message: "Order Placed Successfully",
-            type: "success",
-        })
-    }
-
     const Navigator = () => {
         setShowModal(true);
     }
@@ -80,7 +73,8 @@ const Cart = ({ navigation }) => {
                                             <View style={styles.PriceAndButtonAlignment}>
 
                                                 <Text style={styles.CartItemName}>{cartItem.item.name}</Text>
-                                                <Text style={styles.CartItemPrice}>RS. {cartItem.item.price}</Text>
+                                                {/* <Text style={styles.CartItemPrice}>RS. {cartItem.item.price}</Text> */}
+                                                <Text style={styles.CartItemPrice}>{cartItem.item.weight} gram</Text>
                                                 <View style={{ backgroundColor: "black", borderRadius: 20, width: moderateScale(85), height: moderateScaleVertical(30) }}>
                                                     <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(2) }}>
                                                         <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={{ height: moderateScaleVertical(23), width: moderateScale(23), justifyContent: "center", alignSelf: "center", marginTop: 0 }} imageStyle={{ borderRadius: 15 }}>
@@ -108,26 +102,27 @@ const Cart = ({ navigation }) => {
 
                             <View style={styles.TotalAlignment}>
                                 <View style={styles.TotalPaddingAlignment}>
-                                    <Text style={styles.TotalSubChildAlignment}>Item total</Text>
-                                    <Text style={styles.TotalSubChildAlignment}>CGST(1.5%)</Text>
+                                    {/* <Text style={styles.TotalSubChildAlignment}>Total weight</Text> */}
+                                    {/* <Text style={styles.TotalSubChildAlignment}>Item total</Text> */}
+                                    {/* <Text style={styles.TotalSubChildAlignment}>CGST(1.5%)</Text>
                                     <Text style={styles.TotalSubChildAlignment}>SGST(1.5%)</Text>
                                     <Text style={styles.TotalSubChildAlignment}>Discount</Text>
-                                    <Text style={styles.TotalSubChildAlignment10}>Grand Total</Text>
+                                    <Text style={styles.TotalSubChildAlignment10}>Grand Total</Text> */}
                                 </View>
-                                <View style={styles.line2}></View>
+                                {/* <View style={styles.line2}></View> */}
                                 <View style={styles.TotalPaddingAlignment}>
-                                    <Text style={styles.TotalSubChildAlignment2}>{total}</Text>
+                                    {/* <Text style={styles.TotalSubChildAlignment2}>{total}</Text> */}
+                                    {/* <Text style={styles.TotalSubChildAlignment2}>000.00</Text>
                                     <Text style={styles.TotalSubChildAlignment2}>000.00</Text>
-                                    <Text style={styles.TotalSubChildAlignment2}>000.00</Text>
-                                    <Text style={styles.TotalSubChildAlignment2}>000.00</Text>
-                                    <Text style={styles.TotalSubChildAlignment20}>{(15 / 100) * grandTotal}</Text>
+                                    <Text style={styles.TotalSubChildAlignment2}>000.00</Text> */}
+                                    {/* <Text style={styles.TotalSubChildAlignment20}>{(15 / 100) * grandTotal}</Text> */}
                                 </View>
                             </View>
 
-                            <View style={styles.line}></View>
+                            {/* <View style={styles.line}></View> */}
                             <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: -5, marginHorizontal: -10, marginBottom: moderateScaleVertical(50) }}>
                                 <View>
-                                    <TouchableOpacity onPress={() => navigation.navigate('product')} style={styles.logInButtonAlignment}>
+                                    <TouchableOpacity onPress={() => navigation.navigate('our')} style={styles.logInButtonAlignment}>
                                         <ImageBackground source={require("../assets/texture.png")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
                                             <Text style={styles.logInButtonText}>CONTINUE SHOPPING</Text>
                                         </ImageBackground>
@@ -549,6 +544,7 @@ const styles = StyleSheet.create({
         marginBottom: moderateScaleVertical(25),
     },
     line: {
+        marginTop: moderateScaleVertical(15),
         width: "95%",
         height: 1.5,
         backgroundColor: "#a4a4a4",

@@ -1,146 +1,88 @@
-import { View, Text, ImageBackground, StyleSheet, Animated, SafeAreaView, ScrollView, TouchableOpacity, Image, Modal } from 'react-native'
-import React, { useState } from 'react'
+
+import React, { useEffect, useState } from 'react';
+import { View, Text, ImageBackground, StyleSheet, Animated, SafeAreaView, TouchableOpacity, Image, Modal } from 'react-native'
+import axios from 'axios';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
-import SimpleModal from '../SimpleModal'
 
-const ManageOrder = ({navigation}) => {
-    // WhatsApp
-    const [isModalVisible, setisModalVisible] = useState(false)
-    const [chooseData, setChooseData] = useState();
+const ManageOrder = () => {
+    const [orderHistory, setOrderHistory] = useState([]);
+    const API_URL = 'https://bliss-app-backend-production.up.railway.app/api/checkouts/order';
+    const JWT_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmFtIFNpbmdoIiwiZW1haWwiOiI1MzJAZ21haWwuY29tIiwiX2lkIjoiNjRlMzQ1MmNkYzQ4Yjc0MThmZGFiOWQ3IiwidXNlckNvdW50IjozLCJtb2JpbGUiOiIyMzY0NDQ0NDg5IiwiaWF0IjoxNjkyNjE1OTgwfQ.9dygSEqZolBwpDqOuKIgK4gRkYEBq2rFQBJl2v2C_ts';
 
-    const changeModalVisible = (bool) => {
-        setisModalVisible(bool)
-    }
+    useEffect(() => {
+        fetchOrderHistory();
+    }, []);
 
-
-    const setData = (data) => {
-        setChooseData(data)
-    }
-    // WhatsApp
+    const fetchOrderHistory = async () => {
+        try {
+            const response = await axios.get(API_URL, {
+                headers: {
+                    Authorization: `Bearer ${JWT_TOKEN}`,
+                },
+            });
+            setOrderHistory(response.data);
+            console.log(response.data)
+        } catch (error) {
+            console.error('Error fetching order history:', error.message);
+        }
+        // console.log(order)
+    };
 
     return (
-        <View style={styles.background} >
-            <View style={{}}>
-                <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
-            </View>
-            <ScrollView>
-                <View>
-                    <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), height: moderateScaleVertical(150), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
+        <View style={styles.background}>
+
+            {orderHistory.map((order, index) => (
+                <View key={index}>
+                    {/* <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), height: moderateScaleVertical(150), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
                         <Text style={{ color: "black", }}></Text>
                         <View style={{ flexDirection: "row", marginHorizontal: moderateScale(-37), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                            <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>23 April 2023</Text>
-                            <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(15), color: "black" }}>                       </Text>
+                            <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Date:</Text>
+                            <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>{order.createdAt}</Text>
                         </View>
                         <View style={{ flexDirection: "row", marginHorizontal: -15, justifyContent: "space-around", marginTop: moderateScaleVertical(5) }}>
                             <View style={{ flexDirection: "column" }}>
                                 <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Order No :</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black" }}>#321</Text>
+                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black" }}>{order._id}</Text>
 
                             </View>
                             <View style={{ flexDirection: "column" }}>
                                 <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Qty.</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black" }}>1 pcs</Text>
+                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black" }}>{order.items[0].quantity}</Text>
                             </View>
                             <View style={{ flexDirection: "column" }}>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Price</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black", textAlign: "right" }}>Rs. 400</Text>
+                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Total</Text>
+                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black", textAlign: "right" }}>{order.total}</Text>
                             </View>
                         </View>
-                    </View>
+                    </View> */}
+
                     <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), height: moderateScaleVertical(150), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
                         <Text style={{ color: "black", }}></Text>
-                        <View style={{ flexDirection: "row", marginHorizontal: moderateScale(-37), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                            <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>15 June 2023</Text>
-                            <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(15), color: "black" }}>                       </Text>
-                        </View>
-                        <View style={{ flexDirection: "row", marginHorizontal: moderateScale(-15), justifyContent: "space-around", marginTop: moderateScaleVertical(5) }}>
+                        <View style={{ flexDirection: "row", marginHorizontal: moderateScale(-20), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
                             <View style={{ flexDirection: "column" }}>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Order No :</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black" }}>#721</Text>
-
+                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(11), color: "#bc9954" }}>Date:</Text>
+                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(11), color: "#bc9954" }}>Order No :</Text>
+                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(11), color: "#bc9954" }}>Qty.</Text>
+                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(11 ), color: "#bc9954" }}>Total</Text>
                             </View>
-                            <View style={{ flexDirection: "column" }}>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Qty.</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black" }}>3 pcs</Text>
-                            </View>
-                            <View style={{ flexDirection: "column" }}>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Price</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black", textAlign: "right" }}>Rs. 900</Text>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), height: moderateScaleVertical(150), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                        <Text style={{ color: "black", }}></Text>
-                        <View style={{ flexDirection: "row", marginHorizontal: moderateScale(-37), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                            <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>2 Feb 2023</Text>
-                            <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(15), color: "black" }}>                         </Text>
-                        </View>
-                        <View style={{ flexDirection: "row", marginHorizontal: -15, justifyContent: "space-around", marginTop: moderateScaleVertical(5) }}>
-                            <View style={{ flexDirection: "column" }}>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Order No :</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black" }}>#481</Text>
-
-                            </View>
-                            <View style={{ flexDirection: "column" }}>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Qty.</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black" }}>1 pcs</Text>
-                            </View>
-                            <View style={{ flexDirection: "column" }}>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Price</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black", textAlign: "right" }}>Rs. 300</Text>
+                            <View>
+                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>{order.createdAt}</Text>
+                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>{order._id}</Text>
+                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>{order.items[0].quantity}</Text>
+                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black"}}>{order.total}</Text>
                             </View>
                         </View>
                     </View>
                 </View>
-            </ScrollView>
-            {/* Whatsapp */}
-            <View style={{ bottom: -40, position: "absolute", right: 5 }}>
-                <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
-                    <View style={styles.icontextAlignment}>
-                        <Image source={require("../../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
-                        <Text style={styles.helpText}>Help</Text>
-                    </View>
-                </TouchableOpacity>
-
-                <Modal
-                    transparent={true}
-                    animationType='fade'
-                    visible={isModalVisible}
-                    nRequestClose={() => changeModalVisible(false)}
-                >
-                    <SimpleModal changeModalVisible={changeModalVisible}
-                        setData={setData}
-                    />
-                </Modal>
-            </View>
-            <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ position: "absolute", backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: moderateScaleVertical(748), }}>
-                <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                        <Image source={require("../../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                    </TouchableOpacity>
-
-                    {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>
-                    <Image source={require("../assets/cart-filled.png")} style={{ width: 40, height: 40 }} />
-                </TouchableOpacity> */}
-
-                    <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-                        <Image source={require("../../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                    </TouchableOpacity>
-                </View>
-            </ImageBackground>
-            {/* Whatsapp */}
+            ))}
         </View>
+    );
+};
 
-    )
-}
+export default ManageOrder;
 
-export default ManageOrder
 
 const styles = StyleSheet.create({
-    goldenStrip: {
-        width: "100%",
-        height: 3,
-    },
     background: {
         display: 'flex',
         flex: 1,

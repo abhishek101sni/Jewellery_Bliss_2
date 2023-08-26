@@ -109,12 +109,12 @@ const SignUp = ({ navigation }) => {
             <Text style={styles.ForgotPasswordText}>Forgot password?</Text>
           </TouchableOpacity>
 
-          <View style={{ flex: 1, marginTop: moderateScaleVertical(20) }}>
+          <View style={{ flex: 1, marginTop: moderateScaleVertical(20) , marginBottom:moderateScaleVertical(20) }}>
             <View style={styles.line}></View>
             <View style={styles.ExistingCustomer}>
               <Text style={styles.ExistingCustomerText}>Are you Existing customer Click </Text>
               <TouchableOpacity onPress={() => navigation.navigate('login')}>
-                <Text style={styles.ExistingCustomerHereText}> here </Text>
+                <Text style={styles.ExistingCustomerHereText}>here </Text>
               </TouchableOpacity>
             </View>
 
@@ -125,9 +125,9 @@ const SignUp = ({ navigation }) => {
       </ScrollView>
 
 
-      <View >
+      {/* <View >
         <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} />
-      </View>
+      </View> */}
       {/* <View style={{ top: height - 890, }}>
         <Image source={require("../assets/GOLDEN-STRIP.png")} style={{  width: "100%", }} />
       </View> */}
@@ -157,14 +157,15 @@ const styles = StyleSheet.create({
   SignUpTitle: {
     marginTop: moderateScaleVertical(5),
     fontSize: textScale(18),
-    alignSelf: 'center'
+    alignSelf: 'center',
+    marginBottom:moderateScaleVertical(20)
   },
   SignUpText: {
     fontSize: textScale(23),
     marginTop: moderateScaleVertical(-30),
     textAlign: "center",
     color: "black",
-    fontFamily: "Poppins-Medium"
+    fontFamily: "HurmeGeometricSans1"
   },
 
   // Input Buttons CSS
@@ -181,6 +182,7 @@ const styles = StyleSheet.create({
     paddingBottom: moderateScaleVertical(0),
     paddingLeft: moderateScale(0),
     fontSize: 13,
+    fontFamily:"HurmeGeometricSans1",
   },
 
   //  Mobile No Input Buttons
@@ -195,6 +197,8 @@ const styles = StyleSheet.create({
     paddingBottom: moderateScaleVertical(0),
     paddingLeft: moderateScale(0),
     fontSize: 13,
+    fontFamily:"HurmeGeometricSans1",
+
   },
 
   //  Email Id Input Buttons
@@ -209,6 +213,8 @@ const styles = StyleSheet.create({
     paddingBottom: moderateScaleVertical(0),
     paddingLeft: moderateScale(0),
     fontSize: 13,
+    fontFamily:"HurmeGeometricSans1",
+
   },
 
   //  Password Input Buttons
@@ -223,6 +229,8 @@ const styles = StyleSheet.create({
     paddingBottom: moderateScaleVertical(0),
     paddingLeft: moderateScale(0),
     fontSize: 13,
+    fontFamily:"HurmeGeometricSans1",
+
   },
   //  Confirm password Input Buttons
   ConfirmPasswordInputbotton: {
@@ -236,10 +244,11 @@ const styles = StyleSheet.create({
     paddingBottom: moderateScaleVertical(0),
     paddingLeft: moderateScale(0),
     fontSize: 13,
+    fontFamily:"HurmeGeometricSans1",
+
   },
   logInButtonAlignment: {
     alignItems: "center",
-    fontFamily: "Poppins-Medium",
     marginBottom: moderateScaleVertical(-3),
   },
   logInButtonText: {
@@ -247,8 +256,8 @@ const styles = StyleSheet.create({
     color: "black",
     marginLeft: moderateScale(0),
     borderRadius: 40,
-    paddingTop: moderateScaleVertical(5),
-    fontFamily: "Poppins-Medium",
+    fontFamily:"HurmeGeometricSans1",
+
   },
   ImageBackgroundStyle: {
     alignItems: "center",
@@ -262,9 +271,11 @@ const styles = StyleSheet.create({
   ForgotPasswordText: {
     fontSize: textScale(14),
     color: "#a4a4a4",
-    marginBottom: moderateScaleVertical(25),
+    marginBottom: moderateScaleVertical(15),
     textAlign: "center",
     marginTop: moderateScaleVertical(20),
+    fontFamily:"HurmeGeometricSans1",
+
   },
   ExistingCustomer: {
     flexDirection: "row",
@@ -274,15 +285,16 @@ const styles = StyleSheet.create({
   ExistingCustomerText: {
     textAlign: "center",
     paddingTop: moderateScaleVertical(6),
-    fontWeight: 'bold',
     color: "#404040",
+    fontFamily:"HurmeGeometricSans1SemiBold",
+
   },
   ExistingCustomerHereText: {
     textAlign: "center",
     paddingTop: moderateScaleVertical(6),
     textDecorationLine: 'underline',
-    fontWeight: 'bold',
     color: "#404040",
+    fontFamily:"HurmeGeometricSans1SemiBold",
 
 
   },

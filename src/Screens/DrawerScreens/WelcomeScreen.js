@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState, useRef } from 'react'
 import SimpleModal from '../SimpleModal';
 import MarqueeView from "react-native-marquee-view";
 import Carousel, { Pagination } from 'react-native-snap-carousel';
@@ -12,6 +12,10 @@ import { height, moderateScale, moderateScaleVertical, textScale } from '../../u
 
 const WelcomeScreen = () => {
     const [visible, setVisible] = useState(false)
+    const isCarousel = useRef(null);
+    const isCarousel2 = useRef(null);
+    const [page, setPage] = useState(0);
+    const [page2, setPage2] = useState(0);
     // WhatsApp
     const [isModalVisible, setisModalVisible] = useState(false)
     const [chooseData, setChooseData] = useState();
@@ -74,30 +78,31 @@ const WelcomeScreen = () => {
     // Products Carosuel
     const entries2 = [
         {
-            img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/Handmadeandhollow/handmadeandhollow.jpg'),
+            img: require('../../assets/WelcomeScreenCategoriesBanners/Chains.png'),
             onPress: () => {
                 navigation.navigate("chains");
             }
         },
         {
-            img: require('../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/casting.jpg'),
+            img: require('../../assets/WelcomeScreenCategoriesBanners/CastingJewellery.png'),
             onPress: () => {
                 navigation.navigate("CastingJwellery");
             }
         },
         {
-            img: require('../../assets/czParent.jpg'),
+            img: require('../../assets/WelcomeScreenCategoriesBanners/CastingCz.png'),
             onPress: () => {
                 navigation.navigate("CastingCzJwellery");
             }
         },
         {
-            img: require('../../assets/CZ_RING_4.jpg'),
+            img: require('../../assets/WelcomeScreenCategoriesBanners/PlainJewellery.png'),
             onPress: () => {
                 navigation.navigate("PlainJwellery");
             }
         },
     ];
+
 
     // image Slider box
     const slides = [
@@ -113,8 +118,8 @@ const WelcomeScreen = () => {
                 <Image
                     source={item.img}
                     style={{
-                        height: moderateScaleVertical(150),
-                        width: moderateScale(280),
+                        // height: moderateScaleVertical(350),
+                        width: moderateScale(270),
                         marginTop: moderateScaleVertical(30),
                         borderRadius: 20,
                         marginBottom: moderateScaleVertical(10),
@@ -137,12 +142,12 @@ const WelcomeScreen = () => {
                 <View >
                     <ImageBackground style={styles.MainBackGroundImage} imageStyle={{ borderRadius: 40 }} source={require("../../assets/CompressedTexture3.jpg")} >
 
-                        <View style={styles.GoldenBackGroundImage}>
 
-                        </View>
-                        <View style={{ marginLeft: moderateScale(30) }}>
-                            <Text style={styles.WelcomeText}>Welcome,</Text>
-                            <Text style={styles.UserName}>{userInfo?.name}</Text>
+                        <View style={{ marginLeft: moderateScale(25), marginTop: moderateScaleVertical(20) }}>
+                            <View style={{ flexDirection: "row" }}>
+                                <Text style={styles.WelcomeText}>Welcome , </Text>
+                                <Text style={styles.UserName}>{userInfo?.name}</Text>
+                            </View>
                             <Text style={styles.UserBrandName}>{userDetails?.brandName}</Text>
                             <View style={styles.userCountStyle}>
                                 <Text style={styles.UserCount}>JB00{userInfo?.userCount}</Text>
@@ -150,7 +155,7 @@ const WelcomeScreen = () => {
                             <View style={{ marginTop: moderateScaleVertical(5) }}>
                                 <Text style={styles.GoldenScreenBelowText}>Welcome to our app! We have thrilled to have you here.</Text>
                                 <View style={{ flexDirection: "row" }}>
-                                    <Text style={styles.GoldenScreenBelowText}>Enjoy Shopping! </Text>
+                                    <Text style={styles.GoldenScreenBelowText2}>Enjoy Shopping! </Text>
                                     <Image source={require("../../assets/smiley-emoji.png")} style={styles.smileyEmoji} />
                                 </View>
                             </View>
@@ -219,33 +224,12 @@ const WelcomeScreen = () => {
                     </View> */}
                 </View>
 
-                <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('pricelist')}>
-                    <View style={styles.WastageChartButton}>
-                        <Text style={styles.buttontext}>WASTAGE CHART</Text>
-                    </View>
-                </TouchableOpacity>
+                {/* Parallax */}
 
-
-                {/* <SliderBox
-                    images={slides}
-                    dotColor="#eec06b"
-                    inactiveDotColor="black"
-                    circleLoop
-                    paginationBoxVerticalPadding={20}
-                    dotStyle={{
-                        width: moderateScale(7),
-                        // height: moderateScaleVertical(7),
-                        borderRadius: 20,
-                        marginHorizontal: moderateScale(-3),
-                        padding: 0,
-                        // margintTop: moderateScaleVertical(400)
-                    }}
-                    ImageComponentStyle={{ borderRadius: 30, width: '90%', marginTop: 15 }}
-                /> */}
-
-                {/* // Parallax */}
-
+                {/* Categories Parallax */}
                 <Carousel
+                    ref={isCarousel}
+                    onSnapToItem={(page) => setPage(page)}
                     data={entries2}
                     renderItem={renderItem2}
                     sliderWidth={width}
@@ -253,9 +237,34 @@ const WelcomeScreen = () => {
                     loop
                     firstItem={1}
                 />
+                <Pagination
+                    activeDotIndex={page}
+                    carouselRef={isCarousel}
+                    tappableDots={true}
+                    inactiveDotOpacity={0.4}
+                    inactiveDotScale={0.6}
+                    dotsLength={entries2.length}
+                    dotStyle={{
+                        width: 5,
+                        height: 5,
+                        borderRadius: 18,
+                        backgroundColor: "#eec06b",
+                    }}
+                    inactiveDotStyle={{
+                        backgroundColor: "black",
+                    }}
+                />
 
-                {/* Banner */}
+                <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('pricelist')}>
+                    <View style={styles.WastageChartButton}>
+                        <Text style={styles.buttontext}>WASTAGE CHART</Text>
+                    </View>
+                </TouchableOpacity>
+
+                {/* Categories Parallax */}
                 <Carousel
+                    ref={isCarousel2}
+                    onSnapToItem={(page2) => setPage(page2)}
                     data={entries}
                     renderItem={renderItem}
                     sliderWidth={width}
@@ -263,6 +272,23 @@ const WelcomeScreen = () => {
                     loop
                     firstItem={1}
                 />
+                {/* <Pagination
+                    activeDotIndex={page2}
+                    carouselRef={isCarousel2}
+                    tappableDots={true}
+                    inactiveDotOpacity={0.4}
+                    inactiveDotScale={0.6}
+                    dotsLength={entries.length}
+                    dotStyle={{
+                        width: 5,
+                        height: 5,
+                        borderRadius: 18,
+                        backgroundColor: "#eec06b",
+                    }}
+                    inactiveDotStyle={{
+                        backgroundColor: "black",
+                    }}
+                /> */}
 
 
                 {/* <View style={styles.line}></View> */}
@@ -281,7 +307,7 @@ const WelcomeScreen = () => {
 
             </ScrollView>
 
-            {/* Whatsapp */}
+            {/* Whatsapp start */}
             <View View style={{ bottom: moderateScaleVertical(-95), position: "absolute", right: moderateScale(5) }}>
                 <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
                     <View style={styles.icontextAlignment}>
@@ -301,8 +327,10 @@ const WelcomeScreen = () => {
                     />
                 </Modal>
             </View>
-            {/* Whatsapp */}
+            {/* Whatsapp end */}
 
+
+            {/* BottomTabNavigator */}
             {/* <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop:0, }}>
                     <View style={{ marginTop: moderateScaleVertical(15), flexDirection: "row", justifyContent: "space-around" }}>
                         <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
@@ -345,15 +373,15 @@ const styles = StyleSheet.create({
     WelcomeText: {
         color: "black",
         fontSize: textScale(20),
-        fontWeight: "400",
+        // fontWeight: "400",
         marginLeft: moderateScale(0),
         fontFamily: "HurmeGeometricSans1"
     },
     UserName: {
         color: "black",
         fontSize: textScale(23),
-        fontWeight: "700",
-        fontFamily: "HurmeGeometricSans1Bold"
+        // fontWeight: "700",
+        fontFamily: "HurmeGeometricSans1SemiBold"
     },
     UserBrandName: {
         color: "black",
@@ -383,12 +411,19 @@ const styles = StyleSheet.create({
         height: moderateScaleVertical(30),
     },
     GoldenScreenBelowText: {
+        marginTop: moderateScaleVertical(10),
         color: "black",
         fontSize: textScale(10),
-        fontWeight: "600",
-        fontFamily: "HurmeGeometricSans1"
+        fontFamily: "HurmeGeometricSans1SemiBold"
+    },
+    GoldenScreenBelowText2: {
+        marginTop: moderateScaleVertical(1),
+        color: "black",
+        fontSize: textScale(10),
+        fontFamily: "HurmeGeometricSans1SemiBold"
     },
     smileyEmoji: {
+        marginTop: moderateScaleVertical(2),
         width: moderateScale(14),
         height: moderateScaleVertical(14),
     },

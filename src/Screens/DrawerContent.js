@@ -25,7 +25,7 @@ const DrawerContent = (props) => {
                     <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("our") }}>
                         <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(10) }}>
                             <Image source={require("../assets/drawerIcons/ourProducts.png")} style={styles.OurProductIcon} />
-                            <Text style={styles.DrawerContentTitle}>Our Product</Text>
+                            <Text style={styles.DrawerContentTitle}>Our Products</Text>
                         </View>
                     </TouchableOpacity>
 
@@ -78,7 +78,7 @@ const DrawerContent = (props) => {
 
 
                 <View style={styles.line}></View>
-                <View style={{ marginTop: moderateScaleVertical(50), flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(50) }}>
+                <View style={{ marginTop: moderateScaleVertical(38), flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(50) }}>
                     <TouchableOpacity onPress={() => {
                         Linking.openURL("https://www.facebook.com/jewellerybliss2023?mibextid=ZbWKwL");
                     }}>
@@ -92,7 +92,7 @@ const DrawerContent = (props) => {
                         <Image source={require("../assets/SocialMediaIcons/instagramColored.png")} style={{ width: moderateScale(32), marginTop: moderateScaleVertical(3), height: moderateScaleVertical(32) }} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => { Linking.openURL('whatsapp://send?text=Hii Jwellery Bliss&phone=9818287083') }}>
+                    <TouchableOpacity onPress={() => { Linking.openURL('whatsapp://send?text=Hii Jwellery Bliss&phone=9654511612') }}>
                         <Image source={require("../assets/SocialMediaIcons/whatsappColored.png")} style={{ width: moderateScale(33), height: moderateScaleVertical(33), marginTop: moderateScaleVertical(2) }} />
                     </TouchableOpacity>
                 </View>
@@ -101,8 +101,8 @@ const DrawerContent = (props) => {
 
                 <View style={{ marginTop: moderateScaleVertical(60), marginBottom: moderateScaleVertical(15) }}>
                     <TouchableOpacity style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(90) }} onPress={logout}>
-                        <Image source={require("../assets/logoutIcon.png")} style={{ width: moderateScale(20), height: moderateScaleVertical(20), }} />
-                        <Text style={{ fontSize: textScale(15), fontWeight: "600", color: "#181818" }}>Logout</Text>
+                        <Image source={require("../assets/logoutIcon.png")} style={{ width: moderateScale(21), height: moderateScaleVertical(23), }} />
+                        <Text style={{ fontSize: textScale(15), fontWeight: "700", color: "#181818" , fontFamily:"HurmeGeometricSans1" }}>Logout</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -132,12 +132,12 @@ const styles = StyleSheet.create({
     ViewProfileAlignment: {
         flexDirection: "column",
         alignItems: "center",
-        marginTop: moderateScaleVertical(35),
+        marginTop: moderateScaleVertical(15),
         marginBottom: moderateScaleVertical(20)
     },
     ViewProfileDp: {
-        width: moderateScale(150),
-        height: moderateScaleVertical(150),
+        width: moderateScale(120),
+        height: moderateScaleVertical(120),
         borderRadius: 90
     },
     ViewProfileDpTouch: {
@@ -152,10 +152,11 @@ const styles = StyleSheet.create({
     // },
     ViewProfileText: {
         fontSize: 14,
-        fontWeight: "500",
+        fontWeight: "700",
         // color: "#F0F0F0",
         color: "#181818",
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
+        fontFamily:"HurmeGeometricSans1",
     },
 
     DrawerContentTouch: {
@@ -222,12 +223,14 @@ const styles = StyleSheet.create({
     DrawerContentTitle: {
         textAlign: "center",
         justifyContent: "center",
-        marginTop: moderateScaleVertical(4),
-        // color: "#F0F0F0",
+        marginTop: moderateScaleVertical(6),
         color: "#181818",
-        fontSize: textScale(15),
+        fontSize: textScale(16.5),
         marginLeft: moderateScale(20),
-        fontWeight: "500"
+        // fontWeight: "700",
+        // fontFamily:"HurmeGeometricSans1"
+        // fontFamily:"HurmeGeometricSans1Bold"
+        fontFamily:"HurmeGeometricSans1SemiBold"
     }
 
 

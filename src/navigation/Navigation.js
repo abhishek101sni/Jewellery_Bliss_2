@@ -143,7 +143,7 @@ const Navigation = () => {
                                 headerTitleStyle: { color: '#bc9954' }
                             }}
                         />
-                          <Stack.Screen
+                        <Stack.Screen
                             name="forgotPass"
                             component={ForgotPassword}
                             options={{
@@ -154,7 +154,7 @@ const Navigation = () => {
                                 headerTitleStyle: { color: '#bc9954' }
                             }} />
 
-                          <Stack.Screen
+                        <Stack.Screen
                             name="resetPass"
                             component={ResetPassword}
                             options={{
@@ -209,8 +209,6 @@ const Navigation = () => {
                                 headerTitleStyle: { color: '#bc9954' }
                             }} />
 
-
-
                         <Stack.Screen
                             name="singleproduct"
                             component={SingleProduct}
@@ -247,7 +245,7 @@ const Navigation = () => {
                             name="Manage"
                             component={ManageOrder}
                             options={{
-                                title: 'Manage Orders',
+                                title: 'Order history',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -257,7 +255,7 @@ const Navigation = () => {
                             name="our"
                             component={OurProduct}
                             options={{
-                                title: 'Our Products',
+                                title: 'Our Product',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -366,7 +364,7 @@ const Navigation = () => {
                                 headerTintColor: '#bc9954',
                                 headerTitleStyle: { color: '#bc9954' }
                             }} />
-                      
+
 
                         {/* Categories */}
 

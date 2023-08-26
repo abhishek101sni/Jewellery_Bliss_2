@@ -83,16 +83,16 @@ const LogIn = ({ navigation,
 
                     <View style={styles.line}></View>
 
-                    <View style={{ flexDirection: "row", justifyContent: "center" }}>
-                        <Text style={{ textAlign: "center", paddingTop: 6, fontWeight: 'bold', fontFamily: "HurmeGeometricSans1", color: "#404040", }}>You are not a registered user Click </Text>
+                    <View style={{ flexDirection: "row", justifyContent: "center", marginBottom: moderateScaleVertical(20) }}>
+                        <Text style={{ textAlign: "center", paddingTop: 6, fontFamily: "HurmeGeometricSans1SemiBold", color: "#404040", }}>You are not a registered user Click </Text>
                         <TouchableOpacity onPress={() => navigation.navigate('signup')}>
-                            <Text style={{ fontWeight: 'bold', textAlign: "center", fontFamily: "Poppins-Medium", paddingTop: 6, color: "#404040", textDecorationLine: 'underline', fontFamily: "HurmeGeometricSans1", }}> here </Text>
+                            <Text style={{ textAlign: "center", paddingTop: 6, color: "#404040", textDecorationLine: 'underline', fontFamily: "HurmeGeometricSans1SemiBold", }}>here </Text>
                         </TouchableOpacity>
                     </View>
                 </View>
             </ScrollView>
             <View >
-                <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} />
+                {/* <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} /> */}
             </View>
         </ImageBackground>
     );
@@ -120,12 +120,13 @@ const styles = StyleSheet.create({
         flex: 0.5,
         fontSize: textScale(18),
         alignSelf: 'center',
-        marginTop: moderateScaleVertical(20)
+        marginTop: moderateScaleVertical(40),
+        marginBottom: moderateScaleVertical(10)
     },
     LogInText: {
         fontSize: textScale(20),
         marginTop: moderateScaleVertical(10),
-        marginBottom: moderateScaleVertical(20),
+        marginBottom: moderateScaleVertical(10),
         textAlign: "center",
         color: "black",
         fontFamily: "HurmeGeometricSans1",
@@ -156,19 +157,17 @@ const styles = StyleSheet.create({
         paddingBottom: moderateScaleVertical(0),
         paddingLeft: moderateScale(0),
         fontFamily: "HurmeGeometricSans1",
-
+        marginBottom: moderateScaleVertical(20)
     },
     logInButtonAlignment: {
         alignItems: "center",
-        fontFamily: "Poppins-Medium",
-        // marginBottom: moderateScaleVertical(10),
     },
     logInButtonText: {
         fontSize: textScale(20),
         color: "black",
         marginLeft: moderateScale(0),
         borderRadius: 40,
-        paddingTop: moderateScaleVertical(3),
+        // paddingTop: moderateScaleVertical(3),
         fontFamily: "HurmeGeometricSans1",
 
     },
@@ -179,7 +178,6 @@ const styles = StyleSheet.create({
         height: moderateScaleVertical(60),
         justifyContent: 'center',
         marginTop: moderateScaleVertical(40),
-        fontFamily: "Poppins-Medium"
     },
     ForgotPasswordText: {
         fontSize: textScale(14),
@@ -188,6 +186,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginTop: moderateScaleVertical(20),
         fontFamily: "HurmeGeometricSans1",
+        marginBottom: moderateScaleVertical(20)
     },
     line: {
         width: "80%",

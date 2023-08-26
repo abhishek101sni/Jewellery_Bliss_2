@@ -7,7 +7,7 @@ import { height, moderateScale, moderateScaleVertical, textScale } from '../../u
 import SimpleModal from '../SimpleModal';
 
 
-const Product = ({ navigation }) => {
+const TwentytwoKaratScreen = ({ navigation }) => {
     // WhatsApp
     const [isModalVisible, setisModalVisible] = useState(false)
     const [chooseData, setChooseData] = useState();
@@ -102,7 +102,7 @@ const Product = ({ navigation }) => {
     )
 }
 
-export default Product
+export default TwentytwoKaratScreen
 
 const styles = StyleSheet.create({
     goldenStrip: {

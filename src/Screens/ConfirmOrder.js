@@ -1,7 +1,8 @@
-import { View, Text, ImageBackground, Modal, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { View, Text, ImageBackground, Modal, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { moderateScale, moderateScaleVertical, height, textScale } from '../utils/responsive'
 import SimpleModal from './SimpleModal'
+import { getLeftStyles } from 'react-native-paper/lib/typescript/src/components/List/utils'
 
 const ConfirmOrder = ({ navigation }) => {
     // WhatsApp
@@ -22,42 +23,95 @@ const ConfirmOrder = ({ navigation }) => {
             <View style={{}}>
                 <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
             </View>
-            {/* <View style={styles.disclaimer}> */}
-            <ImageBackground style={styles.disclaimer} imageStyle={{ borderRadius: 20 }} source={require("../assets/CompressedTexture3.jpg")} >
-                <View style={{ marginTop: moderateScaleVertical(20), marginLeft: moderateScale(20) }}>
-                    <Text style={{ fontSize: textScale(17), marginleft: moderateScale(25), fontWeight: "500", color: "black" }}>Bank Details :</Text>
-                    <View style={{ flexDirection: "row" }}>
-                        <Image source={require("../assets/icici.png")} style={styles.bankImage} />
-                        <View style={{ flexDirection: "column", marginTop: moderateScaleVertical(22), marginLeft: moderateScale(40) }}>
-                            {/* <Text style={{ fontSize: textScale(18), fontWeight: "500", color: "black" }}>STANDARD CHARTED BANK</Text> */}
-                            <Text style={{ fontSize: textScale(18), fontWeight: "500", color: "black" }}>ICICI BANK</Text>
-                            <Text style={{ fontSize: textScale(15), fontWeight: "500", color: "black" }}>629205034031</Text>
-
+            <ScrollView>
+                <View style={{ backgroundColor: "#E8E8E8", alignSelf: "center", width: moderateScaleVertical(390), borderRadius: 20, marginTop: moderateScaleVertical(30) }}>
+                    <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(20) }}>
+                        <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold" }}>Product Name</Text>
+                        <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold" }}>Qty.</Text>
+                        <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold" }}>Purity</Text>
+                        <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold" }}>Weight</Text>
+                        <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold" }}>Price</Text>
+                    </View>
+ 
+                    <View style={{ marginBottom: moderateScaleVertical(10), marginTop: moderateScaleVertical(-10) }}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(20) }}>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(100) }} >Handmade & Hollow 8.300</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(40) }}>  20</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(40) }}>20 kt</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(60) }}>4000 gm</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(30) }}>200</Text>
                         </View>
+                        <View style={styles.Productline}></View>
                     </View>
-                    <View style={{ marginLeft: moderateScale(120), marginTop: moderateScaleVertical(15), flexDirection: "column", marginVertical: moderateScaleVertical(6) }}>
-                        <Text style={{ fontSize: textScale(15), fontWeight: "500", color: "black" }}>IFSC CODE :</Text>
-                        <Text style={{ fontSize: textScale(12), fontWeight: "400", color: "black" }}>ICIC0006292</Text>
-                        <Text style={{ fontSize: textScale(15), fontWeight: "500", color: "black" }}>ACCOUNT HOLDER NAME :</Text>
-                        <Text style={{ fontSize: textScale(12), fontWeight: "400", color: "black" }}>NIKHIL</Text>
+                    <View style={{ marginBottom: moderateScaleVertical(10), marginTop: moderateScaleVertical(-10) }}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(20) }}>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(100) }} >Handmade & Hollow 8.300</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(40) }}>  20</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(40) }}>20 kt</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(60) }}>4000 gm</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(30) }}>200</Text>
+                        </View>
+                        <View style={styles.Productline}></View>
                     </View>
-                    <View style={styles.line}></View>
-                    <View style={{ flexDirection: "row" }}>
-                        <Text style={styles.disclaimerText}>Disclaimer:</Text>
-                        <Text style={styles.disclaimerDummyText}>This is dummy text opens everytime </Text>
+                    <View style={{ marginBottom: moderateScaleVertical(10), marginTop: moderateScaleVertical(-10) }}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(20) }}>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(100) }} >Handmade & Hollow 8.300</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(40) }}>  20</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(40) }}>20 kt</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(60) }}>4000 gm</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(30) }}>200</Text>
+                        </View>
+                        <View style={styles.Productline}></View>
                     </View>
 
                 </View>
-            </ImageBackground>
-            {/* </View> */}
 
-            <View>
-                <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('thank')}>
-                    <View style={styles.WastageChartButton}>
-                        <Text style={styles.buttontext}>CONFIRM  ORDER</Text>
+                <ImageBackground style={styles.disclaimer} imageStyle={{ borderRadius: 20 }} source={require("../assets/CompressedTexture3.jpg")} >
+                    <View style={{ marginTop: moderateScaleVertical(5), marginLeft: moderateScale(20) }}>
+                        <View style={{ flexDirection: "column" }}>
+                            <Text style={{ fontSize: textScale(17), color: "black", fontFamily: "HurmeGeometricSans1SemiBold" }}>Bank Details</Text>
+                            <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>To initiate the order processing, a payment of 15% on the bank details mentioned below</Text>
+                        </View>
+                        <View style={{ flexDirection: "row" }}>
+                            <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(3) }}>
+                                <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
+                                    <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Bank Name</Text>
+                                    <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>A/C No.</Text>
+                                    <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>IFSC Code</Text>
+                                    <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>A/c holder name</Text>
+                                </View>
+                                <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
+                                    <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
+                                    <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
+                                    <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
+                                    <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
+                                </View>
+                                <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
+                                    <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>ICICI BANK</Text>
+                                    <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>629205034031</Text>
+                                    <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>ICIC0006292</Text>
+                                    <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>Mr. Nikhil Jain</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.line}></View>
+                        <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(5), marginBottom: moderateScaleVertical(10) }}>
+                            <Text style={styles.disclaimerText}>Disclaimer : </Text>
+                            <Text style={styles.disclaimerTextValue}></Text>
+                        </View>
                     </View>
-                </TouchableOpacity>
-            </View>
+                </ImageBackground>
+                <View>
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('thank')}>
+                        <View style={styles.WastageChartButton}>
+                            <Text style={styles.buttontext}>CONFIRM  ORDER</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+            </ScrollView>
+
+            {/* Tab Navigator */}
+
             <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ position: "absolute", backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: moderateScaleVertical(748), marginBottom: moderateScaleVertical(0) }}>
                 <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
                     <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
@@ -69,6 +123,8 @@ const ConfirmOrder = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
             </ImageBackground>
+            {/* Tab Navigator */}
+
             {/* Whatsapp */}
             <View View style={{ bottom: -40, position: "absolute", right: 20 }}>
                 <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
@@ -103,12 +159,12 @@ const styles = StyleSheet.create({
     },
     disclaimer: {
         alignSelf: "center",
-        marginTop: moderateScaleVertical(0),
         width: moderateScale(390),
-        height: moderateScaleVertical(300),
+        height: moderateScaleVertical(250),
         alignSelf: "center",
-        marginTop: moderateScaleVertical(250),
+        marginTop: moderateScaleVertical(50),
         borderRadius: 15,
+
     },
     line: {
         marginTop: moderateScaleVertical(10),
@@ -119,24 +175,42 @@ const styles = StyleSheet.create({
         backgroundColor: "black",
         alignSelf: 'center',
     },
+    Productline: {
+        marginTop: moderateScaleVertical(10),
+        width: "90%",
+        // marginRight: moderateScale(20),
+        height: moderateScaleVertical(0.1),
+        backgroundColor: "#a4a4a4",
+        backgroundColor: "black",
+        alignSelf: 'center',
+    },
     disclaimerText: {
         color: "black",
         fontSize: textScale(18),
-        justifyContent: "center",
-        alignItems: "center",
         marginLeft: moderateScale(-2),
-        marginTop: moderateScaleVertical(7)
-    },
-    disclaimerDummyText: {
-        color: " opens everytimeblack",
         fontSize: textScale(13),
-        justifyContent: "center",
-        alignItems: "center",
-        marginLeft: moderateScale(10),
-        marginTop: moderateScaleVertical(12),
+        fontSize: textScale(14),
         color: "black",
-        fontWeight: "400"
+        fontFamily: "HurmeGeometricSans1SemiBold"
     },
+    disclaimerTextValue: {
+        color: "black",
+        fontSize: textScale(18),
+        marginLeft: moderateScale(-2),
+        fontSize: textScale(13),
+        color: "black",
+        fontFamily: "HurmeGeometricSans1"
+    },
+    // disclaimerDummyText: {
+    //     color: " opens everytimeblack",
+    //     fontSize: textScale(18),
+    //     justifyContent: "center",
+    //     alignItems: "center",
+    //     marginLeft: moderateScale(10),
+    //     // marginTop: moderateScaleVertical(12),
+    //     color: "black",
+    //     fontWeight: "300"
+    // },
     WastageChartButton: {
         marginTop: moderateScaleVertical(20),
         backgroundColor: "black",
@@ -148,7 +222,8 @@ const styles = StyleSheet.create({
         width: moderateScale(160),
         justifyContent: "center",
         height: moderateScaleVertical(50),
-        alignSelf: 'center'
+        alignSelf: 'center',
+        marginBottom: moderateScaleVertical(100)
     },
     buttontext: {
         fontSize: textScale(14),
@@ -156,9 +231,9 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     bankImage: {
-        marginTop: moderateScaleVertical(10),
         width: moderateScale(80),
-        height: moderateScaleVertical(80)
+        height: moderateScaleVertical(80),
+        marginTop: moderateScaleVertical(25)
     },
     // Whatsapp style
 

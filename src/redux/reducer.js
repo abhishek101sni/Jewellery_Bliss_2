@@ -92,12 +92,20 @@ export const reducer = (state = initialState, action = {}) => {
     }
 };
 
+// function calculateCartTotal(cartItems, initialTotal = 0) {
+//     return cartItems.reduce((acc, cartItem) => {
+//         console.log(`%%%%%%`, acc, cartItem);
+//         return acc + (parseInt(cartItem.item.price) * (cartItem.count));
+//     }, initialTotal)
+// }
 function calculateCartTotal(cartItems, initialTotal = 0) {
     return cartItems.reduce((acc, cartItem) => {
+        // console.log(`%%%%%%`,cartItem.item.category);
         console.log(`%%%%%%`, acc, cartItem);
-        return acc + (parseInt(cartItem.item.price) * (cartItem.count));
+        return acc + (parseInt(cartItem.item.weight) * (cartItem.count));
     }, initialTotal)
 }
+
 
 function calculateGrandTotal(total) {
     const tax = 1.5;

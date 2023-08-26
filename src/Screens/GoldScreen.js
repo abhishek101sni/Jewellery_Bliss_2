@@ -34,7 +34,7 @@ const GoldScreen = ({ navigation }) => {
                 <View style={styles.container}>
                     <DataTable>
                         {/* <DataTable.Header style={{ backgroundColor: "#bc9954", borderTopRightRadius: 20, borderTopLeftRadius: 20, width: moderateScale(390), alignSelf: "center" }} > */}
-                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20, height: moderateScaleVertical(90) }} style={{ width: moderateScale(390), alignSelf: "center" }}>
+                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20, height: moderateScaleVertical(90), width:moderateScale(370) , alignSelf:"center"  }} style={{ width: moderateScale(390), alignSelf: "center" }}>
                             <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" }} style={{ justifyContent: "center", color: "black" }} >GOLD COINS</DataTable.Title>
                         </ImageBackground>
                         {/* </DataTable.Header> */}
