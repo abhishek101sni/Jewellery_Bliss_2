@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { moderateScale, moderateScaleVertical, height, textScale } from '../utils/responsive'
 import SimpleModal from './SimpleModal'
 import { getLeftStyles } from 'react-native-paper/lib/typescript/src/components/List/utils'
+import { useSelector, useDispatch } from 'react-redux';
 
 const ConfirmOrder = ({ navigation }) => {
     // WhatsApp
@@ -18,6 +19,11 @@ const ConfirmOrder = ({ navigation }) => {
         setChooseData(data)
     }
     // WhatsApp
+
+    const [showModal, setShowModal] = useState(false);
+    const { cart, cartDetails } = useSelector((state) => state.reducer);
+    const dispatch = useDispatch();
+    const { total, grandTotal } = cartDetails;
     return (
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <View style={{}}>
@@ -32,13 +38,13 @@ const ConfirmOrder = ({ navigation }) => {
                         <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold" }}>Weight</Text>
                         <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold" }}>Price</Text>
                     </View>
- 
+
                     <View style={{ marginBottom: moderateScaleVertical(10), marginTop: moderateScaleVertical(-10) }}>
                         <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(20) }}>
-                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(100) }} >Handmade & Hollow 8.300</Text>
-                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(40) }}>  20</Text>
-                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(40) }}>20 kt</Text>
-                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(60) }}>4000 gm</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(100) }} >{cartItem.name}</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(40) }}>{cartItem.count}</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(40) }}>{cartItem.purity}</Text>
+                            <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(60) }}>{cartItem.weight} gm</Text>
                             <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(30) }}>200</Text>
                         </View>
                         <View style={styles.Productline}></View>
