@@ -82,18 +82,18 @@ const DrawerContent = (props) => {
                     <TouchableOpacity onPress={() => {
                         Linking.openURL("https://www.facebook.com/jewellerybliss2023?mibextid=ZbWKwL");
                     }}>
-                        <Image source={require("../assets/SocialMediaIcons/facebookColored.png")} style={{ width: moderateScale(32), marginTop: moderateScaleVertical(3), height: moderateScaleVertical(32) }} />
+                        <Image source={require("../assets/SocialMediaIcons/facebookColored.png")} style={{ width: moderateScale(33.5), marginTop: moderateScaleVertical(3), height: moderateScaleVertical(34) }} />
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => {
 
                         Linking.openURL("https://www.instagram.com/");
                     }}>
-                        <Image source={require("../assets/SocialMediaIcons/instagramColored.png")} style={{ width: moderateScale(32), marginTop: moderateScaleVertical(3), height: moderateScaleVertical(32) }} />
+                        <Image source={require("../assets/SocialMediaIcons/instagramColored.png")} style={{ width: moderateScale(33.5), marginTop: moderateScaleVertical(3), height: moderateScaleVertical(34) }} />
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => { Linking.openURL('whatsapp://send?text=Hii Jwellery Bliss&phone=9654511612') }}>
-                        <Image source={require("../assets/SocialMediaIcons/whatsappColored.png")} style={{ width: moderateScale(33), height: moderateScaleVertical(33), marginTop: moderateScaleVertical(2) }} />
+                        <Image source={require("../assets/SocialMediaIcons/whatsappColored.png")} style={{ width: moderateScale(33.5), height: moderateScaleVertical(34), marginTop: moderateScaleVertical(2) }} />
                     </TouchableOpacity>
                 </View>
 
@@ -101,8 +101,8 @@ const DrawerContent = (props) => {
 
                 <View style={{ marginTop: moderateScaleVertical(60), marginBottom: moderateScaleVertical(15) }}>
                     <TouchableOpacity style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(90) }} onPress={logout}>
-                        <Image source={require("../assets/logoutIcon.png")} style={{ width: moderateScale(21), height: moderateScaleVertical(23), }} />
-                        <Text style={{ fontSize: textScale(15), fontWeight: "700", color: "#181818" , fontFamily:"HurmeGeometricSans1" }}>Logout</Text>
+                        <Image source={require("../assets/logoutIcon.png")} style={{ width: moderateScale(22), height: moderateScaleVertical(24), }} />
+                        <Text style={{ fontSize: textScale(16), color: "#181818" , fontFamily:"HurmeGeometricSans1Bold" }}>Logout</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -152,11 +152,11 @@ const styles = StyleSheet.create({
     // },
     ViewProfileText: {
         fontSize: 14,
-        fontWeight: "700",
+        // fontWeight: "700",
         // color: "#F0F0F0",
         color: "#181818",
         textDecorationLine: 'underline',
-        fontFamily:"HurmeGeometricSans1",
+        fontFamily:"HurmeGeometricSans1SemiBold",
     },
 
     DrawerContentTouch: {

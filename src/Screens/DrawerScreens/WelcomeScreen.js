@@ -103,27 +103,16 @@ const WelcomeScreen = () => {
         },
     ];
 
-
-    // image Slider box
-    const slides = [
-        require('../../assets/CZ_RING_2.jpg'),
-        require('../../assets/CZ_RING_2.jpg'),
-        require('../../assets/CZ_RING_2.jpg'),
-        require('../../assets/CZ_RING_2.jpg'),
-    ]
-
     const renderItem2 = ({ item, index }) => {
         return (
             <TouchableOpacity activeOpacity={0.8} onPress={item.onPress}>
                 <Image
                     source={item.img}
                     style={{
-                        // height: moderateScaleVertical(350),
                         width: moderateScale(270),
                         marginTop: moderateScaleVertical(30),
                         borderRadius: 20,
-                        marginBottom: moderateScaleVertical(10),
-                        // backgroundColor:"black"
+                        marginBottom: moderateScaleVertical(5),
                     }}
                 />
             </TouchableOpacity>
@@ -168,7 +157,7 @@ const WelcomeScreen = () => {
                         <TouchableOpacity onPress={() => { setVisible(true) }} >
                             <MarqueeView>
                                 <View style={styles.MarqueeAlignment}>
-                                    <Text style={{ color: "#404040" }}>
+                                    <Text style={{ color: "#404040", fontFamily: "HurmeGeometricSans1SemiBold" }}>
                                         Price 18K: | Fine rate: red | Gold MCX: Rs 50,000 995
                                         rate: Rs 45,000 | Fine rate: rs720000 | Gold MCX: Rs 50,000
                                     </Text>
@@ -244,17 +233,18 @@ const WelcomeScreen = () => {
                     inactiveDotOpacity={0.4}
                     inactiveDotScale={0.6}
                     dotsLength={entries2.length}
+
                     dotStyle={{
-                        width: 5,
-                        height: 5,
-                        borderRadius: 18,
+                        width: moderateScale(9),
+                        height: moderateScaleVertical(9),
+                        borderRadius: 9,
                         backgroundColor: "#eec06b",
+                        marginVertical: moderateScaleVertical(-4),
                     }}
                     inactiveDotStyle={{
                         backgroundColor: "black",
                     }}
                 />
-
                 <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('pricelist')}>
                     <View style={styles.WastageChartButton}>
                         <Text style={styles.buttontext}>WASTAGE CHART</Text>
@@ -308,7 +298,7 @@ const WelcomeScreen = () => {
             </ScrollView>
 
             {/* Whatsapp start */}
-            <View View style={{ bottom: moderateScaleVertical(-95), position: "absolute", right: moderateScale(5) }}>
+            <View View style={{ bottom: moderateScaleVertical(-37), position: "absolute", right: moderateScale(5) }}>
                 <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
                     <View style={styles.icontextAlignment}>
                         <Image source={require("../../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
@@ -331,17 +321,17 @@ const WelcomeScreen = () => {
 
 
             {/* BottomTabNavigator */}
-            {/* <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop:0, }}>
-                    <View style={{ marginTop: moderateScaleVertical(15), flexDirection: "row", justifyContent: "space-around" }}>
-                        <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                            <Image source={require("../../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                        </TouchableOpacity>
+            <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: 0, }}>
+                <View style={{ marginTop: moderateScaleVertical(15), flexDirection: "row", justifyContent: "space-around" }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
+                        <Image source={require("../../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                    </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-                            <Image source={require("../../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                        </TouchableOpacity>
-                    </View>
-                </ImageBackground> */}
+                    <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
+                        <Image source={require("../../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                    </TouchableOpacity>
+                </View>
+            </ImageBackground>
 
         </ImageBackground>
     )
@@ -379,7 +369,7 @@ const styles = StyleSheet.create({
     },
     UserName: {
         color: "black",
-        fontSize: textScale(23),
+        fontSize: textScale(20),
         // fontWeight: "700",
         fontFamily: "HurmeGeometricSans1SemiBold"
     },
@@ -448,13 +438,13 @@ const styles = StyleSheet.create({
         // elevation:120,
     },
     GoldenCategoriesButtonsText: {
-        fontSize: textScale(12),
+        fontSize: textScale(13),
         color: "black",
-        fontWeight: "500",
-        textAlign: "center"
+        textAlign: "center",
+        fontFamily:"HurmeGeometricSans1SemiBold"
     },
     WastageChartButton: {
-        marginTop: moderateScaleVertical(20),
+        marginTop: moderateScaleVertical(-10),
         backgroundColor: "black",
         padding: moderateScale(15),
         alignItems: "center",
@@ -469,8 +459,7 @@ const styles = StyleSheet.create({
     buttontext: {
         fontSize: textScale(14),
         color: "#eec06b",
-        fontWeight: "bold",
-        // fontWeight: 500,
+        fontFamily:"HurmeGeometricSans1SemiBold"
     },
     line: {
         width: moderateScale("80%"),

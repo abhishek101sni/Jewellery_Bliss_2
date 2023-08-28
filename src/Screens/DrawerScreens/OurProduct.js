@@ -25,7 +25,6 @@ const OurProduct = ({ navigation }) => {
 
     const getAPIDATA = async () => {
         const url = "https://bliss-app-backend-production.up.railway.app/api/products/categories";
-        // const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=subcategory";
         let result = await fetch(url);
         result = await result.json();
         setData(result);
@@ -75,7 +74,7 @@ const OurProduct = ({ navigation }) => {
                                 <View style={styles.View3}>
                                     <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/Handmadeandhollow/handmadeandhollow.jpg")} />
                                     <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                                        <Text style={{ color: "black", fontWeight: "600", }}>CHAINS</Text>
+                                        <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold" }}>CHAINS</Text>
                                     </ImageBackground>
                                 </View>
                             </TouchableOpacity>
@@ -87,7 +86,7 @@ const OurProduct = ({ navigation }) => {
                                 <View style={styles.View3}>
                                     <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/plainjewellery/plain.jpg")} />
                                     <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                                        <Text style={{ color: "black", fontWeight: "600", }}>PLAIN JEWELLERY</Text>
+                                        <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold" }}>PLAIN JEWELLERY</Text>
                                     </ImageBackground>
                                 </View>
                             </TouchableOpacity>
@@ -101,7 +100,7 @@ const OurProduct = ({ navigation }) => {
                                 <View style={styles.View3}>
                                     <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/casting.jpg")} />
                                     <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                                        <Text style={{ color: "black", fontWeight: "600", }}>CASTING JEWELLERY</Text>
+                                        <Text style={{ color: "black",fontFamily: "HurmeGeometricSans1SemiBold" }}>CASTING JEWELLERY</Text>
                                     </ImageBackground>
                                 </View>
                             </TouchableOpacity>
@@ -111,7 +110,7 @@ const OurProduct = ({ navigation }) => {
                                 <TouchableOpacity onPress={() => { navigation.navigate('CastingCzJwellery') }}>
                                     <Image style={styles.ImageView} source={require("../../assets/czParent.jpg")} />
                                     <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                                        <Text style={{ color: "black", fontWeight: "600", }}>CASTING CZ JEWELLERY</Text>
+                                        <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold" ,}}>CASTING CZ JEWELLERY</Text>
                                     </ImageBackground>
                                 </TouchableOpacity>
                             </View>

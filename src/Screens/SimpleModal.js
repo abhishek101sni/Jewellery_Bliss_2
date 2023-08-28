@@ -20,12 +20,12 @@ const SimpleModal = (props) => {
                     <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(10), marginHorizontal: moderateScale(-60), justifyContent: "space-around", paddingHorizontal: 30 }}>
                         <TouchableOpacity style={{ alignItems: "center" }} onPress={() => { Linking.openURL('tel:9654511612'); }}>
                             <Image source={require("../assets/telephone.png")} style={styles.Callingicon} />
-                            {/* <Text style={styles.icontext}>Call</Text> */}
+                            <Text style={styles.icontext}>Call</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity style={{ alignItems: "center" }} onPress={() => { Linking.openURL('whatsapp://send?text=Hii Jwellery Bliss&phone=9654511612') }}>
                             <Image source={require("../assets/SocialMediaIcons/whatsappColored.png")} style={styles.Whatsappicon} />
-                            {/* <Text style={styles.icontext}>Whatsapp</Text> */}
+                            <Text style={styles.icontext}>Whatsapp</Text>
                         </TouchableOpacity>
                     </View>
                     <TouchableOpacity style={styles.Touch} onPress={() => closeModal(false, "Cancel")}>
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     },
     BackgroundImagemodal: {
         width: moderateScale(310),
-        height: moderateScaleVertical(150),
+        height: moderateScaleVertical(170),
         paddingTop: 10,
         borderRadius: 10,
         marginTop: moderateScaleVertical(2.5)
@@ -87,8 +87,10 @@ const styles = StyleSheet.create({
         // tintColor: "black"
     },
     icontext: {
-        fontSize: textScale(15),
-        color: "black"
+        fontSize: textScale(13),
+        color: "black",
+        fontFamily:"HurmeGeometricSans1SemiBold",
+        marginTop:moderateScaleVertical(2)
     },
     Cancelicontext: {
         fontSize: textScale(15),

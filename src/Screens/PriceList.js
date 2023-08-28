@@ -64,7 +64,7 @@ const DropDown2 = ({ navigation }) => {
 
 
       {/* <View style={{ flex: 1 }}> */}
-      <View style={{ }}>
+      <View style={{}}>
         <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
       </View>
 
@@ -80,13 +80,13 @@ const DropDown2 = ({ navigation }) => {
         {isClicked ? (
           <View style={styles.dropDownArea}>
             <TouchableOpacity style={styles.GoldcoinsItem} onPress={() => navigation.navigate('goldscreen')}>
-              <Text style={styles.Goldtext}>Gold</Text>
+              <Text style={styles.Goldtext}>Gold Coins</Text>
             </TouchableOpacity>
 
             {/* <View style={styles.line}></View> */}
 
             <TouchableOpacity style={styles.SilvercoinsItem} onPress={() => navigation.navigate('silverscreen')}>
-              <Text style={styles.Silvertext}>Silver</Text>
+              <Text style={styles.Silvertext}>Silver Coins</Text>
             </TouchableOpacity>
           </View>) : null}
 
@@ -117,7 +117,7 @@ const DropDown2 = ({ navigation }) => {
             containerStyle={{ paddingVertical: -10 }}
           />
         </View> */}
-        <View style={{flexDirection:"row" , justifyContent:"space-around"  ,marginHorizontal:10}}>
+        <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: 10 }}>
           <Image source={require("../assets/gold-bars.png")} style={{ width: moderateScale(200), height: moderateScaleVertical(200), alignSelf: "center", marginTop: moderateScaleVertical(150) }} />
           <Image source={require("../assets/silver-Bars.png")} style={{ width: moderateScale(200), height: moderateScaleVertical(200), alignSelf: "center", marginTop: moderateScaleVertical(150) }} />
         </View>
@@ -145,21 +145,21 @@ const DropDown2 = ({ navigation }) => {
       </View>
       {/* Whatsapp */}
 
-      <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{position:"absolute" , backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: moderateScaleVertical(748), }}>
-            <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-                <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                    <Image source={require("../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                </TouchableOpacity>
+      <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ position: "absolute", backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: moderateScaleVertical(748), }}>
+        <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
+          <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
+            <Image source={require("../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+          </TouchableOpacity>
 
-                {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>
+          {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>
                     <Image source={require("../assets/cart-filled.png")} style={{ width: 40, height: 40 }} />
                 </TouchableOpacity> */}
 
-                <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-                    <Image source={require("../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                </TouchableOpacity>
-            </View>
-        </ImageBackground>
+          <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
+            <Image source={require("../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
 
     </ImageBackground>
   )
@@ -169,8 +169,8 @@ export default DropDown2
 
 const styles = StyleSheet.create({
   goldenStrip: {
-      width: "100%",
-      height:3,
+    width: "100%",
+    height: 3,
   },
   dropDownStyle: {
     width: "90%",
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
   },
   dropDownArea: {
     width: "85%",
-    height: moderateScaleVertical(100),
+    height: moderateScaleVertical(80),
     borderRadius: 5,
     marginTop: moderateScaleVertical(2),
     backgroundColor: "#fff",
@@ -204,25 +204,26 @@ const styles = StyleSheet.create({
   },
   GoldcoinsItem: {
     width: "85%",
-    height: moderateScaleVertical(50),
+    height: moderateScaleVertical(40),
     alignSelf: "center",
     justifyContent: "center",
   },
   SilvercoinsItem: {
     width: "85%",
-    height: moderateScaleVertical(50),
+    height: moderateScaleVertical(30),
     alignSelf: "center",
     justifyContent: "center"
   },
   Goldtext: {
     fontSize: textScale(20),
     color: "black",
-    fontWeight: "500",
+    fontFamily: "HurmeGeometricSans1SemiBold"
   },
   Silvertext: {
     fontSize: textScale(20),
     color: "black",
-    fontWeight: "500",
+    fontFamily: "HurmeGeometricSans1SemiBold"
+
   },
   CarouselAlignment: {
     paddingTop: moderateScaleVertical(20),
@@ -290,7 +291,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   // Whatsapp
-  
+
 })
 
 // import { SelectList } from 'react-native-dropdown-select-list'

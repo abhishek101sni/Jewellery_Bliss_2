@@ -110,23 +110,6 @@ const SingleProduct = ({ navigation }) => {
 
                 <View >
                     <ImageBackground style={styles.MainBackGroundImage} imageStyle={{ borderRadius: 20 }} source={require("../assets/texture.png")} >
-                        {/* <View style={{ marginLeft: moderateScale(15), flexDirection: "row" }}>
-                            <View style={{ flexDirection: "column" }}>
-                                <Text style={styles.ProductNamesStyle}>NAME</Text>
-                                <Text style={styles.ProductNamesStyle}>PURITY</Text>
-                                <Text style={styles.ProductNamesStyle}>WEIGHT</Text>
-                            </View>
-                            <View style={{ flexDirection: "column" }}>
-                                <Text style={styles.ProductNamesStyle}>:</Text>
-                                <Text style={styles.ProductNamesStyle}>:</Text>
-                                <Text style={styles.ProductNamesStyle}>:</Text>
-                            </View>
-                            <View style={{ flexDirection: "column" }}>
-                                <Text style={styles.ProductNamesValueStyle}>{activeItem.name}</Text>
-                                <Text style={styles.ProductNamesValueStyle}>{activeItem?.purity} KT</Text>
-                                <Text style={styles.ProductNamesValueStyle}>{activeItem.weight} g</Text>
-                            </View>
-                        </View> */}
                         <View style={{ flexDirection: "row" }}>
                             <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(3) ,marginLeft:moderateScale(20) }}>
                                 <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
@@ -164,7 +147,7 @@ const SingleProduct = ({ navigation }) => {
                 <View style={styles.ProductLogoBackground}>
                     <View style={{ flexDirection: "column" }}>
                         <View style={styles.ProductCodeAlignment}>
-                            <View style={{ flexDirection: "row" }}>
+                            <View style={{ flexDirection: "row" ,alignSelf:"center" }}>
                                 <Text style={styles.ProductCodeTextStyle}>Product Code : </Text>
                                 <Text style={styles.ProductCodeTextStyleCode}>{activeItem._id}</Text>
                             </View>
@@ -328,12 +311,10 @@ const styles = StyleSheet.create({
 
         color: "#757575",
         fontSize: textScale(12),
-        fontWeight: "600"
     },
     ProductCodeTextStyleCode: {
         color: "black",
         fontSize: textScale(12),
-        fontWeight: "400"
     },
 
     MainBackGroundImage: {

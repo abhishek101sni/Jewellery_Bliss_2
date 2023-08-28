@@ -31,50 +31,37 @@ const ManageOrder = () => {
     return (
         <View style={styles.background}>
 
-            {orderHistory.map((order, index) => (
-                <View key={index}>
-                    {/* <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), height: moderateScaleVertical(150), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                        <Text style={{ color: "black", }}></Text>
-                        <View style={{ flexDirection: "row", marginHorizontal: moderateScale(-37), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                            <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Date:</Text>
-                            <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>{order.createdAt}</Text>
-                        </View>
-                        <View style={{ flexDirection: "row", marginHorizontal: -15, justifyContent: "space-around", marginTop: moderateScaleVertical(5) }}>
-                            <View style={{ flexDirection: "column" }}>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Order No :</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black" }}>{order._id}</Text>
-
-                            </View>
-                            <View style={{ flexDirection: "column" }}>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Qty.</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black" }}>{order.items[0].quantity}</Text>
-                            </View>
-                            <View style={{ flexDirection: "column" }}>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>Total</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(12), color: "black", textAlign: "right" }}>{order.total}</Text>
-                            </View>
-                        </View>
-                    </View> */}
-
-                    <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), height: moderateScaleVertical(150), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                        <Text style={{ color: "black", }}></Text>
-                        <View style={{ flexDirection: "row", marginHorizontal: moderateScale(-20), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                            <View style={{ flexDirection: "column" }}>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(11), color: "#bc9954" }}>Date:</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(11), color: "#bc9954" }}>Order No :</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(11), color: "#bc9954" }}>Qty.</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(11 ), color: "#bc9954" }}>Total</Text>
-                            </View>
-                            <View>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>{order.createdAt}</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>{order._id}</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black" }}>{order.items[0].quantity}</Text>
-                                <Text style={{ fontFamily: "Poppins-Medium", fontSize: textScale(13), color: "black"}}>{order.total}</Text>
+            {orderHistory.map((order, index) => {
+                const createdAtDate = new Date(order.createdAt);
+                const formattedDate = createdAtDate.toISOString().split('T')[0];
+                const last4DigitsOfOrderNo = order._id.slice(-4);
+                return (
+                    <View key={index}>
+                        <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
+                            <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
+                                <View style={{ flexDirection: "column" }}>
+                                    <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
+                                    <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
+                                    <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
+                                    <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
+                                </View>
+                                <View style={{ flexDirection: "column" }}>
+                                    <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
+                                    <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
+                                    <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
+                                    <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
+                                </View>
+                                <View style={{ flexDirection: "column" }}>
+                                    <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
+                                    <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
+                                    <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
+                                    <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
+                                </View>
                             </View>
                         </View>
                     </View>
-                </View>
-            ))}
+                )
+            })}
         </View>
     );
 };

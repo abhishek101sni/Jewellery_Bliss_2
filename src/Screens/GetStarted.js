@@ -70,8 +70,8 @@ const GetStarted = ({ navigation }) => {
                             activeDotIndex={index}
                             carouselRef={isCarousel}
                             dotStyle={{
-                                width: 10,
-                                height: 10,
+                                width: moderateScale(9),
+                                height: moderateScaleVertical(9),
                                 borderRadius: 10,
                                 marginHorizontal: 0,
                                 backgroundColor: "#eec06b",
@@ -108,7 +108,7 @@ export default GetStarted;
 
 const styles = StyleSheet.create({
     SnapCarousel: {
-        padding: moderateScale(20),
+        // padding: moderateScale(20),
         borderRadius: 20,
         alignItems: 'center',
         justifyContent: "center",
@@ -124,17 +124,16 @@ const styles = StyleSheet.create({
 
     },
     SnapCarouselText1: {
+        marginTop: moderateScaleVertical(70),
         marginVertical: moderateScaleVertical(10),
-        fontSize: textScale(17),
-        fontWeight: "bold",
+        fontSize: textScale(18),
         color: "#eec06b",
-        fontFamily: "HurmeGeometricSans1Bold"
+        fontFamily: "HurmeGeometricSans1SemiBold"
     },
     SnapCarouselText2: {
         marginVertical: moderateScaleVertical(10),
         fontSize: textScale(16),
-        fontWeight: "600",
-        fontSize: textScale(18),
+        // fontSize: textScale(18),
         color: "black",
         fontFamily: "HurmeGeometricSans1"
     },

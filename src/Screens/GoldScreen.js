@@ -20,88 +20,90 @@ const GoldScreen = ({ navigation }) => {
     // WhatsApp
     return (
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
-            <View style={{}}>
+            <View>
                 <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
             </View>
-            <ScrollView>
 
+            <ScrollView>
                 <View>
-                    <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
-                        <Image source={require("../assets/gold-bars.png")} style={{ width: moderateScale(250), height: moderateScaleVertical(250), borderRadius: 30 }} />
+
+                    <View>
+                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
+                            <Image source={require("../assets/gold-bars.png")} style={{ width: moderateScale(230), height: moderateScaleVertical(230), borderRadius: 30 }} />
+                        </View>
+                    </View>
+
+                    <View >
+                        <DataTable>
+                            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20, height: moderateScaleVertical(90), width: moderateScale(390), alignSelf: "center" }} style={{ width: moderateScale(390), alignSelf: "center" }}>
+                                <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" }} style={{ justifyContent: "center", color: "black" }} >GOLD COINS</DataTable.Title>
+                            </ImageBackground>
+
+                            <DataTable.Row style={{ backgroundColor: "#f6f6f6", width: moderateScale(390), alignSelf: "center" }}>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>Weight</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>Gold Price</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>Making</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>Gst</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>Net Amt</DataTable.Cell>
+                            </DataTable.Row>
+
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), justifyContent: "space-evenly", alignSelf: "center" }} >
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>1 Gram</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 5,840</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>116.8</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>175.2</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 6,132</DataTable.Cell>
+                            </DataTable.Row>
+                            <DataTable.Row style={{ backgroundColor: "#f6f6f6", width: moderateScale(390), alignSelf: "center" }}>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>2 Gram</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 11680</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>233.6</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>350.4</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 12,264</DataTable.Cell>
+                            </DataTable.Row>
+
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center" }} >
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>5 Gram</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 29,200</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>584</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>876</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 30,660</DataTable.Cell>
+                            </DataTable.Row>
+                            <DataTable.Row style={{ backgroundColor: "#f6f6f6", width: moderateScale(390), alignSelf: "center" }}>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>10 Gram</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 58,400</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>1168</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>1752</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 61,320</DataTable.Cell>
+                            </DataTable.Row>
+
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center" }} >
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>20 Gram</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 1,16,800</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>2336</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>3504</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 1,22,640</DataTable.Cell>
+                            </DataTable.Row>
+                            <DataTable.Row style={{ backgroundColor: "#f6f6f6", width: moderateScale(390), alignSelf: "center" }}>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>50 Gram</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 2,92,000</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>5,840</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>8,760</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 3,06,600</DataTable.Cell>
+                            </DataTable.Row>
+
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>100 Gram</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 5,84,000</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>11,680</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>17,520</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>₹ 612,200</DataTable.Cell>
+                            </DataTable.Row>
+                        </DataTable>
                     </View>
                 </View>
-
-                <View style={styles.container}>
-                    <DataTable>
-                        {/* <DataTable.Header style={{ backgroundColor: "#bc9954", borderTopRightRadius: 20, borderTopLeftRadius: 20, width: moderateScale(390), alignSelf: "center" }} > */}
-                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20, height: moderateScaleVertical(90), width:moderateScale(370) , alignSelf:"center"  }} style={{ width: moderateScale(390), alignSelf: "center" }}>
-                            <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" }} style={{ justifyContent: "center", color: "black" }} >GOLD COINS</DataTable.Title>
-                        </ImageBackground>
-                        {/* </DataTable.Header> */}
-
-                        <DataTable.Row style={{ backgroundColor: "#f6f6f6", width: moderateScale(390), alignSelf: "center" }}>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(12), fontWeight: "700" }}>Weight</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(12), fontWeight: "700" }}>Gold Price</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(12), fontWeight: "700" }}>Making</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(12), fontWeight: "700" }}>Gst</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(12), fontWeight: "700" }}>Net Amt</DataTable.Cell>
-                        </DataTable.Row>
-
-                        <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), justifyContent: "space-evenly", alignSelf: "center" }} >
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11), fontWeight: "700" }}>1 Gram</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 5,840</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>116.8</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>175.2</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 6,132</DataTable.Cell>
-                        </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#f6f6f6", width: moderateScale(390), alignSelf: "center" }}>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11), fontWeight: "700" }}>2 Gram</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 11680</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>233.6</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>350.4</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 12,264</DataTable.Cell>
-                        </DataTable.Row>
-
-                        <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center" }} >
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11), fontWeight: "700" }}>5 Gram</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 29,200</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>584</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>876</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 30,660</DataTable.Cell>
-                        </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#f6f6f6", width: moderateScale(390), alignSelf: "center" }}>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11), fontWeight: "700" }}>10 Gram</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 58,400</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>1168</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>1752</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 61,320</DataTable.Cell>
-                        </DataTable.Row>
-
-                        <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center" }} >
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11), fontWeight: "700" }}>20 Gram</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 1,16,800</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>2336</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>3504</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 1,22,640</DataTable.Cell>
-                        </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#f6f6f6", width: moderateScale(390), alignSelf: "center" }}>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11), fontWeight: "700" }}>50 Gram</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 2,92,000</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>5,840</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>8,760</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 3,06,600</DataTable.Cell>
-                        </DataTable.Row>
-
-                        <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11), fontWeight: "700" }}>100 Gram</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 5,84,000</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>11,680</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>17,520</DataTable.Cell>
-                            <DataTable.Cell textStyle={{ fontSize: textScale(11) }}>₹ 612,200.</DataTable.Cell>
-                        </DataTable.Row>
-                    </DataTable>
-                </View>
             </ScrollView>
+
             {/* Whatsapp */}
             <View style={{ bottom: -40, position: "absolute", right: 5 }}>
                 <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
@@ -153,7 +155,8 @@ const styles = StyleSheet.create({
         // padding: 15,
         // fontSize: textScale(30),
         alignItems: "center",
-        alignSelf: "center"
+        alignSelf: "center",
+        // width:"80%"
     },
     tableHeader: {
         borderColor: 'black',
