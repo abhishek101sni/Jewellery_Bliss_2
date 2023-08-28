@@ -1,0 +1,10 @@
+* alert messages on forgotpassword screen
+alert(`There is no account with email ${email}`)
+Password Change Request Email sent to abhishek@gmail.com
+
+*AuthContext
+alert(`Wrong Credentails`);
+*login
+alert('Please fill in all the mandatory fields.');
+*signup
+alert('Please fill in all the mandatory fields.');
