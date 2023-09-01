@@ -69,6 +69,7 @@ import TwentyKarat from '../Screens/KaratScreens/TwentyKarat';
 import TwentytwokaratScreen from '../Screens/KaratScreens/TwentytwoKaratScreen';
 import ConfirmOrder from '../Screens/ConfirmOrder';
 import Drawer from './Drawer';
+import GoldSilverPrice from '../Screens/DrawerScreens/GoldSilverPrice';
 // Chains SubCategories
 import AllNawabiC from '../Screens/Categories/SubCategories/Chains/AllNawabiC';
 import ChocoChainsC from '../Screens/Categories/SubCategories/Chains/ChocoChainsC';
@@ -164,6 +165,8 @@ const Navigation = () => {
                                 headerTintColor: '#bc9954',
                                 headerTitleStyle: { color: '#bc9954' }
                             }} />
+
+
 
                     </>
                 ) : null
@@ -364,6 +367,16 @@ const Navigation = () => {
                                 headerTintColor: '#bc9954',
                                 headerTitleStyle: { color: '#bc9954' }
                             }} />
+                        {/* <Stack.Screen
+                            name="GoldPrice"
+                            component={GoldPrice}
+                            options={{
+                                title: 'Price',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} /> */}
 
 
                         {/* Categories */}
@@ -960,6 +973,16 @@ const Navigation = () => {
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
                                 headerTitleStyle: { color: 'black' }
+                            }} />
+                        <Stack.Screen
+                            name="GoldSilverPrice"
+                            component={GoldSilverPrice}
+                            options={{
+                                title: 'Live Price',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
                             }} />
                     </>
                 ) : null

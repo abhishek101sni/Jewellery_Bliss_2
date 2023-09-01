@@ -23,7 +23,7 @@ const LogIn = ({ navigation,
         } login(mobile, pasword)
     }
 
-    return (
+    return (  
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <ScrollView>
                 <View style={{ flex: 1 }}>

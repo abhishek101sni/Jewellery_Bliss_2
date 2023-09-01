@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from "../redux/action";
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
-import FlashMessage, { showMessage, hideMessage } from "react-native-flash-message";
 import SimpleModal from "./SimpleModal";
 
 const WIDTH = Dimensions.get('window').width;

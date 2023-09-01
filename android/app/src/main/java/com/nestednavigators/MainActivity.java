@@ -1,4 +1,4 @@
-package com.nestednavigators;
+package com.jewelleryBliss;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

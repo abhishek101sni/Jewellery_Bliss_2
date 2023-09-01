@@ -7,11 +7,13 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
-  ImageBackground
+  ImageBackground,
+  Linking
 } from "react-native";
 import { AuthContext } from "./AuthContext";
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
+import CheckBox from '@react-native-community/checkbox';
 
 
 const SignUp = ({ navigation }) => {
@@ -21,6 +23,7 @@ const SignUp = ({ navigation }) => {
   const [name, setName] = useState(null);
   const [role, setRole] = useState("Dealer");
   const [email, setEmail] = useState(null);
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleRegister = () => {
     if (!name || !mobile || !email || !role || !password) {
@@ -29,6 +32,7 @@ const SignUp = ({ navigation }) => {
     }
     register(name, email, password, mobile, role);
   };
+
   return (
     <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
       <ScrollView>
@@ -40,7 +44,7 @@ const SignUp = ({ navigation }) => {
           <View style={styles.SignUpTitle}>
             <Text style={styles.SignUpText}>Sign Up</Text>
           </View>
-          
+
           <KeyboardAwareScrollView>
             <View style={{ marginTop: moderateScaleVertical(-30) }}>
               {/* name */}
@@ -95,21 +99,43 @@ const SignUp = ({ navigation }) => {
                 secureTextEntry
                 placeholderTextColor="#C7C7CD"
               />
+
+
+              <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: 90, marginLeft: moderateScaleVertical(41), marginTop: moderateScaleVertical(10) }}>
+                <Text style={{ color: "#404040", fontFamily: "HurmeGeometricSans1SemiBold", width: "80%" }}>To know about Terms & Conditions</Text>
+                <TouchableOpacity onPress={() => { Linking.openURL('https://www.demo.janusalive.com/jewellery-bliss/about-us.html') }}>
+                  <Text style={{ textAlign: "center", color: "#404040", textDecorationLine: 'underline', fontFamily: "HurmeGeometricSans1SemiBold", }}> Click here</Text></TouchableOpacity>
+              </View>
+
+              {/* CheckBox */}
+              <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(2) }}>
+                <CheckBox
+                  value={isChecked}
+                  onValueChange={setIsChecked}
+                  style={styles.checkbox}
+                />
+                <Text style={styles.checkboxLabel}>I agree to the terms and conditions</Text>
+
+              </View>
+              {/* CheckBox */}
             </View>
           </KeyboardAwareScrollView>
 
-          <TouchableOpacity onPress={handleRegister} style={styles.logInButtonAlignment}>
+
+
+          <TouchableOpacity onPress={handleRegister} style={[styles.logInButtonAlignment,
+          isChecked ? styles.activeButton : styles.disabledButton
+          ]}
+            disabled={!isChecked}>
             <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
               <Text style={styles.logInButtonText}>SIGN UP</Text>
             </ImageBackground>
           </TouchableOpacity>
-
-          {/* <TouchableOpacity onPress={() => { navigation.navigate('confimrorder') }}> */}
           <TouchableOpacity onPress={() => { navigation.navigate('forgotPass') }}>
             <Text style={styles.ForgotPasswordText}>Forgot password?</Text>
           </TouchableOpacity>
 
-          <View style={{ flex: 1, marginTop: moderateScaleVertical(20) , marginBottom:moderateScaleVertical(20) }}>
+          <View style={{ flex: 1, marginTop: moderateScaleVertical(20), marginBottom: moderateScaleVertical(20) }}>
             <View style={styles.line}></View>
             <View style={styles.ExistingCustomer}>
               <Text style={styles.ExistingCustomerText}>Are you Existing customer Click </Text>
@@ -158,7 +184,7 @@ const styles = StyleSheet.create({
     marginTop: moderateScaleVertical(5),
     fontSize: textScale(18),
     alignSelf: 'center',
-    marginBottom:moderateScaleVertical(20)
+    marginBottom: moderateScaleVertical(20)
   },
   SignUpText: {
     fontSize: textScale(23),
@@ -182,7 +208,7 @@ const styles = StyleSheet.create({
     paddingBottom: moderateScaleVertical(0),
     paddingLeft: moderateScale(0),
     fontSize: 13,
-    fontFamily:"HurmeGeometricSans1",
+    fontFamily: "HurmeGeometricSans1",
   },
 
   //  Mobile No Input Buttons
@@ -197,7 +223,7 @@ const styles = StyleSheet.create({
     paddingBottom: moderateScaleVertical(0),
     paddingLeft: moderateScale(0),
     fontSize: 13,
-    fontFamily:"HurmeGeometricSans1",
+    fontFamily: "HurmeGeometricSans1",
 
   },
 
@@ -213,7 +239,7 @@ const styles = StyleSheet.create({
     paddingBottom: moderateScaleVertical(0),
     paddingLeft: moderateScale(0),
     fontSize: 13,
-    fontFamily:"HurmeGeometricSans1",
+    fontFamily: "HurmeGeometricSans1",
 
   },
 
@@ -229,7 +255,7 @@ const styles = StyleSheet.create({
     paddingBottom: moderateScaleVertical(0),
     paddingLeft: moderateScale(0),
     fontSize: 13,
-    fontFamily:"HurmeGeometricSans1",
+    fontFamily: "HurmeGeometricSans1",
 
   },
   //  Confirm password Input Buttons
@@ -244,8 +270,22 @@ const styles = StyleSheet.create({
     paddingBottom: moderateScaleVertical(0),
     paddingLeft: moderateScale(0),
     fontSize: 13,
-    fontFamily:"HurmeGeometricSans1",
+    fontFamily: "HurmeGeometricSans1",
 
+  },
+  // CheckBox
+  checkbox: {
+    marginTop: moderateScaleVertical(10),
+    marginLeft: moderateScale(24),
+  },
+  checkboxLabel: {
+    color: "black",
+    // marginBottom: moderateScaleVertical(5),
+    width: "80%",
+    fontSize: textScale(13),
+    fontFamily: "HurmeGeometricSans1SemiBold",
+    marginTop: moderateScaleVertical(15),
+    color: "#404040"
   },
   logInButtonAlignment: {
     alignItems: "center",
@@ -256,7 +296,7 @@ const styles = StyleSheet.create({
     color: "black",
     marginLeft: moderateScale(0),
     borderRadius: 40,
-    fontFamily:"HurmeGeometricSans1",
+    fontFamily: "HurmeGeometricSans1",
 
   },
   ImageBackgroundStyle: {
@@ -274,7 +314,7 @@ const styles = StyleSheet.create({
     marginBottom: moderateScaleVertical(15),
     textAlign: "center",
     marginTop: moderateScaleVertical(20),
-    fontFamily:"HurmeGeometricSans1",
+    fontFamily: "HurmeGeometricSans1",
 
   },
   ExistingCustomer: {
@@ -286,7 +326,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     paddingTop: moderateScaleVertical(6),
     color: "#404040",
-    fontFamily:"HurmeGeometricSans1SemiBold",
+    fontFamily: "HurmeGeometricSans1SemiBold",
 
   },
   ExistingCustomerHereText: {
@@ -294,7 +334,7 @@ const styles = StyleSheet.create({
     paddingTop: moderateScaleVertical(6),
     textDecorationLine: 'underline',
     color: "#404040",
-    fontFamily:"HurmeGeometricSans1SemiBold",
+    fontFamily: "HurmeGeometricSans1SemiBold",
 
 
   },

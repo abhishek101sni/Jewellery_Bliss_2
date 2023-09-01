@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     alignment: {
         flexDirection: "row",
         alignItems: "center",
-        marginLeft: moderateScale(12),
+        // marginLeft: moderateScale(12),
         justifyContent: "space-around",
         marginTop: moderateScaleVertical(25)
     },

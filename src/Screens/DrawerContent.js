@@ -47,6 +47,14 @@ const DrawerContent = (props) => {
                     </TouchableOpacity>
                     <View style={styles.line}></View>
 
+                    <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("GoldSilverPrice") }} >
+                        <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(10), }}>
+                            <Image source={require("../assets/drawerIcons/rupee.png")} style={styles.WastageChartIcon} />
+                            <Text style={styles.DrawerContentTitle}>Live Price</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <View style={styles.line}></View>
+
                     <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("ServiceAvailable") }} >
                         <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(10), }}>
                             <Image source={require("../assets/drawerIcons/serviceAvailable.png")} style={styles.ServAvailIcon} />
@@ -102,7 +110,7 @@ const DrawerContent = (props) => {
                 <View style={{ marginTop: moderateScaleVertical(60), marginBottom: moderateScaleVertical(15) }}>
                     <TouchableOpacity style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(90) }} onPress={logout}>
                         <Image source={require("../assets/logoutIcon.png")} style={{ width: moderateScale(22), height: moderateScaleVertical(24), }} />
-                        <Text style={{ fontSize: textScale(16), color: "#181818" , fontFamily:"HurmeGeometricSans1Bold" }}>Logout</Text>
+                        <Text style={{ fontSize: textScale(16), color: "#181818", fontFamily: "HurmeGeometricSans1Bold" }}>Logout</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -156,7 +164,7 @@ const styles = StyleSheet.create({
         // color: "#F0F0F0",
         color: "#181818",
         textDecorationLine: 'underline',
-        fontFamily:"HurmeGeometricSans1SemiBold",
+        fontFamily: "HurmeGeometricSans1SemiBold",
     },
 
     DrawerContentTouch: {
@@ -181,7 +189,7 @@ const styles = StyleSheet.create({
         marginLeft: moderateScale(13)
     },
     WastageChartIcon: {
-        width: moderateScale(40),
+        width: moderateScale(41),
         height: moderateScaleVertical(41),
         // tintColor: "#F0F0F0",
         tintColor: "#181818",
@@ -230,7 +238,7 @@ const styles = StyleSheet.create({
         // fontWeight: "700",
         // fontFamily:"HurmeGeometricSans1"
         // fontFamily:"HurmeGeometricSans1Bold"
-        fontFamily:"HurmeGeometricSans1SemiBold"
+        fontFamily: "HurmeGeometricSans1SemiBold"
     }
 
 
