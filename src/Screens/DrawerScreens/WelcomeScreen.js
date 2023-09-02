@@ -3,28 +3,12 @@ import SimpleModal from '../SimpleModal';
 import MarqueeView from 'react-native-marquee-view';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import axios from 'axios';
-import {
-  View,
-  Text,
-  Dimensions,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-  ImageBackground,
-  Modal,
-  z,
-} from 'react-native';
+import { View, Text, Dimensions, ScrollView, StyleSheet, TouchableOpacity, Image, ImageBackground, Modal } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { AuthContext } from '../AuthContext';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserDetailsActionCreator } from '../../redux/Formdetails/formDetails.action-creator';
-import {
-  height,
-  moderateScale,
-  moderateScaleVertical,
-  textScale,
-} from '../../utils/responsive';
+import { height, moderateScale, moderateScaleVertical, textScale, } from '../../utils/responsive';
 
 const WelcomeScreen = () => {
   const [visible, setVisible] = useState(false);
@@ -148,15 +132,7 @@ const WelcomeScreen = () => {
   const renderItem2 = ({ item, index }) => {
     return (
       <TouchableOpacity activeOpacity={0.8} onPress={item.onPress}>
-        <Image
-          source={item.img}
-          style={{
-            width: moderateScale(270),
-            marginTop: moderateScaleVertical(30),
-            borderRadius: 20,
-            marginBottom: moderateScaleVertical(5),
-          }}
-        />
+        <Image source={item.img} style={{ width: moderateScale(270), marginTop: moderateScaleVertical(20), borderRadius: 20, marginBottom: moderateScaleVertical(5)}}/>
       </TouchableOpacity>
     );
   };
@@ -164,26 +140,15 @@ const WelcomeScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <ImageBackground
-      style={{ flex: 1 }}
-      source={require('../../assets/background-image2.png')}>
+    <ImageBackground style={{ flex: 1 }} source={require('../../assets/background-image2.png')}>
       <View>
-        <Image
-          source={require('../../assets/GOLDEN-STRIP.png')}
-          style={styles.goldenStrip}
-        />
+        <Image source={require('../../assets/GOLDEN-STRIP.png')} style={styles.goldenStrip} />
       </View>
+
       <ScrollView>
         <View>
-          <ImageBackground
-            style={styles.MainBackGroundImage}
-            imageStyle={{ borderRadius: 40 }}
-            source={require('../../assets/CompressedTexture3.jpg')}>
-            <View
-              style={{
-                marginLeft: moderateScale(25),
-                marginTop: moderateScaleVertical(20),
-              }}>
+          <ImageBackground style={styles.MainBackGroundImage} imageStyle={{ borderRadius: 40 }} source={require('../../assets/CompressedTexture3.jpg')}>
+            <View style={{ marginLeft: moderateScale(25), marginTop: moderateScaleVertical(20)}}>
               <View style={{ flexDirection: 'row' }}>
                 <Text style={styles.WelcomeText}>Welcome , </Text>
                 <Text style={styles.UserName}>{userInfo?.name}</Text>
@@ -193,17 +158,12 @@ const WelcomeScreen = () => {
                 <Text style={styles.UserCount}>JB00{userInfo?.userCount}</Text>
               </View>
               <View style={{ marginTop: moderateScaleVertical(5) }}>
-                <Text style={styles.GoldenScreenBelowText}>
-                  Welcome to our app! We have thrilled to have you here.
-                </Text>
+                <Text style={styles.GoldenScreenBelowText}>Welcome to our app! We have thrilled to have you here.</Text>
                 <View style={{ flexDirection: 'row' }}>
                   <Text style={styles.GoldenScreenBelowText2}>
-                    Enjoy Shopping!{' '}
+                    Enjoy Shopping!
                   </Text>
-                  <Image
-                    source={require('../../assets/smiley.png')}
-                    style={styles.smileyEmoji}
-                  />
+                  <Image source={require('../../assets/smiley.png')} style={styles.smileyEmoji}/>
                 </View>
               </View>
             </View>
@@ -353,7 +313,7 @@ const WelcomeScreen = () => {
           </View>
         </TouchableOpacity>
 
-        {/* Categories Parallax */}
+        {/* Banner Parallax */}
         <Carousel
           ref={isCarousel2}
           onSnapToItem={page2 => setPage(page2)}
@@ -580,7 +540,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     paddingHorizontal: moderateScale(0),
-    marginTop: moderateScaleVertical(10),
+    marginTop: moderateScaleVertical(5),
   },
   GoldenCategoriesButtonsStyle: {
     alignItems: 'center',

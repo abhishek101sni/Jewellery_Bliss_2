@@ -11,13 +11,14 @@ const Thankyou = ({ navigation }) => {
           {/* <Image source={require("../assets/green-tick.gif")} style={styles.imageSize} /> */}
           <View style={styles.colomnAlignment}>
             <Text style={styles.ThankyouText}>Thank You!</Text>
-            <Text style={styles.OrderConfirmendText}>Your order is confirmed</Text>
+            {/* <Text style={styles.OrderConfirmendText}>Your order is confirmed</Text> */}
+            <Text style={styles.OrderConfirmendText}>To initiate the order processing, a payment of 15% on the bank details mentioned below.</Text>
 
             <ImageBackground style={styles.disclaimer} imageStyle={{ borderRadius: 20 }} source={require("../assets/CompressedTexture3.jpg")} >
               <View style={{ marginTop: moderateScaleVertical(5), marginLeft: moderateScale(20) }}>
                 <View style={{ flexDirection: "column" }}>
                   <Text style={{ fontSize: textScale(17), color: "black", fontFamily: "HurmeGeometricSans1SemiBold" }}>Bank Details</Text>
-                  <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>To initiate the order processing, a payment of 15% on the bank details mentioned below</Text>
+                  {/* <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>To initiate the order processing, a payment of 15% on the bank details mentioned below</Text> */}
                 </View>
                 <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(3) }}>
                   <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
   disclaimer: {
     alignSelf: "center",
     width: moderateScale(390),
-    height: moderateScaleVertical(275),
+    height: moderateScaleVertical(235),
     alignSelf: "center",
     marginTop: moderateScaleVertical(10),
     borderRadius: 15,
@@ -112,15 +113,21 @@ const styles = StyleSheet.create({
   },
   ThankyouText: {
     marginTop: moderateScaleVertical(0),
-    fontSize: textScale(25),
-    fontWeight: "400",
+    fontSize: textScale(30),
+    // fontWeight: "400",
+    fontFamily: "HurmeGeometricSans1SemiBold",
+    color: "black",
   },
   OrderConfirmendText: {
     marginTop: moderateScaleVertical(5),
     marginBottom: moderateScaleVertical(10),
-    fontSize: textScale(25),
-    // fontWeight: "700",
-    color: "#353839"
+    fontSize: textScale(20),
+    color: "#353839",
+    fontFamily: "HurmeGeometricSans1",
+    textAlign: "center",
+    // textAlign: "justify",
+    // width: "60%",
+    alignSelf: "center",
   },
   logInButtonAlignment: {
     alignItems: "center",

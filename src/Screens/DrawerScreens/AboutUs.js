@@ -11,7 +11,7 @@ const AboutUs = () => {
       </View>
       <ScrollView>
         <View style={styles.AboutUsContentAlignment2}>
-          <View style={{width:moderateScale(385)}}>
+          <View style={{ width: moderateScale(385) }}>
             <Text style={styles.AboutUsContent}>
               Welcome to Jewellery Bliss! We are amongst India’s largest B2B jewellery platform revolutionizing the jewellery industry through tech-led innovations. {'\n'}{'\n'}
               We are a team of experienced jewellery manufacturers and wholesalers who are dedicated to providing our clients with high-quality jewellery products at competitive prices. With years of experience in the industry, we understand the importance of delivering not only quality products but also exceptional customer service. We strive to build strong relationships with our clients by offering personalized attention and flexible solutions to meet their specific needs.{'\n'}{'\n'}
@@ -25,7 +25,6 @@ const AboutUs = () => {
           </View>
 
           <View style={{ marginTop: moderateScaleVertical(15), marginBottom: moderateScaleVertical(0), flexDirection: "row", justifyContent: "space-around", marginHorizontal: (10) }}>
-            {/* <View style={styles.block}> */}
             <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} style={styles.block} imageStyle={{
               borderBottomLeftRadius: 20,
               borderTopRightRadius: 20,
@@ -33,13 +32,26 @@ const AboutUs = () => {
             }}>
               <View style={styles.blockItems}>
                 <Image source={require("../../assets/dp2.jpg")} style={styles.imageStyle} />
-                <Text style={styles.founderName}>Akhil jain</Text>
+                <Text style={styles.founderName}>N.K. Jain</Text>
                 {/* <Text style={styles.founderPosition}>Position</Text> */}
                 {/* <Text style={styles.founderDescription}>Lorem Ipsum is simply dummy text of the printing and typesetting industry</Text> */}
               </View>
             </ImageBackground>
-            {/* </View> */}
-            {/* <View e={styles.block}> */}
+
+            <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} style={styles.block} imageStyle={{
+              borderBottomLeftRadius: 20,
+              borderTopRightRadius: 20,
+              borderTopLeftRadius: 20,
+            }}>
+              <View style={styles.blockItems}>
+                <Image source={require("../../assets/dp2.jpg")} style={styles.imageStyle} />
+                <Text style={styles.founderName}>Shivangi Jain</Text>
+                {/* <Text style={styles.founderPosition}>Position</Text> */}
+                {/* <Text style={styles.founderDescription}>Lorem Ipsum is simply dummy text of the printing and typesetting industry</Text> */}
+              </View>
+            </ImageBackground>
+          </View>
+          <View style={{ marginTop: moderateScaleVertical(15), marginBottom: moderateScaleVertical(0), flexDirection: "row", justifyContent: "space-around", marginHorizontal: (10) }}>
             <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} style={styles.block} imageStyle={{
               borderBottomLeftRadius: 20,
               borderTopRightRadius: 20,
@@ -52,10 +64,7 @@ const AboutUs = () => {
                 {/* <Text style={styles.founderDescription}>Lorem Ipsum is simply dummy text of the printing and typesetting industry</Text> */}
               </View>
             </ImageBackground>
-            {/* </View> */}
-          </View>
-  <View style={{ marginTop: moderateScaleVertical(16), flexDirection: "row", justifyContent: "space-around", marginHorizontal: (10) }}>
-            {/* <View style={styles.block}> */}
+
             <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} style={styles.block} imageStyle={{
               borderBottomLeftRadius: 20,
               borderTopRightRadius: 20,
@@ -68,10 +77,9 @@ const AboutUs = () => {
                 {/* <Text style={styles.founderDescription}>Lorem Ipsum is simply dummy text of the printing and typesetting industry</Text> */}
               </View>
             </ImageBackground>
-            {/* </View> */}
-
           </View>
- </View>
+
+        </View>
       </ScrollView>
       <View style={{}}>
         <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
@@ -145,7 +153,7 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     // borderColor: '#bc9954',
     backgroundColor: "white",
-    height: moderateScaleVertical(350),
+    height: moderateScaleVertical(250),
     width: moderateScale(180),
     borderBottomLeftRadius: 20,
     borderTopRightRadius: 20,

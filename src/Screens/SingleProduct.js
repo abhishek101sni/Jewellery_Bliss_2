@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { ScrollView, StyleSheet, Text, View, Modal, TouchableOpacity, ImageBackground, Image } from "react-native";
+import React, { useState, useRef } from "react";
+import { ScrollView, StyleSheet, Text, View, Modal, TouchableOpacity, ImageBackground, Image, Dimensions } from "react-native";
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from "../redux/action";
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
 import SimpleModal from "./SimpleModal";
-
-
+import Carousel, { Pagination } from 'react-native-snap-carousel';
 
 const CONTENT = [
     {
@@ -22,6 +21,10 @@ const SELECTORS = [
 ];
 
 const SingleProduct = ({ navigation }) => {
+
+    const isCarousel = useRef(null);
+    const { width } = Dimensions.get('screen');
+    const [page, setPage] = useState(0);
 
     // WhatsApp
     const [isModalVisible, setisModalVisible] = useState(false)
@@ -94,24 +97,66 @@ const SingleProduct = ({ navigation }) => {
     };
 
 
+    const renderItem = ({ item, index }) => {
+        return (
+            <Image
+                source={{ uri: item }}
+                style={{
+                    height: moderateScaleVertical(350),
+                    width: moderateScale(290),
+                    marginTop: moderateScaleVertical(30),
+                    borderRadius: 20,
+                    marginBottom: moderateScaleVertical(10),
+                    borderWidth: 0.5,
+                    borderColor: "#eec06b",
+                    // backgroundColor:"pink"
+                }}
+            />
+        );
+    };
+
+
+
     return (
-
-
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <View style={{}}>
                 <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
             </View>
             <ScrollView>
-                <View>
-                    <ImageBackground style={styles.MainBackGroundImage1} imageStyle={{ borderRadius: 20 }} source={require("../assets/CompressedTexture3.jpg")} >
-                        <Image style={styles.singleProductImageStyle} source={{ uri: activeItem.images[0] }} />
-                    </ImageBackground>
-                </View>
+
+                <Carousel
+                    ref={isCarousel}
+                    onSnapToItem={page => setPage(page)}
+                    data={activeItem.images}
+                    renderItem={renderItem}
+                    sliderWidth={width}
+                    itemWidth={300}
+                    loop
+                    firstItem={1}
+                />
+                <Pagination
+                    activeDotIndex={page}
+                    carouselRef={isCarousel}
+                    tappableDots={true}
+                    inactiveDotOpacity={0.4}
+                    inactiveDotScale={0.6}
+                    dotsLength={activeItem.images.length}
+                    dotStyle={{
+                        width: moderateScale(9),
+                        height: moderateScaleVertical(9),
+                        borderRadius: 9,
+                        backgroundColor: '#eec06b',
+                        marginVertical: moderateScaleVertical(-4),
+                    }}
+                    inactiveDotStyle={{
+                        backgroundColor: 'black',
+                    }}
+                />
 
                 <View >
                     <ImageBackground style={styles.MainBackGroundImage} imageStyle={{ borderRadius: 20 }} source={require("../assets/texture.png")} >
                         <View style={{ flexDirection: "row" }}>
-                            <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(3) ,marginLeft:moderateScale(20) }}>
+                            <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(3), marginLeft: moderateScale(20) }}>
                                 <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
                                     <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Name</Text>
                                     <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Purity</Text>
@@ -147,7 +192,7 @@ const SingleProduct = ({ navigation }) => {
                 <View style={styles.ProductLogoBackground}>
                     <View style={{ flexDirection: "column" }}>
                         <View style={styles.ProductCodeAlignment}>
-                            <View style={{ flexDirection: "row" ,alignSelf:"center" }}>
+                            <View style={{ flexDirection: "row", alignSelf: "center" }}>
                                 <Text style={styles.ProductCodeTextStyle}>Product Code : </Text>
                                 <Text style={styles.ProductCodeTextStyleCode}>{activeItem._id}</Text>
                             </View>
@@ -169,36 +214,7 @@ const SingleProduct = ({ navigation }) => {
                         </View>
                     </View>
                 </View>
-                {/* <View style={styles.selectors}>
-                    {SELECTORS.map((selector) => (
-                        <TouchableOpacity
-                            key={selector.title}
-                            onPress={
-                                () => setSections([selector.value])
-                            }
-                        >
-                            <View style={styles.selector}>
-                                <Text
-                                    style={
-                                        activeSections.includes(selector.value) &&
-                                        styles.activeSelector
-                                    }>
-                                    {selector.title}
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-                    ))}
-                </View>
-                <Accordion
-                    activeSections={activeSections}
-                    sections={CONTENT}
-                    touchableComponent={TouchableOpacity}
-                    expandMultiple={multipleSelect}
-                    renderHeader={renderHeader}
-                    renderContent={renderContent}
-                    duration={400}
-                    onChange={setSections}
-                /> */}
+
 
                 <View style={{ marginTop: moderateScaleVertical(10) }}>
                     <View style={{ borderBottomWidth: 1.5, borderBottomColor: "black", alignSelf: "center", width: moderateScale(260) }}>
@@ -577,3 +593,6 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     }
 });
+
+
+
