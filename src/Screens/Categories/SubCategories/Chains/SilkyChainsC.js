@@ -8,7 +8,7 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const SilkyC = ({ navigation }) => {
+const SilkyChainsC = ({ navigation }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
@@ -31,9 +31,11 @@ const SilkyC = ({ navigation }) => {
 
   return (
     <ImageBackground style={{ flex: 1 }} source={require("../../../../assets/background-image2.png")}>
-      <View style={{ top: height - 938, }}>
-        <Image source={require("../../../../assets/GOLDEN-STRIP.png")} style={{ borderWidth: 3, width: 1090, alignSelf: "center" }} />
-      </View>
+      <Image source={require('../../../../assets/GOLDEN-STRIP.png')} style={{
+        width: '100%',
+        // marginBottom:10,
+        height: 3,
+      }} />
 
       <FlatList contentContainerStyle={{ alignItems: "center" }}
         data={data}
@@ -59,7 +61,7 @@ const SilkyC = ({ navigation }) => {
   )
 }
 
-export default SilkyC
+export default SilkyChainsC
 
 const styles = StyleSheet.create({
   View1: {

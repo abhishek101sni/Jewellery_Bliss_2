@@ -58,132 +58,132 @@ const Cart = ({ navigation }) => {
             </View>
             <ScrollView>
                 <View>
+                    {
+                        cart.length ? cart.map(cartItem => (
 
-                    <ScrollView>
-                        {
-                            cart.length ? cart.map(cartItem => (
+                            <View key={cartItem.id} >
 
-                                <View key={cartItem.id} >
+                                <ImageBackground imageStyle={{ borderRadius: 10 }} style={styles.MainBackGroundImage} source={require("../assets/texture.png")}>
+                                    <View style={styles.CArtBoxAlignment}>
 
-                                    <ImageBackground imageStyle={{ borderRadius: 10 }} style={styles.MainBackGroundImage} source={require("../assets/texture.png")}>
-                                        <View style={styles.CArtBoxAlignment}>
+                                        <Image style={styles.dynamicImageStyle} source={{ uri: cartItem.item.images[0] }} />
+                                        <View style={styles.PriceAndButtonAlignment}>
 
-                                            <Image style={styles.dynamicImageStyle} source={{ uri: cartItem.item.images[0] }} />
-                                            <View style={styles.PriceAndButtonAlignment}>
+                                            <Text style={styles.CartItemName}>{cartItem.item.name}</Text>
+                                            {/* <Text style={styles.CartItemPrice}>RS. {cartItem.item.price}</Text> */}
+                                            <Text style={styles.CartItemPrice}>{cartItem.item.weight} gram</Text>
 
-                                                <Text style={styles.CartItemName}>{cartItem.item.name}</Text>
-                                                {/* <Text style={styles.CartItemPrice}>RS. {cartItem.item.price}</Text> */}
-                                                <Text style={styles.CartItemPrice}>{cartItem.item.weight} gram</Text>
-                                                <View style={{ backgroundColor: "black", borderRadius: 20, width: moderateScale(85), height: moderateScaleVertical(30) }}>
-                                                    <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(2) }}>
-                                                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={{ height: moderateScaleVertical(23), width: moderateScale(23), justifyContent: "center", alignSelf: "center", marginTop: 0 }} imageStyle={{ borderRadius: 15 }}>
-                                                            <TouchableOpacity onPress={() => decreaseCount(cartItem.item)}>
-                                                                <Image source={require("../assets/minus.png")} style={{ width: moderateScale(23), height: moderateScaleVertical(23) }} />
-                                                            </TouchableOpacity>
-                                                        </ImageBackground>
+                                            <View style={{ backgroundColor: "black", borderRadius: 20, width: moderateScale(85), height: moderateScaleVertical(30), marginTop: moderateScaleVertical(20), marginLeft: moderateScale(7) }}>
+                                                <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(1.5) }}>
 
-                                                        <Text style={{ color: "#fff", fontSize: 20 }}>{cartItem.count}</Text>
+                                                    <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={{ height: moderateScaleVertical(23), width: moderateScale(23), justifyContent: "center", alignSelf: "center", marginTop: 0 }} imageStyle={{ borderRadius: 15 }}>
+                                                        <TouchableOpacity onPress={() => decreaseCount(cartItem.item)}>
+                                                            <Image source={require("../assets/minus.png")} style={{ width: moderateScale(23), height: moderateScaleVertical(23) }} />
+                                                        </TouchableOpacity>
+                                                    </ImageBackground>
 
-                                                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={{ height: moderateScaleVertical(23), width: moderateScale(23), justifyContent: "center", alignSelf: "center" }} imageStyle={{ borderRadius: 15 }}>
-                                                            <TouchableOpacity onPress={() => increaseCount(cartItem.item)}>
-                                                                <Image source={require("../assets/add.png")} style={{ width: moderateScale(23), height: moderateScaleVertical(23), marginLeft: 0 }} />
-                                                            </TouchableOpacity>
-                                                        </ImageBackground>
-                                                    </View>
+                                                    <Text style={{ color: "#fff", fontSize: 20 }}>{cartItem.count}</Text>
+
+                                                    <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={{ height: moderateScaleVertical(23), width: moderateScale(23), justifyContent: "center", alignSelf: "center" }} imageStyle={{ borderRadius: 15 }}>
+                                                        <TouchableOpacity onPress={() => increaseCount(cartItem.item)}>
+                                                            <Image source={require("../assets/add.png")} style={{ width: moderateScale(23), height: moderateScaleVertical(23), marginLeft: 0 }} />
+                                                        </TouchableOpacity>
+                                                    </ImageBackground>
+
                                                 </View>
                                             </View>
                                         </View>
-                                    </ImageBackground>
-                                </View>
-                            )) : <></>
-                        }
-                        <View style={styles.View10}>
+                                    </View>
+                                </ImageBackground>
+                            </View>
+                        )) : <></>
+                    }
+                    <View style={styles.View10}>
 
-                            <View style={styles.TotalAlignment}>
-                                <View style={styles.TotalPaddingAlignment}>
-                                    {/* <Text style={styles.TotalSubChildAlignment}>Total weight</Text> */}
-                                    {/* <Text style={styles.TotalSubChildAlignment}>Item total</Text> */}
-                                    {/* <Text style={styles.TotalSubChildAlignment}>CGST(1.5%)</Text>
+                        {/* <View style={styles.TotalAlignment}> */}
+                        {/* <View style={styles.TotalPaddingAlignment}> */}
+                        {/* <Text style={styles.TotalSubChildAlignment}>Total weight</Text> */}
+                        {/* <Text style={styles.TotalSubChildAlignment}>Item total</Text> */}
+                        {/* <Text style={styles.TotalSubChildAlignment}>CGST(1.5%)</Text>
                                     <Text style={styles.TotalSubChildAlignment}>SGST(1.5%)</Text>
                                     <Text style={styles.TotalSubChildAlignment}>Discount</Text>
                                     <Text style={styles.TotalSubChildAlignment10}>Grand Total</Text> */}
-                                </View>
-                                {/* <View style={styles.line2}></View> */}
-                                <View style={styles.TotalPaddingAlignment}>
-                                    {/* <Text style={styles.TotalSubChildAlignment2}>{total}</Text> */}
-                                    {/* <Text style={styles.TotalSubChildAlignment2}>000.00</Text>
+                        {/* </View> */}
+                        {/* <View style={styles.line2}></View> */}
+                        {/* <View style={styles.TotalPaddingAlignment}> */}
+                        {/* <Text style={styles.TotalSubChildAlignment2}>{total}</Text> */}
+                        {/* <Text style={styles.TotalSubChildAlignment2}>000.00</Text>
                                     <Text style={styles.TotalSubChildAlignment2}>000.00</Text>
                                     <Text style={styles.TotalSubChildAlignment2}>000.00</Text> */}
-                                    {/* <Text style={styles.TotalSubChildAlignment20}>{(15 / 100) * grandTotal}</Text> */}
-                                </View>
+                        {/* <Text style={styles.TotalSubChildAlignment20}>{(15 / 100) * grandTotal}</Text> */}
+                        {/* </View> */}
+                        {/* </View> */}
+
+                        {/* <View style={styles.line}></View> */}
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: -5, marginHorizontal: -10, marginBottom: moderateScaleVertical(50) }}>
+                            <View>
+                                <TouchableOpacity onPress={() => navigation.navigate('our')} style={styles.logInButtonAlignment}>
+                                    <ImageBackground source={require("../assets/texture.png")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
+                                        <Text style={styles.logInButtonText}>CONTINUE SHOPPING</Text>
+                                    </ImageBackground>
+                                </TouchableOpacity>
                             </View>
 
-                            {/* <View style={styles.line}></View> */}
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: -5, marginHorizontal: -10, marginBottom: moderateScaleVertical(50) }}>
-                                <View>
-                                    <TouchableOpacity onPress={() => navigation.navigate('our')} style={styles.logInButtonAlignment}>
-                                        <ImageBackground source={require("../assets/texture.png")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
-                                            <Text style={styles.logInButtonText}>CONTINUE SHOPPING</Text>
-                                        </ImageBackground>
-                                    </TouchableOpacity>
-                                </View>
-
-                                {/* <View>
+                            {/* <View>
                                     <TouchableOpacity onPress={showMsg} style={styles.logInButtonAlignment}>
                                         <ImageBackground source={require("../assets/texture.png")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
                                             <Text style={styles.logInButtonText}>PLACE ORDER</Text>
                                         </ImageBackground>
                                     </TouchableOpacity>
                                 </View> */}
-                                <View>
-                                    <TouchableOpacity onPress={() => navigation.navigate('confimrorder')} style={styles.logInButtonAlignment}>
-                                        <ImageBackground source={require("../assets/texture.png")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
-                                            <Text style={styles.logInButtonText}>PLACE ORDER</Text>
-                                        </ImageBackground>
-                                    </TouchableOpacity>
-                                </View>
+                            <View>
+                                <TouchableOpacity onPress={() => navigation.navigate('confimrorder')} style={styles.logInButtonAlignment}>
+                                    <ImageBackground source={require("../assets/texture.png")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
+                                        <Text style={styles.logInButtonText}>PLACE ORDER</Text>
+                                    </ImageBackground>
+                                </TouchableOpacity>
                             </View>
                         </View>
-                    </ScrollView>
+                    </View>
                 </View>
             </ScrollView>
 
-            {/* Whatsapp */}
-            <View View style={{ bottom: -40, position: "absolute", right: 20 }}>
-                <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
+
+            {/* Whatsapp start */}
+
+            <View style={{ bottom: moderateScaleVertical(-42), position: 'absolute', right: moderateScale(5) }}>
+
+                <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
                     <View style={styles.icontextAlignment}>
-                        <Image source={require("../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
+                        <Image source={require('../assets/whatsapp-white.png')} style={styles.whatsappIcon} />
                         <Text style={styles.helpText}>Help</Text>
                     </View>
                 </TouchableOpacity>
 
-                <Modal
-                    transparent={true}
-                    animationType='fade'
-                    visible={isModalVisible}
-                    nRequestClose={() => changeModalVisible(false)}
-                >
-                    <SimpleModal changeModalVisible={changeModalVisible}
-                        setData={setData}
-                    />
+                <Modal transparent={true} animationType="fade" visible={isModalVisible} nRequestClose={() => changeModalVisible(false)}>
+                    <SimpleModal changeModalVisible={changeModalVisible} setData={setData} />
                 </Modal>
+
             </View>
-            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: 0, }}>
-                <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                        <Image source={require("../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                    </TouchableOpacity>
 
-                    {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>
-                    <Image source={require("../assets/cart-filled.png")} style={{ width: 40, height: 40 }} />
-                </TouchableOpacity> */}
+            {/* Whatsapp end */}
 
-                    <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-                        <Image source={require("../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                    </TouchableOpacity>
-                </View>
-            </ImageBackground>
-            {/* Whatsapp */}
+
+{/* BottomTabNavigator */}
+<ImageBackground source={require('../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) }}>
+        <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
+
+          <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
+            <Image source={require('../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
+            <Image source={require('../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
+          </TouchableOpacity>
+          {/* BottomTabNavigator end */}
+
+        </View>
+      </ImageBackground>
 
         </ImageBackground>
     )
@@ -310,16 +310,17 @@ const styles = StyleSheet.create({
         marginTop: moderateScaleVertical(9),
         color: 'black',
         marginLeft: moderateScale(10),
-        fontWeight: "600",
-        fontSize: 17
+        fontSize: 17,
+        fontFamily: 'HurmeGeometricSans1SemiBold',
 
     },
     CartItemPrice: {
         color: 'black',
-        fontWeight: '400',
-        marginBottom: moderateScaleVertical(27),
+        marginBottom: moderateScaleVertical(0),
         marginLeft: moderateScale(10),
-        fontSize: 18,
+        fontSize: textScale(15),
+        fontFamily: 'HurmeGeometricSans1SemiBold',
+
     },
     alignment: {
         flexDirection: "colomn",
@@ -671,11 +672,10 @@ const styles = StyleSheet.create({
         marginBottom: moderateScaleVertical(20),
     },
     logInButtonText: {
-        fontSize: textScale(12),
+        fontSize: textScale(13),
         color: "black",
         paddingTop: moderateScaleVertical(4),
-        // fontFamily: "Poppins-Medium",
-        fontWeight: "600"
+        fontFamily: 'HurmeGeometricSans1SemiBold',
 
     },
     ImageBackgroundStyle: {
@@ -687,33 +687,35 @@ const styles = StyleSheet.create({
         marginTop: moderateScaleVertical(40),
         // fontFamily: "Poppins-Medium"
     },
-    // Whatsapp style
+   
+  // Whatsapp style
 
-    HelpButtonAlignment: {
-        justifyContent: "center",
-        backgroundColor: "#25D366",
-        width: moderateScale(110),
-        height: moderateScaleVertical(45),
-        borderRadius: 40,
-        marginBottom: moderateScaleVertical(100)
-        // position: "fixed",
-    },
-    icontextAlignment: {
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "row",
-        justifyContent: "space-around",
-        paddingHorizontal: moderateScale(-30),
-        marginHorizontal: moderateScale(25),
-    },
-    whatsappIcon: {
-        width: moderateScale(20),
-        height: moderateScaleVertical(20),
-        // position:"fixed",
-    },
-    helpText: {
-        color: 'white',
-        fontSize: textScale(13),
-        fontWeight: "bold",
-    }
+  HelpButtonAlignment: {
+    justifyContent: 'center',
+    backgroundColor: '#25D366',
+    width: moderateScale(90),
+    height: moderateScaleVertical(40),
+    borderRadius: 40,
+    marginBottom: moderateScaleVertical(100),
+    // position: "fixed",
+  },
+  icontextAlignment: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingHorizontal: moderateScale(-30),
+    marginHorizontal: moderateScale(15),
+  },
+  whatsappIcon: {
+    width: moderateScale(20),
+    height: moderateScaleVertical(20),
+    // position:"fixed",
+  },
+  helpText: {
+    color: 'white',
+    fontSize: textScale(13),
+    fontWeight: 'bold',
+  },
+
 })

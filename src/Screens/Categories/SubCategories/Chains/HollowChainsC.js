@@ -7,7 +7,7 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const Rodium7gC = ({ navigation }) => {
+const HollowChainsC = ({ navigation }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
@@ -30,9 +30,7 @@ const Rodium7gC = ({ navigation }) => {
 
   return (
     <ImageBackground style={{ flex: 1 }} source={require("../../../../assets/background-image2.png")}>
-      <View style={{ top: height - 938, }}>
-        <Image source={require("../../../../assets/GOLDEN-STRIP.png")} style={{ borderWidth: 3, width: 1090, alignSelf: "center" }} />
-      </View>
+            <Image source={require('../../../../assets/GOLDEN-STRIP.png')} style={{width: '100%',height: 3}} />
 
       <FlatList contentContainerStyle={{ alignItems: "center" }}
         data={data}
@@ -58,7 +56,7 @@ const Rodium7gC = ({ navigation }) => {
   )
 }
 
-export default Rodium7gC
+export default HollowChainsC
 
 const styles = StyleSheet.create({
   View1: {

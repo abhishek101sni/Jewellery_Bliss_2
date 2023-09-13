@@ -1,4 +1,6 @@
 
+
+
 import React, { useState, useEffect } from 'react'
 import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, ImageBackground } from 'react-native'
 import { useDispatch } from 'react-redux'
@@ -7,13 +9,13 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const Rodium6gC = ({ navigation }) => {
+const IndoChocoChainsC = ({ navigation }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
   const getAPIDATA = async () => {
-    // const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=18";
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Rodium%206g";
+    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Indo%20Choco";
+
     let result = await fetch(url);
     result = await result.json();
     setData(result);
@@ -30,9 +32,7 @@ const Rodium6gC = ({ navigation }) => {
 
   return (
     <ImageBackground style={{ flex: 1 }} source={require("../../../../assets/background-image2.png")}>
-      <View style={{ top: height - 938, }}>
-        <Image source={require("../../../../assets/GOLDEN-STRIP.png")} style={{ borderWidth: 3, width: 1090, alignSelf: "center" }} />
-      </View>
+      <Image source={require('../../../../assets/GOLDEN-STRIP.png')} style={{ width: '100%', height: 3 }} />
 
       <FlatList contentContainerStyle={{ alignItems: "center" }}
         data={data}
@@ -46,6 +46,7 @@ const Rodium6gC = ({ navigation }) => {
                 <ImageBackground style={styles.View5} imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} source={require("../../../../assets/CompressedTexture3.jpg")}>
                   <Text style={{ color: "black", fontWeight: "600", }}>{item?.name}</Text>
                 </ImageBackground>
+
               </View>
             </TouchableOpacity>
           </View>
@@ -57,7 +58,7 @@ const Rodium6gC = ({ navigation }) => {
   )
 }
 
-export default Rodium6gC
+export default IndoChocoChainsC
 
 const styles = StyleSheet.create({
   View1: {

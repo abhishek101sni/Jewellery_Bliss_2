@@ -115,13 +115,12 @@ const SingleProduct = ({ navigation }) => {
         );
     };
 
-
-
     return (
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <View style={{}}>
                 <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
             </View>
+
             <ScrollView>
 
                 <Carousel
@@ -154,23 +153,23 @@ const SingleProduct = ({ navigation }) => {
                 />
 
                 <View >
-                    <ImageBackground style={styles.MainBackGroundImage} imageStyle={{ borderRadius: 20 }} source={require("../assets/texture.png")} >
+                    <ImageBackground style={styles.MainBackGroundImage} imageStyle={{ borderRadius: 20, height: moderateScaleVertical(100) }} source={require("../assets/CompressedTexture3.jpg")} >
                         <View style={{ flexDirection: "row" }}>
                             <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(3), marginLeft: moderateScale(20) }}>
                                 <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
-                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Name</Text>
-                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Purity</Text>
-                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Weight</Text>
+                                    <Text style={{ fontSize: textScale(16.5), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Name</Text>
+                                    <Text style={{ fontSize: textScale(16.5), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Purity</Text>
+                                    <Text style={{ fontSize: textScale(16.5), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Weight</Text>
                                 </View>
                                 <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
-                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
-                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
-                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
+                                    <Text style={{ fontSize: textScale(16.5), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
+                                    <Text style={{ fontSize: textScale(16.5), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
+                                    <Text style={{ fontSize: textScale(16.5), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
                                 </View>
                                 <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
-                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>{activeItem.name}</Text>
-                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>{activeItem?.purity} KT</Text>
-                                    <Text style={{ fontSize: textScale(18), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>{activeItem.weight} g</Text>
+                                    <Text style={{ fontSize: textScale(16.5), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>{activeItem.name}</Text>
+                                    <Text style={{ fontSize: textScale(16.5), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>{activeItem?.purity} KT</Text>
+                                    <Text style={{ fontSize: textScale(16.5), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>{activeItem.weight} g</Text>
                                 </View>
                             </View>
                         </View>
@@ -194,21 +193,21 @@ const SingleProduct = ({ navigation }) => {
                         <View style={styles.ProductCodeAlignment}>
                             <View style={{ flexDirection: "row", alignSelf: "center" }}>
                                 <Text style={styles.ProductCodeTextStyle}>Product Code : </Text>
-                                <Text style={styles.ProductCodeTextStyleCode}>{activeItem._id}</Text>
+                                <Text style={styles.ProductCodeTextStyleCode}>{activeItem._id.slice(-4)}</Text>
                             </View>
                         </View>
                         <View style={styles.ProductPageLogoAlignment}>
                             <View style={{ alignItems: "center" }}>
                                 <Image source={require("../assets/certifiedJwellery.png")} style={styles.ProductPageLogoSize} />
-                                <Text style={{ color: "black", fontSize: textScale(10) }}>Certified Jewellery</Text>
+                                <Text style={{ color: "black", fontSize: textScale(10), fontFamily: "HurmeGeometricSans1SemiBold" }}>Certified Jewellery</Text>
                             </View>
                             <View style={{ alignItems: "center" }}>
                                 <Image source={require("../assets/returnPolicy.png")} style={styles.ProductPageLogoSize} />
-                                <Text style={{ color: "black", fontSize: textScale(10) }}>Return Policy</Text>
+                                <Text style={{ color: "black", fontSize: textScale(10), fontFamily: "HurmeGeometricSans1SemiBold" }}>Return Policy</Text>
                             </View>
                             <View style={{ alignItems: "center" }}>
                                 <Image source={require("../assets/insuredShipping.png")} style={styles.ProductPageLogoSize} />
-                                <Text style={{ color: "black", fontSize: textScale(10) }}>Insured Shipping</Text>
+                                <Text style={{ color: "black", fontSize: textScale(10), fontFamily: "HurmeGeometricSans1SemiBold" }}>Insured Shipping</Text>
                             </View>
 
                         </View>
@@ -218,67 +217,85 @@ const SingleProduct = ({ navigation }) => {
 
                 <View style={{ marginTop: moderateScaleVertical(10) }}>
                     <View style={{ borderBottomWidth: 1.5, borderBottomColor: "black", alignSelf: "center", width: moderateScale(260) }}>
-                        <Text style={{ color: "black", alignSelf: "center", padding: 5, fontSize: textScale(18), fontWeight: "600" }}>Product Specification</Text>
+                        <Text style={{ color: "black", alignSelf: "center", padding: 5, fontSize: textScale(18), fontFamily: 'HurmeGeometricSans1SemiBold' }}>Product Specification</Text>
                     </View>
                 </View>
 
-                <View style={{ backgroundColor: "#fff", width: "100%", height: moderateScale(150), marginBottom: moderateScaleVertical(52) }}>
+                <View style={{ backgroundColor: "#d3d3d3", width: moderateScale(350), height: moderateScale(150), marginBottom: moderateScaleVertical(52), alignSelf: "center", borderRadius: 20 }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: 0 }}>
-                        <View style={{ flexDirection: "column" }}>
-                            <Text style={{ fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), }}>Gross Weight</Text>
-                            <Text style={{ fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), }}>Net Weight</Text>
-                            <Text style={{ fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), }}>Tunch</Text>
-                            <Text style={{ fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), }}>Wastage</Text>
-                            <Text style={{ fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), }}>Fine Weight</Text>
+                        <View style={{ flexDirection: "column", marginTop: moderateScaleVertical(10) }}>
+                            <Text style={{
+                                fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1SemiBold'
+                            }}>Gross Weight</Text>
+                            <Text style={{
+                                fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1SemiBold',
+                            }}>Net Weight</Text>
+                            <Text style={{
+                                fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1SemiBold',
+                            }}>Tunch</Text>
+                            <Text style={{
+                                fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1SemiBold',
+                            }}>Wastage</Text>
+                            <Text style={{
+                                fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1SemiBold',
+                            }}>Fine Weight</Text>
                         </View>
-                        <View style={{ flexDirection: "column" }}>
-                            <Text style={{ fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), }} >20.0 g</Text>
-                            <Text style={{ fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), }}>2.0 g</Text>
-                            <Text style={{ fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), }}>23.0 </Text>
-                            <Text style={{ fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), }}>90.0 g</Text>
-                            <Text style={{ fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), }}>12.0 g</Text>
+                        <View style={{ flexDirection: "column", marginTop: moderateScaleVertical(10) }}>
+                            <Text style={{
+                                fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
+                            }} >20.0 g</Text>
+                            <Text style={{
+                                fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
+                            }}>2.0 g</Text>
+                            <Text style={{
+                                fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
+                            }}>23.0 </Text>
+                            <Text style={{
+                                fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
+                            }}>90.0 g</Text>
+                            <Text style={{
+                                fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
+                            }}>12.0 g</Text>
                         </View>
                     </View>
                 </View>
                 {/* </View> */}
             </ScrollView>
+            {/* Whatsapp start */}
 
-            {/* Whatsapp */}
+            <View style={{ bottom: moderateScaleVertical(-42), position: 'absolute', right: moderateScale(5) }}>
 
-            <View style={{ bottom: -40, position: "absolute", right: 7 }}>
-                <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
+                <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
                     <View style={styles.icontextAlignment}>
-                        <Image source={require("../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
+                        <Image source={require('../assets/whatsapp-white.png')} style={styles.whatsappIcon} />
                         <Text style={styles.helpText}>Help</Text>
                     </View>
                 </TouchableOpacity>
 
-                <Modal
-                    transparent={true}
-                    animationType='fade'
-                    visible={isModalVisible}
-                    nRequestClose={() => changeModalVisible(false)}
-                >
-                    <SimpleModal changeModalVisible={changeModalVisible}
-                        setData={setData}
-                    />
+                <Modal transparent={true} animationType="fade" visible={isModalVisible} nRequestClose={() => changeModalVisible(false)}>
+                    <SimpleModal changeModalVisible={changeModalVisible} setData={setData} />
                 </Modal>
+
             </View>
-            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: 0, }}>
-                <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                        <Image source={require("../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+
+            {/* Whatsapp end */}
+
+            {/* BottomTabNavigator starts*/}
+            <ImageBackground source={require('../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) }}>
+                <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
+
+                    <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
+                        <Image source={require('../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
                     </TouchableOpacity>
 
-                    {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>
-                    <Image source={require("../assets/cart-filled.png")} style={{ width: 40, height: 40 }} />
-                </TouchableOpacity> */}
-
-                    <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-                        <Image source={require("../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                    <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
+                        <Image source={require('../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
                     </TouchableOpacity>
+
                 </View>
             </ImageBackground>
+            {/* BottomTabNavigator end */}
+
         </ImageBackground>
     )
 }
@@ -313,11 +330,12 @@ const styles = StyleSheet.create({
         alignSelf: "center"
     },
     ProductLogoBackground: {
-        backgroundColor: 'white',
+        backgroundColor: '#d3d3d3',
         marginTop: moderateScaleVertical(40),
-        width: "100%",
+        width: moderateScale(350),
         height: moderateScaleVertical(110),
         alignSelf: "center",
+        borderRadius: 20
     },
     ProductCodeAlignment: {
         marginTop: moderateScaleVertical(10),
@@ -327,10 +345,12 @@ const styles = StyleSheet.create({
 
         color: "#757575",
         fontSize: textScale(12),
+        fontFamily: "HurmeGeometricSans1SemiBold"
     },
     ProductCodeTextStyleCode: {
         color: "black",
         fontSize: textScale(12),
+        fontFamily: "HurmeGeometricSans1SemiBold"
     },
 
     MainBackGroundImage: {
@@ -384,7 +404,7 @@ const styles = StyleSheet.create({
         width: moderateScale(35),
     },
     AddToCartButtonAlignment: {
-        marginTop: moderateScaleVertical(20),
+        marginTop: moderateScaleVertical(5),
         alignItems: "center",
         fontFamily: "Poppins-Medium",
         marginBottom: moderateScaleVertical(-20),
@@ -395,7 +415,7 @@ const styles = StyleSheet.create({
         width: moderateScale(200),
         height: moderateScaleVertical(60),
         justifyContent: 'center',
-        marginTop: moderateScaleVertical(20),
+        // marginTop: moderateScaleVertical(20),
         fontFamily: "Poppins-Medium"
     },
     AddToCartButtonText: {
@@ -404,7 +424,7 @@ const styles = StyleSheet.create({
         color: "black",
         marginLeft: moderateScale(0),
         borderRadius: 40,
-        paddingTop: moderateScaleVertical(0),
+        // paddingTop: moderateScaleVertical(0),
         // fontFamily: "Poppins-Medium"
     },
 
@@ -566,21 +586,21 @@ const styles = StyleSheet.create({
     // Whatsapp style
 
     HelpButtonAlignment: {
-        justifyContent: "center",
-        backgroundColor: "#25D366",
-        width: moderateScale(110),
-        height: moderateScaleVertical(45),
+        justifyContent: 'center',
+        backgroundColor: '#25D366',
+        width: moderateScale(90),
+        height: moderateScaleVertical(40),
         borderRadius: 40,
-        marginBottom: moderateScaleVertical(100)
+        marginBottom: moderateScaleVertical(100),
         // position: "fixed",
     },
     icontextAlignment: {
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "row",
-        justifyContent: "space-around",
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
         paddingHorizontal: moderateScale(-30),
-        marginHorizontal: moderateScale(25),
+        marginHorizontal: moderateScale(15),
     },
     whatsappIcon: {
         width: moderateScale(20),
@@ -590,8 +610,9 @@ const styles = StyleSheet.create({
     helpText: {
         color: 'white',
         fontSize: textScale(13),
-        fontWeight: "bold",
-    }
+        fontWeight: 'bold',
+    },
+
 });
 
 

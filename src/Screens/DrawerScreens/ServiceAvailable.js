@@ -6,11 +6,6 @@ const ServiceAvailable = () => {
     return (
         <View style={{ backgroundColor: "white", flex: 1 }}>
             <ScrollView>
-                {/* <View style={styles.OurServiceAlignment}>
-                    <Text style={styles.OurServiceText}>OUR SERVICE AVAILABLE</Text>
-                </View>
-                <View style={styles.OurServiceline}></View> */}
-
                 {/* ----------------Andhra Pradesh----------------- */}
                 <View style={styles.container}>
                     <DataTable>
@@ -23,7 +18,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Bidar</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Gulburga</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Guntur</DataTable.Cell>
                         </DataTable.Row>
@@ -32,7 +27,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Kadapa</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Kakinada</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Karim Nagar</DataTable.Cell>
                         </DataTable.Row>
@@ -41,7 +36,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Kurnool</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Manchiryal</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Nadhyal</DataTable.Cell>
                         </DataTable.Row>
@@ -50,7 +45,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Nizamabad</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Ongole</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Palasa</DataTable.Cell>
                         </DataTable.Row>
@@ -59,7 +54,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Rajmundry</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Siddipet</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Srikakulam</DataTable.Cell>
                         </DataTable.Row>
@@ -68,7 +63,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Vijaywada</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20, }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20, }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Vishakhapatnam</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Warangal</DataTable.Cell>
                         </DataTable.Row>
@@ -93,7 +88,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Aurangabad</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Buxer</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Bihar Sharif</DataTable.Cell>
                         </DataTable.Row>
@@ -102,7 +97,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Darbhanga</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Dehri</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Gaya</DataTable.Cell>
                         </DataTable.Row>
@@ -111,7 +106,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Motihari</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20, }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20, }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Patna</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Siwan</DataTable.Cell>
                         </DataTable.Row>
@@ -127,7 +122,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Bilaspur</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Durg</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Korba</DataTable.Cell>
                         </DataTable.Row>
@@ -168,7 +163,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Anand</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Anjar</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Baroda</DataTable.Cell>
                         </DataTable.Row>
@@ -177,7 +172,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Bhuj</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Billimora</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Gandhidham</DataTable.Cell>
                         </DataTable.Row>
@@ -186,7 +181,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Jungarh</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20, }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20, }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Rajkot</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Surat</DataTable.Cell>
                         </DataTable.Row>
@@ -194,7 +189,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Navsari</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Valsad</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20, }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20, }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Wapi</DataTable.Cell>
                         </DataTable.Row>
                     </DataTable>
@@ -209,7 +204,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Ballabhgarh</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Bhiwani</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Faridabad</DataTable.Cell>
                         </DataTable.Row>
@@ -218,7 +213,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Hasi</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Hisar</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Karnal</DataTable.Cell>
                         </DataTable.Row>
@@ -227,7 +222,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Mewat</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20, }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20, }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Panipat</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Rohtak</DataTable.Cell>
                         </DataTable.Row>
@@ -277,7 +272,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Daltonganj</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Deoghar</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Dhanbad</DataTable.Cell>
                         </DataTable.Row>
@@ -285,7 +280,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Giridih</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Hazaribagh</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Jamshedpur</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Ranchi</DataTable.Cell>
                         </DataTable.Row>
@@ -304,7 +299,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Daltonganj</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Deoghar</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Dhanbad</DataTable.Cell>
                         </DataTable.Row>
@@ -312,7 +307,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Giridih</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Hazaribagh</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Jamshedpur</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Ranchi</DataTable.Cell>
                         </DataTable.Row>
@@ -332,7 +327,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Alappuzha</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Ernakulam</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Idukki</DataTable.Cell>
                         </DataTable.Row>
@@ -340,7 +335,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Kannur</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Karunagappally</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Kasaragod</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Kayamkulam</DataTable.Cell>
                         </DataTable.Row>
@@ -348,7 +343,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Kochi</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Kollam</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Kottayam</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Kozhikode</DataTable.Cell>
                         </DataTable.Row>
@@ -356,7 +351,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Malappuram</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Palakkad</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Pathanamthitta</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Thalayolaparambu</DataTable.Cell>
                         </DataTable.Row>
@@ -364,7 +359,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Thiruvalla</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Thiruvananthapuram</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Thrissur</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Thodupuzha</DataTable.Cell>
                         </DataTable.Row>
@@ -385,7 +380,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Dewas</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Indore</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Itarsi</DataTable.Cell>
                         </DataTable.Row>
@@ -393,7 +388,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Jabalpur</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Ratlam</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Rewa</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Ujjain</DataTable.Cell>
                         </DataTable.Row>
@@ -409,7 +404,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Aurangabad</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Baramati</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Bhayander</DataTable.Cell>
                         </DataTable.Row>
@@ -417,7 +412,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Chandrapur</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Chhindwara</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff" }}>
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff" }}>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Dahisar</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Hupari</DataTable.Cell>
                         </DataTable.Row>
@@ -426,7 +421,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Jalgaon</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Karad</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff" }}>
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff" }}>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Kankavali</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Kolhapur</DataTable.Cell>
                         </DataTable.Row>
@@ -435,7 +430,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Mumbai Metropolitan</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Nagpur</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff" }}>
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff" }}>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Nanded</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Nashik</DataTable.Cell>
                         </DataTable.Row>
@@ -444,7 +439,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Pune</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Ratnagiri</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff" }}>
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff" }}>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Sangli</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Satara</DataTable.Cell>
                         </DataTable.Row>
@@ -465,7 +460,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Bharampur</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Cuttak</DataTable.Cell>
                         </DataTable.Row>
                     </DataTable>
@@ -480,7 +475,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Bhatinda</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Chandigarh</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Firozpur</DataTable.Cell>
                         </DataTable.Row>
@@ -489,7 +484,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Jagraon</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Jalandhar</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Nagpur</DataTable.Cell>
                         </DataTable.Row>
@@ -498,12 +493,12 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Muktsar</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Nawashahar</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Pathankot</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Patiala</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Sirhind</DataTable.Cell>
                         </DataTable.Row>
@@ -519,7 +514,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Alwar</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Beawar</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Bhilwara</DataTable.Cell>
                         </DataTable.Row>
@@ -528,7 +523,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Chittor</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Jaipur</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Jodhpur</DataTable.Cell>
                         </DataTable.Row>
@@ -537,7 +532,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Kishangarh</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Nathdwara</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Pali</DataTable.Cell>
                         </DataTable.Row>
@@ -546,7 +541,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Kishangarh</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Nathdwara</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Pali</DataTable.Cell>
                         </DataTable.Row>
@@ -555,12 +550,12 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Ratangarh</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Sikar</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Sujangarh</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Udaipur</DataTable.Cell>
                         </DataTable.Row>
                     </DataTable>
@@ -579,7 +574,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Arcot</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Chennai</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Coimbatore</DataTable.Cell>
                         </DataTable.Row>
@@ -588,7 +583,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Dindigul</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Dindivanam</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Eral</DataTable.Cell>
                         </DataTable.Row>
@@ -597,7 +592,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Gudiyatham</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Kanchipuram</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Kanyakumari</DataTable.Cell>
                         </DataTable.Row>
@@ -606,7 +601,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Karur</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Kumbakonam</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Madurai</DataTable.Cell>
                         </DataTable.Row>
@@ -615,7 +610,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Mayiladuthurai</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Ooty</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Palani</DataTable.Cell>
                         </DataTable.Row>
@@ -624,7 +619,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Polur</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Ramanathapuram</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Salem</DataTable.Cell>
                         </DataTable.Row>
@@ -633,7 +628,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Selam</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Thanjavur</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Theni</DataTable.Cell>
                         </DataTable.Row>
@@ -642,7 +637,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Tirupathur</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Tirupur</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Tiruvannamalai</DataTable.Cell>
                         </DataTable.Row>
@@ -651,7 +646,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Tuticorin</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Vanniyambadi</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Vellore</DataTable.Cell>
                         </DataTable.Row>
@@ -660,7 +655,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Virudhachalam</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Udaipur</DataTable.Cell>
                         </DataTable.Row>
                     </DataTable>
@@ -676,7 +671,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Aligarh</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Azamgarh</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Awagarh</DataTable.Cell>
                         </DataTable.Row>
@@ -685,7 +680,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Ballia</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Barabanki</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Bareilly</DataTable.Cell>
                         </DataTable.Row>
@@ -694,7 +689,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Bhadohi</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Bijnor</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Bulandshahar</DataTable.Cell>
                         </DataTable.Row>
@@ -703,7 +698,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Dhualpur</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Etah</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Etawah</DataTable.Cell>
                         </DataTable.Row>
@@ -712,7 +707,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Farukhabad</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Firozabad</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Gajraula</DataTable.Cell>
                         </DataTable.Row>
@@ -721,7 +716,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Gopiganj</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Gwalior</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Gorakhpur</DataTable.Cell>
                         </DataTable.Row>
@@ -730,7 +725,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Gurgaon</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Hardoi</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Hathras</DataTable.Cell>
                         </DataTable.Row>
@@ -739,7 +734,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Jaunpur</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Jhansi</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Kanpur</DataTable.Cell>
                         </DataTable.Row>
@@ -748,7 +743,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Lakimpur</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Lucknow</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Mathura</DataTable.Cell>
                         </DataTable.Row>
@@ -757,7 +752,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Mau</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Mirzapur</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Moradabad</DataTable.Cell>
                         </DataTable.Row>
@@ -766,7 +761,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Muraina</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Muzaffar Nagar</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Prayagraj</DataTable.Cell>
                         </DataTable.Row>
@@ -775,7 +770,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Raebareilly</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Saharanpur</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Shahjahanpur</DataTable.Cell>
                         </DataTable.Row>
@@ -784,7 +779,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Sultanpur</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Thandla</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Tundla</DataTable.Cell>
                         </DataTable.Row>
@@ -792,7 +787,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} >Unnao</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Varanasi</DataTable.Cell>
                         </DataTable.Row>
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20 }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Thanjavur</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Theni</DataTable.Cell>
                         </DataTable.Row>
@@ -808,7 +803,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Haldwani</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Haridwar</DataTable.Cell>
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Kashipur</DataTable.Cell>
                         </DataTable.Row>
@@ -817,7 +812,7 @@ const ServiceAvailable = () => {
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }} style={{ marginRight: moderateScaleVertical(-50) }}>Roorkee</DataTable.Cell>
                         </DataTable.Row>
 
-                        <DataTable.Row style={{ backgroundColor: "#fff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20, }} >
+                        <DataTable.Row style={{ backgroundColor: "#f0f8ff", justifyContent: "space-between", borderBottomRightRadius: 20, borderBottomLeftRadius: 20, }} >
                             <DataTable.Cell textStyle={{ fontSize: textScale(15) }}>Rudrapur</DataTable.Cell>
                         </DataTable.Row>
                     </DataTable>
@@ -842,8 +837,11 @@ export default ServiceAvailable;
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 20,
-        paddingHorizontal: 30,
+        // paddingTop: 20,
+        // paddingHorizontal: 30,
+        alignItems: "center",
+        alignSelf: "center",
+        marginTop: moderateScaleVertical(20)
     },
     OurServiceAlignment: {
         marginTop: 20,

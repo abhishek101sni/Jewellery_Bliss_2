@@ -71,24 +71,19 @@ const DropdownComponent = () => {
         </View>
       </View>
       {/* Whatsapp */}
-      <View style={{ bottom: -120, position: "absolute", right: 20 }}>
-        <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
+      <View style={{ bottom: moderateScaleVertical(-44), position: 'absolute', right: moderateScale(5) }}>
+
+        <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
           <View style={styles.icontextAlignment}>
-            <Image source={require("../../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
+            <Image source={require('../../assets/whatsapp-white.png')} style={styles.whatsappIcon} />
             <Text style={styles.helpText}>Help</Text>
           </View>
         </TouchableOpacity>
 
-        <Modal
-          transparent={true}
-          animationType='fade'
-          visible={isModalVisible}
-          nRequestClose={() => changeModalVisible(false)}
-        >
-          <SimpleModal changeModalVisible={changeModalVisible}
-            setData={setData}
-          />
+        <Modal transparent={true} animationType="fade" visible={isModalVisible} nRequestClose={() => changeModalVisible(false)}>
+          <SimpleModal changeModalVisible={changeModalVisible} setData={setData} />
         </Modal>
+
       </View>
 
       {/* Whatsapp */}
@@ -151,21 +146,21 @@ const styles = StyleSheet.create({
   // Whatsapp style
 
   HelpButtonAlignment: {
-    justifyContent: "center",
-    backgroundColor: "#25D366",
-    width: moderateScale(110),
-    height: moderateScaleVertical(45),
+    justifyContent: 'center',
+    // backgroundColor: '#25D366',
+    width: moderateScale(90),
+    height: moderateScaleVertical(40),
     borderRadius: 40,
-    marginBottom: moderateScaleVertical(100)
+    marginBottom: moderateScaleVertical(100),
     // position: "fixed",
   },
   icontextAlignment: {
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-    justifyContent: "space-around",
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     paddingHorizontal: moderateScale(-30),
-    marginHorizontal: moderateScale(25),
+    marginHorizontal: moderateScale(15),
   },
   whatsappIcon: {
     width: moderateScale(20),
@@ -175,6 +170,6 @@ const styles = StyleSheet.create({
   helpText: {
     color: 'white',
     fontSize: textScale(13),
-    fontWeight: "bold",
-  }
+    fontWeight: 'bold',
+  },
 });

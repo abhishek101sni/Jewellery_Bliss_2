@@ -55,7 +55,7 @@ const GetStarted = ({ navigation }) => {
                 </View>
 
                 <View style={{ flex: 1 }}>
-                    <View style={{ alignItems: "center", flex: 0.9 }}>
+                    <View style={{ alignItems: "center", flex: 1 }}>
                         <Carousel
                             ref={isCarousel}
                             data={data}

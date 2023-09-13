@@ -11,7 +11,7 @@ const AboutUs = () => {
       </View>
       <ScrollView>
         <View style={styles.AboutUsContentAlignment2}>
-          <View style={{ width: moderateScale(385) }}>
+          <View style={{ width: moderateScale(370) }}>
             <Text style={styles.AboutUsContent}>
               Welcome to Jewellery Bliss! We are amongst India’s largest B2B jewellery platform revolutionizing the jewellery industry through tech-led innovations. {'\n'}{'\n'}
               We are a team of experienced jewellery manufacturers and wholesalers who are dedicated to providing our clients with high-quality jewellery products at competitive prices. With years of experience in the industry, we understand the importance of delivering not only quality products but also exceptional customer service. We strive to build strong relationships with our clients by offering personalized attention and flexible solutions to meet their specific needs.{'\n'}{'\n'}
@@ -24,7 +24,7 @@ const AboutUs = () => {
             <Text style={styles.keyDriversText}>OUR KEY DRIVERS</Text>
           </View>
 
-          <View style={{ marginTop: moderateScaleVertical(15), marginBottom: moderateScaleVertical(0), flexDirection: "row", justifyContent: "space-around", marginHorizontal: (10) }}>
+          <View style={{ marginTop: moderateScaleVertical(15), marginBottom: moderateScaleVertical(0), flexDirection: "row", justifyContent: "space-around", marginHorizontal: (6) }}>
             <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} style={styles.block} imageStyle={{
               borderBottomLeftRadius: 20,
               borderTopRightRadius: 20,
@@ -51,7 +51,7 @@ const AboutUs = () => {
               </View>
             </ImageBackground>
           </View>
-          <View style={{ marginTop: moderateScaleVertical(15), marginBottom: moderateScaleVertical(0), flexDirection: "row", justifyContent: "space-around", marginHorizontal: (10) }}>
+          <View style={{ marginTop: moderateScaleVertical(15), marginBottom: moderateScaleVertical(0), flexDirection: "row", justifyContent: "space-around", marginHorizontal: (4) }}>
             <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} style={styles.block} imageStyle={{
               borderBottomLeftRadius: 20,
               borderTopRightRadius: 20,

@@ -51,14 +51,59 @@ const GoldScreen = ({ navigation }) => {
             <View style={{}}>
                 <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
             </View>
-            <View>
-                <ScrollView>
+            <ScrollView>
+                <View style={{ flex: 1 }}>
 
-                    {/* <View>
+                    <View>
                         <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
                             <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
                         </View>
-                    </View> */}
+                    </View>
+                    <View>
+                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
+                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
+                        </View>
+                    </View>
+                    <View>
+                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
+                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
+                        </View>
+                    </View>
+                    <View>
+                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
+                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
+                        </View>
+                    </View>
+                    <View>
+                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
+                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
+                        </View>
+                    </View>
+                    <View>
+                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
+                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
+                        </View>
+                    </View>
+                    <View>
+                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
+                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
+                        </View>
+                    </View>
+                    <View>
+                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
+                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
+                        </View>
+                    </View>
+                    <View>
+                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
+                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
+                        </View>
+                    </View>
+                    <View>
+                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
+                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
+                        </View>
+                    </View>
 
                     <View style={styles.container}>
                         {apiDATA.data && apiDATA.data.length > 0 ? (
@@ -124,8 +169,8 @@ const GoldScreen = ({ navigation }) => {
                             <Text>Loading</Text>
                         )}
                     </View>
-                </ScrollView>
-            </View>
+                </View>
+            </ScrollView>
 
             {/* Whatsapp */}
             <View style={{ bottom: -40, position: "absolute", right: 5 }}>
@@ -148,19 +193,19 @@ const GoldScreen = ({ navigation }) => {
                 </Modal>
             </View>
             {/* Whatsapp */}
-            <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ position: "absolute", backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: moderateScaleVertical(748), }}>
-                <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                        <Image source={require("../../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+            
+            {/* BottomTabNavigator */}
+            <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4), marginTop: moderateScaleVertical(700) }}>
+                <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
+
+                    <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
+                        <Image source={require('../../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
                     </TouchableOpacity>
 
-                    {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>
-                    <Image source={require("../assets/cart-filled.png")} style={{ width: 40, height: 40 }} />
-                </TouchableOpacity> */}
-
-                    <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-                        <Image source={require("../../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                    <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
+                        <Image source={require('../../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
                     </TouchableOpacity>
+
                 </View>
             </ImageBackground>
         </ImageBackground>

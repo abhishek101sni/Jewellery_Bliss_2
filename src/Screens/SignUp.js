@@ -1,15 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  TextInput,
-  ScrollView,
-  ImageBackground,
-  Linking
-} from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, ScrollView, ImageBackground, Linking} from "react-native";
 import { AuthContext } from "./AuthContext";
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
@@ -102,9 +92,10 @@ const SignUp = ({ navigation }) => {
 
 
               <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: 90, marginLeft: moderateScaleVertical(41), marginTop: moderateScaleVertical(10) }}>
-                <Text style={{ color: "#404040", fontFamily: "HurmeGeometricSans1SemiBold", width: "80%" }}>To know about Terms & Conditions</Text>
-                <TouchableOpacity onPress={() => { Linking.openURL('https://www.demo.janusalive.com/jewellery-bliss/about-us.html') }}>
-                  <Text style={{ textAlign: "center", color: "#404040", textDecorationLine: 'underline', fontFamily: "HurmeGeometricSans1SemiBold", }}> Click here</Text></TouchableOpacity>
+                <Text style={{ color: "#404040", fontFamily: "HurmeGeometricSans1SemiBold", fontSize:textScale(12)}}>To know about Terms & Conditions Click</Text>
+                <TouchableOpacity onPress={() => { Linking.openURL("http://jewellerybliss.com/term-condition.html") }}>
+                  <Text style={{ textAlign: "center", color: "#404040", textDecorationLine: 'underline', fontFamily: "HurmeGeometricSans1SemiBold", fontSize:textScale(12)}}>  here</Text>
+                  </TouchableOpacity>
               </View>
 
               {/* CheckBox */}

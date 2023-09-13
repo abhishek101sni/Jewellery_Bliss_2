@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, ScrollView, Linking } from 'react-native'
 import { AuthContext } from '../Screens/AuthContext';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
-import { background } from 'native-base/lib/typescript/theme/styled-system';
+import Icon from "react-native-vector-icons/FontAwesome"
 
 const DrawerContent = (props) => {
     const { logout, userInfo } = useContext(AuthContext);

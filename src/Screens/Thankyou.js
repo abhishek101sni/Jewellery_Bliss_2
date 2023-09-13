@@ -54,7 +54,7 @@ const Thankyou = ({ navigation }) => {
             </View>
 
             <View>
-              <Image style={{ alignSelf: "center", width: moderateScale(390), height: moderateScaleVertical(275), marginBottom: moderateScaleVertical(0) }} source={require("../assets/QRcode.jpeg")} />
+              <Image style={{ alignSelf: "center", width: moderateScale(360), height: moderateScaleVertical(275), marginBottom: moderateScaleVertical(0) , borderRadius:20 }} source={require("../assets/QRcode.jpeg")} />
             </View>
 
             <TouchableOpacity style={styles.logInButtonAlignment} onPress={() => navigation.navigate('Drawer')}>
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   disclaimer: {
     alignSelf: "center",
-    width: moderateScale(390),
+    width: moderateScale(360),
     height: moderateScaleVertical(235),
     alignSelf: "center",
     marginTop: moderateScaleVertical(10),

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { StyleSheet, Image } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Button } from 'react-native';
 
 import Splash from '../Screens/Splash';
 import GetStarted from '../Screens/GetStarted';
@@ -71,21 +72,23 @@ import ConfirmOrder from '../Screens/ConfirmOrder';
 import Drawer from './Drawer';
 import GoldSilverPrice from '../Screens/DrawerScreens/GoldSilverPrice';
 // Chains SubCategories
-import AllNawabiC from '../Screens/Categories/SubCategories/Chains/AllNawabiC';
 import ChocoChainsC from '../Screens/Categories/SubCategories/Chains/ChocoChainsC';
-import DoubleMarutiC from '../Screens/Categories/SubCategories/Chains/DoubleMarutiC';
-import HandmadeAndHollowC from '../Screens/Categories/SubCategories/Chains/HandmadeAndHollowC';
-import IndoChocoC from '../Screens/Categories/SubCategories/Chains/IndoChocoC';
-import KajuKatliC from '../Screens/Categories/SubCategories/Chains/KajuKatliC';
+import HandmadeChainsC from '../Screens/Categories/SubCategories/Chains/HandmadeChainsC';
+import HollowChainsC from '../Screens/Categories/SubCategories/Chains/HollowChainsC';
+import HollowNawabiChainsC from '../Screens/Categories/SubCategories/Chains/HollowNawabiChainsC';
+import IndoChainsC from '../Screens/Categories/SubCategories/Chains/IndoChainsC';
+import IndoChocoChainsC from '../Screens/Categories/SubCategories/Chains/IndoChocoChainsC';
+import KajuKatliChainsC from '../Screens/Categories/SubCategories/Chains/KajuKatliChainsC';
 import MachineChainsC from '../Screens/Categories/SubCategories/Chains/MachineChainsC';
-import NawabiC from '../Screens/Categories/SubCategories/Chains/NawabiC';
-import Rodium6gC from '../Screens/Categories/SubCategories/Chains/Rodium6gC';
-import Rodium7gC from '../Screens/Categories/SubCategories/Chains/Rodium7gC';
+import MadrasiChainsC from '../Screens/Categories/SubCategories/Chains/MadrasiChainsC';
 import RodiumChainsC from '../Screens/Categories/SubCategories/Chains/RodiumChainsC';
-import Rodium10gC from '../Screens/Categories/SubCategories/Chains/Rodium10gC';
-import SilkyC from '../Screens/Categories/SubCategories/Chains/SilkyC';
+import SilkyChainsC from '../Screens/Categories/SubCategories/Chains/SilkyChainsC';
+import SolidNawabiChainsC from '../Screens/Categories/SubCategories/Chains/SolidNawabiChainsC';
+
 import ForgotPassword from '../Screens/ForgotPassword';
 import ResetPassword from '../Screens/ResetPassword';
+import Appointment from '../Screens/Appointment';
+import CustomiseOrder from '../Screens/CustomiseOrder';
 
 const Stack = createNativeStackNavigator();
 
@@ -184,12 +187,24 @@ const Navigation = () => {
                         <Stack.Screen
                             name="Drawer"
                             component={Drawer}
-                            options={{ headerShown: false }} />
+                            options={{
+                                headerShown: false,
+                                headerRight: () => (
+                                    <Button
+                                        onPress={() => alert('This is a button!')}
+                                        title="Info"
+                                        color="#fff"
+                                    />
+                                )
+                            }} />
 
                         <Stack.Screen
                             name="tabs"
                             component={Tabs}
-                            options={{ headerShown: false }} />
+                            options={{
+                                headerShown: false,
+
+                            }} />
 
                         <Stack.Screen
                             name="otp"
@@ -239,7 +254,8 @@ const Navigation = () => {
                                 title: 'About us',
                                 headerStyle: { backgroundColor: '#181818' },
                                 headerTintColor: '#bc9954',
-                                headerTitleStyle: { color: '#bc9954' }
+                                headerTitleStyle: { color: '#bc9954' },
+
                             }} />
 
 
@@ -299,6 +315,8 @@ const Navigation = () => {
                                 headerTintColor: '#bc9954',
                                 headerTitleStyle: { color: '#bc9954' },
                                 tabBarStyle: { display: "none" },
+
+
                             }} />
 
                         <Stack.Screen
@@ -362,6 +380,26 @@ const Navigation = () => {
                             component={ConfirmOrder}
                             options={{
                                 title: 'Confirm Order',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+                        <Stack.Screen
+                            name="Appointment"
+                            component={Appointment}
+                            options={{
+                                title: 'Appointment',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+                        <Stack.Screen
+                            name="CustomiseOrder"
+                            component={CustomiseOrder}
+                            options={{
+                                title: 'Customise your order',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#181818' },
                                 headerTintColor: '#bc9954',
@@ -431,17 +469,6 @@ const Navigation = () => {
 
 
                         <Stack.Screen
-                            name="AllNawabiC"
-                            component={AllNawabiC}
-                            options={{
-                                title: 'All Nawabi',
-                                headerShown: true,
-                                headerStyle: { backgroundColor: '#bc9954' },
-                                headerTintColor: 'black',
-                                headerTitleStyle: { color: 'black' }
-                            }} />
-
-                        <Stack.Screen
                             name="ChocoChainsC"
                             component={ChocoChainsC}
                             options={{
@@ -453,10 +480,10 @@ const Navigation = () => {
                             }} />
 
                         <Stack.Screen
-                            name="DoubleMarutiC"
-                            component={DoubleMarutiC}
+                            name="HandmadeChainsC"
+                            component={HandmadeChainsC}
                             options={{
-                                title: 'Double Maruti',
+                                title: 'Handmade Chains',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -464,10 +491,10 @@ const Navigation = () => {
                             }} />
 
                         <Stack.Screen
-                            name="HandmadeAndHollowC"
-                            component={HandmadeAndHollowC}
+                            name="HollowChainsC"
+                            component={HollowChainsC}
                             options={{
-                                title: 'Handmade and Hollow',
+                                title: 'Hollow Chains',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -475,10 +502,10 @@ const Navigation = () => {
                             }} />
 
                         <Stack.Screen
-                            name="IndoChocoC"
-                            component={IndoChocoC}
+                            name="HollowNawabiChainsC"
+                            component={HollowNawabiChainsC}
                             options={{
-                                title: 'Indo Choco',
+                                title: 'Hollow Nawabi Chains',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -486,10 +513,33 @@ const Navigation = () => {
                             }} />
 
                         <Stack.Screen
-                            name="KajuKatliC"
-                            component={KajuKatliC}
+                            name="IndoChainsC"
+                            component={IndoChainsC}
                             options={{
-                                title: 'Kaju Katli',
+                                title: 'Indo Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#bc9954' },
+                                headerTintColor: 'black',
+                                headerTitleStyle: { color: 'black' }
+                            }} />
+
+                        <Stack.Screen
+                            name="IndoChocoChainsC"
+                            component={IndoChocoChainsC}
+                            options={{
+                                title: 'Indo Choco Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#bc9954' },
+                                headerTintColor: 'black',
+                                headerTitleStyle: { color: 'black' }
+                            }} />
+
+
+                        <Stack.Screen
+                            name="KajuKatliChainsC"
+                            component={KajuKatliChainsC}
+                            options={{
+                                title: 'Kaju Katli Chains',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -507,33 +557,12 @@ const Navigation = () => {
                                 headerTitleStyle: { color: 'black' }
                             }} />
 
-                        <Stack.Screen
-                            name="Nawabi"
-                            component={NawabiC}
-                            options={{
-                                title: 'Nawabi',
-                                headerShown: true,
-                                headerStyle: { backgroundColor: '#bc9954' },
-                                headerTintColor: 'black',
-                                headerTitleStyle: { color: 'black' }
-                            }} />
 
                         <Stack.Screen
-                            name="Rodium6gC"
-                            component={Rodium6gC}
+                            name="MadrasiChainsC"
+                            component={MadrasiChainsC}
                             options={{
-                                title: 'Rodium 6g',
-                                headerShown: true,
-                                headerStyle: { backgroundColor: '#bc9954' },
-                                headerTintColor: 'black',
-                                headerTitleStyle: { color: 'black' }
-                            }} />
-
-                        <Stack.Screen
-                            name="Rodium7gC"
-                            component={Rodium7gC}
-                            options={{
-                                title: 'Rodium 7g',
+                                title: 'Madrasi Chains',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -552,10 +581,10 @@ const Navigation = () => {
                             }} />
 
                         <Stack.Screen
-                            name="Rodium10gC"
-                            component={Rodium10gC}
+                            name="SilkyChainsC"
+                            component={SilkyChainsC}
                             options={{
-                                title: 'Rodium 10g',
+                                title: 'Silky Chains',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -563,16 +592,15 @@ const Navigation = () => {
                             }} />
 
                         <Stack.Screen
-                            name="SilkyC"
-                            component={SilkyC}
+                            name="SolidNawabiChainsC"
+                            component={SolidNawabiChainsC}
                             options={{
-                                title: 'Silky',
+                                title: 'Solid Nawabi Chains',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
                                 headerTitleStyle: { color: 'black' }
                             }} />
-
 
                         {/* Plain Jwellery */}
 
@@ -857,7 +885,7 @@ const Navigation = () => {
                             name="LadiesSolitaireRings"
                             component={LadiesSolitaireRingsCZ}
                             options={{
-                                title: 'Ladies Solitair Rings',
+                                title: 'Ladies Solitaire Rings',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',

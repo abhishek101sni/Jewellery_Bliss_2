@@ -1,256 +1,303 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, ImageBackground } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground } from 'react-native'
 import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
+import axios from 'axios';
+import SimpleModal from '../SimpleModal';
 
 const CastingCzJwellery = ({ navigation }) => {
 
+  // CastingCz Jwellery Content
+
+  const CastingCzData = [
+    {
+      img: require('../../assets/coming_soon.png'),
+      onPress: () => {
+        navigation.navigate("NeckLaceSets");
+      },
+      title: "Necklace Sets"
+
+    },
+    {
+      img: require('../../assets/coming_soon.png'),
+      onPress: () => {
+        navigation.navigate('MangalSutraCZ');
+      },
+      title: "Mangal Sutra",
+    },
+    {
+      img: require('../../assets/CZ_RING_1.jpg'),
+      onPress: () => {
+        navigation.navigate("LadiesRings");
+      },
+      title: "Ladies Rings",
+    },
+    {
+      img: require('../../assets/CZ_RING_2.jpg'),
+      onPress: () => {
+        navigation.navigate("CockTailRings");
+      },
+      title: "Cocktail Rings",
+    },
+    {
+      img: require('../../assets/CZ_RING_3.jpg'),
+      onPress: () => {
+        navigation.navigate("LadiesSolitaireRings");
+      },
+      title: "Ladies Solitaire Rings",
+    },
+    {
+      img: require('../../assets/CZ_RING_4.jpg'),
+      onPress: () => {
+        navigation.navigate("GentsRingsCZ");
+      },
+      title: "Gents Rings",
+    },
+    {
+      img: require('../../assets/CZ_RING_5.jpg'),
+      onPress: () => {
+        navigation.navigate("GentsSolitairRings");
+      },
+      title: "Gents Solitaire Rings",
+    },
+    {
+      img: require('../../assets/cz_tops.jpg'),
+      onPress: () => {
+        navigation.navigate("TopsCZ");
+      },
+      title: "Tops",
+    },
+    {
+      img: require('../../assets/coming_soon.png'),
+      onPress: () => {
+        navigation.navigate("SolitaireRopeCZ");
+      },
+      title: "Solitaire Rops",
+    },
+    {
+      img: require('../../assets/pendentCZ.jpg'),
+      onPress: () => {
+        navigation.navigate("PendentSetsCZ");
+      },
+      title: "Pendent Sets",
+    },
+    {
+      img: require('../../assets/coming_soon.png'),
+      onPress: () => {
+        navigation.navigate("SolitairePendentSetsCZ");
+      },
+      title: "Solitaire Pendents Sets",
+    },
+    {
+      img: require('../../assets/charms.jpg'),
+      onPress: () => {
+        navigation.navigate("Charms");
+      },
+      title: "Charms",
+    },
+    {
+      img: require('../../assets/coming_soon.png'),
+      onPress: () => {
+        navigation.navigate("GoldPendentscz");
+      },
+      title: "Gold Pendents",
+    },
+    {
+      img: require('../../assets/coming_soon.png'),
+      onPress: () => {
+        navigation.navigate("BraceLets");
+      },
+      title: "Bracelets",
+    },
+    {
+      img: require('../../assets/coming_soon.png'),
+      onPress: () => {
+        navigation.navigate("Bali");
+      },
+      title: "Bali",
+    },
+
+  ];
+  // WhatsApp
+  const [isModalVisible, setisModalVisible] = useState(false)
+  const [chooseData, setChooseData] = useState();
+
+  const changeModalVisible = (bool) => {
+    setisModalVisible(bool)
+  }
+
+
+  const setData = (data) => {
+    setChooseData(data)
+  }
+  // WhatsApp
+
+  const [category, setcategory] = useState([]);
+  const [products, setProducts] = useState([]);
+
+  // const getCategory = async () => {
+  //   const url = "http://localhost:5009/api/products?category=chains"
+  //   let result = await fetch(url);
+  //   result = await result.json();
+  //   setcategory(result);
+  // }
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get('https://bliss-app-backend-production.up.railway.app/api/products', {
+        params: { category: 'chains' },
+      });
+      setProducts(response.data);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
+  };
+
   return (
+    <>
+      <View style={{ backgroundColor: "#1A2228", flex: 1 }}>
+        <View>
+          <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
+        </View>
+        <ScrollView>
+          <View style={{ marginBottom: moderateScaleVertical(120) }}>
+            {/* FlatList */}
 
-    <View style={{ backgroundColor: "#181818", flex: 1 }}>
-      <ScrollView>
-        <View style={styles.alignment}>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('NeckLaceSets') }} >
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                {/* <Text style={styles.View5}>NECKLACE SETS</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>NECKLACE SETS</Text>
-                </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('MangalSutraCZ') }}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                {/* <Text style={styles.View5}>MANGAL SUTRA</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>MANGAL SUTRA</Text>
-                </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-
-        </View>
-
-        <View style={styles.alignment}>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('LadiesRings') }}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/CZ_RING_1.jpg")} />
-                {/* <Text style={styles.View5}>LADIES RING</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>LADIES RING</Text>
-                </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('CockTailRings') }}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/CZ_RING_2.jpg")} />
-                {/* <Text style={styles.View5}>COCKTAIL RINGS</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>COCKTAIL RINGS</Text>
-                </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.alignment}>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('LadiesSolitaireRings') }}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/CZ_RING_3.jpg")} />
-                {/* <Text style={styles.View5}>LADIES SOLITAIRE RING</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>LADIES SOLITAIRE RING</Text>
-                </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('GentsRingsCZ') }}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/CZ_RING_4.jpg")} />
-                {/* <Text style={styles.View5}>GENTS RING</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>GENTS RING</Text>
-                </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.alignment}>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('GentsSolitairRings') }}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/CZ_RING_5.jpg")} />
-                {/* <Text style={styles.View5}>GENTS SOLITAIRE RING</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>GENTS SOLITAIRE RING</Text>
-                </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('TopsCZ') }}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/cz_tops.jpg")} />
-                {/* <Text style={styles.View5}>TOPS</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>TOPS</Text>
-                </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.alignment}>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('SolitaireRopeCZ') }}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                {/* <Text style={styles.View5}>SOLITAIRE ROPE</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>SOLITAIRE ROPE</Text>
-                </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('Bali') }}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                {/* <Text style={styles.View5}>BALI</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>BALI</Text>
-                </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.alignment}>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('PendentSetsCZ') }} >
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/pendentCZ.jpg")} />
-                {/* <Text style={styles.View5}>PENDENT SETS</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>PENDENT SETS</Text>
-                </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('SolitairePendentSetsCZ') }}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                {/* <Text style={styles.View5}>SOLITAIRE PENDENT SETS</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>SOLITAIRE PENDENT SETS</Text>
-                </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.alignment}>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('Charms') }}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/charms.jpg")} />
-                {/* <Text style={styles.View5}>CHARMS</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>CHARMS</Text>
-                  </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('GoldPendentscz') }}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                {/* <Text style={styles.View5}>GOLD PENDENTS</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>GOLD PENDENTS</Text>
-                  </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.alignment}>
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => { navigation.navigate('BraceLets') }} >
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                {/* <Text style={styles.View5}>BRACELETS</Text> */}
-                <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontWeight: "600", fontSize: textScale(11) }}>BRACELETS</Text>
-                  </ImageBackground>
-              </View>
-            </TouchableOpacity>
-          </View>
-          {/* <TouchableOpacity>
-              <View style={styles.View2}>
-                <View style={styles.View3}>
-                  <Image style={styles.ImageView} source={require("../../assets/GWT-270.jpg")} />
-                  <Text style={styles.View5}>GOLD PENDENTS</Text>
+            <FlatList contentContainerStyle={{ alignItems: "center" }}
+              data={CastingCzData}
+              numColumns={2}
+              renderItem={({ item, index }) =>
+                <View key={index} style={styles.alignment}>
+                  <View style={styles.View2}>
+                    <TouchableOpacity activeOpacity={.6} onPress={item.onPress}>
+                      <Image style={styles.ImageView} source={item.img} />
+                      <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                        <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>{item.title}</Text>
+                      </ImageBackground>
+                    </TouchableOpacity>
+                  </View>
                 </View>
-              </View>
-            </TouchableOpacity> */}
+              }
+            />
+
+          </View>
+        </ScrollView>
+
+        {/* Whatsapp Help Button*/}
+
+        <View View style={{ bottom: -40, position: "absolute", right: 5 }}>
+          <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
+            <View style={styles.icontextAlignment}>
+              <Image source={require("../../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
+              <Text style={styles.helpText}>Help</Text>
+            </View>
+          </TouchableOpacity>
+
+          <Modal
+            transparent={true}
+            animationType='fade'
+            visible={isModalVisible}
+            nRequestClose={() => changeModalVisible(false)}
+          >
+            <SimpleModal changeModalVisible={changeModalVisible}
+              setData={setData}
+            />
+          </Modal>
         </View>
-      </ScrollView>
-    </View>
+
+        {/* BottomTabNavigator */}
+        <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) }}>
+          <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
+
+            <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
+              <Image source={require('../../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
+              <Image source={require('../../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
+            </TouchableOpacity>
+
+          </View>
+        </ImageBackground>
+      </View>
+    </>
   )
 }
 
 export default CastingCzJwellery
 
 const styles = StyleSheet.create({
+  goldenStrip: {
+    width: "100%",
+    height: 3,
+  },
+  // flatlist Design
   alignment: {
     flexDirection: "row",
-    alignItems: "center",
-    marginLeft: moderateScale(12),
     justifyContent: "space-around",
-    marginTop: moderateScaleVertical(25)
+    marginHorizontal: moderateScale(20)
   },
-
   View2: {
     backgroundColor: 'white',
-    justifyContent: 'space-evenly',
-    marginRight: moderateScale(10),
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     width: moderateScale(153),
-    height: moderateScaleVertical(180)
-  },
-  View3: {
-    // backgroundColor: 'white',
-    backgroundColor: 'white',
-    borderRadius: 35
+    height: moderateScaleVertical(200),
+    marginTop: moderateScaleVertical(40),
   },
   ImageView: {
-    height: moderateScaleVertical(140),
-    width: moderateScale(120),
+    height: moderateScaleVertical(160),
+    width: moderateScale(153),
     alignSelf: 'center',
-    borderRadius: 35,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
   },
   View5: {
     alignItems: "center",
     height: moderateScaleVertical(40),
     width: moderateScale(153),
-    color: 'black',
-    // paddingTop: 13,
-    backgroundColor: '#ECC440',
-    textAlign: 'center',
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-    fontWeight: "900",
-    fontSize: textScale(10),
     justifyContent: "center",
+    marginTop: moderateScaleVertical(160),
+    position: "absolute"
+  },
+  // flatlist Design
+
+
+  // Whatsapp style
+
+  HelpButtonAlignment: {
+    justifyContent: "center",
+    backgroundColor: "#25D366",
+    width: moderateScale(110),
+    height: moderateScaleVertical(45),
+    borderRadius: 40,
+    marginBottom: moderateScaleVertical(100)
+    // position: "fixed",
+  },
+  icontextAlignment: {
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    paddingHorizontal: moderateScale(-30),
+    marginHorizontal: moderateScale(25),
+  },
+  whatsappIcon: {
+    width: moderateScale(20),
+    height: moderateScaleVertical(20),
+    // position:"fixed",
+  },
+  helpText: {
+    color: 'white',
+    fontSize: textScale(13),
+    fontWeight: "bold",
   }
 })

@@ -61,11 +61,11 @@ const ConfirmOrder = ({ navigation }) => {
             <ScrollView>
                 <View>
                     {/* <View style={{marginBottom:moderateScaleVertical(30)}}> */}
-                    <View style={{ backgroundColor: "#E8E8E8", alignSelf: "center", width: moderateScaleVertical(390), borderRadius: 20, marginTop: moderateScaleVertical(30) }}>
+                    <View style={{ backgroundColor: "#E8E8E8", alignSelf: "center", width: moderateScaleVertical(360), borderRadius: 20, marginTop: moderateScaleVertical(30) }}>
                         <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(20) }}>
                             {/* <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold" }}>Category</Text> */}
-                            <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-14), width: moderateScale(60), }}>Product Name</Text>
-                            <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-25) }}>Qty.</Text>
+                            <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-10), width: moderateScale(60), }}>Product Name</Text>
+                            <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-5) }}>Qty.</Text>
                             <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-20) }}>Purity</Text>
                             <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-20) }}>Weight</Text>
                             <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-5) }}>Making</Text>
@@ -139,7 +139,7 @@ const ConfirmOrder = ({ navigation }) => {
                                     <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(20) }}>
                                         {/* <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(100) }} >  {cartItem.item.subcategory}</Text> */}
                                         <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(90), marginLeft: moderateScale(-10) }} >{cartItem.item.name}</Text>
-                                        <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(20), marginLeft: moderateScale(-45) }}>{cartItem.count}</Text>
+                                        <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(20), marginLeft: moderateScale(-20) }}>{cartItem.count}</Text>
                                         <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(15), marginLeft: moderateScale(-5) }}>{cartItem.item.purity}</Text>
                                         <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(60), marginLeft: moderateScale(-10) }}>{cartItem.item.weight} gm</Text>
                                         <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(30), marginLeft: moderateScale(-5) }}>{cartItem.item.mcharges}</Text>
@@ -213,50 +213,48 @@ const ConfirmOrder = ({ navigation }) => {
                 </ImageBackground>
 
                 <View>
-                    <Text style={{ fontSize: textScale(30), color: "black", alignSelf: "center", fontFamily: "HurmeGeometricSans1Bold", marginTop: moderateScaleVertical(10), marginBottom: moderateScaleVertical(10) }}>OR</Text>
+                    <Text style={{ fontSize: textScale(30), color: "black", alignSelf: "center", fontFamily: "HurmeGeometricSans1SemiBold", marginTop: moderateScaleVertical(10), marginBottom: moderateScaleVertical(10) }}>OR</Text>
                 </View>
 
                 <View>
-                    <Image style={{ alignSelf: "center", width: moderateScale(390), height: moderateScaleVertical(275), marginBottom: moderateScaleVertical(110) }} source={require("../assets/QRcode.jpeg")} />
+                    <Image style={{ alignSelf: "center", width: moderateScale(360), height: moderateScaleVertical(275), marginBottom: moderateScaleVertical(110), borderRadius: 20 }} source={require("../assets/QRcode.jpeg")} />
                 </View>
                 {/* </View> */}
             </ScrollView>
+            {/* BottomTabNavigator */}
+            <ImageBackground source={require('../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) }}>
+                <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
 
-            {/* Tab Navigator */}
-
-            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ position: "absolute", backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: moderateScaleVertical(748), marginBottom: moderateScaleVertical(0) }}>
-                <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                        <Image source={require("../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                    <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
+                        <Image source={require('../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-                        <Image source={require("../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                    <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
+                        <Image source={require('../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
                     </TouchableOpacity>
+                    {/* BottomTabNavigator end */}
+
                 </View>
             </ImageBackground>
-            {/* Tab Navigator */}
 
-            {/* Whatsapp */}
-            <View View style={{ bottom: -40, position: "absolute", right: 20 }}>
-                <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
+            {/* Whatsapp start */}
+
+            <View style={{ bottom: moderateScaleVertical(-42), position: 'absolute', right: moderateScale(5) }}>
+
+                <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
                     <View style={styles.icontextAlignment}>
-                        <Image source={require("../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
+                        <Image source={require('../assets/whatsapp-white.png')} style={styles.whatsappIcon} />
                         <Text style={styles.helpText}>Help</Text>
                     </View>
                 </TouchableOpacity>
 
-                <Modal
-                    transparent={true}
-                    animationType='fade'
-                    visible={isModalVisible}
-                    nRequestClose={() => changeModalVisible(false)}
-                >
-                    <SimpleModal changeModalVisible={changeModalVisible}
-                        setData={setData}
-                    />
+                <Modal transparent={true} animationType="fade" visible={isModalVisible} nRequestClose={() => changeModalVisible(false)}>
+                    <SimpleModal changeModalVisible={changeModalVisible} setData={setData} />
                 </Modal>
+
             </View>
+
+            {/* Whatsapp end */}
         </ImageBackground>
     )
 }
@@ -271,7 +269,7 @@ const styles = StyleSheet.create({
     },
     disclaimer: {
         alignSelf: "center",
-        width: moderateScale(390),
+        width: moderateScale(360),
         height: moderateScaleVertical(275),
         alignSelf: "center",
         marginTop: moderateScaleVertical(50),
@@ -347,24 +345,25 @@ const styles = StyleSheet.create({
         height: moderateScaleVertical(80),
         marginTop: moderateScaleVertical(25)
     },
+
     // Whatsapp style
 
     HelpButtonAlignment: {
-        justifyContent: "center",
-        backgroundColor: "#25D366",
-        width: moderateScale(110),
-        height: moderateScaleVertical(45),
+        justifyContent: 'center',
+        backgroundColor: '#25D366',
+        width: moderateScale(90),
+        height: moderateScaleVertical(40),
         borderRadius: 40,
-        marginBottom: moderateScaleVertical(100)
+        marginBottom: moderateScaleVertical(100),
         // position: "fixed",
     },
     icontextAlignment: {
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "row",
-        justifyContent: "space-around",
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
         paddingHorizontal: moderateScale(-30),
-        marginHorizontal: moderateScale(25),
+        marginHorizontal: moderateScale(15),
     },
     whatsappIcon: {
         width: moderateScale(20),
@@ -374,7 +373,7 @@ const styles = StyleSheet.create({
     helpText: {
         color: 'white',
         fontSize: textScale(13),
-        fontWeight: "bold",
+        fontWeight: 'bold',
     },
 
 })

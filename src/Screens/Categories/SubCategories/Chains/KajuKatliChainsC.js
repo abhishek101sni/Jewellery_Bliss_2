@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useEffect } from 'react'
 import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, ImageBackground } from 'react-native'
 import { useDispatch } from 'react-redux'
@@ -9,12 +6,12 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const IndoChocoC = ({ navigation }) => {
+const KajuKatliChainsC = ({ navigation }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
   const getAPIDATA = async () => {
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Indo%20Choco";
+    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Kaju%20Katli";
 
     let result = await fetch(url);
     result = await result.json();
@@ -32,10 +29,11 @@ const IndoChocoC = ({ navigation }) => {
 
   return (
     <ImageBackground style={{ flex: 1 }} source={require("../../../../assets/background-image2.png")}>
-      <View style={{ top: height - 938, }}>
-        <Image source={require("../../../../assets/GOLDEN-STRIP.png")} style={{ borderWidth: 3, width: 1090, alignSelf: "center" }} />
-      </View>
-
+      <Image source={require('../../../../assets/GOLDEN-STRIP.png')} style={{
+        width: '100%',
+        // marginBottom:10,
+        height: 3,
+      }} />
       <FlatList contentContainerStyle={{ alignItems: "center" }}
         data={data}
         numColumns={2}
@@ -60,7 +58,8 @@ const IndoChocoC = ({ navigation }) => {
   )
 }
 
-export default IndoChocoC
+export default KajuKatliChainsC
+
 
 const styles = StyleSheet.create({
   View1: {

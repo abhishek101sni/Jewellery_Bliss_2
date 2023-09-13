@@ -19,7 +19,8 @@ const WelcomeScreen = () => {
 
   // GoldPriceApi
   const [apiDATA, setAPIdata] = useState([]);
-  const API_URL = 'https://rappid.in/apis/mcx.php?key=9015790532';
+  // const API_URL = 'https://rappid.in/apis/mcx.php?key=9015790532';
+  const API_URL = 'https://rappid.in/apis/gold_rates.php?mobile=8076238140';
   const firstData = apiDATA.data && apiDATA.data[0];
   const secondData = apiDATA.data && apiDATA.data[2];
 
@@ -71,6 +72,9 @@ const WelcomeScreen = () => {
   }, []);
 
   const { width } = Dimensions.get('screen');
+  console.log(width)
+  const { height } = Dimensions.get('screen');
+  console.log(height)
 
   const entries = [
     {
@@ -132,7 +136,7 @@ const WelcomeScreen = () => {
   const renderItem2 = ({ item, index }) => {
     return (
       <TouchableOpacity activeOpacity={0.8} onPress={item.onPress}>
-        <Image source={item.img} style={{ width: moderateScale(270), marginTop: moderateScaleVertical(20), borderRadius: 20, marginBottom: moderateScaleVertical(5)}}/>
+        <Image source={item.img} style={{ width: moderateScale(270), marginTop: moderateScaleVertical(20), borderRadius: 20, marginBottom: moderateScaleVertical(5) }} />
       </TouchableOpacity>
     );
   };
@@ -148,7 +152,7 @@ const WelcomeScreen = () => {
       <ScrollView>
         <View>
           <ImageBackground style={styles.MainBackGroundImage} imageStyle={{ borderRadius: 40 }} source={require('../../assets/CompressedTexture3.jpg')}>
-            <View style={{ marginLeft: moderateScale(25), marginTop: moderateScaleVertical(20)}}>
+            <View style={{ marginLeft: moderateScale(25), marginTop: moderateScaleVertical(20) }}>
               <View style={{ flexDirection: 'row' }}>
                 <Text style={styles.WelcomeText}>Welcome , </Text>
                 <Text style={styles.UserName}>{userInfo?.name}</Text>
@@ -163,46 +167,46 @@ const WelcomeScreen = () => {
                   <Text style={styles.GoldenScreenBelowText2}>
                     Enjoy Shopping!
                   </Text>
-                  <Image source={require('../../assets/smiley.png')} style={styles.smileyEmoji}/>
+                  <Image source={require('../../assets/smiley.png')} style={styles.smileyEmoji} />
                 </View>
               </View>
             </View>
           </ImageBackground>
         </View>
 
-        {/* <View style={styles.wholeAlignment}>
-                    <View style={{ backgroundColor: "#F0F0F0", height: moderateScaleVertical(20), marginTop: moderateScaleVertical(10), alignItems: "center" }}>
-                        <TouchableOpacity onPress={() => { navigation.navigate("GoldPrice") }} >
-                            <MarqueeView>
-                                <View style={styles.MarqueeAlignment}>
-                                    <Text style={{ color: "#404040", fontFamily: "HurmeGeometricSans1SemiBold" }}>
-                                        Price 18K: | Fine rate: red | Gold MCX: Rs 50,000 995
-                                        rate: Rs 45,000 | Fine rate: rs720000 | Gold MCX: Rs 50,000
-                                    </Text>
-                                </View>
-                            </MarqueeView>
-                        </TouchableOpacity>
-                    </View>
-                </View> */}
+        <View style={styles.wholeAlignment}>
+          <View style={{ backgroundColor: "#F0F0F0", height: moderateScaleVertical(20), marginTop: moderateScaleVertical(5), alignItems: "center" }}>
+            <TouchableOpacity onPress={() => { navigation.navigate("GoldPrice") }} >
+              <MarqueeView>
+                <View style={styles.MarqueeAlignment}>
+                  <Text style={{ color: "#404040", fontFamily: "HurmeGeometricSans1SemiBold" }}>
+                    Price 18K: | Fine rate: red | Gold MCX: Rs 50,000 995
+                    rate: Rs 45,000 | Fine rate: rs720000 | Gold MCX: Rs 50,000
+                  </Text>
+                </View>
+              </MarqueeView>
+            </TouchableOpacity>
+          </View>
+        </View>
 
         <View style={styles.wholeAlignment}>
           <View
             style={{
               backgroundColor: '#F0F0F0',
-              height: moderateScaleVertical(20),
+              height: moderateScaleVertical(30),
               marginTop: moderateScaleVertical(10),
               alignItems: 'center',
             }}>
             <MarqueeView>
-              <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1SemiBold', }}>
+              <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1SemiBold', paddingTop: 2, paddingBottom: 2, fontSize: textScale(18) }}>
                 {apiDATA.data && apiDATA.data.length > 0 ? (apiDATA.data.map((data, index) => (
                   <TouchableOpacity onPress={() => { navigation.navigate('GoldSilverPrice') }}>
                     <View key={index}>
                       <View style={{ flexDirection: 'row' }}>
-                        {/* <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}> {firstData.Symbol} </Text> */}
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}> {firstData.Symbol} </Text>
                         <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}> Gold Sell Price </Text>
                         <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1SemiBold' }}>Buy : ₹ {firstData.BUY} Sell : ₹ {firstData.SELL}</Text>
-                        {/* <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}> {secondData.Symbol} </Text> */}
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}> {secondData.Symbol} </Text>
                         <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}> Silver Sell Price </Text>
                         <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1SemiBold' }}>Buy : ₹ {secondData.BUY} Sell : ₹ {secondData.SELL}</Text>
                       </View>
@@ -219,39 +223,24 @@ const WelcomeScreen = () => {
 
         <View style={styles.GoldenCategoriesButtonsAlignment}>
           <View>
-            <TouchableOpacity
-              activeOpacity={0.8}
-              onPress={() => navigation.navigate('eighteenkarat')}>
-              <ImageBackground
-                source={require('../../assets/CompressedTexture3.jpg')}
-                style={styles.GoldenCategoriesButtonsStyle}
-                imageStyle={{ borderRadius: 12 }}>
+            <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('eighteenkarat')}>
+              <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} style={styles.GoldenCategoriesButtonsStyle} imageStyle={{ borderRadius: 12 }}>
                 <Text style={styles.GoldenCategoriesButtonsText}>18KT</Text>
               </ImageBackground>
             </TouchableOpacity>
           </View>
 
           <View>
-            <TouchableOpacity
-              activeOpacity={0.8}
-              onPress={() => navigation.navigate('twentykarat')}>
-              <ImageBackground
-                source={require('../../assets/CompressedTexture3.jpg')}
-                style={styles.GoldenCategoriesButtonsStyle}
-                imageStyle={{ borderRadius: 12 }}>
+            <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('twentykarat')}>
+              <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} style={styles.GoldenCategoriesButtonsStyle} imageStyle={{ borderRadius: 12 }}>
                 <Text style={styles.GoldenCategoriesButtonsText}>20KT</Text>
               </ImageBackground>
             </TouchableOpacity>
           </View>
 
           <View>
-            <TouchableOpacity
-              activeOpacity={0.8}
-              onPress={() => navigation.navigate('twentytwokarat')}>
-              <ImageBackground
-                source={require('../../assets/CompressedTexture3.jpg')}
-                style={styles.GoldenCategoriesButtonsStyle}
-                imageStyle={{ borderRadius: 12 }}>
+            <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('twentytwokarat')}>
+              <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} style={styles.GoldenCategoriesButtonsStyle} imageStyle={{ borderRadius: 12 }}>
                 <Text style={styles.GoldenCategoriesButtonsText}>22KT</Text>
               </ImageBackground>
             </TouchableOpacity>
@@ -274,10 +263,60 @@ const WelcomeScreen = () => {
                     </View> */}
         </View>
 
+        <View style={{ marginTop: moderateScale(2) }}>
+          <ScrollView horizontal={true} styles={styles.container} showsHorizontalScrollIndicator={false}>
+            {/* 1 */}
+            <View style={styles.card}>
+              <View style={styles.View2}>
+                <TouchableOpacity activeOpacity={.6} onPress={() => navigation.navigate('chains')}>
+                  <Image style={styles.ImageView} source={require("../../assets/testingChain.png")} />
+                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                    <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>Chains</Text>
+                  </ImageBackground>
+                </TouchableOpacity>
+              </View>
+            </View>
+
+            {/* 2 */}
+            <View style={styles.card}>
+              <View style={styles.View2}>
+                <TouchableOpacity activeOpacity={.6} onPress={() => navigation.navigate('CastingJwellery')}>
+                  <Image style={styles.ImageView} source={require("../../assets/testingRing.png")} />
+                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                    <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>Casting Jewellery</Text>
+                  </ImageBackground>
+                </TouchableOpacity>
+              </View>
+            </View>
+
+            {/* 3 */}
+            <View style={styles.card}>
+              <View style={styles.View2}>
+                <TouchableOpacity activeOpacity={.6} onPress={() => navigation.navigate('CastingCzJwellery')}>
+                  <Image style={styles.ImageView} source={require("../../assets/jlry6.png")} />
+                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                    <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>Casting CZ Jewellery</Text>
+                  </ImageBackground>
+                </TouchableOpacity>
+              </View>
+            </View>
+            {/* 4 */}
+            <View style={styles.card}>
+              <View style={styles.View2}>
+                <TouchableOpacity activeOpacity={.6} onPress={() => navigation.navigate('PlainJwellery')}>
+                  <Image style={styles.ImageView} source={require("../../assets/jlry2.png")} />
+                  <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                    <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>Plain Jewellery</Text>
+                  </ImageBackground>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </ScrollView>
+        </View>
         {/* Parallax */}
 
         {/* Categories Parallax */}
-        <Carousel
+        {/* <Carousel
           ref={isCarousel}
           onSnapToItem={page => setPage(page)}
           data={entries2}
@@ -304,17 +343,15 @@ const WelcomeScreen = () => {
           inactiveDotStyle={{
             backgroundColor: 'black',
           }}
-        />
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={() => navigation.navigate('pricelist')}>
+        /> */}
+        <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('pricelist')}>
           <View style={styles.WastageChartButton}>
             <Text style={styles.buttontext}>WASTAGE CHART</Text>
           </View>
         </TouchableOpacity>
 
         {/* Banner Parallax */}
-        <Carousel
+        {/* <Carousel
           ref={isCarousel2}
           onSnapToItem={page2 => setPage(page2)}
           data={entries}
@@ -323,7 +360,7 @@ const WelcomeScreen = () => {
           itemWidth={300}
           loop
           firstItem={1}
-        />
+        /> */}
         {/* <Pagination
                     activeDotIndex={page2}
                     carouselRef={isCarousel2}
@@ -343,6 +380,28 @@ const WelcomeScreen = () => {
                 /> */}
 
         {/* <View style={styles.line}></View> */}
+
+        <View style={{ marginTop: moderateScaleVertical(5) }}>
+          <ScrollView horizontal={true} styles={styles.container} showsHorizontalScrollIndicator={false}>
+            {/* 1 */}
+            <View style={styles.card}>
+              <Image style={styles.ImageView2} source={require("../../assets/banner.jpg")} />
+            </View>
+            <View style={styles.card}>
+              <Image style={styles.ImageView2} source={require("../../assets/banner.jpg")} />
+            </View>
+            <View style={styles.card}>
+              <Image style={styles.ImageView2} source={require("../../assets/banner.jpg")} />
+            </View>
+            <View style={styles.card}>
+              <Image style={styles.ImageView2} source={require("../../assets/banner.jpg")} />
+            </View>
+          </ScrollView>
+
+        </View>
+
+
+
 
         <View style={styles.logosAlignment}>
           <Image
@@ -370,83 +429,51 @@ const WelcomeScreen = () => {
             style={styles.imgsize6}
           />
         </View>
+
+        {/* <View>
+          <TouchableOpacity onPress={() => navigation.navigate("Appointment")}>
+            <ImageBackground style={styles.Appointmentbutton} imageStyle={{ borderRadius: 20 }} source={require('../../assets/CompressedTexture3.jpg')}>
+              <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(5), marginTop: moderateScaleVertical(3) }}>
+                <Image source={require("../../assets/Appointment.png")} style={{ width: moderateScale(25), height: moderateScaleVertical(25), marginTop: moderateScaleVertical(3) }} />
+                <Text style={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold", color: "black" }}>Request Appointment</Text>
+              </View>
+            </ImageBackground>
+          </TouchableOpacity>
+        </View> */}
       </ScrollView>
 
       {/* Whatsapp start */}
-      <View
-        View
-        style={{
-          bottom: moderateScaleVertical(-37),
-          position: 'absolute',
-          right: moderateScale(5),
-        }}>
-        <TouchableOpacity
-          onPress={() => changeModalVisible(true)}
-          style={styles.HelpButtonAlignment}>
+
+      <View style={{ bottom: moderateScaleVertical(-42), position: 'absolute', right: moderateScale(5) }}>
+
+        <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
           <View style={styles.icontextAlignment}>
-            <Image
-              source={require('../../assets/whatsapp-white.png')}
-              style={styles.whatsappIcon}
-            />
+            <Image source={require('../../assets/whatsapp-white.png')} style={styles.whatsappIcon} />
             <Text style={styles.helpText}>Help</Text>
           </View>
         </TouchableOpacity>
 
-        <Modal
-          transparent={true}
-          animationType="fade"
-          visible={isModalVisible}
-          nRequestClose={() => changeModalVisible(false)}>
-          <SimpleModal
-            changeModalVisible={changeModalVisible}
-            setData={setData}
-          />
+        <Modal transparent={true} animationType="fade" visible={isModalVisible} nRequestClose={() => changeModalVisible(false)}>
+          <SimpleModal changeModalVisible={changeModalVisible} setData={setData} />
         </Modal>
+
       </View>
+
       {/* Whatsapp end */}
 
       {/* BottomTabNavigator */}
-      <ImageBackground
-        source={require('../../assets/CompressedTexture3.jpg')}
-        imageStyle={{}}
-        style={{
-          backgroundColor: 'pink',
-          height: moderateScaleVertical(60),
-          width: '100%',
-          alignSelf: 'center',
-          marginTop: 0,
-        }}>
-        <View
-          style={{
-            marginTop: moderateScaleVertical(15),
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-          }}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('Drawer');
-            }}>
-            <Image
-              source={require('../../assets/home.png')}
-              style={{
-                width: moderateScale(35),
-                height: moderateScaleVertical(35),
-              }}
-            />
+      <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) }}>
+        <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
+
+          <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
+            <Image source={require('../../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
           </TouchableOpacity>
 
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('cart');
-            }}>
-            <Image
-              source={require('../../assets/cart.png')}
-              style={{
-                width: moderateScale(35),
-                height: moderateScaleVertical(35),
-              }}
-            />
+          <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
+            <Image source={require('../../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
           </TouchableOpacity>
+          {/* BottomTabNavigator end */}
+
         </View>
       </ImageBackground>
     </ImageBackground>
@@ -466,6 +493,14 @@ const styles = StyleSheet.create({
     width: moderateScale(355),
     height: moderateScaleVertical(170),
     alignSelf: 'center',
+    // flex:1,
+  },
+  Appointmentbutton: {
+    marginTop: moderateScaleVertical(10),
+    width: moderateScale(120),
+    height: moderateScaleVertical(40),
+    alignSelf: 'center',
+    marginBottom: moderateScale(3)
     // flex:1,
   },
   GoldenBackGroundImage: {
@@ -540,7 +575,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     paddingHorizontal: moderateScale(0),
-    marginTop: moderateScaleVertical(5),
+    marginTop: moderateScaleVertical(-4),
   },
   GoldenCategoriesButtonsStyle: {
     alignItems: 'center',
@@ -559,7 +594,7 @@ const styles = StyleSheet.create({
     fontFamily: 'HurmeGeometricSans1SemiBold',
   },
   WastageChartButton: {
-    marginTop: moderateScaleVertical(-10),
+    marginTop: moderateScaleVertical(5),
     backgroundColor: 'black',
     padding: moderateScale(15),
     alignItems: 'center',
@@ -576,6 +611,9 @@ const styles = StyleSheet.create({
     color: '#eec06b',
     fontFamily: 'HurmeGeometricSans1SemiBold',
   },
+  horizontalImages: {
+    width: 100
+  },
   line: {
     width: moderateScale('80%'),
     height: moderateScaleVertical(2),
@@ -585,7 +623,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   logosAlignment: {
-    marginTop: moderateScaleVertical(20),
+    marginTop: moderateScaleVertical(6),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -633,8 +671,8 @@ const styles = StyleSheet.create({
   HelpButtonAlignment: {
     justifyContent: 'center',
     backgroundColor: '#25D366',
-    width: moderateScale(110),
-    height: moderateScaleVertical(45),
+    width: moderateScale(90),
+    height: moderateScaleVertical(40),
     borderRadius: 40,
     marginBottom: moderateScaleVertical(100),
     // position: "fixed",
@@ -645,7 +683,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingHorizontal: moderateScale(-30),
-    marginHorizontal: moderateScale(25),
+    marginHorizontal: moderateScale(15),
   },
   whatsappIcon: {
     width: moderateScale(20),
@@ -692,6 +730,52 @@ const styles = StyleSheet.create({
     width: '100%',
     right: 0,
     left: 0,
+  },
+  container: {
+    // flex: 1,
+    // flexDirection: "row",
+    // padding: 8,
+  },
+  card: {
+    justifyContent: "center",
+    alignItems: "center",
+    // borderRadius: 10,
+    margin: 5,
+  },
+  View2: {
+    backgroundColor: 'black',
+    borderRadius: 20,
+    width: moderateScale(240),
+    height: moderateScaleVertical(200),
+    // marginTop: moderateScaleVertical(40),
+    // marginHorizontal: moderateScale(2s0)
+  },
+
+  ImageView: {
+    height: moderateScaleVertical(160),
+    width: moderateScale(153),
+    alignSelf: 'center',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+  },
+  ImageView2: {
+    height: moderateScaleVertical(150),
+    width: moderateScale(300),
+    alignSelf: 'center',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+  },
+  View5: {
+    alignItems: "center",
+    height: moderateScaleVertical(40),
+    width: moderateScale(240),
+    justifyContent: "center",
+    marginTop: moderateScaleVertical(160),
+    position: "absolute"
   },
 });
 

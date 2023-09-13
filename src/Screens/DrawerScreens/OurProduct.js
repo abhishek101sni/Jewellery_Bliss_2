@@ -1,10 +1,40 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground } from 'react-native'
-import { StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground, StyleSheet } from 'react-native'
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 import SimpleModal from '../SimpleModal';
 
 const OurProduct = ({ navigation }) => {
+    const ParentCategoryData = [
+        {
+            img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/Handmadeandhollow/handmadeandhollow.jpg'),
+            onPress: () => {
+                navigation.navigate("chains");
+            },
+            title: "Chains"
+
+        },
+        {
+            img: require('../../assets/PRODUCTS/CHAINS/Categories/plainjewellery/plain.jpg'),
+            onPress: () => {
+                navigation.navigate("PlainJwellery");
+            },
+            title: "Plain Jewellery",
+        },
+        {
+            img: require('../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/casting.jpg'),
+            onPress: () => {
+                navigation.navigate("CastingJwellery");
+            },
+            title: "Casting Jewellery",
+        },
+        {
+            img: require('../../assets/czParent.jpg'),
+            onPress: () => {
+                navigation.navigate("CastingCzJwellery");
+            },
+            title: "Casting Cz Jewellery",
+        },
+    ];
 
     // WhatsApp
     const [isModalVisible, setisModalVisible] = useState(false)
@@ -18,13 +48,13 @@ const OurProduct = ({ navigation }) => {
     const setData2 = (data) => {
         setChooseData(data)
     }
-    // WhatsAppz
+    // WhatsApp
 
     const [data, setData] = useState([]);
     // const dispatch = useDispatch();
 
     const getAPIDATA = async () => {
-        const url = "https://bliss-app-backend-production.up.railway.app/api/products/categories";
+        // const url = "https://bliss-app-backend-production.up.railway.app/api/products/categories";
         let result = await fetch(url);
         result = await result.json();
         setData(result);
@@ -37,116 +67,63 @@ const OurProduct = ({ navigation }) => {
 
     return (
         <>
-            {/* <View style={{ backgroundColor: "black", flex: 1 }}>
-                <ScrollView>
-                    <FlatList contentContainerStyle={{ alignItems: "center" }}
-                        data={data}
-                        numColumns={2}
-                        renderItem={({ item, index }) => <View key={index} style={styles.View1}>
-
-
-                            <View style={styles.View2}>
-                                <TouchableOpacity onPress={() => { navigation.navigate('chains') }}>
-                                    <View style={styles.View3}>
-                                        <Image style={styles.ImageView} source={require("../../assets/coming_soon.png")} />
-                                        <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTextureHd.jpg")}>
-                                            <Text style={{ color: "black", fontWeight: "600", }}>{item?.category}</Text>
-                                        </ImageBackground>
-
-                                    </View>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                        }
-                    />
-                </ScrollView>
-            </View> */}
-
             <View style={{ backgroundColor: "#1A2228", flex: 1 }}>
-                <View style={{}}>
+                <View >
                     <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
                 </View>
                 <ScrollView>
-                    <View style={styles.alignment}>
 
-                        <View style={styles.View2}>
-                            <TouchableOpacity onPress={() => { navigation.navigate('chains') }}>
-                                <View style={styles.View3}>
-                                    <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/Handmadeandhollow/handmadeandhollow.jpg")} />
-                                    <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                                        <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold" }}>CHAINS</Text>
-                                    </ImageBackground>
+                    {/* FlatList */}
+
+                    <FlatList contentContainerStyle={{ alignItems: "center" }}
+                        data={ParentCategoryData}
+                        numColumns={2}
+                        renderItem={({ item, index }) =>
+                            <View key={index} style={styles.alignment}>
+                                <View style={styles.View2}>
+                                    <TouchableOpacity activeOpacity={.6} onPress={item.onPress}>
+                                        <Image style={styles.ImageView} source={item.img} />
+                                        <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
+                                            <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>{item.title}</Text>
+                                        </ImageBackground>
+                                    </TouchableOpacity>
                                 </View>
-                            </TouchableOpacity>
-                        </View>
-
-
-                        <View style={styles.View2}>
-                            <TouchableOpacity onPress={() => { navigation.navigate('PlainJwellery') }}>
-                                <View style={styles.View3}>
-                                    <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/plainjewellery/plain.jpg")} />
-                                    <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                                        <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold" }}>PLAIN JEWELLERY</Text>
-                                    </ImageBackground>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-
-                    </View>
-
-                    <View style={styles.alignment}>
-                        <View style={styles.View2}>
-                            <TouchableOpacity onPress={() => { navigation.navigate('CastingJwellery') }}>
-                                <View style={styles.View3}>
-                                    <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/casting.jpg")} />
-                                    <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                                        <Text style={{ color: "black",fontFamily: "HurmeGeometricSans1SemiBold" }}>CASTING JEWELLERY</Text>
-                                    </ImageBackground>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.View2}>
-                            <View style={styles.View3}>
-                                <TouchableOpacity onPress={() => { navigation.navigate('CastingCzJwellery') }}>
-                                    <Image style={styles.ImageView} source={require("../../assets/czParent.jpg")} />
-                                    <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                                        <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold" ,}}>CASTING CZ JEWELLERY</Text>
-                                    </ImageBackground>
-                                </TouchableOpacity>
                             </View>
-                        </View>
-                    </View>
+                        }
+                    />
                 </ScrollView>
-                {/* Whatsapp */}
-                <View style={{ bottom: -40, position: "absolute", right: 5 }}>
-                    <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
+
+                {/* Whatsapp start */}
+
+                <View style={{ bottom: moderateScaleVertical(-35), position: 'absolute', right: moderateScale(5) }}>
+
+                    <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
                         <View style={styles.icontextAlignment}>
-                            <Image source={require("../../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
+                            <Image source={require('../../assets/whatsapp-white.png')} style={styles.whatsappIcon} />
                             <Text style={styles.helpText}>Help</Text>
                         </View>
                     </TouchableOpacity>
 
-                    <Modal
-                        transparent={true}
-                        animationType='fade'
-                        visible={isModalVisible}
-                        nRequestClose={() => changeModalVisible(false)}
-                    >
-                        <SimpleModal changeModalVisible={changeModalVisible}
-                            setData={setData}
-                        />
+                    <Modal transparent={true} animationType="fade" visible={isModalVisible} nRequestClose={() => changeModalVisible(false)}>
+                        <SimpleModal changeModalVisible={changeModalVisible} setData={setData} />
                     </Modal>
+
                 </View>
-                <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ position: "absolute", backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: moderateScaleVertical(748), }}>
-                    <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-                        <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                            <Image source={require("../../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+
+                {/* Whatsapp end */}
+
+                {/* BottomTabNavigator */}
+                <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) }}>
+                    <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
+
+                        <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
+                            <Image source={require('../../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
                         </TouchableOpacity>
 
-
-                        <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-                            <Image source={require("../../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+                        <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
+                            <Image source={require('../../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
                         </TouchableOpacity>
+
                     </View>
                 </ImageBackground>
             </View>
@@ -163,80 +140,69 @@ const styles = StyleSheet.create({
     },
     alignment: {
         flexDirection: "row",
-        alignItems: "center",
-        // marginLeft: moderateScale(12),
         justifyContent: "space-around",
-        marginTop: moderateScaleVertical(25)
+        marginHorizontal: moderateScale(20)
     },
 
     View2: {
         backgroundColor: 'white',
-        justifyContent: 'space-around',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
         width: moderateScale(153),
-        height: moderateScaleVertical(180),
+        height: moderateScaleVertical(200),
         marginTop: moderateScaleVertical(40),
-        marginHorizontal: moderateScale(20)
+        // marginHorizontal: moderateScale(2s0)
     },
-    View3: {
-        backgroundColor: 'white',
-        borderRadius: 35
-    },
+
     ImageView: {
-        height: moderateScaleVertical(140),
-        width: moderateScale(120),
+        height: moderateScaleVertical(160),
+        width: moderateScale(153),
         alignSelf: 'center',
-        borderRadius: 35,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0,
     },
     View5: {
         alignItems: "center",
         height: moderateScaleVertical(40),
         width: moderateScale(153),
-        textAlign: 'center',
-        alignSelf: "center",
-        fontWeight: "900",
-        fontSize: textScale(10),
         justifyContent: "center",
+        marginTop: moderateScaleVertical(160),
+        position: "absolute"
     },
-    // Whatsapp style
+   
+  // Whatsapp style
 
-    HelpButtonAlignment: {
-        justifyContent: "center",
-        backgroundColor: "#25D366",
-        width: moderateScale(110),
-        height: moderateScaleVertical(45),
-        borderRadius: 40,
-        marginBottom: moderateScaleVertical(100)
-        // position: "fixed",
-    },
-    icontextAlignment: {
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "row",
-        justifyContent: "space-around",
-        paddingHorizontal: moderateScale(-30),
-        marginHorizontal: moderateScale(25),
-    },
-    whatsappIcon: {
-        width: moderateScale(20),
-        height: moderateScaleVertical(20),
-        // position:"fixed",
-    },
-    helpText: {
-        color: 'white',
-        fontSize: textScale(13),
-        fontWeight: "bold",
-    },
+  HelpButtonAlignment: {
+    justifyContent: 'center',
+    backgroundColor: '#25D366',
+    width: moderateScale(90),
+    height: moderateScaleVertical(40),
+    borderRadius: 40,
+    marginBottom: moderateScaleVertical(100),
+    // position: "fixed",
+  },
+  icontextAlignment: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingHorizontal: moderateScale(-30),
+    marginHorizontal: moderateScale(15),
+  },
+  whatsappIcon: {
+    width: moderateScale(20),
+    height: moderateScaleVertical(20),
+    // position:"fixed",
+  },
+  helpText: {
+    color: 'white',
+    fontSize: textScale(13),
+    fontWeight: 'bold',
+  },
 
-    backgroundColor: {
-        backgroundColor: "black",
-        flex: 1
-    },
-    alignment2: {
-        marginTop: 100,
-        alignSelf: "center",
-    },
+
 })

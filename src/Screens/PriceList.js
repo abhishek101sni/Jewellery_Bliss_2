@@ -7,6 +7,7 @@ export const SLIDER_WIDTH = Dimensions.get("window").width + 30;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.9);
 import SimpleModal from './SimpleModal';
 
+
 const data = [
   {
     id: 1,
@@ -123,41 +124,37 @@ const DropDown2 = ({ navigation }) => {
         </View>
       </View>
 
-      {/* Whatsapp */}
-      <View style={{ bottom: -40, position: "absolute", right: 5 }}>
-        <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
+      {/* Whatsapp start */}
+
+      <View style={{ bottom: moderateScaleVertical(-44), position: 'absolute', right: moderateScale(5) }}>
+
+        <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
           <View style={styles.icontextAlignment}>
-            <Image source={require("../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
+            <Image source={require('../assets/whatsapp-white.png')} style={styles.whatsappIcon} />
             <Text style={styles.helpText}>Help</Text>
           </View>
         </TouchableOpacity>
 
-        <Modal
-          transparent={true}
-          animationType='fade'
-          visible={isModalVisible}
-          nRequestClose={() => changeModalVisible(false)}
-        >
-          <SimpleModal changeModalVisible={changeModalVisible}
-            setData={setData}
-          />
+        <Modal transparent={true} animationType="fade" visible={isModalVisible} nRequestClose={() => changeModalVisible(false)}>
+          <SimpleModal changeModalVisible={changeModalVisible} setData={setData} />
         </Modal>
+
       </View>
-      {/* Whatsapp */}
 
-      <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ position: "absolute", backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: moderateScaleVertical(748), }}>
-        <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-          <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-            <Image source={require("../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+      {/* Whatsapp end */}
+
+      {/* BottomTabNavigator */}
+      <ImageBackground source={require('../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4), marginTop: moderateScaleVertical(697) }}>
+        <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
+
+          <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
+            <Image source={require('../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
           </TouchableOpacity>
 
-          {/* <TouchableOpacity onPress={() => { navigation.navigate("scrn2") }}>
-                    <Image source={require("../assets/cart-filled.png")} style={{ width: 40, height: 40 }} />
-                </TouchableOpacity> */}
-
-          <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-            <Image source={require("../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
+          <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
+            <Image source={require('../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
           </TouchableOpacity>
+
         </View>
       </ImageBackground>
 
@@ -264,21 +261,21 @@ const styles = StyleSheet.create({
   // Whatsapp style
 
   HelpButtonAlignment: {
-    justifyContent: "center",
-    backgroundColor: "#25D366",
-    width: moderateScale(110),
-    height: moderateScaleVertical(45),
+    justifyContent: 'center',
+    backgroundColor: '#25D366',
+    width: moderateScale(90),
+    height: moderateScaleVertical(40),
     borderRadius: 40,
-    marginBottom: moderateScaleVertical(100)
+    marginBottom: moderateScaleVertical(100),
     // position: "fixed",
   },
   icontextAlignment: {
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-    justifyContent: "space-around",
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     paddingHorizontal: moderateScale(-30),
-    marginHorizontal: moderateScale(25),
+    marginHorizontal: moderateScale(15),
   },
   whatsappIcon: {
     width: moderateScale(20),
@@ -288,9 +285,8 @@ const styles = StyleSheet.create({
   helpText: {
     color: 'white',
     fontSize: textScale(13),
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
-  // Whatsapp
 
 })
 
