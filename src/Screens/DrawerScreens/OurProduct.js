@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     width: moderateScale(90),
     height: moderateScaleVertical(40),
     borderRadius: 40,
-    marginBottom: moderateScaleVertical(100),
+    marginBottom: moderateScaleVertical(125),
     // position: "fixed",
   },
   icontextAlignment: {

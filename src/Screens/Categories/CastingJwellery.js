@@ -1,59 +1,5 @@
-
-// <View style={styles.alignment}>
-//   <View style={styles.View2}>
-//     <TouchableOpacity onPress={() => { navigation.navigate('LadiesRing') }} >
-//       <View style={styles.View3}>
-//         <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/ladiesRings.jpg")} />
-//         {/* <Text style={styles.View5}>LADIES RING</Text> */}
-//         <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-//           <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>Ladies Rings</Text>
-//         </ImageBackground>
-//       </View>
-//     </TouchableOpacity>
-//   </View>
-
-//   <View style={styles.View2}>
-//     <TouchableOpacity onPress={() => { navigation.navigate('GentsRing') }}>
-//       <View style={styles.View3}>
-//         <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/gentsRings.jpg")} />
-//         {/* <Text style={styles.View5}>GENTS RING</Text> */}
-//         <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-//           <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>Gents Rings</Text>
-//         </ImageBackground>
-//       </View>
-//     </TouchableOpacity>
-//   </View>
-
-// </View>
-
-// <View style={styles.alignment}>
-//   <View style={styles.View2}>
-//     <TouchableOpacity onPress={() => { navigation.navigate('Pendents') }}>
-//       <View style={styles.View3}>
-//         <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/pendents.jpg")} />
-//         {/* <Text style={styles.View5}>PENDENTS</Text> */}
-//         <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-//           <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>Pendents</Text>
-//         </ImageBackground>
-//       </View>
-//     </TouchableOpacity>
-//   </View>
-//   <View style={styles.View2}>
-//     <View style={styles.View3}>
-//       <TouchableOpacity onPress={() => { navigation.navigate('Tops') }}>
-//         <Image style={styles.ImageView} source={require("../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/tops.jpg")} />
-//         {/* <Text style={styles.View5}>TOPS</Text> */}
-//         <ImageBackground imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-//           <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>Tops</Text>
-//         </ImageBackground>
-//       </TouchableOpacity>
-//     </View>
-//   </View>
-// </View>
-
-
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground , SafeAreaView } from 'react-native'
 import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 import axios from 'axios';
@@ -135,15 +81,16 @@ const CastingJwellery = ({ navigation }) => {
   };
 
   return (
-    <>
+    
+    <SafeAreaView style={{flex:1}}>
       <View style={{ backgroundColor: "#1A2228", flex: 1 }}>
         <View>
           <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
         </View>
-        <ScrollView>
-          <View style={{ marginBottom: moderateScaleVertical(120) }}>
+<ScrollView>
             {/* FlatList */}
-
+            
+            <View style={{ marginBottom: moderateScaleVertical(50) }}>
             <FlatList contentContainerStyle={{ alignItems: "center" }}
               data={CastingData}
               numColumns={2}
@@ -160,9 +107,9 @@ const CastingJwellery = ({ navigation }) => {
                 </View>
               }
             />
-
-          </View>
-        </ScrollView>
+            </View>
+            </ScrollView>
+       
 
         {/* Whatsapp Help Button*/}
 
@@ -201,7 +148,7 @@ const CastingJwellery = ({ navigation }) => {
           </View>
         </ImageBackground>
       </View>
-    </>
+      </SafeAreaView>
   )
 }
 

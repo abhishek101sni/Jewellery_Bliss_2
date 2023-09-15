@@ -18,7 +18,7 @@ const DrawerNav = createDrawerNavigator()
 const Drawer = ({ navigation }) => {
 
     return (
-       
+    //    <SafeAreaView style={{flex:1}}>
         <DrawerNav.Navigator drawerContent={props => <DrawerContent {...props} />}>
             <DrawerNav.Screen name='Profile' component={WelcomeScreen} options={{
                 title: '',
@@ -54,7 +54,7 @@ const Drawer = ({ navigation }) => {
             <DrawerNav.Screen name='T&C' component={TnC} />
             <DrawerNav.Screen name='Service Available' component={ServiceAvailable} />
         </DrawerNav.Navigator>
-       
+        // </SafeAreaView>
     )
 }
 

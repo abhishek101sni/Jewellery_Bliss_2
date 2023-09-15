@@ -248,14 +248,14 @@ export default function Appointment({navigation}) {
               </View>
 
               <View>
-                {/* <TouchableOpacity onPress={handleSubmit} style={styles.logInButtonAlignment} > */}
+                <TouchableOpacity onPress={handleSubmit} style={styles.logInButtonAlignment} >
 
                 {/* <TouchableOpacity onPress={() => {Alert.alert(`Your Appointment is Scheduled on ${date}` ), console.log("Appointment Booking Details Sent")}} style={styles.logInButtonAlignment} >  */}
-                <TouchableOpacity
+                {/* <TouchableOpacity
                   onPress={() => {
                     navigation.navigate('AppointmentThankyou');
                   }}
-                  style={styles.logInButtonAlignment}>
+                  style={styles.logInButtonAlignment}> */}
                   <ImageBackground
                     source={require('../assets/CompressedTexture3.jpg')}
                     style={styles.ImageBackgroundStyle}

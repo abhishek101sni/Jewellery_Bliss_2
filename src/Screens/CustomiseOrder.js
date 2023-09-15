@@ -1,26 +1,11 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  TextInput,
-  ScrollView,
-  ImageBackground,
-  Alert,
-} from 'react-native';
-import {
-  moderateScale,
-  moderateScaleVertical,
-  textScale,
-} from '../utils/responsive';
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, ScrollView, ImageBackground,Alert,SafeAreaView} from 'react-native';
+import { moderateScale , moderateScaleVertical , textScale} from '../utils/responsive';
 import {SelectList} from 'react-native-dropdown-select-list';
 import axios from 'axios';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 const CustomiseOrder = ({navigation}) => {
-  // const [category, setCategory] = useState("ch")
-  // const [subcategory, setSubCategory] = useState([])
+
   const [category, setCategory] = useState(null);
   const [subcategory, setSubCategory] = useState(null);
   const [purity, setPurity] = useState(null);
@@ -28,7 +13,6 @@ const CustomiseOrder = ({navigation}) => {
   const [length, setLength] = useState(null);
   const [size, setSize] = useState(null);
   const [quantity, setQuantity] = useState(null);
-
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleSubmit = async () => {
@@ -41,17 +25,21 @@ const CustomiseOrder = ({navigation}) => {
         length,
         size,
         quantity,
+        selectedImage,
       };
       // console.log(`dataaaaaaaaaaaaaaaaaaaaaaa`,data);
       const response = await axios.post(
         'https://jewellery-bliss.onrender.com/api/customorders/add',
         data,
       );
+
       console.log('Response:', response.data);
     } catch (error) {
       console.error('Error:', error.message);
     }
   };
+
+  
 
   const selectImageFromGallery = () => {
     const options = {
@@ -68,72 +56,73 @@ const CustomiseOrder = ({navigation}) => {
         // Use the selected image (response.uri) in your component
         const selectedImage = response.assets[0].uri;
         setSelectedImage(selectedImage); // Save the selected image URI in state
-        console.log('image selected', response);
+        console.log('image selecxsdddcoahcisadhcoshcojsdochsdoted', response);
       }
     });
   };
 
   const Parentcategory = [
-    {key: 'ch', value: 'Chains'},
-    {key: 'pj', value: 'Plain Jewellery'},
-    {key: 'cj', value: 'Casting Jewellery'},
-    {key: 'czj', value: 'Casting CZ Jwellery'},
+    {key: 'Chains', value: 'Chains'},
+    {key: 'PlainJewellery', value: 'Plain Jewellery'},
+    {key: 'CastingJewellery', value: 'Casting Jewellery'},
+    {key: 'castingCZJewellery', value: 'Casting CZ Jwellery'},
   ];
   const Childcategory = {
-    ch: [
-      {key: '1', value: 'Silky chains'},
-      {key: '2', value: 'Indo chains'},
-      {key: '3', value: 'Rodium chains'},
-      {key: '4', value: 'Kaju Katli chains'},
-      {key: '5', value: 'Machine Chains'},
-      {key: '6', value: 'Solid Nawabi chains'},
-      {key: '7', value: 'Hollow Nawabi chains'},
-      {key: '8', value: 'Madrasi chains'},
-      {key: '9', value: 'Handmade chains'},
-      {key: '10', value: 'Hollow chains'},
-      {key: '11', value: 'Choco chains'},
-      {key: '12', value: 'Indo Choco chains'},
+    Chains: [
+      {key: 'Silky chains', value: 'Silky chains'},
+      {key: 'Indo chains', value: 'Indo chains'},
+      {key: 'Rodium chains', value: 'Rodium chains'},
+      {key: 'Kaju Katli chains', value: 'Kaju Katli chains'},
+      {key: 'Machine Chains', value: 'Machine Chains'},
+      {key: 'Solid Nawabi chains', value: 'Solid Nawabi chains'},
+      {key: 'Hollow Nawabi chains', value: 'Hollow Nawabi chains'},
+      {key: 'Madrasi chains', value: 'Madrasi chains'},
+      {key: 'Handmade chains', value: 'Handmade chains'},
+      {key: 'Hollow chains', value: 'Hollow chains'},
+      {key: 'Choco chains', value: 'Choco chains'},
+      {key: 'Indo Choco chains', value: 'Indo Choco chains'},
     ],
-    pj: [
-      {key: '13', value: 'Silky chains'},
-      {key: '14', value: 'Indo chains'},
-      {key: '15', value: 'Rodum chains'},
-      {key: '16', value: 'Kaju Katli chains'},
-      {key: '17', value: 'Machine Chains'},
-      {key: '18', value: 'Solid Nawabi chains'},
-      {key: '19', value: 'Hollow Nawabi chains'},
-      {key: '20', value: 'Madrasi chains'},
-      {key: '21', value: 'Handmade chains'},
-      {key: '22', value: 'Hollow chains'},
-      {key: '23', value: 'Choco chains'},
-      {key: '24', value: 'Indo Choco chains'},
+    PlainJewellery: [
+      {key: 'Silky chains', value: 'Silky chains'},
+      {key: 'Indo chains', value: 'Indo chains'},
+      {key: 'Rodium chains', value: 'Rodium chains'},
+      {key: 'Kaju Katli chains', value: 'Kaju Katli chains'},
+      {key: 'Machine Chains', value: 'Machine Chains'},
+      {key: 'Solid Nawabi chains', value: 'Solid Nawabi chains'},
+      {key: 'Hollow Nawabi chains', value: 'Hollow Nawabi chains'},
+      {key: 'Madrasi chains', value: 'Madrasi chains'},
+      {key: 'Handmade chains', value: 'Handmade chains'},
+      {key: 'Hollow chains', value: 'Hollow chains'},
+      {key: 'Choco chains', value: 'Choco chains'},
+      {key: 'Indo Choco chains', value: 'Indo Choco chains'},
     ],
-    cj: [
-      {key: '25', value: 'Ladies Rings'},
-      {key: '26', value: 'Gents Rings'},
-      {key: '27', value: 'Pendents'},
-      {key: '28', value: 'Tops'},
+    CastingJewellery: [
+      {key: 'Ladies Rings', value: 'Ladies Rings'},
+      {key: 'Gents Rings', value: 'Gents Rings'},
+      {key: 'Pendents', value: 'Pendents'},
+      {key: 'Tops', value: 'Tops'},
     ],
-    czj: [
-      {key: '29', value: 'Necklace Sets'},
-      {key: '30', value: 'Mangal Sutra'},
-      {key: '31', value: 'Ladies Rings'},
-      {key: '32', value: 'Cocktail Rings'},
-      {key: '33', value: 'Ladies Solitaire Rings'},
-      {key: '34', value: 'Gents Rings'},
-      {key: '35', value: 'Gents Solitaire Rings'},
-      {key: '36', value: 'Tops Rings'},
-      {key: '37', value: 'Solitaire Rops'},
-      {key: '38', value: 'Pendent Sets'},
-      {key: '39', value: 'Solitaire Pendent Sets'},
-      {key: '40', value: 'Charms'},
-      {key: '41', value: 'Gold Pendents'},
-      {key: '42', value: 'Bracelets'},
-      {key: '43', value: 'Bali'},
+    castingCZJewellery: [
+      {key: 'Necklace Sets', value: 'Necklace Sets'},
+      {key: 'Mangal Sutra', value: 'Mangal Sutra'},
+      {key: 'Ladies Rings', value: 'Ladies Rings'},
+      {key: 'Cocktail Rings', value: 'Cocktail Rings'},
+      {key: 'Ladies Solitaire Rings', value: 'Ladies Solitaire Rings'},
+      {key: 'Gents Rings', value: 'Gents Rings'},
+      {key: 'Gents Solitaire Rings', value: 'Gents Solitaire Rings'},
+      {key: 'Tops Rings', value: 'Tops Rings'},
+      {key: 'Solitaire Rops', value: 'Solitaire Rops'},
+      {key: 'Pendent Sets', value: 'Pendent Sets'},
+      {key: 'Solitaire Pendent Sets', value: 'Solitaire Pendent Sets'},
+      {key: 'Charms', value: 'Charms'},
+      {key: 'Gold Pendents', value: 'Gold Pendents'},
+      {key: 'Bracelets', value: 'Bracelets'},
+      {key: 'Bali', value: 'Bali'},
     ],
   };
 
   return (
+    <SafeAreaView style={{flex:1}}>
     <ImageBackground
       style={{flex: 1}}
       source={require('../assets/background-image2.png')}>
@@ -150,7 +139,7 @@ const CustomiseOrder = ({navigation}) => {
             <Text style={styles.LogInText}>Customise Your Order</Text>
           </View>
           <View>
-            <View style={{marginBottom: moderateScaleVertical(10)}}>
+            <View style={{marginBottom: moderateScaleVertical(-10)}}>
               <SelectList
                 data={Parentcategory}
                 setSelected={setCategory}
@@ -160,7 +149,6 @@ const CustomiseOrder = ({navigation}) => {
                   borderLeftWidth: 0,
                   borderRightWidth: 0,
                   borderRadius: 0,
-                  width: '110%',
                   alignSelf: 'center',
                   borderColor: '#bc9954',
                   borderBottomWidth: moderateScale(0),
@@ -204,15 +192,17 @@ const CustomiseOrder = ({navigation}) => {
               setSelected={setSubCategory}
               fontFamily="HurmeGeometricSans1"
               boxStyles={{
+              
                 borderTopWidth: 0,
                 borderLeftWidth: 0,
                 borderRightWidth: 0,
                 borderRadius: 0,
-                width: '90%',
+              
                 alignSelf: 'center',
                 borderColor: '#bc9954',
                 borderBottomWidth: moderateScale(0),
                 width: '89%',
+            
               }}
               badgeTextStyles={{
                 color: 'black',
@@ -220,14 +210,14 @@ const CustomiseOrder = ({navigation}) => {
                 paddingBottom: -25,
                 paddingLeft: 0,
               }}
-              placeholder="Select subCategory"
+              placeholder="Select Subcategory"
               placeholderTextColor="black"
               dropdownStyles={{
                 width: '80%',
                 alignSelf: 'center',
                 height: 130,
                 borderColor: '#bc9954',
-                borderRadius: 2,
+                borderRadius: 1,
               }}
               // search={false}
               inputStyles={{
@@ -303,27 +293,27 @@ const CustomiseOrder = ({navigation}) => {
               </TouchableOpacity>
             </View>
 
-            {/* <View style={{marginTop: moderateScaleVertical(10)}}>
+            <View style={{marginTop: moderateScaleVertical(10) , display:"none"}}>
               {selectedImage && (
                 <Image
                   source={{uri: selectedImage}}
                   style={{width: moderateScale(200), height:moderateScaleVertical(150) }}
                 />
               )}
-            </View> */}
+            </View>
           </View>
 
           <View style={styles.logInButtonAlignment}>
-            {/* <TouchableOpacity onPress={handleSubmit}> */}
-            {/* <TouchableOpacity
+            <TouchableOpacity onPress={handleSubmit}>
+            {/* <TouchableOpacity ``
               onPress={() => {
                 Alert.alert('Thank you');
                 console.log('Data Submitted Succesfully');
               }}> */}
-              <TouchableOpacity
+              {/* <TouchableOpacity
               onPress={() => {
                navigation.navigate("CustomiseThankyou")
-              }}>
+              }}> */}
               <ImageBackground
                 source={require('../assets/CompressedTexture3.jpg')}
                 style={styles.ImageBackgroundStyle}
@@ -386,6 +376,7 @@ const CustomiseOrder = ({navigation}) => {
         </View>
       </ImageBackground>
     </ImageBackground>
+    </SafeAreaView>
   );
 };
 
@@ -500,3 +491,4 @@ const styles = StyleSheet.create({
   //   // marginTop: moderateScaleVertical(40),
   // },
 });
+

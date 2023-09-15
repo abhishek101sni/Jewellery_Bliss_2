@@ -1,75 +1,156 @@
-
-import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, ImageBackground, Modal } from 'react-native'
-import { useDispatch } from 'react-redux'
-import { setActiveItem } from '../../../../redux/action';
-import { StyleSheet } from 'react-native';
-import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
+import React, {useState, useEffect} from 'react';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  FlatList,
+  ImageBackground,
+  SafeAreaView,
+  Button,
+  Modal
+} from 'react-native';
+import {useDispatch} from 'react-redux';
+import {setActiveItem} from '../../../../redux/action';
+import {StyleSheet} from 'react-native';
+import {
+  height,
+  moderateScale,
+  moderateScaleVertical,
+  textScale,
+} from '../../../../utils/responsive';
 import SimpleModal from '../../../SimpleModal';
 
 
+const SilkyChainsC = ({navigation}) => {
 
-const ChocoChainsC = ({ navigation }) => {
-  // WhatsApp
-  const [isModalVisible, setisModalVisible] = useState(false)
-  const [chooseData, setChooseData] = useState();
+// WhatsApp
+const [isModalVisible, setisModalVisible] = useState(false)
+const [chooseData, setChooseData] = useState();
 
-  const changeModalVisible = (bool) => {
-    setisModalVisible(bool)
-  }
+const changeModalVisible = (bool) => {
+  setisModalVisible(bool)
+}
 
 
-  const setData2 = (data) => {
-    setChooseData(data)
-  }
-  // WhatsApp
+const setData2 = (data) => {
+  setChooseData(data)
+}
+// WhatsApp
+
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
+  // loadmore
+  const [visibleData, setVisibleData] = useState([]);
+  const [itemsToLoad, setItemsToLoad] = useState(10);
+
   const getAPIDATA = async () => {
-    // const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=18";
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Choco%20chains";
+    const url =
+      'https://bliss-app-backend-production.up.railway.app/api/products/?search=Choco%20chains';
+
     let result = await fetch(url);
     result = await result.json();
     setData(result);
-  }
+  };
 
   useEffect(() => {
     getAPIDATA();
   }, []);
 
-  const handlePress = (item) => {
+  const handlePress = item => {
     dispatch(setActiveItem(item));
     navigation.navigate('singleproduct');
   };
 
+  useEffect(() => {
+    // Update the visible data based on the number of items to load.
+    setVisibleData(data.slice(0, itemsToLoad));
+  }, [data, itemsToLoad]);
+
+  const loadMoreItems = () => {
+    // Increase the number of items to load.
+    setItemsToLoad(itemsToLoad + 5); // You can adjust the increment as needed.
+  };
+
   return (
-    <ImageBackground style={{ flex: 1 }} source={require("../../../../assets/background-image2.png")}>
-      <Image source={require('../../../../assets/GOLDEN-STRIP.png')} style={{ width: '100%', height: 3 }} />
-      
-      <ScrollView>
-        <View style={{ marginBottom: moderateScaleVertical(120) }}>
-          {/* FlatList */}
+    <SafeAreaView style={{flex: 1}}>
+      <ImageBackground
+        style={{flex: 1}}
+        source={require('../../../../assets/background-image2.png')}>
+        <Image
+          source={require('../../../../assets/GOLDEN-STRIP.png')}
+          style={{
+            width: '100%',
+            // marginBottom:10,
+            height: 3,
+          }}
+        />
 
-          <FlatList contentContainerStyle={{ alignItems: "center" }}
-            data={data}
-            numColumns={2}
-            renderItem={({ item, index }) =>
-              <View key={index} style={styles.alignment}>
-                <View style={styles.View2}>
-                  <TouchableOpacity activeOpacity={.6} onPress={() => handlePress(item)}>
-                    <Image style={styles.ImageView} source={{ uri: item.images[0] }} />
-                    <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../../../assets/CompressedTexture3.jpg")}>
-                      <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>{item?.name}</Text>
+        <FlatList
+          contentContainerStyle={{alignItems: 'center'}}
+          data={visibleData} // Use the visibleData state to render items.
+          numColumns={2}
+          renderItem={({item, index}) => (
+            // <View style={{marginBottom:moderateScaleVertical(10)}}>
+            <View key={index} style={styles.View1}>
+              <View style={styles.View2}>
+                <TouchableOpacity onPress={() => handlePress(item)}>
+                  <View style={styles.View3}>
+                    <Image
+                      style={styles.ImageView}
+                      source={{uri: item.images[0]}}
+                    />
+                    <ImageBackground
+                      style={styles.View5}
+                      imageStyle={{
+                        borderBottomLeftRadius: 20,
+                        borderBottomRightRadius: 20,
+                      }}
+                      source={require('../../../../assets/CompressedTexture3.jpg')}>
+                      <Text style={{color: 'black', fontFamily:"HurmeGeometricSans1Bold" , fontSize:textScale(13)}}>
+                        {item?.name}
+                      </Text>
                     </ImageBackground>
-                  </TouchableOpacity>
-                </View>
+                  </View>
+                </TouchableOpacity>
               </View>
-            }
-          />
-        </View>
-      </ScrollView>
-
+            </View>
+            // </View>
+          )}
+          ListFooterComponent={() => (
+            <TouchableOpacity
+              onPress={loadMoreItems}
+              style={{alignItems: 'center'}}>
+              <ImageBackground
+                source={require('../../../../assets/CompressedTexture3.jpg')}
+                imageStyle={{borderRadius: 20}}
+                style={{
+                  alignItems: 'center',
+                  padding: moderateScale(9),
+                  width: moderateScale(100),
+                  height: moderateScaleVertical(40),
+                  justifyContent: 'center',
+                  marginTop: moderateScaleVertical(20),
+                  marginBottom:moderateScaleVertical(5)
+                }}>
+                <Text
+                  style={{
+                    fontSize: textScale(13),
+                    color: 'black',
+                    marginLeft: moderateScale(0),
+                    borderRadius: 40,
+                    // paddingTop: moderateScaleVertical(3),
+                    fontFamily: 'HurmeGeometricSans1',
+                  }}>
+                  Load more...
+                </Text>
+              </ImageBackground>
+            </TouchableOpacity>
+          )}
+        />
+        
       {/* Whatsapp Help Button*/}
 
       <View View style={{ bottom: -40, position: "absolute", right: 5 }}>
@@ -91,67 +172,60 @@ const ChocoChainsC = ({ navigation }) => {
           />
         </Modal>
       </View>
-
-      {/* Bottom Tab Navigator */}
-
-      <ImageBackground source={require("../../../../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ position: "absolute", backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: moderateScaleVertical(748), }}>
-        <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-          <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-            <Image source={require("../../../../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-          </TouchableOpacity>
-
-
-          <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-            <Image source={require("../../../../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-          </TouchableOpacity>
-        </View>
       </ImageBackground>
-    </ImageBackground>
-  )
-}
+    </SafeAreaView>
+  );
+};
 
-export default ChocoChainsC
+export default SilkyChainsC;
 
 const styles = StyleSheet.create({
-  goldenStrip: {
-    width: "100%",
-    height: 3,
+  View1: {
+    marginBottom: moderateScale(10),
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginHorizontal: moderateScale(20),
   },
-  // flatlist Design
-  alignment: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    marginHorizontal: moderateScale(20)
-  },
+
   View2: {
     backgroundColor: 'white',
+    justifyContent: 'space-evenly',
+    // marginRight: moderateScale(10),
+    marginTop: moderateScaleVertical(15),
+    marginBottom: moderateScaleVertical(15),
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-    width: moderateScale(153),
-    height: moderateScaleVertical(200),
-    marginTop: moderateScaleVertical(40),
+    width: moderateScale(150),
+    height: moderateScaleVertical(180),
+    justifyContent: 'space-around',
+    marginHorizontal: moderateScale(-5),
   },
+
+  View3: {
+    backgroundColor: 'white',
+    borderRadius: 35,
+  },
+
   ImageView: {
-    height: moderateScaleVertical(160),
-    width: moderateScale(153),
+    height: moderateScaleVertical(155),
+    width: moderateScale(150),
     alignSelf: 'center',
+    borderRadius: 0,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0,
   },
   View5: {
-    alignItems: "center",
+    alignItems: 'center',
     height: moderateScaleVertical(40),
     width: moderateScale(153),
-    justifyContent: "center",
-    marginTop: moderateScaleVertical(160),
-    position: "absolute"
+    textAlign: 'center',
+    alignSelf: 'center',
+    fontWeight: '900',
+    fontSize: textScale(10),
+    justifyContent: 'center',
   },
-  // flatlist Design
-
   // Whatsapp style
 
   HelpButtonAlignment: {
@@ -160,7 +234,7 @@ const styles = StyleSheet.create({
     width: moderateScale(110),
     height: moderateScaleVertical(45),
     borderRadius: 40,
-    marginBottom: moderateScaleVertical(100)
+    marginBottom: moderateScaleVertical(40)
     // position: "fixed",
   },
   icontextAlignment: {
@@ -181,4 +255,4 @@ const styles = StyleSheet.create({
     fontSize: textScale(13),
     fontWeight: "bold",
   }
-})
+});

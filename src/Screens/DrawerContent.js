@@ -85,7 +85,7 @@ const DrawerContent = (props) => {
 
 
                 <View style={styles.line}></View>
-                <View style={{ marginTop: moderateScaleVertical(38), flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(50) }}>
+                <View style={{ marginTop: moderateScaleVertical(10), flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(50) }}>
                     <TouchableOpacity onPress={() => {
                         Linking.openURL("https://www.facebook.com/jewellerybliss2023?mibextid=ZbWKwL");
                     }}>
@@ -106,7 +106,7 @@ const DrawerContent = (props) => {
 
 
 
-                <View style={{ marginTop: moderateScaleVertical(60), marginBottom: moderateScaleVertical(15) }}>
+                <View style={{ marginTop: moderateScaleVertical(60), marginBottom: moderateScaleVertical(60) }}>
                     <TouchableOpacity style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(90) }} onPress={logout}>
                         <Image source={require("../assets/logoutIcon.png")} style={{ width: moderateScale(22), height: moderateScaleVertical(24), }} />
                         <Text style={{ fontSize: textScale(16), color: "#181818", fontFamily: "HurmeGeometricSans1Bold" }}>Logout</Text>
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     ViewProfileAlignment: {
         flexDirection: "column",
         alignItems: "center",
-        marginTop: moderateScaleVertical(15),
+        marginTop: moderateScaleVertical(60),
         marginBottom: moderateScaleVertical(20)
     },
     ViewProfileDp: {

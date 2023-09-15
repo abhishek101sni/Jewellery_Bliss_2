@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, SafeAreaView,FlatList, Modal, ImageBackground } from 'react-native'
 import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 import axios from 'axios';
@@ -158,13 +158,13 @@ const CastingCzJwellery = ({ navigation }) => {
   };
 
   return (
-    <>
+    <SafeAreaView style={{flex:1}}>
       <View style={{ backgroundColor: "#1A2228", flex: 1 }}>
         <View>
           <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
         </View>
         <ScrollView>
-          <View style={{ marginBottom: moderateScaleVertical(120) }}>
+          <View style={{ marginBottom: moderateScaleVertical(50) }}>
             {/* FlatList */}
 
             <FlatList contentContainerStyle={{ alignItems: "center" }}
@@ -224,7 +224,7 @@ const CastingCzJwellery = ({ navigation }) => {
           </View>
         </ImageBackground>
       </View>
-    </>
+      </SafeAreaView>
   )
 }
 
@@ -239,7 +239,8 @@ const styles = StyleSheet.create({
   alignment: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginHorizontal: moderateScale(20)
+    marginHorizontal: moderateScale(20),
+    marginVertical:moderateScaleVertical(20)
   },
   View2: {
     backgroundColor: 'white',
@@ -249,7 +250,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 20,
     width: moderateScale(153),
     height: moderateScaleVertical(200),
-    marginTop: moderateScaleVertical(40),
+
   },
   ImageView: {
     height: moderateScaleVertical(160),

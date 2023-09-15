@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground } from 'react-native'
+import { View, Text, Image, TouchableOpacity, SafeAreaView ,ScrollView, FlatList, Modal, ImageBackground } from 'react-native'
 import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 import SimpleModal from '../SimpleModal';
@@ -117,15 +117,16 @@ const PlainJwellery = ({ navigation }) => {
   // WhatsApp
 
   return (
-    <>
+    <SafeAreaView style={{flex:1}}>
       <View style={{ backgroundColor: "#1A2228", flex: 1 }}>
         <View>
           <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
         </View>
-        <ScrollView>
-          <View style={{ marginBottom: moderateScaleVertical(120) }}>
+        
+         
             {/* FlatList */}
-
+<ScrollView>
+<View style={{ marginBottom: moderateScaleVertical(50) }}>
             <FlatList contentContainerStyle={{ alignItems: "center" }}
               data={PlainJewellery}
               numColumns={2}
@@ -142,10 +143,8 @@ const PlainJwellery = ({ navigation }) => {
                 </View>
               }
             />
-
-          </View>
-        </ScrollView>
-
+            </View>
+            </ScrollView>
         {/* Whatsapp Help Button*/}
 
         <View View style={{ bottom: -40, position: "absolute", right: 5 }}>
@@ -184,7 +183,7 @@ const PlainJwellery = ({ navigation }) => {
           </View>
         </ImageBackground>
       </View>
-    </>
+    </SafeAreaView>
   )
 }
 
@@ -199,7 +198,8 @@ const styles = StyleSheet.create({
   alignment: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginHorizontal: moderateScale(20)
+    marginHorizontal: moderateScale(20),
+    marginVertical:moderateScaleVertical(20)
   },
   View2: {
     backgroundColor: 'white',
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 20,
     width: moderateScale(153),
     height: moderateScaleVertical(200),
-    marginTop: moderateScaleVertical(40),
+    // marginTop: moderateScaleVertical(40),
   },
   ImageView: {
     height: moderateScaleVertical(160),

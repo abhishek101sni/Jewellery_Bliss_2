@@ -141,10 +141,10 @@ const Chains = ({ navigation }) => {
         <View>
           <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
         </View>
-        <ScrollView>
-          <View style={{ marginBottom: moderateScaleVertical(120) }}>
+        
             {/* FlatList */}
-
+     <ScrollView >
+     <View style={{ marginBottom: moderateScaleVertical(50) }}>
             <FlatList contentContainerStyle={{ alignItems: "center" }}
               data={ChainsData}
               numColumns={2}
@@ -161,14 +161,12 @@ const Chains = ({ navigation }) => {
                 </View>
               }
             />
-
-          </View>
-        </ScrollView>
+            </View>
+            </ScrollView>
+  
 
         {/* Whatsapp start */}
-
         <View style={{ bottom: moderateScaleVertical(-35), position: 'absolute', right: moderateScale(5) }}>
-
           <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
             <View style={styles.icontextAlignment}>
               <Image source={require('../../assets/whatsapp-white.png')} style={styles.whatsappIcon} />
@@ -185,7 +183,7 @@ const Chains = ({ navigation }) => {
         {/* Whatsapp end */}
 
         {/* BottomTabNavigator */}
-        <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) }}>
+        <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) , marginTop:moderateScaleVertical(0) }}>
           <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
 
             <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
@@ -198,7 +196,8 @@ const Chains = ({ navigation }) => {
 
           </View>
         </ImageBackground>
-      </View>
+
+          </View>
       </SafeAreaView>
   )
 }
@@ -214,7 +213,9 @@ const styles = StyleSheet.create({
   alignment: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginHorizontal: moderateScale(20)
+    marginHorizontal: moderateScale(20),
+    marginVertical:moderateScaleVertical(20)
+
   },
   View2: {
     backgroundColor: 'white',
@@ -224,7 +225,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 20,  
     width: moderateScale(153),
     height: moderateScaleVertical(200),
-    marginTop: moderateScaleVertical(40),
+    // marginTop: moderateScaleVertical(40),
   },
   ImageView: {
     height: moderateScaleVertical(160),
