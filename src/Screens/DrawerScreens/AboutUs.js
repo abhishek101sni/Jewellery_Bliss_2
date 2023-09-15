@@ -1,10 +1,11 @@
-import { View, Text, StyleSheet, Image, ScrollView, ImageBackground } from 'react-native'
+import { View, Text, StyleSheet, Image, ScrollView, ImageBackground , SafeAreaView } from 'react-native'
 import React from 'react'
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 
 
 const AboutUs = () => {
   return (
+    <SafeAreaView style={{flex:1}}>
     <ImageBackground style={{ flex: 1 }} source={require("../../assets/background-image2.png")}>
       <View style={{}}>
         <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
@@ -85,6 +86,7 @@ const AboutUs = () => {
         <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
       </View>
     </ImageBackground>
+    </SafeAreaView>
 
   )
 }

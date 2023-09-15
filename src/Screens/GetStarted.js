@@ -1,4 +1,4 @@
-import { Text, View, Image, TouchableOpacity, StyleSheet, Dimensions, ImageBackground, ScrollView } from 'react-native'
+import { Text, View, Image, TouchableOpacity, StyleSheet, Dimensions, ImageBackground, ScrollView ,SafeAreaView } from 'react-native'
 import React, { useState, useRef } from 'react'
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
 
@@ -47,6 +47,8 @@ const GetStarted = ({ navigation }) => {
 
     return (
 
+
+        <SafeAreaView style={{flex:1}}>
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <View style={{ flex: 1 }}>
 
@@ -101,6 +103,7 @@ const GetStarted = ({ navigation }) => {
                 </View>
             </View>
         </ImageBackground>
+         </SafeAreaView>
     )
 }
 

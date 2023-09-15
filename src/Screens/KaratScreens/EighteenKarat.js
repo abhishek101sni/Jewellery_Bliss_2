@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, Modal, ScrollView, FlatList, ImageBackground } from 'react-native'
+import { View, Text, Image, TouchableOpacity, Modal, ScrollView, FlatList, ImageBackground, SafeAreaView } from 'react-native'
 import { useDispatch } from 'react-redux'
 import { setActiveItem } from '../../redux/action';
 import { StyleSheet } from 'react-native';
@@ -42,6 +42,7 @@ const Product = ({ navigation }) => {
     };
 
     return (
+        <SafeAreaView style={{flex:1}}>
         <ImageBackground style={{ flex: 1 }} source={require("../../assets/background-image2.png")}>
             <View style={{}}>
                 <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
@@ -96,8 +97,8 @@ const Product = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
             </ImageBackground> */}
-
         </ImageBackground>
+        </SafeAreaView>
 
     )
 }

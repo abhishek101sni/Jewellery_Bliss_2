@@ -1,7 +1,7 @@
 import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import DrawerContent from '../Screens/DrawerContent';
-import { Button, Image, TouchableOpacity, View } from 'react-native';
+import { Button, Image, TouchableOpacity, View , SafeAreaView } from 'react-native';
 
 import WelcomeScreen from '../Screens/DrawerScreens/WelcomeScreen'
 import OurProduct from '../Screens/DrawerScreens/OurProduct';
@@ -18,6 +18,7 @@ const DrawerNav = createDrawerNavigator()
 const Drawer = ({ navigation }) => {
 
     return (
+       
         <DrawerNav.Navigator drawerContent={props => <DrawerContent {...props} />}>
             <DrawerNav.Screen name='Profile' component={WelcomeScreen} options={{
                 title: '',
@@ -53,6 +54,7 @@ const Drawer = ({ navigation }) => {
             <DrawerNav.Screen name='T&C' component={TnC} />
             <DrawerNav.Screen name='Service Available' component={ServiceAvailable} />
         </DrawerNav.Navigator>
+       
     )
 }
 

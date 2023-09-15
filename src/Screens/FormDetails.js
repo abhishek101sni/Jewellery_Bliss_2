@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, ScrollView, ImageBackground } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, ScrollView, ImageBackground , SafeAreaView} from "react-native";
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
 import { AuthContext } from "./AuthContext";
 import { fillDetails } from "../redux/Formdetails/formDetails.action-creator";
@@ -60,6 +60,7 @@ const FormDetails = ({ navigation }) => {
     }, []);
 
     return (
+        <SafeAreaView style={{flex:1}}>
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <ScrollView>
 
@@ -132,7 +133,7 @@ const FormDetails = ({ navigation }) => {
                                 autoCapitalize
                                 autoCorrect={false}
                                 placeholder="State"
-                                placeholderTextColor="#a4a4a4"
+                                placeholderTextColor="#C7C7CD"
                                 onChangeText={setState}
                             />
                         </View>
@@ -146,6 +147,7 @@ const FormDetails = ({ navigation }) => {
                             placeholderTextColor="#C7C7CD"
                             onChangeText={setGstno}
                         />
+                        
 
                         <View style={styles.span}>
                             <TextInput
@@ -177,19 +179,21 @@ const FormDetails = ({ navigation }) => {
                 </View>
 
             </ScrollView>
-            <View style={{ position: "absolute", top: height - 6 }}>
-                <Image source={require("../assets/GOLDEN-STRIP.png")} style={{
-                    borderWidth: 3,
-                    width: 431,
-                }} />
+            <View >
+                <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} />
             </View>
         </ImageBackground>
+        </SafeAreaView>
     );
 };
 
 export default FormDetails;
 
 const styles = StyleSheet.create({
+    goldenStripBottom: {
+        width: "100%",
+        height: 6,
+    },
     SkipButton: {
         alignItems: 'flex-end',
         marginTop: moderateScaleVertical(10),
@@ -198,8 +202,8 @@ const styles = StyleSheet.create({
     },
     SkipButtonText: {
         color: "#bc9954",
-        fontSize: textScale(15),
-        fontWeight: 'bold',
+        fontSize: textScale(13),
+        fontFamily: 'HurmeGeometricSans1Bold',
     },
     logoAlignment: {
         alignSelf: "center",
@@ -215,122 +219,108 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     BusinessDetailsText: {
-        fontSize: 20,
+        fontSize: textScale(20),
         marginTop: moderateScaleVertical(-50),
         textAlign: "center",
         color: "black",
-        fontFamily: "Poppins-Medium"
+        fontFamily: 'HurmeGeometricSans1SemiBold',
     },
     Brandnameinputbottom: {
-        borderWidth: 1,
-        color: "#7d7d7d",
-        lineHeight: 15,
-        marginTop: moderateScaleVertical(0),
-        borderBottomWidth: moderateScaleVertical(1),
-        borderBottomColor: "#bc9954",
-        borderWidth: 0,
+        alignSelf:"center",
+        fontSize: textScale(13),
+        color: "black",
         width: "80%",
-        paddingBottom: 0,
-        paddingLeft: 0,
-        alignSelf: 'center',
+        marginTop: moderateScaleVertical(30),
+        marginBottom: moderateScaleVertical(5),
+        borderBottomWidth: moderateScale(1.5),
+        borderBottomColor: "#bc9954",
+        paddingBottom: moderateScaleVertical(0),
+        fontFamily: "HurmeGeometricSans1",
+        paddingBottom:moderateScaleVertical(1)
     },
     Addressinputbottom: {
-        borderWidth: 1,
-        color: "#7d7d7d",
-        lineHeight: 25,
-        marginTop: moderateScaleVertical(15),
-        borderBottomWidth: 1,
-        borderBottomColor: "#bc9954",
-        borderWidth: 0,
+        fontSize:textScale(13),
+        color: "black",
         width: "80%",
-        paddingBottom: moderateScaleVertical(0),
-        paddingLeft: moderateScale(0),
+        marginTop: moderateScaleVertical(15),
+        borderBottomWidth: moderateScale(1.5),
+        borderBottomColor: "#bc9954",
+        paddingBottom: moderateScaleVertical(1),
+        fontFamily: 'HurmeGeometricSans1Bold',
         alignSelf: 'center',
+       
     },
     Pincodeinputbottom: {
-        borderWidth: 1,
-        color: "#7d7d7d",
-        lineHeight: 25,
-        marginTop: moderateScaleVertical(15),
-        borderBottomWidth: 1,
-        borderBottomColor: "#bc9954",
-        borderWidth: 0,
+        fontSize:textScale(13),
+        color: "black",
         width: "35%",
-        paddingBottom: moderateScaleVertical(0),
-        paddingLeft: moderateScale(0),
+        marginTop: moderateScaleVertical(15),
+        borderBottomWidth: moderateScale(1.5),
+        borderBottomColor: "#bc9954",
+        paddingBottom: moderateScaleVertical(1),
+        fontFamily: 'HurmeGeometricSans1Bold',
     },
     Localityinputbottom: {
-        borderWidth: 1,
-        color: "#7d7d7d",
-        marginTop: moderateScaleVertical(15),
-        lineHeight: 25,
-        borderBottomWidth: 1,
-        borderBottomColor: "#bc9954",
-        borderWidth: 0,
+        fontSize:textScale(13),
+        color: "black",
         width: "35%",
-        paddingBottom: moderateScaleVertical(0),
-        paddingLeft: moderateScale(0),
+        marginTop: moderateScaleVertical(15),
+        borderBottomWidth: moderateScale(1.5),
+        borderBottomColor: "#bc9954",
+        paddingBottom: moderateScaleVertical(1),
+        fontFamily: 'HurmeGeometricSans1Bold',
     },
     Cityinputbottom: {
-        borderWidth: 1,
-        color: "#7d7d7d",
-        marginTop: moderateScaleVertical(15),
-        lineHeight: 25,
-        borderBottomWidth: 1,
-        borderBottomColor: "#bc9954",
-        borderWidth: 0,
+        fontSize:textScale(13),
+        color: "black",
         width: "35%",
-        paddingBottom: moderateScaleVertical(0),
-        paddingLeft: moderateScale(0),
+        marginTop: moderateScaleVertical(15),
+        borderBottomWidth: moderateScale(1.5),
+        borderBottomColor: "#bc9954",
+        paddingBottom: moderateScaleVertical(1),
+        fontFamily: 'HurmeGeometricSans1Bold',
     },
     Stateinputbottom: {
-        borderWidth: 1,
-        color: "#7d7d7d",
-        marginTop: moderateScaleVertical(15),
-        lineHeight: 25,
-        borderBottomWidth: 1,
-        borderBottomColor: "#bc9954",
-        borderWidth: 0,
+        fontSize:textScale(13),
+        color: "black",
         width: "35%",
-        paddingBottom: moderateScaleVertical(0),
-        paddingLeft: moderateScale(0),
+        marginTop: moderateScaleVertical(15),
+        borderBottomWidth: moderateScale(1.5),
+        borderBottomColor: "#bc9954",
+        paddingBottom: moderateScaleVertical(1),
+        fontFamily: 'HurmeGeometricSans1Bold',
     },
     GSTinputbottom: {
-        borderWidth: 1,
-        color: "#7d7d7d",
-        marginTop: moderateScaleVertical(15),
-        lineHeight: 25,
-        borderBottomWidth: 1,
-        borderBottomColor: "#bc9954",
-        borderWidth: 0,
+        alignSelf:"center",
+        fontSize: textScale(13),
+        color: "black",
         width: "80%",
-        paddingBottom: moderateScaleVertical(0),
-        paddingLeft: moderateScale(0),
-        alignSelf: 'center',
+        marginTop: moderateScaleVertical(15),
+        marginBottom: moderateScaleVertical(5),
+        borderBottomWidth: moderateScale(1.5),
+        borderBottomColor: "#bc9954",
+        fontFamily: "HurmeGeometricSans1",
+        paddingBottom:moderateScaleVertical(1)
     },
     StorePersonNameinputbottom: {
-        borderWidth: 1,
-        color: "#7d7d7d",
-        marginTop: moderateScaleVertical(15),
-        lineHeight: 25,
-        borderBottomWidth: 1,
-        borderBottomColor: "#bc9954",
-        borderWidth: 0,
+        fontSize:textScale(13),
+        color: "black",
         width: "35%",
-        paddingBottom: moderateScaleVertical(0),
-        paddingLeft: moderateScale(0),
+        marginTop: moderateScaleVertical(15),
+        borderBottomWidth: moderateScale(1.5),
+        borderBottomColor: "#bc9954",
+        paddingBottom: moderateScaleVertical(1),
+        fontFamily: 'HurmeGeometricSans1Bold',
     },
     contactnoinputbottom: {
-        borderWidth: 1,
-        color: "#7d7d7d",
-        marginTop: moderateScaleVertical(15),
-        lineHeight: 25,
-        borderBottomWidth: 1,
-        borderBottomColor: "#bc9954",
-        borderWidth: 0,
+        fontSize:textScale(13),
+        color: "black",
         width: "35%",
-        paddingBottom: moderateScaleVertical(0),
-        paddingLeft: moderateScale(0),
+        marginTop: moderateScaleVertical(15),
+        borderBottomWidth: moderateScale(1.5),
+        borderBottomColor: "#bc9954",
+        paddingBottom: moderateScaleVertical(1),
+        fontFamily: 'HurmeGeometricSans1Bold',
     },
     SubmitButtonAlignment: {
         alignItems: "center",
@@ -358,6 +348,5 @@ const styles = StyleSheet.create({
     span: {
         flexDirection: "row",
         justifyContent: "space-evenly",
-        paddingHorizontal: 0,
     },
 });

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground, StyleSheet } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, SafeAreaView ,FlatList, Modal, ImageBackground, StyleSheet } from 'react-native'
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 import SimpleModal from '../SimpleModal';
 
@@ -66,8 +66,8 @@ const OurProduct = ({ navigation }) => {
 
 
     return (
-        <>
-            <View style={{ backgroundColor: "#1A2228", flex: 1 }}>
+        
+            <SafeAreaView style={{  flex: 1 }}>
                 <View >
                     <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
                 </View>
@@ -93,24 +93,24 @@ const OurProduct = ({ navigation }) => {
                     />
                 </ScrollView>
 
-                {/* Whatsapp start */}
+              {/* Whatsapp start */}
 
-                <View style={{ bottom: moderateScaleVertical(-35), position: 'absolute', right: moderateScale(5) }}>
+        <View style={{ bottom: moderateScaleVertical(-35), position: 'absolute', right: moderateScale(5) }}>
 
-                    <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
-                        <View style={styles.icontextAlignment}>
-                            <Image source={require('../../assets/whatsapp-white.png')} style={styles.whatsappIcon} />
-                            <Text style={styles.helpText}>Help</Text>
-                        </View>
-                    </TouchableOpacity>
+<TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
+  <View style={styles.icontextAlignment}>
+    <Image source={require('../../assets/whatsapp-white.png')} style={styles.whatsappIcon} />
+    <Text style={styles.helpText}>Help</Text>
+  </View>
+</TouchableOpacity>
 
-                    <Modal transparent={true} animationType="fade" visible={isModalVisible} nRequestClose={() => changeModalVisible(false)}>
-                        <SimpleModal changeModalVisible={changeModalVisible} setData={setData} />
-                    </Modal>
+<Modal transparent={true} animationType="fade" visible={isModalVisible} nRequestClose={() => changeModalVisible(false)}>
+  <SimpleModal changeModalVisible={changeModalVisible} setData={setData} />
+</Modal>
 
-                </View>
+</View>
 
-                {/* Whatsapp end */}
+{/* Whatsapp end */}
 
                 {/* BottomTabNavigator */}
                 <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) }}>
@@ -126,8 +126,7 @@ const OurProduct = ({ navigation }) => {
 
                     </View>
                 </ImageBackground>
-            </View>
-        </>
+            </SafeAreaView>
     )
 }
 
@@ -174,6 +173,7 @@ const styles = StyleSheet.create({
         position: "absolute"
     },
    
+ 
   // Whatsapp style
 
   HelpButtonAlignment: {

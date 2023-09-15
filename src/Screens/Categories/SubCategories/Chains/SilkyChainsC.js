@@ -1,74 +1,257 @@
+// import React, { useState, useEffect } from 'react'
+// import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, ImageBackground } from 'react-native'
+// import { useDispatch } from 'react-redux'
+// import { setActiveItem } from '../../../../redux/action';
+// import { StyleSheet } from 'react-native';
+// import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
+// const SilkyChainsC = ({ navigation }) => {
+//   const [data, setData] = useState([]);
+//   const dispatch = useDispatch();
 
-import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, ImageBackground } from 'react-native'
-import { useDispatch } from 'react-redux'
-import { setActiveItem } from '../../../../redux/action';
-import { StyleSheet } from 'react-native';
-import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
+//   const getAPIDATA = async () => {
+//     const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Silky%20Rope";
 
+//     let result = await fetch(url);
+//     result = await result.json();
+//     setData(result);
+//   }
 
-const SilkyChainsC = ({ navigation }) => {
+//   useEffect(() => {
+//     getAPIDATA();
+//   }, []);
+
+//   const handlePress = (item) => {
+//     dispatch(setActiveItem(item));
+//     navigation.navigate('singleproduct');
+//   };
+
+//   return (
+//     <ImageBackground style={{ flex: 1 }} source={require("../../../../assets/background-image2.png")}>
+//       <Image source={require('../../../../assets/GOLDEN-STRIP.png')} style={{
+//         width: '100%',
+//         // marginBottom:10,
+//         height: 3,
+//       }} />
+
+//       <FlatList contentContainerStyle={{ alignItems: "center" }}
+//         data={data}
+//         numColumns={2}
+//         renderItem={({ item, index }) => <View key={index} style={styles.View1}>
+
+//           <View style={styles.View2}>
+//             <TouchableOpacity onPress={() => handlePress(item)}>
+//               <View style={styles.View3}>
+//                 <Image style={styles.ImageView} source={{ uri: item.images[0] }} />
+//                 <ImageBackground style={styles.View5} imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} source={require("../../../../assets/CompressedTexture3.jpg")}>
+//                   <Text style={{ color: "black", fontWeight: "600", }}>{item?.name}</Text>
+//                 </ImageBackground>
+
+//               </View>
+//             </TouchableOpacity>
+//           </View>
+
+//         </View>}
+//       />
+//     </ImageBackground>
+
+//   )
+// }
+
+// export default SilkyChainsC
+
+// const styles = StyleSheet.create({
+//   View1: {
+//     margin: moderateScale(10),
+//     flexDirection: 'row',
+//     justifyContent: 'center',
+//     marginHorizontal: moderateScale(20)
+//   },
+
+//   View2: {
+//     backgroundColor: 'white',
+//     justifyContent: 'space-evenly',
+//     // marginRight: moderateScale(10),
+//     marginTop: moderateScaleVertical(15),
+//     marginBottom: moderateScaleVertical(15),
+//     borderTopLeftRadius: 20,
+//     borderTopRightRadius: 20,
+//     borderBottomLeftRadius: 20,
+//     borderBottomRightRadius: 20,
+//     width: moderateScale(150),
+//     height: moderateScaleVertical(180),
+//     justifyContent: "space-around",
+//     marginHorizontal: moderateScale(-5)
+//   },
+
+//   View3: {
+//     backgroundColor: 'white',
+//     borderRadius: 35
+//   },
+
+//   ImageView: {
+//     height: moderateScaleVertical(155),
+//     width: moderateScale(150),
+//     alignSelf: 'center',
+//     borderRadius: 0,
+//     borderTopLeftRadius: 20,
+//     borderTopRightRadius: 20,
+//   },
+//   View5: {
+//     alignItems: "center",
+//     height: moderateScaleVertical(40),
+//     width: moderateScale(153),
+//     textAlign: 'center',
+//     alignSelf: "center",
+//     fontWeight: "900",
+//     fontSize: textScale(10),
+//     justifyContent: "center",
+//   },
+// })
+
+import React, {useState, useEffect} from 'react';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  FlatList,
+  ImageBackground,
+  SafeAreaView,
+  Button,
+} from 'react-native';
+import {useDispatch} from 'react-redux';
+import {setActiveItem} from '../../../../redux/action';
+import {StyleSheet} from 'react-native';
+import {
+  height,
+  moderateScale,
+  moderateScaleVertical,
+  textScale,
+} from '../../../../utils/responsive';
+
+const SilkyChainsC = ({navigation}) => {
   const [data, setData] = useState([]);
+  const [visibleData, setVisibleData] = useState([]);
+  const [itemsToLoad, setItemsToLoad] = useState(10);
   const dispatch = useDispatch();
 
   const getAPIDATA = async () => {
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Silky%20Rope";
+    const url =
+      'https://bliss-app-backend-production.up.railway.app/api/products/?search=Silky%20Rope';
 
     let result = await fetch(url);
     result = await result.json();
     setData(result);
-  }
+  };
 
   useEffect(() => {
     getAPIDATA();
   }, []);
 
-  const handlePress = (item) => {
+  useEffect(() => {
+    // Update the visible data based on the number of items to load.
+    setVisibleData(data.slice(0, itemsToLoad));
+  }, [data, itemsToLoad]);
+
+  const handlePress = item => {
     dispatch(setActiveItem(item));
     navigation.navigate('singleproduct');
   };
+  const loadMoreItems = () => {
+    // Increase the number of items to load.
+    setItemsToLoad(itemsToLoad + 5); // You can adjust the increment as needed.
+  };
 
   return (
-    <ImageBackground style={{ flex: 1 }} source={require("../../../../assets/background-image2.png")}>
-      <Image source={require('../../../../assets/GOLDEN-STRIP.png')} style={{
-        width: '100%',
-        // marginBottom:10,
-        height: 3,
-      }} />
+    <SafeAreaView style={{flex: 1}}>
+      <ImageBackground
+        style={{flex: 1}}
+        source={require('../../../../assets/background-image2.png')}>
+        <Image
+          source={require('../../../../assets/GOLDEN-STRIP.png')}
+          style={{
+            width: '100%',
+            // marginBottom:10,
+            height: 3,
+          }}
+        />
 
-      <FlatList contentContainerStyle={{ alignItems: "center" }}
-        data={data}
-        numColumns={2}
-        renderItem={({ item, index }) => <View key={index} style={styles.View1}>
-
-          <View style={styles.View2}>
-            <TouchableOpacity onPress={() => handlePress(item)}>
-              <View style={styles.View3}>
-                <Image style={styles.ImageView} source={{ uri: item.images[0] }} />
-                <ImageBackground style={styles.View5} imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} source={require("../../../../assets/CompressedTexture3.jpg")}>
-                  <Text style={{ color: "black", fontWeight: "600", }}>{item?.name}</Text>
-                </ImageBackground>
-
+        <FlatList
+          contentContainerStyle={{alignItems: 'center'}}
+          data={visibleData} // Use the visibleData state to render items.
+          numColumns={2}
+          renderItem={({item, index}) => (
+            // <View style={{marginBottom:moderateScaleVertical(10)}}>
+            <View key={index} style={styles.View1}>
+              <View style={styles.View2}>
+                <TouchableOpacity onPress={() => handlePress(item)}>
+                  <View style={styles.View3}>
+                    <Image
+                      style={styles.ImageView}
+                      source={{uri: item.images[0]}}
+                    />
+                    <ImageBackground
+                      style={styles.View5}
+                      imageStyle={{
+                        borderBottomLeftRadius: 20,
+                        borderBottomRightRadius: 20,
+                      }}
+                      source={require('../../../../assets/CompressedTexture3.jpg')}>
+                      <Text style={{color: 'black', fontWeight: '600'}}>
+                        {item?.name}
+                      </Text>
+                    </ImageBackground>
+                  </View>
+                </TouchableOpacity>
               </View>
+            </View>
+            // </View>
+          )}
+          ListFooterComponent={() => (
+            <TouchableOpacity
+              onPress={loadMoreItems}
+              style={{alignItems: 'center'}}>
+              <ImageBackground
+                source={require('../../../../assets/CompressedTexture3.jpg')}
+                imageStyle={{borderRadius: 20}}
+                style={{
+                  alignItems: 'center',
+                  padding: moderateScale(9),
+                  width: moderateScale(100),
+                  height: moderateScaleVertical(60),
+                  justifyContent: 'center',
+                  marginTop: moderateScaleVertical(40),
+                }}>
+                <Text
+                  style={{
+                    fontSize: textScale(10),
+                    color: 'black',
+                    marginLeft: moderateScale(0),
+                    borderRadius: 40,
+                    // paddingTop: moderateScaleVertical(3),
+                    fontFamily: 'HurmeGeometricSans1',
+                  }}>
+                  Load more...
+                </Text>
+              </ImageBackground>
             </TouchableOpacity>
-          </View>
+          )}
+        />
+      </ImageBackground>
+    </SafeAreaView>
+  );
+};
 
-        </View>}
-      />
-    </ImageBackground>
-
-  )
-}
-
-export default SilkyChainsC
+export default SilkyChainsC;
 
 const styles = StyleSheet.create({
   View1: {
-    margin: moderateScale(10),
+    marginBottom: moderateScale(10),
     flexDirection: 'row',
     justifyContent: 'center',
-    marginHorizontal: moderateScale(20)
+    marginHorizontal: moderateScale(20),
   },
 
   View2: {
@@ -83,13 +266,13 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 20,
     width: moderateScale(150),
     height: moderateScaleVertical(180),
-    justifyContent: "space-around",
-    marginHorizontal: moderateScale(-5)
+    justifyContent: 'space-around',
+    marginHorizontal: moderateScale(-5),
   },
 
   View3: {
     backgroundColor: 'white',
-    borderRadius: 35
+    borderRadius: 35,
   },
 
   ImageView: {
@@ -101,13 +284,13 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
   },
   View5: {
-    alignItems: "center",
+    alignItems: 'center',
     height: moderateScaleVertical(40),
     width: moderateScale(153),
     textAlign: 'center',
-    alignSelf: "center",
-    fontWeight: "900",
+    alignSelf: 'center',
+    fontWeight: '900',
     fontSize: textScale(10),
-    justifyContent: "center",
+    justifyContent: 'center',
   },
-})
+});

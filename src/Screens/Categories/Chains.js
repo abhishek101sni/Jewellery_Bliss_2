@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground , SafeAreaView} from 'react-native'
 import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 import axios from 'axios';
@@ -136,7 +136,7 @@ const Chains = ({ navigation }) => {
   };
 
   return (
-    <>
+    <SafeAreaView style={{ flex:1}}>
       <View style={{ backgroundColor: "#1A2228", flex: 1 }}>
         <View>
           <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
@@ -199,7 +199,7 @@ const Chains = ({ navigation }) => {
           </View>
         </ImageBackground>
       </View>
-    </>
+      </SafeAreaView>
   )
 }
 
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
+    borderBottomRightRadius: 20,  
     width: moderateScale(153),
     height: moderateScaleVertical(200),
     marginTop: moderateScaleVertical(40),

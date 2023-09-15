@@ -89,6 +89,8 @@ import ForgotPassword from '../Screens/ForgotPassword';
 import ResetPassword from '../Screens/ResetPassword';
 import Appointment from '../Screens/Appointment';
 import CustomiseOrder from '../Screens/CustomiseOrder';
+import AppointmentThankyou from '../Screens/AppointmentThankyou';
+import CustomiseThankyou from '../Screens/CustomiseThankyou';
 
 const Stack = createNativeStackNavigator();
 
@@ -405,6 +407,29 @@ const Navigation = () => {
                                 headerTintColor: '#bc9954',
                                 headerTitleStyle: { color: '#bc9954' }
                             }} />
+
+                         <Stack.Screen
+                            name="AppointmentThankyou"
+                            component={AppointmentThankyou}
+                            options={{
+                                title: '',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                          <Stack.Screen
+                            name="CustomiseThankyou"
+                            component={CustomiseThankyou}
+                            options={{
+                                title: '',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
                         {/* <Stack.Screen
                             name="GoldPrice"
                             component={GoldPrice}

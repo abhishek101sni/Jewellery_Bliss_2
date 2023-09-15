@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, ImageBackground, Image, StyleSheet, TouchableOpacity, Modal } from 'react-native';
+import { View, Text, ImageBackground, Image, StyleSheet, TouchableOpacity, Modal , SafeAreaView } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
 
 function LogInSignUp({ navigation }) {
@@ -8,6 +8,7 @@ function LogInSignUp({ navigation }) {
     }
     const [showModal, setShowModal] = useState(false);
     return (
+        <SafeAreaView style={{flex:1}}>
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <View style={{ flex: 1 }} >
 
@@ -65,6 +66,7 @@ function LogInSignUp({ navigation }) {
             </Modal>
 
         </ImageBackground>
+        </SafeAreaView>
     );
 }
 

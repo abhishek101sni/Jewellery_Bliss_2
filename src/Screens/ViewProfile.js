@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView, Image, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, ImageBackground , SafeAreaView} from 'react-native';
 import React, { useContext, useEffect } from 'react';
 import { AuthContext } from './AuthContext';
 import { useSelector, useDispatch } from 'react-redux';
@@ -10,6 +10,7 @@ const ViewProfile = () => {
     const userDetails = useSelector((state) => state.userDetailsData);
 
     return (
+        <SafeAreaView style={{flex:1}}>
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <ScrollView>
                 <View style={{ alignItems: "center", flexDirection: "column" }}>
@@ -92,6 +93,7 @@ const ViewProfile = () => {
 
             </ScrollView>
         </ImageBackground>
+        </SafeAreaView>
     )
 }
 

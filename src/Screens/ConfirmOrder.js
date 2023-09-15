@@ -66,18 +66,19 @@ const ConfirmOrder = ({ navigation }) => {
                             {/* <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold" }}>Category</Text> */}
                             <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-10), width: moderateScale(60), }}>Product Name</Text>
                             <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-5) }}>Qty.</Text>
-                            <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-20) }}>Purity</Text>
-                            <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-20) }}>Weight</Text>
+                            <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-20) }}>   Purity</Text>
+                            <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-20) }}>   Weight</Text>
                             <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginLeft: moderateScale(-5) }}>Making</Text>
                             <Text style={{ color: "black", fontSize: textScale(14), fontFamily: "HurmeGeometricSans1SemiBold", marginRight: moderateScale(30) }}>Price</Text>
                         </View>
 
                         {/* map */}
                         {
-                            cart.length ? cart.map(cartItem => {
+                            cart?.length ? cart?.map(cartItem => {
                                 {/* Static GoldPRice */ }
-                                let goldprice = 60000;
-                                console.log("goldprice", goldprice)
+                                let goldprice = firstData?.BUY;
+
+                                console.log("goldprice", firstData?.BUY)
 
                                 {/* one gram of goldprice */ }
                                 let OneGramGold = (goldprice / 10);
@@ -92,8 +93,8 @@ const ConfirmOrder = ({ navigation }) => {
                                 console.log("product weight x 1 gram goldprice", productGoldWeight)
 
                                 {/* remove % from making charges */ }
-                                let makingCharges = cartItem.item?.mcharges?.replace('%', '')
-
+                                {/* let makingCharges = cartItem.item?.mcharges?.replace('%', '') */}
+                                let makingCharges =4;
                                 console.log("makingcharges", makingCharges)
                                 console.log(cartItem.item.mcharges)
 
@@ -140,9 +141,10 @@ const ConfirmOrder = ({ navigation }) => {
                                         {/* <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(100) }} >  {cartItem.item.subcategory}</Text> */}
                                         <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(90), marginLeft: moderateScale(-10) }} >{cartItem.item.name}</Text>
                                         <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(20), marginLeft: moderateScale(-20) }}>{cartItem.count}</Text>
-                                        <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(15), marginLeft: moderateScale(-5) }}>{cartItem.item.purity}</Text>
+                                        <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(20), marginLeft: moderateScale(-5) }}>{cartItem.item.purity}</Text>
                                         <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(60), marginLeft: moderateScale(-10) }}>{cartItem.item.weight} gm</Text>
-                                        <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(30), marginLeft: moderateScale(-5) }}>{cartItem.item.mcharges}</Text>
+                                        {/* <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(30), marginLeft: moderateScale(-5) }}>{cartItem.item.mcharges}</Text> */}
+                                        <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(30), marginLeft: moderateScale(-5) }}>4 %</Text>
                                         {/* <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(80), marginRight: moderateScale(-10) }}>Rs. {GrandTotal.toFixed(2)}</Text> */}
                                         <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1", width: moderateScale(90), marginRight: moderateScale(-20) }}>{formattedGrandTotal}</Text>
                                     </View>
@@ -152,22 +154,6 @@ const ConfirmOrder = ({ navigation }) => {
                         }
                     </View>
                 </View>
-
-
-                {/* <View style={styles.container}>
-
-                    {apiDATA.data && apiDATA.data.length > 0 ? (
-                        <View>
-                            <Text>GOLD Price : {firstData.BUY}</Text>
-                            <Text>1 gram of gold {firstData.BUY} = {parseFloat(firstData.BUY) / 10} per gram</Text>
-                            <Text>chain weight =  </Text>
-                        </View>
-                    ) : (
-                        <Text>Loading</Text>
-                    )}
-                </View> */}
-
-                {/* <Text>{firstData.BUY * cartItem.item.weight}</Text> */}
 
                 <View>
                     <View style={styles.WastageChartButton}>

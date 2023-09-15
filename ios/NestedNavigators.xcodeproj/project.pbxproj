@@ -12,11 +12,11 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		39822FBB4E954FA38697F62D /* HurmeGeometricSans1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F7D9DF80B074716B9513036 /* HurmeGeometricSans1.otf */; };
 		7699B88040F8A987B510C191 /* libPods-NestedNavigators-NestedNavigatorsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-NestedNavigators-NestedNavigatorsTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		39822FBB4E954FA38697F62D /* HurmeGeometricSans1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F7D9DF80B074716B9513036 /* HurmeGeometricSans1.otf */; };
-		F1855525FAD54D72809704A9 /* HurmeGeometricSans1Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6A70B74419E429EBC044DAC /* HurmeGeometricSans1Bold.otf */; };
 		90BD43EF5334484D93AB86A8 /* HurmeGeometricSans1SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07D7979BE244451C983EAB83 /* HurmeGeometricSans1SemiBold.otf */; };
+		F1855525FAD54D72809704A9 /* HurmeGeometricSans1Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6A70B74419E429EBC044DAC /* HurmeGeometricSans1Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +33,7 @@
 		00E356EE1AD99517003FC87E /* NestedNavigatorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NestedNavigatorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* NestedNavigatorsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NestedNavigatorsTests.m; sourceTree = "<group>"; };
+		07D7979BE244451C983EAB83 /* HurmeGeometricSans1SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = HurmeGeometricSans1SemiBold.otf; path = ../src/assets/fonts/HurmeGeometricSans1SemiBold.otf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* NestedNavigators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NestedNavigators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = NestedNavigators/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = NestedNavigators/AppDelegate.mm; sourceTree = "<group>"; };
@@ -40,6 +41,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NestedNavigators/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NestedNavigators/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-NestedNavigators-NestedNavigatorsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NestedNavigators-NestedNavigatorsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F7D9DF80B074716B9513036 /* HurmeGeometricSans1.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = HurmeGeometricSans1.otf; path = ../src/assets/fonts/HurmeGeometricSans1.otf; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-NestedNavigators.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NestedNavigators.debug.xcconfig"; path = "Target Support Files/Pods-NestedNavigators/Pods-NestedNavigators.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-NestedNavigators.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NestedNavigators.release.xcconfig"; path = "Target Support Files/Pods-NestedNavigators/Pods-NestedNavigators.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-NestedNavigators-NestedNavigatorsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NestedNavigators-NestedNavigatorsTests.debug.xcconfig"; path = "Target Support Files/Pods-NestedNavigators-NestedNavigatorsTests/Pods-NestedNavigators-NestedNavigatorsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -47,9 +49,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NestedNavigators/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-NestedNavigators-NestedNavigatorsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NestedNavigators-NestedNavigatorsTests.release.xcconfig"; path = "Target Support Files/Pods-NestedNavigators-NestedNavigatorsTests/Pods-NestedNavigators-NestedNavigatorsTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		1F7D9DF80B074716B9513036 /* HurmeGeometricSans1.otf */ = {isa = PBXFileReference; name = "HurmeGeometricSans1.otf"; path = "../src/assets/fonts/HurmeGeometricSans1.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F6A70B74419E429EBC044DAC /* HurmeGeometricSans1Bold.otf */ = {isa = PBXFileReference; name = "HurmeGeometricSans1Bold.otf"; path = "../src/assets/fonts/HurmeGeometricSans1Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		07D7979BE244451C983EAB83 /* HurmeGeometricSans1SemiBold.otf */ = {isa = PBXFileReference; name = "HurmeGeometricSans1SemiBold.otf"; path = "../src/assets/fonts/HurmeGeometricSans1SemiBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F6A70B74419E429EBC044DAC /* HurmeGeometricSans1Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = HurmeGeometricSans1Bold.otf; path = ../src/assets/fonts/HurmeGeometricSans1Bold.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,15 +156,15 @@
 			sourceTree = "<group>";
 		};
 		E32DD0FB7B8C47A0BCA88FB0 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				1F7D9DF80B074716B9513036 /* HurmeGeometricSans1.otf */,
 				F6A70B74419E429EBC044DAC /* HurmeGeometricSans1Bold.otf */,
 				07D7979BE244451C983EAB83 /* HurmeGeometricSans1SemiBold.otf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -585,7 +585,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -613,12 +613,14 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -656,7 +658,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -676,12 +678,14 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

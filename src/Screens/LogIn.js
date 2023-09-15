@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, ScrollView, ImageBackground } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, ScrollView, ImageBackground ,SafeAreaView } from "react-native";
 import { AuthContext } from "./AuthContext";
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
 
@@ -24,6 +24,7 @@ const LogIn = ({ navigation,
     }
 
     return (  
+        <SafeAreaView style={{flex:1}}>
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <ScrollView>
                 <View style={{ flex: 1 }}>
@@ -34,7 +35,7 @@ const LogIn = ({ navigation,
                     <View style={styles.LogInTitle}>
                         <Text style={styles.LogInText}>Login</Text>
                     </View>
-
+                <View style={{alignItems:"center"}}>
                     <TextInput
                         style={styles.MobileNoInput}
                         autoCapitalize
@@ -44,29 +45,16 @@ const LogIn = ({ navigation,
                         placeholderTextColor="#C7C7CD"
                         onChangeText={(text) => setMobile(text)}
                     />
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
                         <TextInput
                             style={styles.PasswordInput}
-
                             autoCapitalize='none'
                             autoCorrect={false}
                             placeholder="Password"
                             placeholderTextColor="#C7C7CD"
                             // secureTextEntry={seePassword}
                             secureTextEntry
-                            // value="password"
                             onChangeText={(text) => setPassword(text)}
                         />
-                        {/* <TouchableOpacity onPress={() => setseePassword(!seePassword)}>
-                            <Image
-                                style={{ height: 20, width: 20, marginTop: 50 }}
-                                source={
-                                    seePassword
-                                        ? require('../assets/eye-open.png')
-                                        : require('../assets/eye-close.png')
-                                }
-                            />
-                        </TouchableOpacity> */}
                     </View>
 
                     <View>
@@ -92,9 +80,10 @@ const LogIn = ({ navigation,
                 </View>
             </ScrollView>
             <View >
-                {/* <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} /> */}
+                <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} />
             </View>
         </ImageBackground>
+        </SafeAreaView>
     );
 };
 
@@ -132,7 +121,6 @@ const styles = StyleSheet.create({
         fontFamily: "HurmeGeometricSans1",
     },
     MobileNoInput: {
-        alignSelf: 'center',
         fontSize: textScale(13),
         color: "black",
         width: "80%",
@@ -143,10 +131,10 @@ const styles = StyleSheet.create({
         paddingBottom: moderateScaleVertical(0),
         paddingLeft: moderateScale(0),
         fontFamily: "HurmeGeometricSans1",
+        paddingBottom:moderateScaleVertical(1)
 
     },
     PasswordInput: {
-        alignSelf: 'center',
         fontSize: textScale(13),
         color: "black",
         width: '80%',
@@ -157,7 +145,8 @@ const styles = StyleSheet.create({
         paddingBottom: moderateScaleVertical(0),
         paddingLeft: moderateScale(0),
         fontFamily: "HurmeGeometricSans1",
-        marginBottom: moderateScaleVertical(20)
+        marginBottom: moderateScaleVertical(20),
+        paddingBottom:moderateScaleVertical(1)
     },
     logInButtonAlignment: {
         alignItems: "center",

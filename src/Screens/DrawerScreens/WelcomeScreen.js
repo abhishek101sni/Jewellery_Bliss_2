@@ -3,7 +3,7 @@ import SimpleModal from '../SimpleModal';
 import MarqueeView from 'react-native-marquee-view';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import axios from 'axios';
-import { View, Text, Dimensions, ScrollView, StyleSheet, TouchableOpacity, Image, ImageBackground, Modal } from 'react-native';
+import { View, Text, Dimensions, ScrollView, StyleSheet, TouchableOpacity, Image, ImageBackground, Modal , SafeAreaView} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { AuthContext } from '../AuthContext';
 import { useSelector, useDispatch } from 'react-redux';
@@ -20,7 +20,8 @@ const WelcomeScreen = () => {
   // GoldPriceApi
   const [apiDATA, setAPIdata] = useState([]);
   // const API_URL = 'https://rappid.in/apis/mcx.php?key=9015790532';
-  const API_URL = 'https://rappid.in/apis/gold_rates.php?mobile=8076238140';
+  // const API_URL = 'https://rappid.in/apis/gold_rates.php?mobile=8076238140';
+  const API_URL = 'https://rappid.in/apis/mcx.php?key=9015790532';
   const firstData = apiDATA.data && apiDATA.data[0];
   const secondData = apiDATA.data && apiDATA.data[2];
 
@@ -144,6 +145,7 @@ const WelcomeScreen = () => {
   const navigation = useNavigation();
 
   return (
+    <SafeAreaView style={{flex:1}}>
     <ImageBackground style={{ flex: 1 }} source={require('../../assets/background-image2.png')}>
       <View>
         <Image source={require('../../assets/GOLDEN-STRIP.png')} style={styles.goldenStrip} />
@@ -174,7 +176,7 @@ const WelcomeScreen = () => {
           </ImageBackground>
         </View>
 
-        <View style={styles.wholeAlignment}>
+        {/* <View style={styles.wholeAlignment}>
           <View style={{ backgroundColor: "#F0F0F0", height: moderateScaleVertical(20), marginTop: moderateScaleVertical(5), alignItems: "center" }}>
             <TouchableOpacity onPress={() => { navigation.navigate("GoldPrice") }} >
               <MarqueeView>
@@ -187,22 +189,22 @@ const WelcomeScreen = () => {
               </MarqueeView>
             </TouchableOpacity>
           </View>
-        </View>
+        </View> */}
 
         <View style={styles.wholeAlignment}>
           <View
             style={{
               backgroundColor: '#F0F0F0',
-              height: moderateScaleVertical(30),
+              height: moderateScaleVertical(25),
               marginTop: moderateScaleVertical(10),
               alignItems: 'center',
             }}>
             <MarqueeView>
-              <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1SemiBold', paddingTop: 2, paddingBottom: 2, fontSize: textScale(18) }}>
+              <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1SemiBold',  }}>
                 {apiDATA.data && apiDATA.data.length > 0 ? (apiDATA.data.map((data, index) => (
                   <TouchableOpacity onPress={() => { navigation.navigate('GoldSilverPrice') }}>
                     <View key={index}>
-                      <View style={{ flexDirection: 'row' }}>
+                      <View style={{ flexDirection: 'row' , paddingTop: 7, paddingBottom:0, fontSize: textScale(20) }}>
                         <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}> {firstData.Symbol} </Text>
                         <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}> Gold Sell Price </Text>
                         <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1SemiBold' }}>Buy : ₹ {firstData.BUY} Sell : ₹ {firstData.SELL}</Text>
@@ -477,6 +479,7 @@ const WelcomeScreen = () => {
         </View>
       </ImageBackground>
     </ImageBackground>
+    </SafeAreaView>
   );
 };
 

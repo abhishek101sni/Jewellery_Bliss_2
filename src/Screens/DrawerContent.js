@@ -18,7 +18,6 @@ const DrawerContent = (props) => {
                         </TouchableOpacity>
                     </View>
                 </View>
-
                 <View>
                     <View style={styles.line}></View>
 
