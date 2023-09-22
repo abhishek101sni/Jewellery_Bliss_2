@@ -85,18 +85,20 @@ const Product = ({ navigation }) => {
                     />
                 </Modal>
             </View>
-            {/* Whatsapp */}
-            {/* <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} imageStyle={{}} style={{ position: "absolute", backgroundColor: "pink", height: moderateScaleVertical(60), width: "100%", alignSelf: "center", marginTop: moderateScaleVertical(748), }}>
-                <View style={{ marginTop: 15, flexDirection: "row", justifyContent: "space-around" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate("Drawer") }}>
-                        <Image source={require("../../assets/home.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                    </TouchableOpacity>
+            {/* BottomTabNavigator */}
+            <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) , borderColor:"black"}}>
+                    <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
 
-                    <TouchableOpacity onPress={() => { navigation.navigate("cart") }}>
-                        <Image source={require("../../assets/cart.png")} style={{ width: moderateScale(35), height: moderateScaleVertical(35) }} />
-                    </TouchableOpacity>
-                </View>
-            </ImageBackground> */}
+                        <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
+                            <Image source={require('../../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
+                            <Image source={require('../../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
+                        </TouchableOpacity>
+
+                    </View>
+                </ImageBackground>
         </ImageBackground>
         </SafeAreaView>
 

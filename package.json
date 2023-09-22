@@ -41,7 +41,7 @@
     "react-native-modal-datetime-picker": "^17.1.0",
     "react-native-multi-level-selector": "^1.0.9",
     "react-native-paper": "^5.9.1",
-    "react-native-reanimated": "^3.3.0",
+    "react-native-reanimated": "^3.4.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.25.0",
     "react-native-snap-carousel": "^4.0.0-beta.6",

@@ -72,9 +72,10 @@ const Cart = ({ navigation }) => {
                                             <Text style={styles.CartItemName}>{cartItem.item.name}</Text>
                                             {/* <Text style={styles.CartItemPrice}>RS. {cartItem.item.price}</Text> */}
                                             <Text style={styles.CartItemPrice}>{cartItem.item.weight} gram</Text>
+                                            <Text style={styles.CartItemPrice}>{cartItem.item.purity} KT</Text>
 
-                                            <View style={{ backgroundColor: "black", borderRadius: 20, width: moderateScale(85), height: moderateScaleVertical(30), marginTop: moderateScaleVertical(20), marginLeft: moderateScale(7) }}>
-                                                <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(1.5) }}>
+                                            <View style={{ backgroundColor: "black", borderRadius: 20, width: moderateScale(85), height: moderateScaleVertical(30), marginTop: moderateScaleVertical(15), marginLeft: moderateScale(7) }}>
+                                                <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(3.5) }}>
 
                                                     <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={{ height: moderateScaleVertical(23), width: moderateScale(23), justifyContent: "center", alignSelf: "center", marginTop: 0 }} imageStyle={{ borderRadius: 15 }}>
                                                         <TouchableOpacity onPress={() => decreaseCount(cartItem.item)}>

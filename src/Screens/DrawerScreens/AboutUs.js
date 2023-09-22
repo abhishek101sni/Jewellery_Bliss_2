@@ -176,7 +176,6 @@ const styles = StyleSheet.create({
   founderName: {
     color: "black",
     fontSize: textScale(21),
-    fontWeight: "600",
     marginTop: moderateScaleVertical(10),
     fontFamily: "HurmeGeometricSans1",
   },

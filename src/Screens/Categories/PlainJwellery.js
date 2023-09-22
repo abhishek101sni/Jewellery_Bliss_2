@@ -61,9 +61,9 @@ const PlainJwellery = ({ navigation }) => {
     {
       img: require('../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("RajkotItems");
+        navigation.navigate("BaliPJ");
       },
-      title: "Rajkot Items",
+      title: "Bali",
     },
     {
       img: require('../../assets/coming_soon.png'),

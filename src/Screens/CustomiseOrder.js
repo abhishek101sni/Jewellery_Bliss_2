@@ -1,11 +1,25 @@
 import React, {useContext, useEffect, useState} from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, ScrollView, ImageBackground,Alert,SafeAreaView} from 'react-native';
-import { moderateScale , moderateScaleVertical , textScale} from '../utils/responsive';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  ScrollView,
+  ImageBackground,
+  Alert,
+  SafeAreaView,
+} from 'react-native';
+import {
+  moderateScale,
+  moderateScaleVertical,
+  textScale,
+} from '../utils/responsive';
 import {SelectList} from 'react-native-dropdown-select-list';
 import axios from 'axios';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 const CustomiseOrder = ({navigation}) => {
-
   const [category, setCategory] = useState(null);
   const [subcategory, setSubCategory] = useState(null);
   const [purity, setPurity] = useState(null);
@@ -14,6 +28,7 @@ const CustomiseOrder = ({navigation}) => {
   const [size, setSize] = useState(null);
   const [quantity, setQuantity] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const handleSubmit = async () => {
     try {
@@ -39,7 +54,19 @@ const CustomiseOrder = ({navigation}) => {
     }
   };
 
-  
+  // hehehe÷
+  const checkFormValidity = () => {
+    if (purity && weight && length && size && quantity) {
+      setIsFormValid(true);
+    } else {
+      setIsFormValid(false);
+    }
+  };
+
+  // Call checkFormValidity when any of the input fields change
+  useEffect(() => {
+    checkFormValidity();
+  }, [purity, weight, length, size, quantity]);
 
   const selectImageFromGallery = () => {
     const options = {
@@ -83,18 +110,19 @@ const CustomiseOrder = ({navigation}) => {
       {key: 'Indo Choco chains', value: 'Indo Choco chains'},
     ],
     PlainJewellery: [
-      {key: 'Silky chains', value: 'Silky chains'},
-      {key: 'Indo chains', value: 'Indo chains'},
-      {key: 'Rodium chains', value: 'Rodium chains'},
-      {key: 'Kaju Katli chains', value: 'Kaju Katli chains'},
-      {key: 'Machine Chains', value: 'Machine Chains'},
-      {key: 'Solid Nawabi chains', value: 'Solid Nawabi chains'},
-      {key: 'Hollow Nawabi chains', value: 'Hollow Nawabi chains'},
-      {key: 'Madrasi chains', value: 'Madrasi chains'},
-      {key: 'Handmade chains', value: 'Handmade chains'},
-      {key: 'Hollow chains', value: 'Hollow chains'},
-      {key: 'Choco chains', value: 'Choco chains'},
-      {key: 'Indo Choco chains', value: 'Indo Choco chains'},
+      {key: 'Sets', value: 'Sets'},
+      {key: 'Mangal Sutra', value: 'Mangal Sutra'},
+      {key: 'Tops', value: 'Tops'},
+      {key: 'Handmade Ladies Rings', value: 'Handmade Ladies Rings'},
+      {key: 'Handmade Gents Rings', value: 'Handmade Gents Rings'},
+      {key: 'Bracelets', value: 'Bracelets'},
+      {key: 'UV Shaped Bali', value: 'UV Shaped Bali'},
+      {key: 'Rajkot Items', value: 'Rajkot Items'},
+      {key: 'Long Sets', value: 'Long Sets'},
+      {key: 'Choker Sets', value: 'Choker Sets'},
+      {key: 'Bangels', value: 'Bangels'},
+      {key: 'Kade', value: 'Kade'},
+      {key: 'Gold Pendents', value: 'Gold Pendents'},
     ],
     CastingJewellery: [
       {key: 'Ladies Rings', value: 'Ladies Rings'},
@@ -122,33 +150,81 @@ const CustomiseOrder = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={{flex:1}}>
-    <ImageBackground
-      style={{flex: 1}}
-      source={require('../assets/background-image2.png')}>
-      <ScrollView>
-        <View style={{flex: 1}}>
-          <View style={styles.logoAlignment}>
-            <Image
-              source={require('../assets/logo.png')}
-              style={styles.logoSize}
-            />
-          </View>
+    <SafeAreaView style={{flex: 1}}>
+      <ImageBackground
+        style={{flex: 1}}
+        source={require('../assets/background-image2.png')}>
+        <ScrollView>
+          <View style={{flex: 1}}>
+            <View style={styles.logoAlignment}>
+              <Image
+                source={require('../assets/logo.png')}
+                style={styles.logoSize}
+              />
+            </View>
 
-          <View style={styles.LogInTitle}>
-            <Text style={styles.LogInText}>Customise Your Order</Text>
-          </View>
-          <View>
-            <View style={{marginBottom: moderateScaleVertical(-10)}}>
+            <View style={styles.LogInTitle}>
+              <Text style={styles.LogInText}>Customise Your Order</Text>
+            </View>
+            <View>
+              <View style={{marginBottom: moderateScaleVertical(-10)}}>
+                <SelectList
+                  data={Parentcategory}
+                  setSelected={setCategory}
+                  fontFamily="HurmeGeometricSans1"
+                  boxStyles={{
+                    borderTopWidth: 0,
+                    borderLeftWidth: 0,
+                    borderRightWidth: 0,
+                    borderRadius: 0,
+                    alignSelf: 'center',
+                    borderColor: '#bc9954',
+                    borderBottomWidth: moderateScale(0),
+                    width: '89%',
+                  }}
+                  badgeTextStyles={{
+                    color: 'black',
+                    fontSize: textScale(30),
+                    paddingBottom: -25,
+                    paddingLeft: 0,
+                  }}
+                  placeholder="Select category"
+                  placeholderTextColor="black"
+                  dropdownStyles={{
+                    width: '80%',
+                    alignSelf: 'center',
+                    height: 150,
+                    borderColor: '#bc9954',
+                    borderRadius: 2,
+                  }}
+                  // search={false}
+                  dropdownTextStyles={{
+                    fontSize: textScale(13),
+                    fontFamily: 'HurmeGeometricSans1SemiBold',
+                    color: '#bc9954',
+                  }}
+                  inputStyles={{
+                    padding: -10,
+                    paddingLeft: -20,
+                    marginTop: 6,
+                    marginBottom: -11,
+                    marginleft: -3,
+                    width: '90%',
+                  }}
+                />
+                <View style={styles.line}></View>
+              </View>
+
               <SelectList
-                data={Parentcategory}
-                setSelected={setCategory}
+                data={Childcategory[category]}
+                setSelected={setSubCategory}
                 fontFamily="HurmeGeometricSans1"
                 boxStyles={{
                   borderTopWidth: 0,
                   borderLeftWidth: 0,
                   borderRightWidth: 0,
                   borderRadius: 0,
+
                   alignSelf: 'center',
                   borderColor: '#bc9954',
                   borderBottomWidth: moderateScale(0),
@@ -160,21 +236,16 @@ const CustomiseOrder = ({navigation}) => {
                   paddingBottom: -25,
                   paddingLeft: 0,
                 }}
-                placeholder="Select category"
+                placeholder="Select Subcategory"
                 placeholderTextColor="black"
                 dropdownStyles={{
                   width: '80%',
                   alignSelf: 'center',
-                  height: 150,
+                  height: 130,
                   borderColor: '#bc9954',
-                  borderRadius: 2,
+                  borderRadius: 1,
                 }}
                 // search={false}
-                dropdownTextStyles={{
-                  fontSize: textScale(13),
-                  fontFamily: 'HurmeGeometricSans1SemiBold',
-                  color: '#bc9954',
-                }}
                 inputStyles={{
                   padding: -10,
                   paddingLeft: -20,
@@ -187,125 +258,95 @@ const CustomiseOrder = ({navigation}) => {
               <View style={styles.line}></View>
             </View>
 
-            <SelectList
-              data={Childcategory[category]}
-              setSelected={setSubCategory}
-              fontFamily="HurmeGeometricSans1"
-              boxStyles={{
-              
-                borderTopWidth: 0,
-                borderLeftWidth: 0,
-                borderRightWidth: 0,
-                borderRadius: 0,
-              
-                alignSelf: 'center',
-                borderColor: '#bc9954',
-                borderBottomWidth: moderateScale(0),
-                width: '89%',
-            
-              }}
-              badgeTextStyles={{
-                color: 'black',
-                fontSize: textScale(30),
-                paddingBottom: -25,
-                paddingLeft: 0,
-              }}
-              placeholder="Select Subcategory"
-              placeholderTextColor="black"
-              dropdownStyles={{
-                width: '80%',
-                alignSelf: 'center',
-                height: 130,
-                borderColor: '#bc9954',
-                borderRadius: 1,
-              }}
-              // search={false}
-              inputStyles={{
-                padding: -10,
-                paddingLeft: -20,
-                marginTop: 6,
-                marginBottom: -11,
-                marginleft: -3,
-                width: '90%',
-              }}
-            />
-            <View style={styles.line}></View>
-          </View>
+            <View>
+              <TextInput
+                style={styles.Inputs}
+                autoCapitalize="none"
+                autoCorrect={false}
+                placeholder="Purity"
+                placeholderTextColor="#C7C7CD"
+                onChangeText={text => setPurity(text)}
+              />
+              <TextInput
+                style={styles.Inputs}
+                autoCapitalize="none"
+                autoCorrect={false}
+                placeholder="Weight"
+                placeholderTextColor="#C7C7CD"
+                onChangeText={text => setWeight(text)}
+              />
+              <TextInput
+                style={styles.Inputs}
+                autoCapitalize="none"
+                autoCorrect={false}
+                placeholder="Length"
+                placeholderTextColor="#C7C7CD"
+                onChangeText={text => setLength(text)}
+              />
+              <TextInput
+                style={styles.Inputs}
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="numeric"
+                placeholder="Size"
+                placeholderTextColor="#C7C7CD"
+                onChangeText={text => setSize(text)}
+              />
+              <TextInput
+                style={styles.Inputs}
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="numeric"
+                placeholder="Quantity"
+                placeholderTextColor="#C7C7CD"
+                onChangeText={text => setQuantity(text)}
+              />
+            </View>
 
-          <View>
-            <TextInput
-              style={styles.Inputs}
-              autoCapitalize="none"
-              autoCorrect={false}
-              placeholder="Purity"
-              placeholderTextColor="#C7C7CD"
-              onChangeText={text => setPurity(text)}
-            />
-            <TextInput
-              style={styles.Inputs}
-              autoCapitalize="none"
-              autoCorrect={false}
-              placeholder="Weight"
-              placeholderTextColor="#C7C7CD"
-              onChangeText={text => setWeight(text)}
-            />
-            <TextInput
-              style={styles.Inputs}
-              autoCapitalize="none"
-              autoCorrect={false}
-              placeholder="Length"
-              placeholderTextColor="#C7C7CD"
-              onChangeText={text => setLength(text)}
-            />
-            <TextInput
-              style={styles.Inputs}
-              autoCapitalize="none"
-              autoCorrect={false}
-              keyboardType="numeric"
-              placeholder="Size"
-              placeholderTextColor="#C7C7CD"
-              onChangeText={text => setSize(text)}
-            />
-            <TextInput
-              style={styles.Inputs}
-              autoCapitalize="none"
-              autoCorrect={false}
-              keyboardType="numeric"
-              placeholder="Quantity"
-              placeholderTextColor="#C7C7CD"
-              onChangeText={text => setQuantity(text)}
-            />
-          </View>
-
-          <View style={{flexDirection: 'row', justifyContent: 'space-around' , }}>
-            <View style={{marginTop:moderateScaleVertical(40)}}>
-              <TouchableOpacity onPress={selectImageFromGallery}>
-                <View
-                  style={{
-                    backgroundColor: '#bc9954',
-                    width: moderateScale(120),
-                    height: moderateScaleVertical(30),
-                    borderRadius: 10,
-                    // padding:10
-                  }}>
-                  <Text style={{alignSelf:"center" , padding:5}}>Select Image</Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                marginHorizontal: moderateScale(-23),
+              }}>
+              <View style={{marginTop: moderateScaleVertical(40)}}>
+                <TouchableOpacity onPress={selectImageFromGallery}>
+                  <View
+                    style={{
+                      backgroundColor: '#bc9954',
+                      width: moderateScale(120),
+                      height: moderateScaleVertical(30),
+                      borderRadius: 10,
+                      // padding:10
+                    }}>
+                    <Text style={{alignSelf: 'center', padding: 5}}>
+                      Select Image
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              </View>
+              <View
+                style={{
+                  width: moderateScale(70),
+                  height: moderateScaleVertical(70),
+                }}>
+                <View style={{marginTop: moderateScaleVertical(10)}}>
+                  {selectedImage && (
+                    <Image
+                      source={{uri: selectedImage}}
+                      style={{
+                        width: moderateScale(70),
+                        height: moderateScaleVertical(70),
+                      }}
+                    />
+                  )}
                 </View>
-              </TouchableOpacity>
+              </View>
             </View>
 
-            <View style={{marginTop: moderateScaleVertical(10) , display:"none"}}>
-              {selectedImage && (
-                <Image
-                  source={{uri: selectedImage}}
-                  style={{width: moderateScale(200), height:moderateScaleVertical(150) }}
-                />
-              )}
-            </View>
-          </View>
-
-          <View style={styles.logInButtonAlignment}>
-            <TouchableOpacity onPress={handleSubmit}>
-            {/* <TouchableOpacity ``
+            <View style={styles.logInButtonAlignment}>
+              {/* <TouchableOpacity onPress={handleSubmit}> */}
+              {/* <TouchableOpacity ``
               onPress={() => {
                 Alert.alert('Thank you');
                 console.log('Data Submitted Succesfully');
@@ -314,68 +355,77 @@ const CustomiseOrder = ({navigation}) => {
               onPress={() => {
                navigation.navigate("CustomiseThankyou")
               }}> */}
-              <ImageBackground
-                source={require('../assets/CompressedTexture3.jpg')}
-                style={styles.ImageBackgroundStyle}
-                imageStyle={{borderRadius: 80}}>
-                <Text style={styles.logInButtonText}>SUBMIT</Text>
-              </ImageBackground>
-            </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  if (isFormValid) {
+                    navigation.navigate('CustomiseThankyou');
+                  } else {
+                    Alert.alert('Please fill in all required fields.');
+                  }
+                }}
+                disabled={!isFormValid}>
+                <ImageBackground
+                  source={require('../assets/CompressedTexture3.jpg')}
+                  style={styles.ImageBackgroundStyle}
+                  imageStyle={{borderRadius: 80}}>
+                  <Text style={styles.logInButtonText}>SUBMIT</Text>
+                </ImageBackground>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
-      </ScrollView>
+        </ScrollView>
 
-      {/* BottomTabNavigator */}
-      <ImageBackground
-        source={require('../assets/CompressedTexture3.jpg')}
-        imageStyle={{
-          borderTopLeftRadius: 15,
-          borderTopRightRadius: 15,
-          borderBottomRightRadius: 15,
-          borderBottomLeftRadius: 15,
-          alignSelf: 'center',
-        }}
-        style={{
-          height: moderateScaleVertical(50),
-          width: moderateScale(370),
-          alignSelf: 'center',
-          marginBottom: moderateScale(4),
-        }}>
-        <View
+        {/* BottomTabNavigator */}
+        <ImageBackground
+          source={require('../assets/CompressedTexture3.jpg')}
+          imageStyle={{
+            borderTopLeftRadius: 15,
+            borderTopRightRadius: 15,
+            borderBottomRightRadius: 15,
+            borderBottomLeftRadius: 15,
+            alignSelf: 'center',
+          }}
           style={{
-            marginTop: moderateScaleVertical(9),
-            flexDirection: 'row',
-            justifyContent: 'space-around',
+            height: moderateScaleVertical(50),
+            width: moderateScale(370),
+            alignSelf: 'center',
+            marginBottom: moderateScale(4),
           }}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('Drawer');
+          <View
+            style={{
+              marginTop: moderateScaleVertical(9),
+              flexDirection: 'row',
+              justifyContent: 'space-around',
             }}>
-            <Image
-              source={require('../assets/home.png')}
-              style={{
-                width: moderateScale(35),
-                height: moderateScaleVertical(35),
-              }}
-            />
-          </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Drawer');
+              }}>
+              <Image
+                source={require('../assets/home.png')}
+                style={{
+                  width: moderateScale(35),
+                  height: moderateScaleVertical(35),
+                }}
+              />
+            </TouchableOpacity>
 
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('cart');
-            }}>
-            <Image
-              source={require('../assets/cart.png')}
-              style={{
-                width: moderateScale(35),
-                height: moderateScaleVertical(35),
-              }}
-            />
-          </TouchableOpacity>
-          {/* BottomTabNavigator end */}
-        </View>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('cart');
+              }}>
+              <Image
+                source={require('../assets/cart.png')}
+                style={{
+                  width: moderateScale(35),
+                  height: moderateScaleVertical(35),
+                }}
+              />
+            </TouchableOpacity>
+            {/* BottomTabNavigator end */}
+          </View>
+        </ImageBackground>
       </ImageBackground>
-    </ImageBackground>
     </SafeAreaView>
   );
 };
@@ -491,4 +541,3 @@ const styles = StyleSheet.create({
   //   // marginTop: moderateScaleVertical(40),
   // },
 });
-
