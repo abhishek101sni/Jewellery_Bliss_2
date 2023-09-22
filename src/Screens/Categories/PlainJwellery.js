@@ -96,9 +96,9 @@ const PlainJwellery = ({ navigation }) => {
     {
       img: require('../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("GoldPendent");
+        navigation.navigate("GodPendent");
       },
-      title: "Gold Pendents",
+      title: "God Pendents",
     },
   ]
 

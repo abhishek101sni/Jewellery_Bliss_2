@@ -72,10 +72,10 @@ const GoldSilverPrice = ({ navigation }) => {
     // fetchAPIData()
     useEffect(() => {
         fetchAPIData();
-        const interval = setInterval(fetchAPIData, 10 * 60 * 1000);
+        const interval = setInterval(fetchAPIData, 5 * 1000);
         return () => {
             clearInterval(interval);
-            console.log('APIcalled after every 10 mins');
+            console.log('APIcalled after every 5 Seconds');
         };
     }, []);
     // GoldPriceApi

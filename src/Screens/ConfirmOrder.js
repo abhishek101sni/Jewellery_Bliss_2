@@ -443,6 +443,27 @@ const ConfirmOrder = ({ navigation }) => {
     }, []);
 
 
+
+    // Tentative price Function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Tentative price Function
+
     // MCX PRICE API
 
     const [apiDATA, setAPIdata] = useState([]);
@@ -463,12 +484,12 @@ const ConfirmOrder = ({ navigation }) => {
 
     useEffect(() => {
         fetchAPIData();
-        const interval = setInterval(fetchAPIData, 10 * 60 * 1000);
+        const interval = setInterval(fetchAPIData, 5 * 1000);
 
 
         return () => {
             clearInterval(interval);
-            console.log('APIcalled after every 10 mins');
+            console.log('APIcalled after every % seconds');
         };
     }, []);
 
@@ -517,6 +538,7 @@ const ConfirmOrder = ({ navigation }) => {
                                        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~") 
                                         let productname= cartItem.item.name
                                         console.log("Product Name = ", productname )
+                                        
                                         let goldprice = parseFloat(firstData?.SELL);
                                         console.log("MCX Gold Buy price = ", firstData?.SELL)
                                         {/* console.log(typeof goldprice) */}

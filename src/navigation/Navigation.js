@@ -33,7 +33,6 @@ import OurProduct from '../Screens/DrawerScreens/OurProduct';
 import BangelsPJ from '../Screens/Categories/SubCategories/PlainJwellery/BangelsPJ';
 import BraceletsPJ from '../Screens/Categories/SubCategories/PlainJwellery/BraceletsPJ';
 import ChokerSetsPJ from '../Screens/Categories/SubCategories/PlainJwellery/ChokerSetsPJ';
-import GoldPendentPJ from '../Screens/Categories/SubCategories/PlainJwellery/GoldPendentPJ';
 import HandmadeGentsRingPJ from '../Screens/Categories/SubCategories/PlainJwellery/HandmadeGentsRingPJ';
 import HandmadeLadiesRingPJ from '../Screens/Categories/SubCategories/PlainJwellery/HandmadeLadiesRingPJ';
 import KadePJ from '../Screens/Categories/SubCategories/PlainJwellery/KadePJ';
@@ -54,7 +53,7 @@ import BraceLetsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/B
 import CharmsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/CharmsCZ';
 import CockTailRingsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/CockTailRingsCZ';
 import GentsSolitairRingsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/GentsSolitairRingsCZ';
-import GodPendentsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/GodPendentsCZ';
+
 import LadiesRingsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/LadiesRingsCZ';
 import LadiesSolitaireRingsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/LadiesSolitaireRingsCZ';
 import MangalSutraCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/MangalSutraCZ';
@@ -108,6 +107,9 @@ import ChainsTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories
 import PlainJewelleryTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/PlainJewelleryTT';
 import CastingCZJewelleryTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/CastingCZJewelleryTT';
 import CastingJewelleryTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/CastingJewelleryTT';
+import GodPendentPJ from '../Screens/Categories/SubCategories/PlainJwellery/GodPendentPJ';
+import GodPendentsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/GodPendentsCZ';
+
 
 
 
@@ -692,10 +694,10 @@ const Navigation = () => {
                             }} />
 
                         <Stack.Screen
-                            name="GoldPendent"
-                            component={GoldPendentPJ}
+                            name="GodPendent"
+                            component={GodPendentPJ}
                             options={{
-                                title: 'Gold Pendent',
+                                title: 'God Pendent',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -916,6 +918,7 @@ const Navigation = () => {
                         <Stack.Screen
                             name="GoldPendentscz"
                             component={GodPendentsCZ}
+                            
                             options={{
                                 title: 'God Pendents',
                                 headerShown: true,
