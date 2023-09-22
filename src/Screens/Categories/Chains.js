@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground , SafeAreaView} from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground, SafeAreaView } from 'react-native'
 import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 import axios from 'axios';
@@ -11,7 +11,7 @@ const Chains = ({ navigation }) => {
 
   const ChainsData = [
     {
-      img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/AllNawabi/allnawabi.jpg'),
+      img: require('../../assets/MoodShots/55.jpg'),
       onPress: () => {
         navigation.navigate("SilkyChainsC");
       },
@@ -26,21 +26,21 @@ const Chains = ({ navigation }) => {
     //   title: "Indo Chains",
     // },
     {
-      img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/Handmadeandhollow/handmadeandhollow.jpg'),
+      img: require('../../assets/MoodShots/50.jpg'),
       onPress: () => {
         navigation.navigate("RodiumChainsC");
       },
       title: "Rodium Chains",
     },
     {
-      img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/kajuKatli/kajukatli.jpg'),
+      img: require('../../assets/MoodShots/24.jpg'),
       onPress: () => {
         navigation.navigate("KajuKatliChainsC");
       },
       title: "Kaju Katli Chains",
     },
     {
-      img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/machinechains/machinechains.jpg'),
+      img: require('../../assets/MoodShots/54.jpg'),
       onPress: () => {
         navigation.navigate("MachineChainsC");
       },
@@ -54,42 +54,42 @@ const Chains = ({ navigation }) => {
       title: "Solid Nawabi Chains",
     },
     {
-      img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/rodium6g/rodium6g.jpg'),
+      img: require('../../assets/MoodShots/44.jpg'),
       onPress: () => {
         navigation.navigate("HollowNawabiChainsC");
       },
       title: "Hollow Nawabi Chains",
     },
     {
-      img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/rodium7g/7g.jpg'),
+      img: require('../../assets/MoodShots/43.jpg'),
       onPress: () => {
         navigation.navigate("MadrasiChainsC");
       },
       title: "Madrasi Chains",
     },
     {
-      img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/rodiumChains/rodiumchains.jpg'),
+      img: require('../../assets/MoodShots/53.jpg'),
       onPress: () => {
         navigation.navigate("HandmadeChainsC");
       },
       title: "Handmade Chains",
     },
     {
-      img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/rodium10g/rodium10g.jpg'),
+      img: require('../../assets/MoodShots/33.jpg'),
       onPress: () => {
         navigation.navigate("HollowChainsC");
       },
       title: "Hollow Chains",
     },
     {
-      img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/silky/silky.jpg'),
+      img: require('../../assets/MoodShots/27.jpg'),
       onPress: () => {
         navigation.navigate("ChocoChainsC");
       },
       title: "Choco Chains",
     },
     {
-      img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/indochoco/indochoco.jpg'),
+      img: require('../../assets/MoodShots/23.jpg'),
       onPress: () => {
         navigation.navigate("IndoChocoChainsC");
       },
@@ -136,15 +136,15 @@ const Chains = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={{ flex:1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={{ backgroundColor: "#1A2228", flex: 1 }}>
         <View>
           <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
         </View>
-        
-            {/* FlatList */}
-     <ScrollView >
-     <View style={{ marginBottom: moderateScaleVertical(50) }}>
+
+        {/* FlatList */}
+        <ScrollView >
+          <View style={{ marginBottom: moderateScaleVertical(50) }}>
             <FlatList contentContainerStyle={{ alignItems: "center" }}
               data={ChainsData}
               numColumns={2}
@@ -161,9 +161,9 @@ const Chains = ({ navigation }) => {
                 </View>
               }
             />
-            </View>
-            </ScrollView>
-  
+          </View>
+        </ScrollView>
+
 
         {/* Whatsapp start */}
         <View style={{ bottom: moderateScaleVertical(-35), position: 'absolute', right: moderateScale(5) }}>
@@ -183,7 +183,7 @@ const Chains = ({ navigation }) => {
         {/* Whatsapp end */}
 
         {/* BottomTabNavigator */}
-        <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) , marginTop:moderateScaleVertical(0) }}>
+        <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4), marginTop: moderateScaleVertical(0) }}>
           <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
 
             <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
@@ -197,8 +197,8 @@ const Chains = ({ navigation }) => {
           </View>
         </ImageBackground>
 
-          </View>
-      </SafeAreaView>
+      </View>
+    </SafeAreaView>
   )
 }
 
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     marginHorizontal: moderateScale(20),
-    marginVertical:moderateScaleVertical(20)
+    marginVertical: moderateScaleVertical(20)
 
   },
   View2: {
@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,  
+    borderBottomRightRadius: 20,
     width: moderateScale(153),
     height: moderateScaleVertical(200),
     // marginTop: moderateScaleVertical(40),

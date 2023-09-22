@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, SafeAreaView ,ScrollView, FlatList, Modal, ImageBackground } from 'react-native'
+import { View, Text, Image, TouchableOpacity, SafeAreaView, ScrollView, FlatList, Modal, ImageBackground } from 'react-native'
 import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 import SimpleModal from '../SimpleModal';
@@ -45,7 +45,7 @@ const PlainJwellery = ({ navigation }) => {
       title: "Handmade Gents Rings",
     },
     {
-      img: require('../../assets/PRODUCTS/CHAINS/Categories/plainjewellery/bracelets.jpg'),
+      img: require('../../assets/MoodShots/38.jpg'),
       onPress: () => {
         navigation.navigate("Bracelets");
       },
@@ -117,16 +117,16 @@ const PlainJwellery = ({ navigation }) => {
   // WhatsApp
 
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={{ backgroundColor: "#1A2228", flex: 1 }}>
         <View>
           <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
         </View>
-        
-         
-            {/* FlatList */}
-<ScrollView>
-<View style={{ marginBottom: moderateScaleVertical(50) }}>
+
+
+        {/* FlatList */}
+        <ScrollView>
+          <View style={{ marginBottom: moderateScaleVertical(50) }}>
             <FlatList contentContainerStyle={{ alignItems: "center" }}
               data={PlainJewellery}
               numColumns={2}
@@ -143,8 +143,8 @@ const PlainJwellery = ({ navigation }) => {
                 </View>
               }
             />
-            </View>
-            </ScrollView>
+          </View>
+        </ScrollView>
         {/* Whatsapp Help Button*/}
 
         <View View style={{ bottom: -40, position: "absolute", right: 5 }}>
@@ -167,7 +167,7 @@ const PlainJwellery = ({ navigation }) => {
           </Modal>
         </View>
 
-        
+
         {/* BottomTabNavigator */}
         <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) }}>
           <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     marginHorizontal: moderateScale(20),
-    marginVertical:moderateScaleVertical(20)
+    marginVertical: moderateScaleVertical(20)
   },
   View2: {
     backgroundColor: 'white',

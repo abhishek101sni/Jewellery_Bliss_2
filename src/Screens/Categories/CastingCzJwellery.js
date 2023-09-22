@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, SafeAreaView,FlatList, Modal, ImageBackground } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, SafeAreaView, FlatList, Modal, ImageBackground } from 'react-native'
 import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 import axios from 'axios';
@@ -11,7 +11,7 @@ const CastingCzJwellery = ({ navigation }) => {
 
   const CastingCzData = [
     {
-      img: require('../../assets/coming_soon.png'),
+      img: require('../../assets/MoodShots/10.jpg'),
       onPress: () => {
         navigation.navigate("NeckLaceSets");
       },
@@ -19,63 +19,63 @@ const CastingCzJwellery = ({ navigation }) => {
 
     },
     {
-      img: require('../../assets/coming_soon.png'),
+      img: require('../../assets/MoodShots/14.jpg'),
       onPress: () => {
         navigation.navigate('MangalSutraCZ');
       },
       title: "Mangal Sutra",
     },
     {
-      img: require('../../assets/CZ_RING_1.jpg'),
+      img: require('../../assets/MoodShots/6.jpg'),
       onPress: () => {
         navigation.navigate("LadiesRings");
       },
       title: "Ladies Rings",
     },
     {
-      img: require('../../assets/CZ_RING_2.jpg'),
+      img: require('../../assets/MoodShots/11.jpg'),
       onPress: () => {
         navigation.navigate("CockTailRings");
       },
       title: "Cocktail Rings",
     },
     {
-      img: require('../../assets/CZ_RING_3.jpg'),
+      img: require('../../assets/MoodShots/2.jpg'),
       onPress: () => {
         navigation.navigate("LadiesSolitaireRings");
       },
       title: "Ladies Solitaire Rings",
     },
     {
-      img: require('../../assets/CZ_RING_4.jpg'),
+      img: require('../../assets/MoodShots/1.jpg'),
       onPress: () => {
         navigation.navigate("GentsRingsCZ");
       },
       title: "Gents Rings",
     },
     {
-      img: require('../../assets/CZ_RING_5.jpg'),
+      img: require('../../assets/MoodShots/3.jpg'),
       onPress: () => {
         navigation.navigate("GentsSolitairRings");
       },
       title: "Gents Solitaire Rings",
     },
     {
-      img: require('../../assets/cz_tops.jpg'),
+      img: require('../../assets/MoodShots/8.jpg'),
       onPress: () => {
         navigation.navigate("TopsCZ");
       },
       title: "Tops",
     },
     {
-      img: require('../../assets/coming_soon.png'),
+      img: require('../../assets/MoodShots/7.jpg'),
       onPress: () => {
         navigation.navigate("SolitaireTopsCZ");
       },
       title: "Solitaire Tops",
     },
     {
-      img: require('../../assets/pendentCZ.jpg'),
+      img: require('../../assets/MoodShots/12.jpg'),
       onPress: () => {
         navigation.navigate("PendentSetsCZ");
       },
@@ -96,7 +96,7 @@ const CastingCzJwellery = ({ navigation }) => {
       title: "Charms",
     },
     {
-      img: require('../../assets/coming_soon.png'),
+      img: require('../../assets/MoodShots/13.jpg'),
       onPress: () => {
         navigation.navigate("GoldPendentscz");
       },
@@ -110,7 +110,7 @@ const CastingCzJwellery = ({ navigation }) => {
       title: "Bracelets",
     },
     {
-      img: require('../../assets/coming_soon.png'),
+      img: require('../../assets/MoodShots/16.jpg'),
       onPress: () => {
         navigation.navigate("Bali");
       },
@@ -158,7 +158,7 @@ const CastingCzJwellery = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={{ backgroundColor: "#1A2228", flex: 1 }}>
         <View>
           <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
@@ -224,7 +224,7 @@ const CastingCzJwellery = ({ navigation }) => {
           </View>
         </ImageBackground>
       </View>
-      </SafeAreaView>
+    </SafeAreaView>
   )
 }
 
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     marginHorizontal: moderateScale(20),
-    marginVertical:moderateScaleVertical(20)
+    marginVertical: moderateScaleVertical(20)
   },
   View2: {
     backgroundColor: 'white',
