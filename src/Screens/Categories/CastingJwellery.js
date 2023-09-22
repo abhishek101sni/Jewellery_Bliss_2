@@ -39,6 +39,13 @@ const CastingJwellery = ({ navigation }) => {
       },
       title: "Tops",
     },
+    {
+      img: require('../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/tops.jpg'),
+      onPress: () => {
+        navigation.navigate("GodPendents");
+      },
+      title: "God Pendents",
+    },
 
   ];
   // WhatsApp

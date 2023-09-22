@@ -39,29 +39,29 @@ import HandmadeLadiesRingPJ from '../Screens/Categories/SubCategories/PlainJwell
 import KadePJ from '../Screens/Categories/SubCategories/PlainJwellery/KadePJ';
 import LongSetsPJ from '../Screens/Categories/SubCategories/PlainJwellery/LongSetsPJ';
 import MangalSutraPJ from '../Screens/Categories/SubCategories/PlainJwellery/MangalSutraPJ';
-import RajkotItemsPJ from '../Screens/Categories/SubCategories/PlainJwellery/RajkotItemsPJ';
 import SetsPJ from '../Screens/Categories/SubCategories/PlainJwellery/SetsPJ';
 import TopsCJ from '../Screens/Categories/SubCategories/CastingJwellery/TopsCJ';
 import TopsPJ from '../Screens/Categories/SubCategories/PlainJwellery/TopsPJ';
+import BaliPJ from '../Screens/Categories/SubCategories/PlainJwellery/BaliPJ';
 import UvShapedBali from '../Screens/Categories/SubCategories/PlainJwellery/UvShapedBaliPJ';
 import UvShapedBaliPJ from '../Screens/Categories/SubCategories/PlainJwellery/UvShapedBaliPJ';
 import GentsRingCJ from '../Screens/Categories/SubCategories/CastingJwellery/GentsRingCJ';
-import GoldPendentsCJ from '../Screens/Categories/SubCategories/CastingJwellery/GoldPendentsCJ';
-import LadiesRingCJ from '../Screens/Categories/SubCategories/CastingJwellery/LadiesRingCJ';
 import PendentsCJ from '../Screens/Categories/SubCategories/CastingJwellery/PendentsCJ';
+import GodPendentsCJ from '../Screens/Categories/SubCategories/CastingJwellery/GodPendentsCJ';
+import LadiesRingCJ from '../Screens/Categories/SubCategories/CastingJwellery/LadiesRingCJ';
 import BaliCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/BaliCZ';
 import BraceLetsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/BraceLetsCZ';
 import CharmsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/CharmsCZ';
 import CockTailRingsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/CockTailRingsCZ';
 import GentsSolitairRingsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/GentsSolitairRingsCZ';
-import GoldPendentsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/GoldPendentsCZ';
+import GodPendentsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/GodPendentsCZ';
 import LadiesRingsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/LadiesRingsCZ';
 import LadiesSolitaireRingsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/LadiesSolitaireRingsCZ';
 import MangalSutraCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/MangalSutraCZ';
 import NeckLaceSetsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/NeckLaceSetsCZ';
 import PendentSetsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/PendentSetsCZ';
 import SolitairePendentSetsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/SolitairePendentSetsCZ';
-import SolitaireRopeCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/SolitaireRopeCZ';
+import SolitaireTopsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/SolitaireTopsCZ';
 import TopsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/TopsCZ';
 import GentsRingsCZ from '../Screens/Categories/SubCategories/CastingCzJwellery/GentsRingsCZ';
 import AboutUs from '../Screens/DrawerScreens/AboutUs';
@@ -91,6 +91,26 @@ import Appointment from '../Screens/Appointment';
 import CustomiseOrder from '../Screens/CustomiseOrder';
 import AppointmentThankyou from '../Screens/AppointmentThankyou';
 import CustomiseThankyou from '../Screens/CustomiseThankyou';
+import JwelleryScreen from '../Screens/JwelleryScreen';
+
+import EighteenParentCategory from '../Screens/KaratScreens/KaratCategories/KaratParentCategories/EighteenParentCategory';
+import TwentyParentCategory from '../Screens/KaratScreens/KaratCategories/KaratParentCategories/TwentyParentCategory';
+import TwentyTwoParentCategory from '../Screens/KaratScreens/KaratCategories/KaratParentCategories/TwentyTwoParentCategory';
+import ChainsE from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/EighteenKaratSubCategory/ChainsE';
+import PlainJewelleryE from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/EighteenKaratSubCategory/PlainJewelleryE';
+import CastingCZJewelleryE from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/EighteenKaratSubCategory/CastingCZJewelleryE';
+import CastingJewelleryE from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/EighteenKaratSubCategory/CastingJewelleryE';
+import ChainsT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyKaratSubCategory/ChainsT';
+import PlainJewelleryT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyKaratSubCategory/PlainJewelleryT';
+import CastingCZJewelleryT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyKaratSubCategory/CastingCZJewelleryT';
+import CastingJewelleryT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyKaratSubCategory/CastingJewelleryT';
+import ChainsTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/ChainsTT';
+import PlainJewelleryTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/PlainJewelleryTT';
+import CastingCZJewelleryTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/CastingCZJewelleryTT';
+import CastingJewelleryTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/CastingJewelleryTT';
+
+
+
 
 const Stack = createNativeStackNavigator();
 
@@ -363,6 +383,15 @@ const Navigation = () => {
                             component={SilverScreen}
                             options={{
                                 title: 'Silver Coins',
+                                headerShown: true, headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+                        <Stack.Screen
+                            name="jewelleryscreen"
+                            component={JwelleryScreen}
+                            options={{
+                                title: 'Jewellery',
                                 headerShown: true, headerStyle: { backgroundColor: '#181818' },
                                 headerTintColor: '#bc9954',
                                 headerTitleStyle: { color: '#bc9954' }
@@ -729,10 +758,10 @@ const Navigation = () => {
                             }} />
 
                         <Stack.Screen
-                            name="RajkotItems"
-                            component={RajkotItemsPJ}
+                            name="BaliPJ"
+                            component={BaliPJ}
                             options={{
-                                title: 'Rajkot Items',
+                                title: 'Bali',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -785,10 +814,10 @@ const Navigation = () => {
                             }} />
 
                         <Stack.Screen
-                            name="GoldPendents"
-                            component={GoldPendentsCJ}
+                            name="GodPendents"
+                            component={GodPendentsCJ}
                             options={{
-                                title: 'Gold Pendents',
+                                title: 'God Pendents',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -886,9 +915,9 @@ const Navigation = () => {
 
                         <Stack.Screen
                             name="GoldPendentscz"
-                            component={GoldPendentsCZ}
+                            component={GodPendentsCZ}
                             options={{
-                                title: 'Gold Pendents',
+                                title: 'God Pendents',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -962,10 +991,10 @@ const Navigation = () => {
                             }} />
 
                         <Stack.Screen
-                            name="SolitaireRopeCZ"
-                            component={SolitaireRopeCZ}
+                            name="SolitaireTopsCZ"
+                            component={SolitaireTopsCZ}
                             options={{
-                                title: 'Solitaire Rope',
+                                title: 'Solitaire Tops',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -1037,6 +1066,177 @@ const Navigation = () => {
                                 headerTintColor: '#bc9954',
                                 headerTitleStyle: { color: '#bc9954' }
                             }} />
+
+                            {/* Karat Screens */}
+                            
+                            <Stack.Screen
+                            name="EighteenParentCategory"
+                            component={EighteenParentCategory}
+                            options={{
+                                title: '18 KARAT',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+                            <Stack.Screen
+                            name="TwentyParentCategory"
+                            component={TwentyParentCategory}
+                            options={{
+                                title: '20 KARAT',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+                            <Stack.Screen
+                            name="TwentyTwoParentCategory"
+                            component={TwentyTwoParentCategory}
+                            options={{
+                                title: '22 KARAT',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            {/* 18SubCategories */}
+                            <Stack.Screen
+                            name="ChainsE"
+                            component={ChainsE}
+                            options={{
+                                title: 'CHAINS',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="PlainJewelleryE"
+                            component={PlainJewelleryE}
+                            options={{
+                                title: 'Plain Jewellery',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="CastingCZJewelleryE"
+                            component={CastingCZJewelleryE}
+                            options={{
+                                title: 'Casting CZ Jewellery',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="CastingJewelleryE"
+                            component={CastingJewelleryE}
+                            options={{
+                                title: 'Casting Jewellery',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            {/* 20SubCategories */}
+                            <Stack.Screen
+                            name="ChainsT"
+                            component={ChainsT}
+                            options={{
+                                title: 'CHAINS',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="PlainJewelleryT"
+                            component={PlainJewelleryT}
+                            options={{
+                                title: 'Plain Jewellery',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="CastingCZJewelleryT"
+                            component={CastingCZJewelleryT}
+                            options={{
+                                title: 'Casting CZ Jewellery',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="CastingJewelleryT"
+                            component={CastingJewelleryT}
+                            options={{
+                                title: 'Casting Jewellery',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            {/* 22SubCategories */}
+                            <Stack.Screen
+                            name="ChainsTT"
+                            component={ChainsTT}
+                            options={{
+                                title: 'CHAINS',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="PlainJewelleryTT"
+                            component={PlainJewelleryTT}
+                            options={{
+                                title: 'Plain Jewellery',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="CastingCZJewelleryTT"
+                            component={CastingCZJewelleryTT}
+                            options={{
+                                title: 'Casting CZ Jewellery',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="CastingJewelleryTT"
+                            component={CastingJewelleryTT}
+                            options={{
+                                title: 'Casting Jewellery',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            
+
                     </>
                 ) : null
                 }

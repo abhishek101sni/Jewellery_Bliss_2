@@ -18,13 +18,13 @@ const Chains = ({ navigation }) => {
       title: "Silky Chains"
 
     },
-    {
-      img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/DoubleMaruti/doublemaruti.jpg'),
-      onPress: () => {
-        navigation.navigate("IndoChainsC");
-      },
-      title: "Indo Chains",
-    },
+    // {
+    //   img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/DoubleMaruti/doublemaruti.jpg'),
+    //   onPress: () => {
+    //     navigation.navigate("IndoChainsC");
+    //   },
+    //   title: "Indo Chains",
+    // },
     {
       img: require('../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/Handmadeandhollow/handmadeandhollow.jpg'),
       onPress: () => {

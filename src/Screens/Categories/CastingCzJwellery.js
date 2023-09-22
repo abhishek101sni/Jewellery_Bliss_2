@@ -70,9 +70,9 @@ const CastingCzJwellery = ({ navigation }) => {
     {
       img: require('../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("SolitaireRopeCZ");
+        navigation.navigate("SolitaireTopsCZ");
       },
-      title: "Solitaire Rops",
+      title: "Solitaire Tops",
     },
     {
       img: require('../../assets/pendentCZ.jpg'),
@@ -100,7 +100,7 @@ const CastingCzJwellery = ({ navigation }) => {
       onPress: () => {
         navigation.navigate("GoldPendentscz");
       },
-      title: "Gold Pendents",
+      title: "God Pendents",
     },
     {
       img: require('../../assets/coming_soon.png'),

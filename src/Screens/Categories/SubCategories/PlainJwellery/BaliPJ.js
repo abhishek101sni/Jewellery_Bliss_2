@@ -6,12 +6,12 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const GoldPendentsCJ = ({ navigation }) => {
+const BaliPJ = ({ navigation }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
   const getAPIDATA = async () => {
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Gold%20Pendents";
+    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Rajkot%20items";
 
     let result = await fetch(url);
     result = await result.json();
@@ -29,9 +29,7 @@ const GoldPendentsCJ = ({ navigation }) => {
 
   return (
     <ImageBackground style={{ flex: 1 }} source={require("../../../../assets/background-image2.png")}>
-      <View style={{ top: height - 938, }}>
-        <Image source={require("../../../../assets/GOLDEN-STRIP.png")} style={{ borderWidth: 3, width: 1090, alignSelf: "center" }} />
-      </View>
+      <Image source={require('../../../../assets/GOLDEN-STRIP.png')} style={{ width: '100%', height: 3 }} />
 
       <FlatList contentContainerStyle={{ alignItems: "center" }}
         data={data}
@@ -57,7 +55,7 @@ const GoldPendentsCJ = ({ navigation }) => {
   )
 }
 
-export default GoldPendentsCJ
+export default BaliPJ
 
 const styles = StyleSheet.create({
   View1: {

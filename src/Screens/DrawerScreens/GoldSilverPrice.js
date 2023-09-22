@@ -1,17 +1,64 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Image, ImageBackground, ScrollView, TouchableOpacity, Modal, } from 'react-native';
+import { StyleSheet, View, Image, ImageBackground, ScrollView, TouchableOpacity, Modal, SafeAreaView} from 'react-native';
 import { DataTable, Text } from 'react-native-paper';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 import SimpleModal from '../SimpleModal'
 import axios from 'axios';
 
-const GoldScreen = ({ navigation }) => {
+const GoldSilverPrice = ({ navigation }) => {
+
+
+
+      // API FOR PREMIUM PRICE
+
+      const [premiumData, setPremiumData] = useState([]);
+      const PREMIUM_API_URL = 'https://jewellery-bliss.onrender.com/api/premium';
+  
+      const fetchPremiumData = async () => {
+          try {
+              const response = await axios.get(PREMIUM_API_URL);
+              setPremiumData(response.data);
+              console.log("helllllllllloooooo", response.data, )
+          
+          } catch (error) {
+              console.error('Error fetching premium data:', error);
+          }
+      };
+  
+      useEffect(() => {
+          fetchPremiumData();
+      }, []);
+
+      function gold995(){
+        let goldprice = parseFloat(firstData?.SELL);
+        console.log("MCX Gold Buy price = ", firstData?.SELL)
+        {/* console.log(typeof goldprice) */}
+
+        let PremiumCharges = premiumData[0]?.premiumcharges;
+        console.log("Premium Charges =" , PremiumCharges)
+
+        let totalOFGoldandPremium= (goldprice + PremiumCharges );
+        console.log("MCX Gold Buy price + Premium Charges =" , totalOFGoldandPremium)
+
+        let threePercentGstofTotal =( totalOFGoldandPremium * 3) / 100 ;
+        console.log("3 % GST Of ( MAX of Gold  + premium Charges) = " , threePercentGstofTotal)
+
+        Gold995= (threePercentGstofTotal + totalOFGoldandPremium)
+        console.log("Gold 995 price including 3 % GST =" , Gold995)
+        return Gold995;
+      }
 
     // GoldPriceApi
     const [apiDATA, setAPIdata] = useState([]);
     const API_URL = 'https://rappid.in/apis/mcx.php?key=9015790532';
     const firstData = apiDATA.data && apiDATA.data[0];
     const secondData = apiDATA.data && apiDATA.data[2];
+    const Dollar = apiDATA.data && apiDATA.data[37];
+
+    const SpotG = apiDATA.data && apiDATA.data[22];
+//   console.log("Spot Gollddddddd" ,SpotG)
+  const SpotS = apiDATA.data && apiDATA.data[23];
+//   console.log("spot silverrrr" ,SpotS )
 
     const fetchAPIData = async () => {
         try {
@@ -47,85 +94,44 @@ const GoldScreen = ({ navigation }) => {
     }
     // WhatsApp
     return (
-        <ImageBackground style={{ flex: 1 }} source={require("../../assets/background-image2.png")}>
+        <SafeAreaView style={{flex:1}}> 
+               <ImageBackground style={{ flex: 1 }} source={require("../../assets/background-image2.png")}>
             <View style={{}}>
                 <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
             </View>
             <ScrollView>
-                <View style={{ flex: 1 }}>
-
-                    <View>
-                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
-                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
-                        </View>
-                    </View>
-                    <View>
-                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
-                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
-                        </View>
-                    </View>
-                    <View>
-                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
-                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
-                        </View>
-                    </View>
-                    <View>
-                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
-                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
-                        </View>
-                    </View>
-                    <View>
-                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
-                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
-                        </View>
-                    </View>
-                    <View>
-                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
-                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
-                        </View>
-                    </View>
-                    <View>
-                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
-                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
-                        </View>
-                    </View>
-                    <View>
-                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
-                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
-                        </View>
-                    </View>
-                    <View>
-                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
-                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
-                        </View>
-                    </View>
-                    <View>
-                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
-                            <Image source={require("../../assets/gold-bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
-                        </View>
-                    </View>
-
+                <View  style={{marginBottom: moderateScaleVertical(70)}}>
                     <View style={styles.container}>
-                        {apiDATA.data && apiDATA.data.length > 0 ? (
+                        {
+                          
+  
+                  apiDATA.data && apiDATA.data.length > 0 ? (
+                                
+                    
                             <DataTable>
                                 <ImageBackground source={require("../../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20, height: moderateScaleVertical(90), width: moderateScale(390), alignSelf: "center" }} style={{ width: moderateScale(390), alignSelf: "center" }}>
-                                    <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" }} style={{ justifyContent: "center", color: "black" }} >GOLD PRICE</DataTable.Title>
+                                    <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" }} style={{ justifyContent: "center", color: "black" }} >MCX GOLD PRICE</DataTable.Title>
                                 </ImageBackground>
 
                                 <DataTable.Row style={{ backgroundColor: "#f6f6f6", width: moderateScale(390), alignSelf: "center" }}>
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(17), fontFamily: "HurmeGeometricSans1Bold" }}>  BUY</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>  BUY</DataTable.Cell>
                                     <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
                                     <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(15), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {firstData.BUY}</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {firstData.BUY}</DataTable.Cell>
                                 </DataTable.Row>
 
+
                                 <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), justifyContent: "space-evenly", alignSelf: "center" }} >
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(17), fontFamily: "HurmeGeometricSans1Bold" }}>  SELL</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>  SELL</DataTable.Cell>
                                     <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}></DataTable.Cell>
                                     <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}></DataTable.Cell>
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}></DataTable.Cell>
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(15), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {firstData.SELL}</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {firstData.SELL}</DataTable.Cell>
+                                </DataTable.Row>
+                                <DataTable.Row style={{ backgroundColor: "#f6f6f6", width: moderateScale(390), alignSelf: "center" }}>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>  SPOT PRICE</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {SpotG.LTP}</DataTable.Cell>
                                 </DataTable.Row>
                             </DataTable>
                         ) : (
@@ -134,36 +140,83 @@ const GoldScreen = ({ navigation }) => {
                     </View>
 
 
-                    {/* <View>
-                        <View style={{ alignSelf: "center", flexDirection: "row", justifyContent: "space-around", marginHorizontal: 30 }}>
-                            <Image source={require("../../assets/silver-Bars.png")} style={{ width: moderateScale(150), height: moderateScaleVertical(150), borderRadius: 30 }} />
-                        </View>
-                    </View> */}
 
-
-                    <View style={styles.container}>
+                    <View style={styles.container2}>
                         {apiDATA.data && apiDATA.data.length > 0 ? (
                             <DataTable>
                                 <ImageBackground source={require("../../assets/silverTexture.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20, height: moderateScaleVertical(90), width: moderateScale(390), alignSelf: "center" }} style={{ width: moderateScale(390), alignSelf: "center" }}>
-                                    <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" }} style={{ justifyContent: "center", color: "black", }} >SILVER PRICE</DataTable.Title>
+                                    <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" }} style={{ justifyContent: "center", color: "black", }} >MCX SILVER PRICE</DataTable.Title>
                                 </ImageBackground>
 
                                 <DataTable.Row style={{ backgroundColor: "#f6f6f6", width: moderateScale(390), alignSelf: "center" }}>
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(17), fontFamily: "HurmeGeometricSans1Bold" }}>  BUY</DataTable.Cell>
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(15), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {secondData.BUY}</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>  BUY</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(10), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(10), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {secondData.BUY}</DataTable.Cell>
                                 </DataTable.Row>
 
                                 <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), justifyContent: "space-evenly", alignSelf: "center" }} >
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(17), fontFamily: "HurmeGeometricSans1Bold" }}>  SELL</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>  SELL</DataTable.Cell>
                                     <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}></DataTable.Cell>
                                     <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}></DataTable.Cell>
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}></DataTable.Cell>
-                                    <DataTable.Cell textStyle={{ fontSize: textScale(15), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {secondData.SELL}</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {secondData.SELL}</DataTable.Cell>
                                 </DataTable.Row>
 
+                                <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), justifyContent: "space-evenly", alignSelf: "center" }} >
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>  SPOT</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}></DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}></DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {SpotS.LTP}</DataTable.Cell>
+                                </DataTable.Row>
+
+
+                                
+
+                            </DataTable>
+                        ) : (
+                            <Text>Loading</Text>
+                        )}
+                    </View>
+
+
+                    <View style={styles.container2}>
+                        {apiDATA.data && apiDATA.data.length > 0 ? (
+                            <DataTable>
+                           
+                                <DataTable.Row style={{ backgroundColor: "#66CDAA", width: moderateScale(390), alignSelf: "center" , borderRadius:12}}>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>USD/INR</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(10), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(10), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {Dollar.LTP}</DataTable.Cell>
+                                </DataTable.Row>
+                            </DataTable>
+                        ) : (
+                            <Text>Loading</Text>
+                        )}
+                    </View>
+                    <View style={styles.container2}>
+                        {apiDATA.data && apiDATA.data.length > 0 ? (
+                            <DataTable>
+                           
+                                <DataTable.Row style={{ backgroundColor: "#66CDAA", width: moderateScale(390), alignSelf: "center" , borderRadius:12}}>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>GOLD 995 with gst</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(10), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {gold995().toFixed(2)}</DataTable.Cell>
+                                </DataTable.Row>
+                            </DataTable>
+                        ) : (
+                            <Text>Loading</Text>
+                        )}
+                    </View>
+                    <View style={styles.container2}>
+                        {apiDATA.data && apiDATA.data.length > 0 ? (
+                            <DataTable>
+                           
+                                <DataTable.Row style={{ backgroundColor: "#66CDAA", width: moderateScale(390), alignSelf: "center" , borderRadius:12}}>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>FINE GOLD RATE with gst</DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(10), fontFamily: "HurmeGeometricSans1SemiBold" }}></DataTable.Cell>
+                                    <DataTable.Cell textStyle={{ fontSize: textScale(13), fontFamily: "HurmeGeometricSans1SemiBold" }}>₹ {(gold995() + (gold995() * 0.005)).toFixed(2)}</DataTable.Cell>
+                                </DataTable.Row>
                             </DataTable>
                         ) : (
                             <Text>Loading</Text>
@@ -195,7 +248,7 @@ const GoldScreen = ({ navigation }) => {
             {/* Whatsapp */}
             
             {/* BottomTabNavigator */}
-            <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4), marginTop: moderateScaleVertical(700) }}>
+            <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4), marginTop: moderateScaleVertical(0) }}>
                 <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
 
                     <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
@@ -209,10 +262,12 @@ const GoldScreen = ({ navigation }) => {
                 </View>
             </ImageBackground>
         </ImageBackground>
+        </SafeAreaView>
+
     )
 }
 
-export default GoldScreen;
+export default GoldSilverPrice;
 
 const styles = StyleSheet.create({
     goldenStrip: {
@@ -222,6 +277,15 @@ const styles = StyleSheet.create({
     container: {
         // padding: 15,
         // fontSize: textScale(30),
+        marginTop:moderateScaleVertical(20),
+        alignItems: "center",
+        alignSelf: "center",
+        // marginBottom:moderateScaleVertical(50),
+    },
+    container2: {
+        // padding: 15,
+        // fontSize: textScale(30),
+        marginTop:moderateScaleVertical(40),
         alignItems: "center",
         alignSelf: "center"
     },
@@ -251,10 +315,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginBottom: moderateScaleVertical(15),
     },
-    container: {
-        paddingTop: 20,
-        paddingHorizontal: 30,
-    },
+    
     // Whatsapp style
 
     HelpButtonAlignment: {
@@ -287,3 +348,4 @@ const styles = StyleSheet.create({
     // Whatsapp
 
 });
+

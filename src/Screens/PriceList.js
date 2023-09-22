@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, FlatList, Dimensions, Modal, ImageBackground } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, FlatList, Dimensions, Modal, ImageBackground , Safeare
+ } from 'react-native'
 import React, { useState, useRef } from 'react'
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
 
@@ -6,6 +7,7 @@ import Carousel, { Pagination } from "react-native-snap-carousel"
 export const SLIDER_WIDTH = Dimensions.get("window").width + 30;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.9);
 import SimpleModal from './SimpleModal';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 const data = [
@@ -19,6 +21,11 @@ const data = [
     id: 2,
     name: "SILVER",
     img: require("../assets/silver-Bars.png"),
+  },
+  {
+    id: 3,
+    name: "Jewellery",
+    // img: require("../assets/silver-Bars.png"),
   },
 ]
 
@@ -61,6 +68,7 @@ const DropDown2 = ({ navigation }) => {
   const [selectCoins, setSelectedCoins] = useState("Select Coins")
   const [isClicked, setIsClicked] = useState(false)
   return (
+    // <SafeAreaView style={{flex:1}}>
     <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
 
 
@@ -88,6 +96,10 @@ const DropDown2 = ({ navigation }) => {
 
             <TouchableOpacity style={styles.SilvercoinsItem} onPress={() => navigation.navigate('silverscreen')}>
               <Text style={styles.Silvertext}>Silver Coins</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.SilvercoinsItem} onPress={() => navigation.navigate('jewelleryscreen')}>
+              <Text style={styles.Silvertext}>Jewellery</Text>
             </TouchableOpacity>
           </View>) : null}
 
@@ -159,6 +171,7 @@ const DropDown2 = ({ navigation }) => {
       </ImageBackground>
 
     </ImageBackground>
+    // </SafeAreaView>
   )
 }
 
@@ -190,12 +203,13 @@ const styles = StyleSheet.create({
   },
   dropDownArea: {
     width: "85%",
-    height: moderateScaleVertical(80),
+    height: moderateScaleVertical(105),
     borderRadius: 5,
     marginTop: moderateScaleVertical(2),
-    backgroundColor: "#fff",
+    backgroundColor: "#757575",
     elevation: 5,
     alignSelf: "center",
+    borderRadius:20
     // borderWidth: 2,
     // borderColor: "black",
   },

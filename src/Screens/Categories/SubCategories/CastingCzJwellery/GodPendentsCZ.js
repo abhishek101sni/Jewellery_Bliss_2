@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react'
 import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, ImageBackground } from 'react-native'
 import { useDispatch } from 'react-redux'
@@ -6,13 +7,12 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const RajkotItemsPJ = ({ navigation }) => {
+const GodPendentsCZ = ({ navigation }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
   const getAPIDATA = async () => {
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Rajkot%20items";
-
+    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Gold%20Pendents";
     let result = await fetch(url);
     result = await result.json();
     setData(result);
@@ -55,7 +55,7 @@ const RajkotItemsPJ = ({ navigation }) => {
   )
 }
 
-export default RajkotItemsPJ
+export default GodPendentsCZ
 
 const styles = StyleSheet.create({
   View1: {

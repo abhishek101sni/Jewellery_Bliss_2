@@ -9,7 +9,7 @@ import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../../../utils/responsive'
 
 
-const SolitaireRopeCZ = ({ navigation }) => {
+const SolitaireTopsCZ = ({ navigation }) => {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
 
@@ -58,7 +58,7 @@ const SolitaireRopeCZ = ({ navigation }) => {
   )
 }
 
-export default SolitaireRopeCZ
+export default SolitaireTopsCZ
 
 const styles = StyleSheet.create({
   View1: {

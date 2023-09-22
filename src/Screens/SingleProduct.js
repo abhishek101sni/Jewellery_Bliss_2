@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { ScrollView, StyleSheet, Text, View, Modal, TouchableOpacity, ImageBackground, Image, Dimensions } from "react-native";
+import { ScrollView, StyleSheet, Text, View, Modal, TouchableOpacity, ImageBackground, Image, Dimensions , SafeAreaView} from "react-native";
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from "../redux/action";
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
@@ -116,6 +116,7 @@ const SingleProduct = ({ navigation }) => {
     };
 
     return (
+        <SafeAreaView style={{flex:1}}>
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <View style={{}}>
                 <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
@@ -297,6 +298,7 @@ const SingleProduct = ({ navigation }) => {
             {/* BottomTabNavigator end */}
 
         </ImageBackground>
+        </SafeAreaView>
     )
 }
 

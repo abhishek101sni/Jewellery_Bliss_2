@@ -11,7 +11,6 @@ const OurProduct = ({ navigation }) => {
                 navigation.navigate("chains");
             },
             title: "Chains"
-
         },
         {
             img: require('../../assets/PRODUCTS/CHAINS/Categories/plainjewellery/plain.jpg'),
@@ -113,7 +112,7 @@ const OurProduct = ({ navigation }) => {
 {/* Whatsapp end */}
 
                 {/* BottomTabNavigator */}
-                <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) }}>
+                <ImageBackground source={require('../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) , borderColor:"black"}}>
                     <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
 
                         <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>

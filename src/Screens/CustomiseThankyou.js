@@ -11,7 +11,7 @@ const CustomiseThankyou = ({ navigation }) => {
         {/* <Image source={require("../assets/green-tick.gif")} style={styles.imageSize} /> */}
         <View style={styles.colomnAlignment}>
           <Text style={styles.ThankyouText}>Thank You!</Text>
-          {/* <Text style={styles.OrderConfirmendText}>Your order is confirmed</Text> */}
+          <Text style={styles.OrderConfirmendText}>Your Customised order has been placed!</Text>
           {/* <Text style={styles.OrderConfirmendText}>Customised order</Text> */}
 
          
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   OrderConfirmendText: {
     marginTop: moderateScaleVertical(5),
     marginBottom: moderateScaleVertical(10),
-    fontSize: textScale(20),
+    fontSize: textScale(17),
     color: "#353839",
     fontFamily: "HurmeGeometricSans1",
     textAlign: "center",
