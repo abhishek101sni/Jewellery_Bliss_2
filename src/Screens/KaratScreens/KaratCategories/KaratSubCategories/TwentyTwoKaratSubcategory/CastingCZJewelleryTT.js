@@ -12,7 +12,7 @@ const CastingCZJewelleryTT = ({ navigation }) => {
       // img: require('../../../../../assets/MoodShots/10.jpg'),
       img: require('../../../../../assets/MoodShots/10.jpg'),
       onPress: () => {
-        navigation.navigate("NeckLaceSetsSubSubCZE");
+        navigation.navigate("NeckLaceSetsSubSubCZTT");
       },
       title: "Necklace Sets"
 
@@ -20,98 +20,98 @@ const CastingCZJewelleryTT = ({ navigation }) => {
     {
       img: require('../../../../../assets/MoodShots/14.jpg'),
       onPress: () => {
-        navigation.navigate('MangalSutraSubSubCZE');
+        navigation.navigate('MangalSutraSubSubCZTT');
       },
       title: "Mangal Sutra",
     },
     {
       img: require('../../../../../assets/MoodShots/6.jpg'),
       onPress: () => {
-        navigation.navigate("LadiesRingsSubSubCZE");
+        navigation.navigate("LadiesRingsSubSubCZTT");
       },
       title: "Ladies Rings",
     },
     {
       img: require('../../../../../assets/MoodShots/11.jpg'),
       onPress: () => {
-        navigation.navigate("CockTailRingsSubSubCZ");
+        navigation.navigate("CockTailRingsSubSubCZTT");
       },
       title: "Cocktail Rings",
     },
     {
       img: require('../../../../../assets/MoodShots/2.jpg'),
       onPress: () => {
-        navigation.navigate("LadiesSolitaireRingsSubSubCZE");
+        navigation.navigate("LadiesSolitaireRingsSubSubCZTT");
       },
       title: "Ladies Solitaire Rings",
     },
     {
       img: require('../../../../../assets/MoodShots/1.jpg'),
       onPress: () => {
-        navigation.navigate("GentsRingsSubSubCZE");
+        navigation.navigate("GentsRingsSubSubCZTT");
       },
       title: "Gents Rings",
     },
     {
       img: require('../../../../../assets/MoodShots/3.jpg'),
       onPress: () => {
-        navigation.navigate("GentsSolitairRingsSubSubCZE");
+        navigation.navigate("GentsSolitairRingsSubSubCZTT");
       },
       title: "Gents Solitaire Rings",
     },
     {
       img: require('../../../../../assets/MoodShots/8.jpg'),
       onPress: () => {
-        navigation.navigate("TopsSubSubCZE");
+        navigation.navigate("TopsSubSubCZTT");
       },
       title: "Tops",
     },
     {
       img: require('../../../../../assets/MoodShots/7.jpg'),
       onPress: () => {
-        navigation.navigate("SolitaireTopsSubSubCZE");
+        navigation.navigate("SolitairePendentSetsSubSuT");
       },
       title: "Solitaire Tops",
     },
     {
       img: require('../../../../../assets/MoodShots/12.jpg'),
       onPress: () => {
-        navigation.navigate("PendentSetsSubSubCZE");
+        navigation.navigate("PendentSetsSubSubCZTT");
       },
       title: "Pendent Sets",
     },
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("SolitairePendentSetsSubSubCZE");
+        navigation.navigate("SolitairePendentSetsSubSubCZTT");
       },
       title: "Solitaire Pendents Sets",
     },
     {
       img: require('../../../../../assets/charms.jpg'),
       onPress: () => {
-        navigation.navigate("CharmsSubSubCZE");
+        navigation.navigate("CharmsSubSubCZTT");
       },
       title: "Charms",
     },
     {
       img: require('../../../../../assets/MoodShots/13.jpg'),
       onPress: () => {
-        navigation.navigate("GodPendentsSubSubCZE");
+        navigation.navigate("GodPendentsSubSubCZTT");
       },
       title: "God Pendents",
     },
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("BraceLetsSubSubCZE");
+        navigation.navigate("BraceLetsSubSubCZTT");
       },
       title: "Bracelets",
     },
     {
       img: require('../../../../../assets/MoodShots/16.jpg'),
       onPress: () => {
-        navigation.navigate("BaliSubSubCZE");
+        navigation.navigate("BaliSubSubCZTT");
       },
       title: "Bali",
     },
