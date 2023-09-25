@@ -5,105 +5,49 @@ import {height, moderateScale, moderateScaleVertical, textScale } from "../../..
 import SimpleModal from '../../../../SimpleModal';
 import { Axios } from 'axios';
 
-const CastingJewelleryTT
- = ({ navigation }) => {
+const CastingJewelleryTT = ({ navigation }) => {
 
     
-  // Plain Jewellery Content
-  const PlainJewellery = [
+  
+  const CastingData = [
     {
-      img: require('../../../../../assets/coming_soon.png'),
+      img: require('../../../../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/ladiesRings.jpg'),
       onPress: () => {
-        navigation.navigate("SetsSubSubPJE");
+        navigation.navigate("LadiesRingSubSubCJTT");
       },
-      title: "Sets"
+      title: "Ladies Rings"
 
     },
     {
-      img: require('../../../../../assets/coming_soon.png'),
+      img: require('../../../../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/gentsRings.jpg'),
       onPress: () => {
-        navigation.navigate("MangalSutraSubSubPJE");
+        navigation.navigate("GentsRingSubSubCJTT");
       },
-      title: "Mangal Sutra",
+      title: "Gents Rings",
     },
     {
-      img: require('../../../../../assets/coming_soon.png'),
+      img: require('../../../../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/pendents.jpg'),
       onPress: () => {
-        navigation.navigate("TopsSubSubPJE");
+        navigation.navigate("PendentsSubSubCJTT");
+      },
+      title: "Pendents",
+    },
+    {
+      img: require('../../../../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/tops.jpg'),
+      onPress: () => {
+        navigation.navigate("TopsSubSubCJTT");
       },
       title: "Tops",
     },
     {
-      img: require('../../../../../assets/coming_soon.png'),
+      img: require('../../../../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/tops.jpg'),
       onPress: () => {
-        navigation.navigate("HandmadeLadiesSubSubPJE");
-      },
-      title: "Handmade Ladies Rings",
-    },
-    {
-      img: require('../../../../../assets/coming_soon.png'),
-      onPress: () => {
-        navigation.navigate("HandmadeGentsSubSubPJE");
-      },
-      title: "Handmade Gents Rings",
-    },
-    {
-      img: require('../../../../../assets/MoodShots/38.jpg'),
-      onPress: () => {
-        navigation.navigate("BraceletsSubSubPJE");
-      },
-      title: "Bracelets",
-    },
-    {
-      img: require('../../../../../assets/coming_soon.png'),
-      onPress: () => {
-        navigation.navigate("UvShapedBaliSubSubPJE");
-      },
-      title: "Uv Shaped Bali",
-    },
-    {
-      img: require('../../../../../assets/coming_soon.png'),
-      onPress: () => {
-        navigation.navigate("BaliSubSubPJE");
-      },
-      title: "Bali",
-    },
-    {
-      img: require('../../../../../assets/coming_soon.png'),
-      onPress: () => {
-        navigation.navigate("LongSetsSubSubPJE");
-      },
-      title: "Long Sets",
-    },
-    {
-      img: require('../../../../../assets/coming_soon.png'),
-      onPress: () => {
-        navigation.navigate("ChokerSetsSubSubPJE");
-      },
-      title: "Choker Sets",
-    },
-    {
-      img: require('../../../../../assets/coming_soon.png'),
-      onPress: () => {
-        navigation.navigate("BangelsSubSubPJE");
-      },
-      title: "Bangels",
-    },
-    {
-      img: require('../../../../../assets/coming_soon.png'),
-      onPress: () => {
-        navigation.navigate("KadeSubSubPJE");
-      },
-      title: "Kade",
-    },
-    {
-      img: require('../../../../../assets/coming_soon.png'),
-      onPress: () => {
-        navigation.navigate("GoldPendentSubSubPJE");
+        navigation.navigate("GodPendentsSubSubCJTT");
       },
       title: "God Pendents",
     },
-  ]
+
+  ];
 
        // WhatsApp
   const [isModalVisible, setisModalVisible] = useState(false)
@@ -154,7 +98,7 @@ const CastingJewelleryTT
 <ScrollView>
 <View style={{ marginBottom: moderateScaleVertical(50) }}>
             <FlatList contentContainerStyle={{ alignItems: "center" }}
-              data={PlainJewellery}
+              data={CastingData}
               numColumns={2}
               renderItem={({ item, index }) =>
                 <View key={index} style={styles.alignment}>

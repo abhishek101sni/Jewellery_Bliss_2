@@ -207,6 +207,50 @@ import CharmsSubSubCZT from '../Screens/KaratScreens/KaratCategories/KaratSubCat
 import GodPendentsSubSubCZT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyKaratSubCategory/TwentyKaratSubSubCategories/TCastingCZJewellery/GodPendentsSubSubCZT';
 import BraceLetsSubSubCZT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyKaratSubCategory/TwentyKaratSubSubCategories/TCastingCZJewellery/BraceLetsSubSubCZT';
 import BaliSubSubCZT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyKaratSubCategory/TwentyKaratSubSubCategories/TCastingCZJewellery/BaliSubSubCZT';
+import SilkyChainsSubSubTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTChains/SilkyChainsSubSubTT';
+import RodiumChainsSubSubTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTChains/RodiumChainsSubSubTT';
+import KajuKatliChainsSubSubTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTChains/KajuKatliChainsSubSubTT';
+import MachineChainsSubSubTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTChains/MachineChainsSubSubTT';
+import SolidNawabiChainsSubSubTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTChains/SolidNawabiChainsSubSubTT';
+import HollowNawabiChainsSubSubTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTChains/HollowNawabiChainsSubSubTT';
+import MadrasiChainsSubSubTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTChains/MadrasiChainsSubSubTT';
+import HandmadeChainsSubSubTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTChains/HandmadeChainsSubSubTT';
+import HollowChainsSubSubTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTChains/HollowChainsSubSubTT';
+import ChocoChainsSubSubTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTChains/ChocoChainsSubSubTT';
+import IndoChocoChainsSubSubTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTChains/IndoChocoChainsSubSubTT';
+import SetsSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/SetsSubSubPJTT';
+import MangalSutraSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/MangalSutraSubSubPJTT';
+import TopsSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/TopsSubSubPJTT';
+import HandmadeLadiesSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/HandmadeLadiesSubSubPJTT';
+import HandmadeGentsSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/HandmadeGentsSubSubPJTT';
+import BraceletsSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/BraceletsSubSubPJTT';
+import UvShapedBaliSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/UvShapedBaliSubSubPJTT';
+import BaliSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/BaliSubSubPJTT';
+import LongSetsSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/LongSetsSubSubPJTT';
+import ChokerSetsSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/ChokerSetsSubSubPJTT';
+import BangelsSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/BangelsSubSubPJTT';
+import KadeSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/KadeSubSubPJTT';
+import GodPendentSubSubPJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTPlainJewellery/GodPendentSubSubPJTT';
+import GentsRingSubSubCJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingJewellery/GentsRingSubSubCJTT';
+import LadiesRingSubSubCJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingJewellery/LadiesRingSubSubCJTT';
+import PendentsSubSubCJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingJewellery/PendentsSubSubCJTT';
+import TopsSubSubCJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingJewellery/TopsSubSubCJTT';
+import GodPendentsSubSubCJTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingJewellery/GodPendentsSubSubCJTT';
+import NeckLaceSetsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/NeckLaceSetsSubSubCZTT';
+import MangalSutraSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/MangalSutraSubSubCZTT';
+import LadiesRingsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/LadiesRingsSubSubCZTT';
+import CockTailRingsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/CockTailRingsSubSubCZTT';
+import LadiesSolitaireRingsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/LadiesSolitaireRingsSubSubCZTT';
+import GentsRingsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/GentsRingsSubSubCZTT';
+import GentsSolitairRingsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/GentsSolitairRingsSubSubCZTT';
+import TopsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/TopsSubSubCZTT';
+import SolitairePendentSetsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/SolitairePendentSetsSubSubCZTT';
+import SolitaireTopsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/SolitaireTopsSubSubCZTT';
+import PendentSetsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/PendentSetsSubSubCZTT';
+import CharmsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/CharmsSubSubCZTT';
+import GodPendentsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/GodPendentsSubSubCZTT';
+import BraceLetsSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/BraceLetsSubSubCZTT';
+import BaliSubSubCZTT from '../Screens/KaratScreens/KaratCategories/KaratSubCategories/TwentyTwoKaratSubcategory/TwentyKaratSubSubCategories/TTCastingCZJewellery/BaliSubSubCZTT';
 
 
 
@@ -2320,11 +2364,499 @@ const Navigation = () => {
                                 headerTitleStyle: { color: '#bc9954' }
                             }} />
 
+                            {/* 22 karat Sub Sub Categories */}
 
+                            <Stack.Screen
+                            name="SilkyChainsSubSubTT"
+                            component={SilkyChainsSubSubTT}
+                            options={{
+                                title: 'Silky Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
 
+                            <Stack.Screen
+                            name="RodiumChainsSubSubTT"
+                            component={RodiumChainsSubSubTT}
+                            options={{
+                                title: 'Rodium Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
 
+                            <Stack.Screen
+                            name="KajuKatliChainsSubSubTT"
+                            component={KajuKatliChainsSubSubTT}
+                            options={{
+                                title: 'Kaju Katli Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
 
+                            <Stack.Screen
+                            name="MachineChainsSubSubTT"
+                            component={MachineChainsSubSubTT}
+                            options={{
+                                title: 'Machine Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
 
+                            <Stack.Screen
+                            name="SolidNawabiChainsSubSubTT"
+                            component={SolidNawabiChainsSubSubTT}
+                            options={{
+                                title: 'Solid Nawabi Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="HollowNawabiChainsSubSubTT"
+                            component={HollowNawabiChainsSubSubTT}
+                            options={{
+                                title: 'Hollow Nawabi Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="MadrasiChainsSubSubTT"
+                            component={MadrasiChainsSubSubTT}
+                            options={{
+                                title: 'Madrasi Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="HandmadeChainsSubSubTT"
+                            component={HandmadeChainsSubSubTT}
+                            options={{
+                                title: 'Handmade Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="HollowChainsSubSubTT"
+                            component={HollowChainsSubSubTT}
+                            options={{
+                                title: 'Hollow Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="ChocoChainsSubSubTT"
+                            component={ChocoChainsSubSubTT}
+                            options={{
+                                title: 'Choco Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="IndoChocoChainsSubSubTT"
+                            component={IndoChocoChainsSubSubTT}
+                            options={{
+                                title: 'Indo Choco Chains',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            {/* Plain Jewellery */}
+
+                            <Stack.Screen
+                            name="SetsSubSubPJTT"
+                            component={SetsSubSubPJTT}
+                            options={{
+                                title: 'Sets',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="MangalSutraSubSubPJTT"
+                            component={MangalSutraSubSubPJTT}
+                            options={{
+                                title: 'Mangalsutra',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           <Stack.Screen
+                            name="TopsSubSubPJTT"
+                            component={TopsSubSubPJTT}
+                            options={{
+                                title: 'Tops',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           <Stack.Screen
+                            name="HandmadeLadiesSubSubPJTT"
+                            component={HandmadeLadiesSubSubPJTT}
+                            options={{
+                                title: 'Handmade Ladies Rings ',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           <Stack.Screen
+                            name="HandmadeGentsSubSubPJTT"
+                            component={HandmadeGentsSubSubPJTT}
+                            options={{
+                                title: 'Handmade Gents Rings ',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           <Stack.Screen
+                            name="BraceletsSubSubPJTT"
+                            component={BraceletsSubSubPJTT}
+                            options={{
+                                title: 'Bracelets',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           <Stack.Screen
+                            name="UvShapedBaliSubSubPJTT"
+                            component={UvShapedBaliSubSubPJTT}
+                            options={{
+                                title: 'UV Shaped Bali',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           <Stack.Screen
+                            name="BaliSubSubPJTT"
+                            component={BaliSubSubPJTT}
+                            options={{
+                                title: 'Bali',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           <Stack.Screen
+                            name="LongSetsSubSubPJTT"
+                            component={LongSetsSubSubPJTT}
+                            options={{
+                                title: 'Long Sets',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           <Stack.Screen
+                            name="ChokerSetsSubSubPJTT"
+                            component={ChokerSetsSubSubPJTT}
+                            options={{
+                                title: 'Choker Sets',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           <Stack.Screen
+                            name="BangelsSubSubPJTT"
+                            component={BangelsSubSubPJTT}
+                            options={{
+                                title: 'Bangels',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           <Stack.Screen
+                            name="KadeSubSubPJTT"
+                            component={KadeSubSubPJTT}
+                            options={{
+                                title: 'Kade',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           <Stack.Screen
+                            name="GodPendentSubSubPJTT"
+                            component={GodPendentSubSubPJTT}
+                            options={{
+                                title: 'God Pendents',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} /> 
+
+                            {/* Casting jewellery */}
+
+                            <Stack.Screen
+                            name="GentsRingSubSubCJTT"
+                            component={GentsRingSubSubCJTT}
+                            options={{
+                                title: 'Gents Rings',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="LadiesRingSubSubCJTT"
+                            component={LadiesRingSubSubCJTT}
+                            options={{
+                                title: 'Ladies Rings',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="PendentsSubSubCJTT"
+                            component={PendentsSubSubCJTT}
+                            options={{
+                                title: 'Pendents',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="TopsSubSubCJTT"
+                            component={TopsSubSubCJTT}
+                            options={{
+                                title: 'Tops',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="GodPendentsSubSubCJTT"
+                            component={GodPendentsSubSubCJTT}
+                            options={{
+                                title: 'God Pendents',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} /> 
+
+                            {/* Casting CZ Jewellery */}
+
+                            <Stack.Screen
+                            name="NeckLaceSetsSubSubCZTT"
+                            component={NeckLaceSetsSubSubCZTT}
+                            options={{
+                                title: 'Necklace Sets',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+                             
+                             <Stack.Screen
+                            name="MangalSutraSubSubCZTT"
+                            component={MangalSutraSubSubCZTT}
+                            options={{
+                                title: 'Mangal Sutra',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                             <Stack.Screen
+                            name="LadiesRingsSubSubCZTT"
+                            component={LadiesRingsSubSubCZTT}
+                            options={{
+                                title: 'Ladies Rings',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                             <Stack.Screen
+                            name="CockTailRingsSubSubCZTT"
+                            component={CockTailRingsSubSubCZTT}
+                            options={{
+                                title: 'CockyTail Rings',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                             <Stack.Screen
+                            name="LadiesSolitaireRingsSubSubCZTT"
+                            component={LadiesSolitaireRingsSubSubCZTT}
+                            options={{
+                                title: 'Ladies Solitaire Rings',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                             <Stack.Screen
+                            name="GentsRingsSubSubCZTT"
+                            component={GentsRingsSubSubCZTT}
+                            options={{
+                                title: 'Gents Rings',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                             <Stack.Screen
+                            name="GentsSolitairRingsSubSubCZTT"
+                            component={GentsSolitairRingsSubSubCZTT}
+                            options={{
+                                title: 'Gents Solitaire Rings',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                        
+                             <Stack.Screen
+                            name="TopsSubSubCZTT"
+                            component={TopsSubSubCZTT}
+                            options={{
+                                title: 'Tops',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                            <Stack.Screen
+                            name="SolitaireTopsSubSubCZTT"
+                            component={SolitaireTopsSubSubCZTT}
+                            options={{
+                                title: 'Solitaire Tops',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           <Stack.Screen
+                            name="PendentSetsSubSubCZTT"
+                            component={PendentSetsSubSubCZTT}
+                            options={{
+                                title: 'Pendents Sets',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                             <Stack.Screen
+                            name="SolitairePendentSetsSubSubCZTT"
+                            component={SolitairePendentSetsSubSubCZTT}
+                            options={{
+                                title: 'Solitaire Pendents Rings',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                           
+                             <Stack.Screen
+                            name="CharmsSubSubCZTT"
+                            component={CharmsSubSubCZTT}
+                            options={{
+                                title: 'Tops',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+                           
+                             <Stack.Screen
+                            name="GodPendentsSubSubCZTT"
+                            component={GodPendentsSubSubCZTT}
+                            options={{
+                                title: 'God Pendents',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                             <Stack.Screen
+                            name="BraceLetsSubSubCZTT"
+                            component={BraceLetsSubSubCZTT}
+                            options={{
+                                title: 'Bracelets',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
+
+                             <Stack.Screen
+                            name="BaliSubSubCZTT"
+                            component={BaliSubSubCZTT}
+                            options={{
+                                title: 'Bali',
+                                headerShown: true,
+                                headerStyle: { backgroundColor: '#181818' },
+                                headerTintColor: '#bc9954',
+                                headerTitleStyle: { color: '#bc9954' }
+                            }} />
 
 
 

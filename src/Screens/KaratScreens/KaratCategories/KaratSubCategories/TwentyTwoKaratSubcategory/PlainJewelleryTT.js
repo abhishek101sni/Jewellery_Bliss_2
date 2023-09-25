@@ -13,7 +13,7 @@ const PlainJewelleryTT = ({ navigation }) => {
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("SetsSubSubPJE");
+        navigation.navigate("SetsSubSubPJTT");
       },
       title: "Sets"
 
@@ -21,84 +21,84 @@ const PlainJewelleryTT = ({ navigation }) => {
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("MangalSutraSubSubPJE");
+        navigation.navigate("MangalSutraSubSubPJTT");
       },
       title: "Mangal Sutra",
     },
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("TopsSubSubPJE");
+        navigation.navigate("TopsSubSubPJTT");
       },
       title: "Tops",
     },
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("HandmadeLadiesSubSubPJE");
+        navigation.navigate("HandmadeLadiesSubSubPJTT");
       },
       title: "Handmade Ladies Rings",
     },
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("HandmadeGentsSubSubPJE");
+        navigation.navigate("HandmadeGentsSubSubPJTT");
       },
       title: "Handmade Gents Rings",
     },
     {
       img: require('../../../../../assets/MoodShots/38.jpg'),
       onPress: () => {
-        navigation.navigate("BraceletsSubSubPJE");
+        navigation.navigate("BraceletsSubSubPJTT");
       },
       title: "Bracelets",
     },
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("UvShapedBaliSubSubPJE");
+        navigation.navigate("UvShapedBaliSubSubPJTT");
       },
       title: "Uv Shaped Bali",
     },
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("BaliSubSubPJE");
+        navigation.navigate("BaliSubSubPJTT");
       },
       title: "Bali",
     },
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("LongSetsSubSubPJE");
+        navigation.navigate("LongSetsSubSubPJTT");
       },
       title: "Long Sets",
     },
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("ChokerSetsSubSubPJE");
+        navigation.navigate("ChokerSetsSubSubPJTT");
       },
       title: "Choker Sets",
     },
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("BangelsSubSubPJE");
+        navigation.navigate("BangelsSubSubPJTT");
       },
       title: "Bangels",
     },
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("KadeSubSubPJE");
+        navigation.navigate("KadeSubSubPJTT");
       },
       title: "Kade",
     },
     {
       img: require('../../../../../assets/coming_soon.png'),
       onPress: () => {
-        navigation.navigate("GoldPendentSubSubPJE");
+        navigation.navigate("GodPendentSubSubPJTT");
       },
       title: "God Pendents",
     },
