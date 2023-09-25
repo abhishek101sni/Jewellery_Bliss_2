@@ -10,20 +10,20 @@ const data = [
     {
         id: 1,
         name1: "BTB E- Commerce Store",
-        name2: "Buy Attractive jewellery for store",
+        name2: "Streamline B2B jewellery procurement online.",
         img: require("../assets/banner-2.png"),
     },
 
     {
         id: 2,
         name1: "BTB E- Commerce Store",
-        name2: "Buy Attractive jewellery for Store",
+        name2: "Discover an exquisite variety of jewellery.",
         img: require("../assets/banner-2.png"),
     },
     {
         id: 3,
         name1: "BTB E- Commerce Store",
-        name2: "Buy Attractive jewellery for Store",
+        name2: "Elevate your style with customized elegance Create personalized jewellery masterpieces.",
         img: require("../assets/banner-2.png"),
     },
 ]
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
 
     },
     SnapCarouselText1: {
-        marginTop: moderateScaleVertical(70),
+        marginTop: moderateScaleVertical(30),
         marginVertical: moderateScaleVertical(10),
         fontSize: textScale(18),
         color: "#eec06b",
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     },
     SnapCarouselText2: {
         marginVertical: moderateScaleVertical(10),
-        fontSize: textScale(16),
+        fontSize: textScale(14),
         // fontSize: textScale(18),
         color: "black",
         fontFamily: "HurmeGeometricSans1"

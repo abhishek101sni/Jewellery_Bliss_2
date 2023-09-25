@@ -9,9 +9,9 @@ const ChainsE = ({ navigation }) => {
 
     const ChainsData = [
         {
-          img: require('../../../../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/AllNawabi/allnawabi.jpg'),
+          img: require('../../../../../assets/MoodShots/55.jpg'),
           onPress: () => {
-            navigation.navigate("");
+            navigation.navigate("SilkyChainsSubSubE");
           },
           title: "Silky Chains"
     
@@ -24,71 +24,73 @@ const ChainsE = ({ navigation }) => {
         //   title: "Indo Chains",
         // },
         {
-          img: require('../../../../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/Handmadeandhollow/handmadeandhollow.jpg'),
+          img: require('../../../../../assets/MoodShots/50.jpg'),
           onPress: () => {
-            navigation.navigate("");
+            navigation.navigate("RodiumChainsSubSubE");
           },
           title: "Rodium Chains",
         },
         {
-          img: require('../../../../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/kajuKatli/kajukatli.jpg'),
+          img: require('../../../../../assets/MoodShots/24.jpg'),
           onPress: () => {
-            navigation.navigate("");
+            navigation.navigate("KajuKatliChainsSubSubE");
           },
           title: "Kaju Katli Chains",
         },
         {
-          img: require('../../../../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/machinechains/machinechains.jpg'),
+          img: require('../../../../../assets/MoodShots/54.jpg'),
           onPress: () => {
+            navigation.navigate("MachineChainsSubSubE");
+           
           },
           title: "Machine Chains",
         },
         {
           img: require('../../../../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/nawabi/nawabi.jpg'),
           onPress: () => {
-            navigation.navigate("");
+            navigation.navigate("SolidNawabiChainsSubSubE");
           },
           title: "Solid Nawabi Chains",
         },
         {
-          img: require('../../../../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/rodium6g/rodium6g.jpg'),
+          img: require('../../../../../assets/MoodShots/44.jpg'),
           onPress: () => {
-            navigation.navigate("");
+            navigation.navigate("HollowNawabiChainsSubSubE");
           },
           title: "Hollow Nawabi Chains",
         },
         {
-          img: require('../../../../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/rodium7g/7g.jpg'),
+          img: require('../../../../../assets/MoodShots/43.jpg'),
           onPress: () => {
-            navigation.navigate("");
+            navigation.navigate("MadrasiChainsSubSubE");
           },
           title: "Madrasi Chains",
         },
         {
-          img: require('../../../../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/rodiumChains/rodiumchains.jpg'),
+          img: require('../../../../../assets/MoodShots/53.jpg'),
           onPress: () => {
-            navigation.navigate("");
+            navigation.navigate("HandmadeChainsSubSubE");
           },
           title: "Handmade Chains",
         },
         {
-          img: require('../../../../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/rodium10g/rodium10g.jpg'),
+          img: require('../../../../../assets/MoodShots/33.jpg'),
           onPress: () => {
-            navigation.navigate("");
+            navigation.navigate("HollowChainsSubSubE");
           },
           title: "Hollow Chains",
         },
         {
-          img: require('../../../../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/silky/silky.jpg'),
+          img: require('../../../../../assets/MoodShots/27.jpg'),
           onPress: () => {
-            navigation.navigate("");
+            navigation.navigate("ChocoChainsSubSubE");
           },
           title: "Choco Chains",
         },
         {
-          img: require('../../../../../assets/PRODUCTS/CHAINS/CHAINSSUBCATEGORIES/indochoco/indochoco.jpg'),
+          img: require('../../../../../assets/MoodShots/23.jpg'),
           onPress: () => {
-            navigation.navigate("");
+            navigation.navigate("IndoChocoChainsSubSubE");
           },
           title: "Indo Choco Chains",
         },

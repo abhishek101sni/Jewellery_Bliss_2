@@ -222,6 +222,33 @@ const GoldSilverPrice = ({ navigation }) => {
                             <Text>Loading</Text>
                         )}
                     </View>
+                    <View >
+                        {apiDATA.data && apiDATA.data.length > 0 ? (
+                            <View style={{backgroundColor:"gray" , width:"95%" , height:moderateScaleVertical(80) , alignSelf:"center" , marginTop:moderateScaleVertical(20) ,borderRadius:10 }}> 
+                        <View style={{ height: "100%", flexDirection:"row" , alignItems:"center" , justifyContent:"space-around" , marginHorizontal:moderateScale(-16)}}>
+                            <View style={{backgroundColor:"black" , width:moderateScale(60) , height:moderateScaleVertical(60) , borderRadius:60, alignItems:"center" , justifyContent:"center" , marginHorizontal:moderateScale(20)}}>
+                               <Text style={{color:"white"}}>hello</Text>
+                            </View>
+                               <Text style={{color:"white"}}>Hello</Text>
+                               <Text style={{color:"white"}}>₹ {firstData.BUY}</Text>
+                        </View>
+                    </View>
+                        ) : (
+                            <Text>Loading</Text>
+                        )}
+                    </View>
+
+
+                    {/* <View style={{backgroundColor:"gray" , width:"95%" , height:moderateScaleVertical(80) , alignSelf:"center" , marginTop:moderateScaleVertical(20) ,borderRadius:10 }}> 
+                        <View style={{ height: "100%", flexDirection:"row" , alignItems:"center" , justifyContent:"space-around" , marginHorizontal:moderateScale(-16)}}>
+                            <View style={{backgroundColor:"black" , width:moderateScale(60) , height:moderateScaleVertical(60) , borderRadius:60, alignItems:"center" , justifyContent:"center" , marginHorizontal:moderateScale(20)}}>
+                               <Text style={{color:"white"}}>hello</Text>
+                            </View>
+                               <Text style={{color:"white"}}>Hello</Text>
+                               <Text style={{color:"white"}}>Hello</Text>
+                        </View>
+                    </View> */}
+
                 </View>
             </ScrollView>
 

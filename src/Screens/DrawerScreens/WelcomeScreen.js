@@ -23,9 +23,9 @@ const WelcomeScreen = () => {
   const firstData = apiDATA.data && apiDATA.data[0];
   const secondData = apiDATA.data && apiDATA.data[2];
   const SpotG = apiDATA.data && apiDATA.data[22];
-  console.log("Spot Gollddddddd" ,SpotG)
+  // console.log("Spot Gollddddddd" ,SpotG)
   const SpotS = apiDATA.data && apiDATA.data[23];
-  console.log("spot silverrrr" ,SpotS )
+  // console.log("spot silverrrr" ,SpotS )
   const Dollar = apiDATA.data && apiDATA.data[37];
   // console.log("dollar" , Dollar)
 

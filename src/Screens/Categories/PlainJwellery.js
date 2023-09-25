@@ -3,6 +3,7 @@ import { View, Text, Image, TouchableOpacity, SafeAreaView, ScrollView, FlatList
 import { StyleSheet } from 'react-native';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 import SimpleModal from '../SimpleModal';
+import axios from 'axios';
 
 const PlainJwellery = ({ navigation }) => {
 

@@ -79,6 +79,7 @@ const FormDetails = ({ navigation }) => {
                     </View>
 
                     <View>
+                    <View style={{alignItems:"center"}}>
                         <TextInput
                             style={styles.Brandnameinputbottom}
                             autoCapitalize
@@ -95,6 +96,7 @@ const FormDetails = ({ navigation }) => {
                             placeholderTextColor="#C7C7CD"
                             onChangeText={setAddress}
                         />
+                        </View>
 
                         <View style={styles.span}>
                             <TextInput
@@ -203,7 +205,7 @@ const styles = StyleSheet.create({
     SkipButtonText: {
         color: "#bc9954",
         fontSize: textScale(13),
-        fontFamily: 'HurmeGeometricSans1Bold',
+        fontFamily: 'HurmeGeometricSans1SemiBold',
     },
     logoAlignment: {
         alignSelf: "center",
@@ -223,31 +225,32 @@ const styles = StyleSheet.create({
         marginTop: moderateScaleVertical(-50),
         textAlign: "center",
         color: "black",
-        fontFamily: 'HurmeGeometricSans1SemiBold',
+        // fontFamily: 'HurmeGeometricSans1SemiBold',
     },
     Brandnameinputbottom: {
-        alignSelf:"center",
         fontSize: textScale(13),
         color: "black",
         width: "80%",
         marginTop: moderateScaleVertical(30),
         marginBottom: moderateScaleVertical(5),
-        borderBottomWidth: moderateScale(1.5),
+        borderBottomWidth: moderateScale(1),
         borderBottomColor: "#bc9954",
         paddingBottom: moderateScaleVertical(0),
         fontFamily: "HurmeGeometricSans1",
-        paddingBottom:moderateScaleVertical(1)
+        paddingLeft:0
+        // paddingBottom:moderateScaleVertical(1)
     },
     Addressinputbottom: {
         fontSize:textScale(13),
         color: "black",
         width: "80%",
         marginTop: moderateScaleVertical(15),
-        borderBottomWidth: moderateScale(1.5),
+        borderBottomWidth: moderateScale(1),
         borderBottomColor: "#bc9954",
         paddingBottom: moderateScaleVertical(1),
-        fontFamily: 'HurmeGeometricSans1Bold',
-        alignSelf: 'center',
+        fontFamily: 'HurmeGeometricSans1',
+        paddingLeft:0
+       
        
     },
     Pincodeinputbottom: {
@@ -255,40 +258,43 @@ const styles = StyleSheet.create({
         color: "black",
         width: "35%",
         marginTop: moderateScaleVertical(15),
-        borderBottomWidth: moderateScale(1.5),
+        borderBottomWidth: moderateScale(1),
         borderBottomColor: "#bc9954",
         paddingBottom: moderateScaleVertical(1),
-        fontFamily: 'HurmeGeometricSans1Bold',
+        fontFamily: 'HurmeGeometricSans1',
+        paddingLeft:0
     },
     Localityinputbottom: {
         fontSize:textScale(13),
         color: "black",
         width: "35%",
         marginTop: moderateScaleVertical(15),
-        borderBottomWidth: moderateScale(1.5),
+        borderBottomWidth: moderateScale(1),
         borderBottomColor: "#bc9954",
         paddingBottom: moderateScaleVertical(1),
-        fontFamily: 'HurmeGeometricSans1Bold',
+        fontFamily: 'HurmeGeometricSans1',
+        paddingLeft:0
     },
     Cityinputbottom: {
         fontSize:textScale(13),
         color: "black",
         width: "35%",
         marginTop: moderateScaleVertical(15),
-        borderBottomWidth: moderateScale(1.5),
+        borderBottomWidth: moderateScale(1),
         borderBottomColor: "#bc9954",
         paddingBottom: moderateScaleVertical(1),
-        fontFamily: 'HurmeGeometricSans1Bold',
+        fontFamily: 'HurmeGeometricSans1',
+        paddingLeft:0
     },
     Stateinputbottom: {
         fontSize:textScale(13),
         color: "black",
         width: "35%",
         marginTop: moderateScaleVertical(15),
-        borderBottomWidth: moderateScale(1.5),
+        borderBottomWidth: moderateScale(1),
         borderBottomColor: "#bc9954",
         paddingBottom: moderateScaleVertical(1),
-        fontFamily: 'HurmeGeometricSans1Bold',
+        fontFamily: 'HurmeGeometricSans1',
     },
     GSTinputbottom: {
         alignSelf:"center",
@@ -297,30 +303,34 @@ const styles = StyleSheet.create({
         width: "80%",
         marginTop: moderateScaleVertical(15),
         marginBottom: moderateScaleVertical(5),
-        borderBottomWidth: moderateScale(1.5),
+        borderBottomWidth: moderateScale(1),
         borderBottomColor: "#bc9954",
         fontFamily: "HurmeGeometricSans1",
-        paddingBottom:moderateScaleVertical(1)
+        paddingBottom:moderateScaleVertical(1),
+        paddingLeft:0
+
     },
     StorePersonNameinputbottom: {
         fontSize:textScale(13),
         color: "black",
         width: "35%",
         marginTop: moderateScaleVertical(15),
-        borderBottomWidth: moderateScale(1.5),
+        borderBottomWidth: moderateScale(1),
         borderBottomColor: "#bc9954",
         paddingBottom: moderateScaleVertical(1),
-        fontFamily: 'HurmeGeometricSans1Bold',
+        fontFamily: 'HurmeGeometricSans1',
+        paddingLeft:0
     },
     contactnoinputbottom: {
         fontSize:textScale(13),
         color: "black",
         width: "35%",
         marginTop: moderateScaleVertical(15),
-        borderBottomWidth: moderateScale(1.5),
+        borderBottomWidth: moderateScale(1),
         borderBottomColor: "#bc9954",
         paddingBottom: moderateScaleVertical(1),
-        fontFamily: 'HurmeGeometricSans1Bold',
+        fontFamily: 'HurmeGeometricSans1',
+        paddingLeft:0
     },
     SubmitButtonAlignment: {
         alignItems: "center",
