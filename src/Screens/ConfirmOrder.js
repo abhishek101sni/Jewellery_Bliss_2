@@ -1,31 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {
-  View,
-  Text,
-  ImageBackground,
-  Modal,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-  SafeAreaView,
-  TextInput,
-  Alert
-} from 'react-native';
-import {
-  moderateScale,
-  moderateScaleVertical,
-  height,
-  textScale,
-} from '../utils/responsive';
+import { View, Text, ImageBackground, Modal, StyleSheet, TouchableOpacity, Image, ScrollView, SafeAreaView, TextInput, Alert } from 'react-native';
+import { moderateScale, moderateScaleVertical, height, textScale} from '../utils/responsive';
 import SimpleModal from './SimpleModal';
 import axios from 'axios';
 import MarqueeView from 'react-native-marquee-view';
-// import { useSelector, useDispatch } from 'react-redux';
-import {getUserDetailsActionCreator} from '../redux/Formdetails/formDetails.action-creator';
-import {mockedRequestAnimationFrame} from 'react-native-reanimated/lib/typescript/reanimated2/utils';
-import Cart from './Cart';
 
 const ConfirmOrder = ({navigation}) => {
   const [CartData, setCartData] = useState([]);
@@ -57,8 +36,7 @@ const ConfirmOrder = ({navigation}) => {
     try {
       const response = await axios.get(PREMIUM_API_URL);
       setPremiumData(response.data);
-      ``;
-      // console.log("helllllllllloooooo", response.data, )
+      console.log("helllllllllloooooo", response.data);
     } catch (error) {
       console.error('Error fetching premium data:', error);
     }
@@ -88,7 +66,7 @@ const ConfirmOrder = ({navigation}) => {
     var arr = [];
     return cart?.map(cartItem => {
       // let goldprice = parseFloat(firstData?.SELL);
-      let goldprice = 1000000;
+      let goldprice = 58568;
       // console.log("MCX Gold Buy price = ", firstData?.SELL)
       console.log('MCX Gold Buy price = ', goldprice);
       {
@@ -195,7 +173,7 @@ const ConfirmOrder = ({navigation}) => {
 
   const handleApplyButtonPress = () => {
     var arr = [];
-    if (Coupon === 'DISCOUNT20') {
+    if (Coupon === 'JBLISS20') {
       if (TentativePrice >= 2500000) {
         cart?.map((cartItem, index) => {
           let fmaking =
@@ -221,7 +199,7 @@ const ConfirmOrder = ({navigation}) => {
       } else {
         Alert.alert('Please add more items to apply this coupon');
       }
-    } else if (Coupon === 'DISCOUNT10') {
+    } else if (Coupon === 'JBLISS10') {
       if (TentativePrice >= 1000000 && TentativePrice < 2500000) {
 
         cart?.map((cartItem, index) => {
@@ -294,37 +272,21 @@ const ConfirmOrder = ({navigation}) => {
 
   return (
     <SafeAreaView style={{flex: 1}}>
-      <ImageBackground
-        style={{flex: 1}}
-        source={require('../assets/background-image2.png')}>
+      <ImageBackground style={{flex: 1}} source={require('../assets/background-image2.png')}>
         <View>
-          <Image
-            source={require('../assets/GOLDEN-STRIP.png')}
-            style={styles.goldenStrip}
-          />
+          <Image source={require('../assets/GOLDEN-STRIP.png')} style={styles.goldenStrip} />
         </View>
         <ScrollView>
-          <View
-            style={{
-              backgroundColor: '#E8E8E8',
-              alignSelf: 'center',
-              width: moderateScale(380),
-              borderRadius: 20,
-              marginTop: moderateScaleVertical(20),
-            }}>
-            <View
-              style={{
-                marginTop: moderateScaleVertical(9),
-                padding: 5,
-                width: moderateScale(370),
+          <View style={{ backgroundColor: '#E8E8E8', alignSelf: 'center', width: moderateScale(370), borderRadius: 20, marginTop: moderateScaleVertical(20)}}>
+            <View style={{ marginTop: moderateScaleVertical(9), padding: 5, width: moderateScale(365),
               }}>
-              <View style={{flexDirection: 'row'}}>
-                <Text style={{color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold' ,width:moderateScale(60), borderWidth:1 ,borderColor:"red", padding:5}}>Product</Text>
-                <Text style={{color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold', width:moderateScale(50),borderWidth:1 ,borderColor:"red", paddingRight:10 , paddingLeft:10,paddingTop:5 }}>QTY</Text>
-                <Text style={{color: 'black' , fontFamily: 'HurmeGeometricSans1SemiBold', width:moderateScale(50), borderWidth:1 ,borderColor:"red",paddingRight:5 ,paddingLeft:5 ,paddingTop:5}}>Purity</Text>
-                <Text style={{color: 'black' , fontFamily: 'HurmeGeometricSans1SemiBold', width:moderateScale(60), borderWidth:1 ,borderColor:"red",paddingRight:5, paddingLeft:15 ,paddingTop:5}}>Wgt.</Text>
-                <Text style={{color: 'black' , fontFamily: 'HurmeGeometricSans1SemiBold', width:moderateScale(75) , borderWidth:1 ,borderColor:"red",paddingRight:10,paddingLeft:10,paddingTop:5}}>Making</Text>
-                <Text style={{color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold', width:moderateScale(60), borderWidth:1 ,borderColor:"red",paddingLeft:5, paddingTop:5}}>Nt Gold Wgt</Text>
+              <View style={{flexDirection: 'row', paddingLeft:0 ,paddingRight:0,}}>
+                <Text style={{ color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold', width:moderateScale(60) , padding:5}}>Product</Text>
+                <Text style={{color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold', width:moderateScale(50) , paddingRight:10 , paddingLeft:10 , paddingTop:5 }}>Qty</Text>
+                <Text style={{color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold', width:moderateScale(50) , paddingRight:5  , paddingLeft:5  , paddingTop:5 }}>Purity</Text>
+                <Text style={{color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold', width:moderateScale(60) , paddingRight:5  , paddingLeft:10 , paddingTop:5 }}>Weight</Text>
+                <Text style={{color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold', width:moderateScale(75) , paddingRight:10 , paddingLeft:10 , paddingTop:5 }}>Making</Text>
+                <Text style={{color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold', width:moderateScale(80) , paddingRight:10 , paddingLeft:5  , paddingTop:5 }}>Net Gold {'\n'}  Weight</Text>
               </View>
 
               {cart?.length && CartData.length > 0 && TentativePrice !== 0 ? (
@@ -347,13 +309,20 @@ const ConfirmOrder = ({navigation}) => {
                   return (
                     <View style={{ marginBottom: moderateScaleVertical(10), marginTop: moderateScaleVertical(-5)}}>
                       <View style={{  marginTop: 10, flexDirection: 'row', }}>
-                        <Text style={{color: 'black' ,width:moderateScale(60), borderWidth:1 ,borderColor:"green"}}>{cartItem.item.name}</Text>
-                        <Text style={{color: 'black' ,width:moderateScale(50),borderWidth:1 ,borderColor:"green",padding:10 ,paddingTop:5 ,}}>{cartItem.count}</Text>
-                        <Text style={{color: 'black' ,width:moderateScale(50), borderWidth:1 ,borderColor:"green"}}>{cartItem.item.purity} KT</Text>
-                        <Text style={{color: 'black' , width:moderateScale(60),borderWidth:1 ,borderColor:"green"}}>{cartItem.item.weight} g</Text>
-                        <Text style={{ textDecorationLine: FinalTentativePrice === 0  ? 'none' : 'line-through', color: 'black',borderWidth:1 ,borderColor:"green" ,width:moderateScale(75) }}>{cartItem.item.mcharges}
-                        </Text>{FinalTentativePrice === 0 ||   Fmaking.length === 0 ? null : (<Text style={{color: 'black'}}>/ {Fmaking[index]} </Text>
-                        )}<Text style={{color: 'black' ,borderWidth:1 ,borderColor:"green"}}>{CartData[index]?.NetGoldWeight?.toFixed(2)} g</Text>
+                        <Text style={{color: 'black', fontFamily: 'HurmeGeometricSans1' ,width:moderateScale(60),padding:5}}>{cartItem.item.name}</Text>
+                        <Text style={{color: 'black', fontFamily: 'HurmeGeometricSans1', width:moderateScale(50),paddingLeft:18 , paddingTop:5}}>{cartItem.count}</Text>
+                        <Text style={{color: 'black' , fontFamily: 'HurmeGeometricSans1', width:moderateScale(50),paddingRight:5 ,paddingLeft:8 ,paddingTop:5}}>{cartItem.item.purity} KT</Text>
+                        <Text style={{color: 'black' , fontFamily: 'HurmeGeometricSans1', width:moderateScale(60), paddingRight:3, paddingLeft:8 ,paddingTop:5}}>{cartItem.item.weight} g</Text>
+
+                        <View style={{flexDirection:"row", width: moderateScale(75) }}>
+                           <Text style={{ textDecorationLine: FinalTentativePrice === 0  ? 'none' : 'line-through', color: 'black' , fontFamily: 'HurmeGeometricSans1',paddingRight:0,paddingLeft:14,paddingTop:5}}>{cartItem.item.mcharges}</Text>
+                           <Text style={{paddingTop:5}}></Text>
+                            {FinalTentativePrice === 0 ||   Fmaking.length === 0 ? null : (
+                             <Text style={{color: 'black' , fontFamily: 'HurmeGeometricSans1' ,paddingTop:5 , paddingRight:6 ,paddingLeft:2 }}> / {Fmaking[index]} </Text>
+                             )}
+                        </View>
+
+                        <Text style={{color: 'black', fontFamily: 'HurmeGeometricSans1', width:moderateScale(100), paddingRight:0 ,paddingLeft:10, paddingTop:5}}>{CartData[index]?.NetGoldWeight?.toFixed(2)} g</Text>
                       </View>
                     </View>
                   );
@@ -361,141 +330,58 @@ const ConfirmOrder = ({navigation}) => {
               ) : (
                 <></>
               )}
-              <View
-                style={{
-                  backgroundColor: '#A8A8A8',
-                  width: moderateScale(380),
-                  height: moderateScaleVertical(20),
-                  padding: 2,
-                  alignSelf: 'center',
-                }}>
-                <MarqueeView speed={0.1}>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-around',
-                      marginHorizontal: moderateScale(20),
-                    }}>
-                    <Text
-                      style={{
-                        color: 'black',
-                        fontSize: textScale(12),
-                        fontFamily: 'HurmeGeometricSans1',
-                      }}>
-                      Gold995 rate :{' '}
-                      {Math.round(CartData[0]?.Gold995).toLocaleString(
-                        'en-IN',
-                        {
-                          maximumFractionDigits: 2,
-                          style: 'currency',
-                          currency: 'INR',
-                        },
-                      )}
+              <View style={{ backgroundColor: '#A8A8A8', width: moderateScale(370), height: moderateScaleVertical(20),alignSelf: 'center', marginLeft:moderateScale(5)}}>
+                <MarqueeView speed={0.2}>
+                  <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginHorizontal: moderateScale(20), height:moderateScaleVertical(20)}}>
+                    <Text style={{ color: 'black', fontSize: textScale(13), fontFamily: 'HurmeGeometricSans1SemiBold', }}>Gold995 Rate : 
+                      {Math.round(CartData[0]?.Gold995).toLocaleString('en-IN',{maximumFractionDigits: 2,style: 'currency',currency: 'INR'})}
                     </Text>
-                    <Text
-                      style={{
-                        color: 'black',
-                        fontSize: textScale(12),
-                        fontFamily: 'HurmeGeometricSans1',
-                      }}>
-                      {' '}
-                      Fine Gold Rate :
-                      {Math.round(CartData[0]?.GoldFineRate).toLocaleString(
-                        'en-IN',
-                        {
-                          maximumFractionDigits: 2,
-                          style: 'currency',
-                          currency: 'INR',
-                        },
-                      )}
+                    <Text> | </Text>
+                    <Text style={{color: 'black', fontSize: textScale(13), fontFamily: 'HurmeGeometricSans1SemiBold',}}>Fine Gold Rate : 
+                    {Math.round(CartData[0]?.GoldFineRate).toLocaleString('en-IN',{maximumFractionDigits: 2,style: 'currency',currency: 'INR'})}
                     </Text>
                   </View>
                 </MarqueeView>
               </View>
 
-              <View
-                style={{
-                  marginTop: moderateScaleVertical(5),
-                  marginLeft: moderateScale(2),
-                  marginBottom: moderateScaleVertical(10),
-                }}>
-                <Text
-                  style={{
-                    fontSize: textScale(14),
-                    fontFamily: 'HurmeGeometricSans1SemiBold',
-                    color: 'black',
-                    justifyContent: 'flex-start',
-                    marginLeft: moderateScale(8),
-                  }}>
+              <View style={{ marginTop: moderateScaleVertical(5), marginBottom: moderateScaleVertical(10)}}>
+                <Text style={{ fontSize: textScale(14), fontFamily: 'HurmeGeometricSans1SemiBold', color: 'black', justifyContent: 'flex-start', marginLeft: moderateScale(8)}}>
                   Tentative price:
                 </Text>
-                <View
-                  style={{flexDirection: 'row', marginLeft: moderateScale(8)}}>
+
+                <View style={{flexDirection: 'row', marginLeft: moderateScale(8)}}>
+
                   {FinalTentativePrice === 0 ? null : (
-                    <Text
-                      style={{
-                        justifyContent: 'flex-start',
-                        marginLeft: moderateScale(8),
-                        color: 'black',
-                      }}>
-                      Before Discount :{' '}
-                    </Text>
-                  )}
-                  <Text
-                    style={{
-                      textDecorationLine:
-                      FinalTentativePrice === 0 ? 'none' : 'line-through',
-                      color: 'black',
-                    }}>
-                    {Math.round(parseFloat(TentativePrice)).toLocaleString(
-                      'en-IN',
-                      {
-                        maximumFractionDigits: 2,
-                        style: 'currency',
-                        currency: 'INR',
-                      },
-                    )}
+                <Text style={{ justifyContent: 'flex-start', marginLeft: moderateScale(8), color: 'black', }}>Before Discount : 
+                </Text> )}
+                  <Text style={{ color: 'black', }}>
+                     {Math.round(parseFloat(TentativePrice)).toLocaleString('en-IN',{maximumFractionDigits: 2,style: 'currency',currency: 'INR',},)}
                   </Text>
                 </View>
+
                 {FinalTentativePrice === 0 ? null : (
-                  <Text
-                    style={{
-                      justifyContent: 'flex-start',
-                      marginLeft: moderateScale(8),
-                      color: 'black',
-                    }}>
-                    After Discount :
-                    {Math.round(parseFloat(FinalTentativePrice)).toLocaleString(
-                      'en-IN',
-                      {
-                        maximumFractionDigits: 2,
-                        style: 'currency',
-                        currency: 'INR',
-                      },
-                    )}
-                  </Text>
-                )}
+                  <Text style={{ justifyContent: 'flex-start', marginLeft: moderateScale(8),color: 'black',}}>
+                        After Discount : {Math.round(parseFloat(FinalTentativePrice)).toLocaleString('en-IN', {maximumFractionDigits: 2,style: 'currency',currency: 'INR',},)}
+                  </Text>)}
               </View>
             </View>
           </View>
 
           <View>
             <View style={styles.containeraa}>
-            <View>
-              <TextInput
-                style={styles.inputaa}
-                placeholder="Enter Coupon"
-                onChangeText={coupon => setCoupon(coupon)}
-              />
+               <View>
+                  <TextInput style={styles.inputaa} placeholder="Enter Coupon code" placeholderTextColor="#C7C7CD" onChangeText={coupon => setCoupon(coupon)}/>
               </View>
               <View>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={handleApplyButtonPress}>
-                <Text style={styles.buttonText}>Apply</Text>
-              </TouchableOpacity>
+                <TouchableOpacity onPress={handleApplyButtonPress} style={styles.logInButtonAlignment}>
+                  <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 10 }}>
+                    <Text style={styles.logInButtonText}>APPLY</Text>
+                  </ImageBackground>
+                </TouchableOpacity>
               </View>
             </View>
+           
+           
           </View>
 
           <View style={styles.WastageChartButton}>
@@ -518,6 +404,7 @@ const ConfirmOrder = ({navigation}) => {
                 marginTop: moderateScaleVertical(15),
                 fontSize: textScale(20),
                 fontFamily: 'HurmeGeometricSans1SemiBold',
+                color:"black"
               }}>
               Disclaimer :
             </Text>
@@ -529,40 +416,21 @@ const ConfirmOrder = ({navigation}) => {
                 marginTop: moderateScaleVertical(6),
                 fontSize: textScale(14),
                 fontFamily: 'HurmeGeometricSans1SemiBold',
+                color:"black", marginVertical:moderateScaleVertical(2)
               }}>
-              For gold price inquiries and booking, please contact us at
-              Jewellery Bliss via call or WhatsApp{' '}
+              For gold price inquiries and booking, please contact{'\n'}us at
+              Jewellery Bliss via call or WhatsApp.
             </Text>
           </View>
 
-          <ImageBackground
-            style={styles.disclaimer}
-            imageStyle={{borderRadius: 20}}
-            source={require('../assets/CompressedTexture3.jpg')}>
+          <ImageBackground style={styles.disclaimer} imageStyle={{borderRadius: 20}} source={require('../assets/CompressedTexture3.jpg')}>
             <View style={{marginTop: moderateScaleVertical(15)}}>
-              <View
-                style={{
-                  flexDirection: 'column',
-                  justifyContent: 'flex-start',
-                  marginLeft: moderateScale(10),
-                }}>
-                <Text
-                  style={{
-                    fontSize: textScale(17),
-                    color: 'black',
-                    fontFamily: 'HurmeGeometricSans1SemiBold',
-                  }}>
+              <View style={{ flexDirection: 'column', justifyContent: 'flex-start', marginLeft: moderateScale(10)}}>
+                <Text style={{ fontSize: textScale(17), color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold',}}>
                   Bank Details
                 </Text>
-                <Text
-                  style={{
-                    fontSize: textScale(14),
-                    color: 'black',
-                    fontFamily: 'HurmeGeometricSans1SemiBold',
-                    marginVertical: moderateScaleVertical(2),
-                  }}>
-                  {' '}
-                  To initiate the order processing, a payment of 15% on the bank
+                <Text style={{ fontSize: textScale(14), color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold', marginVertical: moderateScaleVertical(2)}}>
+                   To initiate the order processing, a payment of 15% on{'\n'}the bank
                   details mentioned below
                 </Text>
               </View>
@@ -758,7 +626,7 @@ const ConfirmOrder = ({navigation}) => {
             style={{
               marginBottom: moderateScaleVertical(50),
               backgroundColor: '#E8E8E8',
-              width: moderateScale(380),
+              width: moderateScale(370),
               alignSelf: 'center',
               borderRadius: 20,
               height: moderateScaleVertical(300),
@@ -779,7 +647,7 @@ const ConfirmOrder = ({navigation}) => {
                   marginBottom: moderateScaleVertical(10),
                   borderRadius: 5,
                 }}
-                source={require('../assets/HDqrCode.jpeg')}
+                source={require('../assets/SingleQRCODE.jpg')}
               />
               <View style={{flexDirection: 'row'}}>
                 <View style={{flexDirection: 'column'}}>
@@ -997,7 +865,7 @@ const styles = StyleSheet.create({
   },
   disclaimer: {
     alignSelf: 'center',
-    width: moderateScale(380),
+    width: moderateScale(370),
     height: moderateScaleVertical(270),
     alignSelf: 'center',
     marginTop: moderateScaleVertical(20),
@@ -1006,7 +874,7 @@ const styles = StyleSheet.create({
   },
   line: {
     marginTop: moderateScaleVertical(10),
-    width: moderateScale(380),
+    width: moderateScale(370),
     // marginRight: moderateScale(20),
     height: moderateScaleVertical(1),
     backgroundColor: '#a4a4a4',
@@ -1100,7 +968,7 @@ const styles = StyleSheet.create({
   ProductLogoBackground: {
     backgroundColor: '#E8E8E8',
     marginTop: moderateScaleVertical(20),
-    width: moderateScale(380),
+    width: moderateScale(370),
     height: moderateScaleVertical(100),
     alignSelf: 'center',
     borderRadius: 20,
@@ -1117,9 +985,13 @@ const styles = StyleSheet.create({
     width: moderateScale(250),
     height: moderateScaleVertical(40),
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: 'black',
     borderRadius: 5,
     paddingHorizontal: 10,
+    color:"black",
+    fontFamily: "HurmeGeometricSans1SemiBold",
+    fontSize: textScale(18)
+
   },
   button: {
     backgroundColor: 'gold',
@@ -1132,4 +1004,25 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
+  logInButtonAlignment: {
+    alignItems: "center",
+},
+ImageBackgroundStyle: {
+  alignItems: "center",
+  padding: moderateScale(9),
+  width: moderateScale(80),
+  height: moderateScaleVertical(40),
+  justifyContent: 'center',
+
+  borderRadius: 10,
+},
+logInButtonText: {
+  fontSize: textScale(15),
+  color: "black",
+  marginLeft: moderateScale(0),
+
+  // paddingTop: moderateScaleVertical(3),
+  fontFamily: "HurmeGeometricSans1SemiBold",
+
+},
 });

@@ -15,41 +15,176 @@ const Thankyou = ({ navigation }) => {
             {/* <Text style={styles.OrderConfirmendText}>Your order is confirmed</Text> */}
             <Text style={styles.OrderConfirmendText}>To initiate the order processing, a payment of 15% on the bank details mentioned below.</Text>
 </View>
-            <ImageBackground style={styles.disclaimer} imageStyle={{ borderRadius: 20 }} source={require("../assets/CompressedTexture3.jpg")} >
-                    <View style={{ marginTop: moderateScaleVertical(15), }}>
-                        <View style={{ flexDirection: "column" ,  justifyContent:"flex-start" , marginLeft:moderateScale(10)}}>
-                            <Text style={{ fontSize: textScale(17), color: "black", fontFamily: "HurmeGeometricSans1SemiBold" }}>Bank Details</Text>
-                            <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>To initiate the order processing, a payment of 15% on the bank details mentioned below</Text>
-                        </View>
-                        <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(3) }}>
-                            <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5),  justifyContent:"flex-start" , marginLeft:moderateScale(10) }}>
-                                <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>Bank Name</Text>
-                                <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>A/C No.</Text>
-                                <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>IFSC Code</Text>
-                                <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}>A/c holder name</Text>
-                            </View>
-                            <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
-                                <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
-                                <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
-                                <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
-                                <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", marginVertical: moderateScaleVertical(2) }}> : </Text>
-                            </View>
-                            <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
-                                <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>ICICI</Text>
-                                <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>629205034031</Text>
-                                <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>ICIC0006292</Text>
-                                <Text style={{ fontSize: textScale(14), color: "black", fontFamily: "HurmeGeometricSans1 ", marginVertical: moderateScaleVertical(2) }}>Adinath Chain and Jewellers{'\n'}E-Comm LLP</Text>
-                            </View>
-                        </View>
+             <ImageBackground style={styles.disclaimer} imageStyle={{borderRadius: 20}} source={require('../assets/CompressedTexture3.jpg')}>
+            <View style={{marginTop: moderateScaleVertical(15)}}>
+              <View style={{ flexDirection: 'column', justifyContent: 'flex-start', marginLeft: moderateScale(10)}}>
+                <Text style={{ fontSize: textScale(17), color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold',}}>
+                  Bank Details
+                </Text>
+                <Text style={{ fontSize: textScale(14), color: 'black', fontFamily: 'HurmeGeometricSans1SemiBold', marginVertical: moderateScaleVertical(2)}}>
+                   To initiate the order processing, a payment of 15% on{'\n'}the bank
+                  details mentioned below
+                </Text>
+              </View>
 
-                        <View style={styles.line}></View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  marginTop: moderateScaleVertical(3),
+                }}>
+                <View
+                  style={{
+                    flexDirection: 'column',
+                    marginVertical: moderateScaleVertical(5),
+                    justifyContent: 'flex-start',
+                    marginLeft: moderateScale(10),
+                  }}>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      color: 'black',
+                      fontFamily: 'HurmeGeometricSans1SemiBold',
+                      marginVertical: moderateScaleVertical(2),
+                    }}>
+                    Bank Name
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      color: 'black',
+                      fontFamily: 'HurmeGeometricSans1SemiBold',
+                      marginVertical: moderateScaleVertical(2),
+                    }}>
+                    A/C No.
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      color: 'black',
+                      fontFamily: 'HurmeGeometricSans1SemiBold',
+                      marginVertical: moderateScaleVertical(2),
+                    }}>
+                    IFSC Code
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      color: 'black',
+                      fontFamily: 'HurmeGeometricSans1SemiBold',
+                      marginVertical: moderateScaleVertical(2),
+                    }}>
+                    A/c holder name
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'column',
+                    marginVertical: moderateScaleVertical(5),
+                  }}>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      color: 'black',
+                      fontFamily: 'HurmeGeometricSans1SemiBold',
+                      marginVertical: moderateScaleVertical(2),
+                    }}>
+                    {' '}
+                    :{' '}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      color: 'black',
+                      fontFamily: 'HurmeGeometricSans1SemiBold',
+                      marginVertical: moderateScaleVertical(2),
+                    }}>
+                    {' '}
+                    :{' '}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      color: 'black',
+                      fontFamily: 'HurmeGeometricSans1SemiBold',
+                      marginVertical: moderateScaleVertical(2),
+                    }}>
+                    {' '}
+                    :{' '}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      color: 'black',
+                      fontFamily: 'HurmeGeometricSans1SemiBold',
+                      marginVertical: moderateScaleVertical(2),
+                    }}>
+                    {' '}
+                    :{' '}
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    flexDirection: 'column',
+                    marginVertical: moderateScaleVertical(5),
+                  }}>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      color: 'black',
+                      fontFamily: 'HurmeGeometricSans1 ',
+                      marginVertical: moderateScaleVertical(2),
+                    }}>
+                    ICICI
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      color: 'black',
+                      fontFamily: 'HurmeGeometricSans1 ',
+                      marginVertical: moderateScaleVertical(2),
+                    }}>
+                    629205034031
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      color: 'black',
+                      fontFamily: 'HurmeGeometricSans1 ',
+                      marginVertical: moderateScaleVertical(2),
+                    }}>
+                    ICIC0006292
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      color: 'black',
+                      fontFamily: 'HurmeGeometricSans1 ',
+                      marginVertical: moderateScaleVertical(2),
+                    }}>
+                    Adinath Chain and Jewellers{'\n'}E-Comm LLP
+                  </Text>
+                </View>
+              </View>
 
-                        <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(5),justifyContent:"flex-start" , marginLeft:moderateScale(10)  }}>
-                            <Text style={styles.disclaimerText}>Disclaimer : </Text>
-                            <Text style={styles.disclaimerTextValue}>Order will Varied order processing due to{'\n'}product availability, customization, and {'\n'}volume , Thank you for your patience.</Text>
-                        </View>
-                    </View>
-                </ImageBackground>
+              <View style={styles.line}></View>
+
+              <View
+                style={{
+                  flexDirection: 'row',
+                  marginTop: moderateScaleVertical(5),
+                  justifyContent: 'flex-start',
+                  marginLeft: moderateScale(10),
+                }}>
+                <Text style={styles.disclaimerText}>Disclaimer : </Text>
+                <Text style={styles.disclaimerTextValue}>
+                  Order will Varied order processing due to{'\n'}
+                  productavailability, customization, and {'\n'}volume , Thank
+                  youfor your patience.
+                </Text>
+              </View>
+            </View>
+          </ImageBackground>
+
 
             <View>
               {/* <Text style={{ fontSize: textScale(30), color: "black", alignSelf: "center", fontFamily: "HurmeGeometricSans1Bold", marginTop: moderateScaleVertical(10), marginBottom: moderateScaleVertical(10) }}>OR</Text> */}
@@ -59,26 +194,97 @@ const Thankyou = ({ navigation }) => {
               {/* <Image style={{ alignSelf: "center", width: moderateScale(360), marginBottom: moderateScaleVertical(0) , borderRadius:20 }} source={require("../assets/ClientQRcode.jpeg")} /> */}
             </View>
 
+            <View
+            style={{
+              marginBottom: moderateScaleVertical(50),
+              backgroundColor: '#E8E8E8',
+              width: moderateScale(370),
+              alignSelf: 'center',
+              borderRadius: 20,
+              height: moderateScaleVertical(300),
+              marginTop: moderateScaleVertical(10),
+            }}>
+            <View
+              style={{
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginVertical: moderateScaleVertical(0),
+                marginTop: moderateScaleVertical(20),
+              }}>
+              <Image
+                style={{
+                  alignSelf: 'center',
+                  width: moderateScale(200),
+                  height: moderateScaleVertical(200),
+                  marginBottom: moderateScaleVertical(10),
+                  borderRadius: 5,
+                }}
+                source={require('../assets/SingleQRCODE.jpg')}
+              />
+              <View style={{flexDirection: 'row'}}>
+                <View style={{flexDirection: 'column'}}>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      fontFamily: 'HurmeGeometricSans1Bold',
+                      color: 'black',
+                    }}>
+                    Merchant Name
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      fontFamily: 'HurmeGeometricSans1Bold',
+                      color: 'black',
+                      marginTop: moderateScaleVertical(25),
+                    }}>
+                    Mobile Number
+                  </Text>
+                </View>
+                <View style={{flexDirection: 'column'}}>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      fontFamily: 'HurmeGeometricSans1SemiBold',
+                      color: 'black',
+                    }}>
+                    {' '}
+                    :{' '}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      fontFamily: 'HurmeGeometricSans1SemiBold',
+                      color: 'black',
+                      marginTop: moderateScaleVertical(25),
+                    }}>
+                    {' '}
+                    :{' '}
+                  </Text>
+                </View>
+                <View style={{flexDirection: 'column'}}>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      fontFamily: 'HurmeGeometricSans1SemiBold',
+                      color: 'black',
+                    }}>
+                    M/S ADINATH CHAIN AND {'\n'}JEWELLERS E-Comm LLP{' '}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: textScale(14),
+                      fontFamily: 'HurmeGeometricSans1SemiBold',
+                      color: 'black',
+                      marginTop: moderateScaleVertical(12),
+                    }}>
+                    9654511612
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
 
-<View style={{marginBottom:moderateScaleVertical(30), backgroundColor:"#E8E8E8" ,width:moderateScale(380), alignSelf: "center", borderRadius:20 , height:moderateScaleVertical(300), marginTop:moderateScaleVertical(20)}}>
-    <View style={{flexDirection:"column" , alignItems:"center" , marginVertical:moderateScaleVertical(0), marginTop:moderateScaleVertical(20)}}>
-    <Image style={{ alignSelf: "center", width: moderateScale(200), height:moderateScaleVertical(200), marginBottom: moderateScaleVertical(10), borderRadius:5 }} source={require("../assets/HDqrCode.jpeg")} />
-    <View style={{flexDirection:"row" }}>
-      <View>
-         <Text style={{fontSize:textScale(14) ,fontFamily: "HurmeGeometricSans1Bold"}}>Merchant Name</Text>
-         <Text style={{marginTop:moderateScaleVertical(20), fontSize:textScale(14),fontFamily: "HurmeGeometricSans1"}}>Mobile Number</Text>
-      </View>
-      <View>
-        <Text style={{fontSize:textScale(14)}}> : </Text>
-        <Text style={{marginTop:moderateScaleVertical(20),fontSize:textScale(14)}}> : </Text>
-      </View>
-      <View>
-        <Text style={{fontSize:textScale(14), fontFamily: "HurmeGeometricSans1"}}>M/S ADINATH CHAIN AND  {'\n'}JEWELLERS E-COMM LLP</Text>
-        <Text style={{fontSize:textScale(14), fontFamily: "HurmeGeometricSans1",marginTop:moderateScaleVertical(3)}} >9654511612</Text>
-      </View> 
-    </View>
-    </View>
-</View>
 
 
             <TouchableOpacity style={styles.logInButtonAlignment} onPress={() => navigation.navigate('Drawer')}>
@@ -102,7 +308,7 @@ const styles = StyleSheet.create({
   },
   disclaimer: {
     alignSelf: "center",
-    width: moderateScale(360),
+    width: moderateScale(370),
     height: moderateScaleVertical(235),
     alignSelf: "center",
     marginTop: moderateScaleVertical(10),
@@ -178,7 +384,7 @@ const styles = StyleSheet.create({
   },
   disclaimer: {
     alignSelf: "center",
-    width: moderateScale(380),
+    width: moderateScale(370),
     height: moderateScaleVertical(270),
     alignSelf: "center",
     marginTop: moderateScaleVertical(20),
@@ -188,7 +394,7 @@ const styles = StyleSheet.create({
 },
 line: {
   marginTop: moderateScaleVertical(10),
-  width: moderateScale(380),
+  width: moderateScale(370),
   // marginRight: moderateScale(20),
   height: moderateScaleVertical(1),
   backgroundColor: "#a4a4a4",

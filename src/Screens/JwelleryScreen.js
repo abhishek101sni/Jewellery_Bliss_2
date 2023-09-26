@@ -36,72 +36,72 @@ const JwelleryScreen = ({ navigation }) => {
 
 {/* CHAINS */}
                     <View >
-                        <DataTable >
-                            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20, height: moderateScaleVertical(90), width: moderateScale(390), alignSelf: "center" }} style={{ width: moderateScale(390), alignSelf: "center" }}>
+                            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20, height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: "center" , alignItems:'center'}} style={{ marginTop: moderateScaleVertical(10),width: moderateScale(370),height: moderateScaleVertical(50),alignSelf: 'center',}}>
                                 <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" }} style={{ justifyContent: "center", color: "black" }} >CHAINS</DataTable.Title>
                             </ImageBackground>
+                        <DataTable >
 
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center" , flexDirection:"row" , justifyContent:"space-around" , marginHorizontal:moderateScale(20)}}>
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center" , flexDirection:"row" , justifyContent:"space-around" , marginHorizontal:moderateScale(20)}}>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}>Machine Chains</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
-                                <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>3.0%</DataTable.Cell>
+                                <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1" }}>3.0%</DataTable.Cell>
                             </DataTable.Row>
 
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), justifyContent: "space-evenly", alignSelf: "center" }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), justifyContent: "space-evenly", alignSelf: "center" }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Indo Choco Chains</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>3.5%</DataTable.Cell>
                             </DataTable.Row>
                             
 
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Choco Chains</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>4.0%</DataTable.Cell>
                             </DataTable.Row>
 
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Solid Nawabi Chains</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>4.0%</DataTable.Cell>
                             </DataTable.Row>
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Solid Nawabi</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>4.0%</DataTable.Cell>
                             </DataTable.Row>
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Hollow Nawabi Chains</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>3.0%</DataTable.Cell>
                             </DataTable.Row>
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Silky Chains</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>3.5%</DataTable.Cell>
                             </DataTable.Row>
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Hand Made Chains</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>3.0%</DataTable.Cell>
                             </DataTable.Row>
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Kaju Katli Chains</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>4.0%</DataTable.Cell>
                             </DataTable.Row>
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Hollow Chains</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>5.0%</DataTable.Cell>
                             </DataTable.Row>
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Rodium Chains</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>4.0%</DataTable.Cell>
                             </DataTable.Row>
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
-                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Hollow Nawabi Chains</DataTable.Cell>
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                                <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Hollow Nawabi</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>3.0%</DataTable.Cell>
                             </DataTable.Row>
@@ -110,12 +110,12 @@ const JwelleryScreen = ({ navigation }) => {
 {/* Plain Jewellery */}
                     <View style={{marginTop:moderateScaleVertical(20)}}>
                         <DataTable>
-                            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20,borderBottomLeftRadius:20,borderBottomRightRadius:20, height: moderateScaleVertical(85), width: moderateScale(390), alignSelf: "center" }} style={{ width: moderateScale(390), alignSelf: "center" }}>
+                            <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20,borderBottomLeftRadius:20,borderBottomRightRadius:20, height: moderateScaleVertical(85), width: moderateScale(370), alignSelf: "center" }} style={{ width: moderateScale(370), alignSelf: "center" }}>
                                 <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" }} style={{ justifyContent: "center", color: "black" }} >PLAIN JEWELLERY</DataTable.Title>
                             </ImageBackground>
 
                             
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Plain Jewellery</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>4.0%</DataTable.Cell>
@@ -127,12 +127,12 @@ const JwelleryScreen = ({ navigation }) => {
                 {/* CASTING JEWELLERY */}
                 <View style={{marginTop:moderateScaleVertical(20)}}>
                         <DataTable>
-                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20,borderBottomLeftRadius:20,borderBottomRightRadius:20, height: moderateScaleVertical(85), width: moderateScale(390), alignSelf: "center" }} style={{ width: moderateScale(390), alignSelf: "center" }}>
+                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20,borderBottomLeftRadius:20,borderBottomRightRadius:20, height: moderateScaleVertical(85), width: moderateScale(370), alignSelf: "center" }} style={{ width: moderateScale(370), alignSelf: "center" }}>
                                 <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" }} style={{ justifyContent: "center", color: "black" }} >CASTING JEWELLERY</DataTable.Title>
                             </ImageBackground>
 
                             
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Casting Jewellery</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>4.0%</DataTable.Cell>
@@ -143,12 +143,12 @@ const JwelleryScreen = ({ navigation }) => {
                     {/* CASTING CZ JEWELLERY */}
                     <View style={{marginTop:moderateScaleVertical(20) , marginBottom:moderateScaleVertical(70)}}>
                         <DataTable>
-                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20,borderBottomLeftRadius:20,borderBottomRightRadius:20, height: moderateScaleVertical(85), width: moderateScale(390), alignSelf: "center" }} style={{ width: moderateScale(390), alignSelf: "center" }}>
+                        <ImageBackground source={require("../assets/CompressedTexture3.jpg")} imageStyle={{ borderTopRightRadius: 20, borderTopLeftRadius: 20,borderBottomLeftRadius:20,borderBottomRightRadius:20, height: moderateScaleVertical(85), width: moderateScale(370), alignSelf: "center" }} style={{ width: moderateScale(370), alignSelf: "center" }}>
                                 <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" }} style={{ justifyContent: "center", color: "black" }} >CASTING CZ JEWELLERY</DataTable.Title>
                             </ImageBackground>
 
                             
-                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(390), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
+                            <DataTable.Row style={{ backgroundColor: "#fff", width: moderateScale(370), alignSelf: "center", borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} >
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1SemiBold" }}>Casting CZ Jewellery</DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold"}}></DataTable.Cell>
                                 <DataTable.Cell textStyle={{ fontSize: textScale(11), fontFamily: "HurmeGeometricSans1" }}>7.0%</DataTable.Cell>

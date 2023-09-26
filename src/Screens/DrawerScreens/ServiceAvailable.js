@@ -9,8 +9,8 @@ const ServiceAvailable = () => {
                 {/* ----------------Andhra Pradesh----------------- */}
                 <View style={styles.container}>
                     <DataTable>
-                        <DataTable.Header style={{ backgroundColor: "#bc9954", borderTopRightRadius: 20, borderTopLeftRadius: 20, width: moderateScale(346), alignItems: "center" }} >
-                            <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" }} style={{ justifyContent: "center", color: "black" }} >ANDHRA PRADESH</DataTable.Title>
+                        <DataTable.Header style={{ backgroundColor: "#bc9954", borderTopRightRadius: 20, borderTopLeftRadius: 20, width: moderateScale(346) }} >
+                            <DataTable.Title textStyle={{ fontSize: textScale(20), color: "white", fontWeight: "bold" ,color: "#fff" }} style={{ justifyContent: "center",  }} >ANDHRA PRADESH</DataTable.Title>
                         </DataTable.Header>
 
                         <DataTable.Row style={{ backgroundColor: "#f6f6f6" }}>
@@ -839,7 +839,7 @@ const styles = StyleSheet.create({
     container: {
         // paddingTop: 20,
         // paddingHorizontal: 30,
-        alignItems: "center",
+        // alignItems: "center",
         alignSelf: "center",
         marginTop: moderateScaleVertical(20)
     },

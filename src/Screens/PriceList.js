@@ -65,10 +65,10 @@ const DropDown2 = ({ navigation }) => {
   const isCarousel = useRef(null)
 
 
-  const [selectCoins, setSelectedCoins] = useState("Select Coins")
+  const [selectCoins, setSelectedCoins] = useState("Select Items")
   const [isClicked, setIsClicked] = useState(false)
   return (
-    // <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{flex:1}}>
     <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
 
 
@@ -79,6 +79,7 @@ const DropDown2 = ({ navigation }) => {
 
       <View style={{ flex: 0.7 }}>
         <TouchableOpacity style={styles.dropDownStyle} onPress={() => { setIsClicked(!isClicked) }}>
+        
           <Text style={{ fontSize: textScale(15), fontWeight: "500", color: "black" }}>{selectCoins}</Text>
           {isClicked ? (
             <Image source={require("../assets/drop-up.png")} style={styles.DropdownArrows} />
@@ -138,7 +139,7 @@ const DropDown2 = ({ navigation }) => {
 
       {/* Whatsapp start */}
 
-      <View style={{ bottom: moderateScaleVertical(-44), position: 'absolute', right: moderateScale(5) }}>
+      <View style={{ bottom: moderateScaleVertical(-90), position: 'absolute', right: moderateScale(5) }}>
 
         <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
           <View style={styles.icontextAlignment}>
@@ -155,8 +156,8 @@ const DropDown2 = ({ navigation }) => {
 
       {/* Whatsapp end */}
 
-      {/* BottomTabNavigator */}
-      <ImageBackground source={require('../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4), marginTop: moderateScaleVertical(697) }}>
+       {/* Background */}
+       {/* <ImageBackground source={require('../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) }}>
         <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
 
           <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
@@ -168,10 +169,10 @@ const DropDown2 = ({ navigation }) => {
           </TouchableOpacity>
 
         </View>
-      </ImageBackground>
+      </ImageBackground> */}
 
     </ImageBackground>
-    // </SafeAreaView>
+    </SafeAreaView>
   )
 }
 
@@ -203,10 +204,10 @@ const styles = StyleSheet.create({
   },
   dropDownArea: {
     width: "85%",
-    height: moderateScaleVertical(105),
+    height: moderateScaleVertical(120),
     borderRadius: 5,
     marginTop: moderateScaleVertical(2),
-    backgroundColor: "#757575",
+    backgroundColor: "#E8E8E8",
     elevation: 5,
     alignSelf: "center",
     borderRadius:20

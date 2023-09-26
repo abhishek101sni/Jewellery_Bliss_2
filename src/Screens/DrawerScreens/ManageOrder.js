@@ -1,14 +1,17 @@
 
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, ImageBackground, TouchableOpacity, Image, Modal } from 'react-native'
+import React, { useContext, useEffect, useState } from 'react';
+import { View, Text, StyleSheet, ScrollView, ImageBackground, TouchableOpacity, Image, Modal , SafeAreaView } from 'react-native'
 import axios from 'axios';
 import { height, moderateScale, moderateScaleVertical, textScale } from '../../utils/responsive'
 import SimpleModal from '../SimpleModal';
+import { AuthContext } from '../AuthContext';
+import { BASE_URL } from '../config';
 
 const ManageOrder = ({ navigation }) => {
+    const {userToken} = useContext(AuthContext)
     const [orderHistory, setOrderHistory] = useState([]);
-    const API_URL = 'https://bliss-app-backend-production.up.railway.app/api/checkouts/order';
-    const JWT_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmFtIFNpbmdoIiwiZW1haWwiOiI1MzJAZ21haWwuY29tIiwiX2lkIjoiNjRlMzQ1MmNkYzQ4Yjc0MThmZGFiOWQ3IiwidXNlckNvdW50IjozLCJtb2JpbGUiOiIyMzY0NDQ0NDg5IiwiaWF0IjoxNjkyNjE1OTgwfQ.9dygSEqZolBwpDqOuKIgK4gRkYEBq2rFQBJl2v2C_ts';
+    const API_URL = 'https://jewellery-bliss.onrender.com/api/checkouts/order';
+    // const JWT_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmFtIFNpbmdoIiwiZW1haWwiOiI1MzJAZ21haWwuY29tIiwiX2lkIjoiNjRlMzQ1MmNkYzQ4Yjc0MThmZGFiOWQ3IiwidXNlckNvdW50IjozLCJtb2JpbGUiOiIyMzY0NDQ0NDg5IiwiaWF0IjoxNjkyNjE1OTgwfQ.9dygSEqZolBwpDqOuKIgK4gRkYEBq2rFQBJl2v2C_ts';
 
     useEffect(() => {
         fetchOrderHistory();
@@ -18,11 +21,10 @@ const ManageOrder = ({ navigation }) => {
         try {
             const response = await axios.get(API_URL, {
                 headers: {
-                    Authorization: `Bearer ${JWT_TOKEN}`,
+                    Authorization: `Bearer ${userToken}`,
                 },
             });
             setOrderHistory(response.data);
-            console.log(response.data)
         } catch (error) {
             console.error('Error fetching order history:', error.message);
         }
@@ -44,6 +46,7 @@ const ManageOrder = ({ navigation }) => {
     // WhatsApp
 
     return (
+        <SafeAreaView style={{flex:1}}>
         <View style={styles.background}>
             <View style={{}}>
                 <Image source={require("../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
@@ -56,270 +59,6 @@ const ManageOrder = ({ navigation }) => {
                         const last4DigitsOfOrderNo = order._id.slice(-4);
                         return (
                             <View key={index}>
-                                <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                                    <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                                    <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                                    <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                                    <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                                    <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                                    <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                                    <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                                    <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                                    <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                                    <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                                    <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
-                                    <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Date</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Order No</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Qty</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "#bc9954", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-60) }}>Total</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-70) }}>:</Text>
-                                        </View>
-                                        <View style={{ flexDirection: "column" }}>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{formattedDate}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{last4DigitsOfOrderNo}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.items[0].quantity}</Text>
-                                            <Text style={{ fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13), color: "black", marginVertical: moderateScaleVertical(1), marginLeft: moderateScale(-140) }}>{order.total}</Text>
-                                        </View>
-                                    </View>
-                                </View>
                                 <View style={{ backgroundColor: "#D8D8D8", width: moderateScale(350), borderRadius: 20, alignSelf: "center", marginTop: moderateScaleVertical(20) }}>
                                     <View style={{ flexDirection: "row", marginHorizontal: moderateScale(40), marginVertical: moderateScaleVertical(10), justifyContent: "space-around", marginTop: moderateScaleVertical(10), }}>
                                         <View style={{ flexDirection: "column" }}>
@@ -379,6 +118,7 @@ const ManageOrder = ({ navigation }) => {
                 </View>
             </ImageBackground>
         </View>
+        </SafeAreaView>
     );
 };
 

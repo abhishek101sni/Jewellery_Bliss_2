@@ -65,19 +65,22 @@ const Cart = ({ navigation }) => {
 
                             <View key={cartItem.id} >
 
-                                <ImageBackground imageStyle={{ borderRadius: 10 }} style={styles.MainBackGroundImage} source={require("../assets/texture.png")}>
+                                <ImageBackground imageStyle={{ borderRadius: 20 }} style={styles.MainBackGroundImage} source={require("../assets/CompressedTexture3.jpg")}>
+
                                     <View style={styles.CArtBoxAlignment}>
 
+                                    <View>
                                         <Image style={styles.dynamicImageStyle} source={{ uri: cartItem.item.images[0] }} />
-                                        <View style={styles.PriceAndButtonAlignment}>
+                                    </View>
 
+                                     <View style={styles.PriceAndButtonAlignment}>
                                             <Text style={styles.CartItemName}>{cartItem.item.name}</Text>
-                                            {/* <Text style={styles.CartItemPrice}>RS. {cartItem.item.price}</Text> */}
                                             <Text style={styles.CartItemPrice}>{cartItem.item.weight} gram</Text>
                                             <Text style={styles.CartItemPrice}>{cartItem.item.purity} KT</Text>
+                                            {/* <Text style={styles.CartItemPrice}>RS. {cartItem.item.price}</Text> */}
 
                                             <View style={{ backgroundColor: "black", borderRadius: 20, width: moderateScale(85), height: moderateScaleVertical(30), marginTop: moderateScaleVertical(15), marginLeft: moderateScale(7) }}>
-                                                <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(3.5) }}>
+                                                <View style={{ height:"100%" ,flexDirection: "row", justifyContent: "space-around", marginTop: moderateScaleVertical(0) }}>
 
                                                     <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={{ height: moderateScaleVertical(23), width: moderateScale(23), justifyContent: "center", alignSelf: "center", marginTop: 0 }} imageStyle={{ borderRadius: 15 }}>
                                                         <TouchableOpacity onPress={() => decreaseCount(cartItem.item)}>
@@ -85,17 +88,17 @@ const Cart = ({ navigation }) => {
                                                         </TouchableOpacity>
                                                     </ImageBackground>
 
-                                                    <Text style={{ color: "#fff", fontSize: 20 }}>{cartItem.count}</Text>
+                                                    <Text style={{ color: "#fff", fontSize: textScale(20) }}>{cartItem.count}</Text>
 
                                                     <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={{ height: moderateScaleVertical(23), width: moderateScale(23), justifyContent: "center", alignSelf: "center" }} imageStyle={{ borderRadius: 15 }}>
                                                         <TouchableOpacity onPress={() => increaseCount(cartItem.item)}>
                                                             <Image source={require("../assets/add.png")} style={{ width: moderateScale(23), height: moderateScaleVertical(23), marginLeft: 0 }} />
                                                         </TouchableOpacity>
                                                     </ImageBackground>
-
                                                 </View>
                                             </View>
-                                        </View>
+                                    </View>
+
                                     </View>
                                 </ImageBackground>
                             </View>
@@ -126,7 +129,7 @@ const Cart = ({ navigation }) => {
                         <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: -5, marginHorizontal: -10, marginBottom: moderateScaleVertical(50) }}>
                             <View>
                                 <TouchableOpacity onPress={() => navigation.navigate('our')} style={styles.logInButtonAlignment}>
-                                    <ImageBackground source={require("../assets/texture.png")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
+                                    <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
                                         <Text style={styles.logInButtonText}>CONTINUE SHOPPING</Text>
                                     </ImageBackground>
                                 </TouchableOpacity>
@@ -141,7 +144,7 @@ const Cart = ({ navigation }) => {
                                 </View> */}
                             <View>
                                 <TouchableOpacity onPress={() => navigation.navigate('confimrorder')} style={styles.logInButtonAlignment}>
-                                    <ImageBackground source={require("../assets/texture.png")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
+                                    <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={styles.ImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
                                         <Text style={styles.logInButtonText}>PLACE ORDER</Text>
                                     </ImageBackground>
                                 </TouchableOpacity>
@@ -232,7 +235,7 @@ const styles = StyleSheet.create({
     MainBackGroundImage: {
         marginTop: moderateScaleVertical(15),
         width: moderateScale(340),
-        height: moderateScaleVertical(120),
+        height: moderateScaleVertical(125),
         alignSelf: "center",
     },
     MainBackGroundImage2: {
@@ -298,13 +301,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     dynamicImageStyle: {
-        height: moderateScaleVertical(120),
-        width: moderateScale(120),
+        height: moderateScaleVertical(125),
+        width: moderateScale(119),
         // backgroundColor: 'black',
         borderTopLeftRadius: moderateScale(10),
         borderBottomLeftRadius: moderateScale(10),
         borderColor: "black",
         borderRadius: 2,
+        marginBottom:moderateScaleVertical(10)
     },
     PriceAndButtonAlignment: {
         flexDirection: "column",

@@ -64,7 +64,7 @@ const DrawerContent = (props) => {
 
                     <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("about") }} >
                         <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(10), }}>
-                            {/* <Image source={require("../assets/drawerIcons/aboutus.png")} style={styles.AboutUsIcon} /> */}
+                            <Image source={require("../assets/drawerIcons/aboutus.png")} style={styles.AboutUsIcon} />
                             <Text style={styles.DrawerContentTitle}>About Us</Text>
                         </View>
                     </TouchableOpacity>
@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: moderateScaleVertical(1.5),
         backgroundColor: "#d6ac60",
+        // backgroundColor: "gray",
         alignSelf: 'center',
         marginBottom: moderateScaleVertical(10),
     },

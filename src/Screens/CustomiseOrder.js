@@ -151,6 +151,7 @@ const CustomiseOrder = ({navigation}) => {
 
   return (
     <SafeAreaView style={{flex: 1}}>
+   
       <ImageBackground
         style={{flex: 1}}
         source={require('../assets/background-image2.png')}>
@@ -426,6 +427,7 @@ const CustomiseOrder = ({navigation}) => {
           </View>
         </ImageBackground>
       </ImageBackground>
+      
     </SafeAreaView>
   );
 };
@@ -502,6 +504,7 @@ const styles = StyleSheet.create({
   logInButtonAlignment: {
     alignItems: 'center',
     marginRight: 10,
+    marginBottom:moderateScaleVertical(10)
   },
   logInButtonText: {
     fontSize: textScale(20),
