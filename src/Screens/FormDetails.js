@@ -72,7 +72,7 @@ const FormDetails = ({ navigation }) => {
                     <Image source={require("../assets/logo.png")} style={styles.logoSize} />
                 </View>
 
-                <View style={{ flex: 1, marginTop: 60 }}>
+                <View style={{ flex: 1, marginTop:moderateScaleVertical(0)  }}>
 
                     <View style={styles.BusinessDetailsTitle}>
                         <Text style={styles.BusinessDetailsText}>Business Details{userDetails?.brandName}</Text>
@@ -182,7 +182,7 @@ const FormDetails = ({ navigation }) => {
 
             </ScrollView>
             <View >
-                <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} />
+                {/* <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} /> */}
             </View>
         </ImageBackground>
         </SafeAreaView>
@@ -199,8 +199,9 @@ const styles = StyleSheet.create({
     SkipButton: {
         alignItems: 'flex-end',
         marginTop: moderateScaleVertical(10),
-        marginLeft: moderateScale(-20),
-        width: '100%',
+        // marginLeft: moderateScale(-20),
+        marginRight: moderateScale(10),
+        // width: '100%',
     },
     SkipButtonText: {
         color: "#bc9954",
@@ -209,20 +210,20 @@ const styles = StyleSheet.create({
     },
     logoAlignment: {
         alignSelf: "center",
-        alignItems: "center",
+        // alignItems: "center",
         justifyContent: "center",
-        marginBottom: moderateScaleVertical(-35),
+        marginBottom: moderateScaleVertical(0),
     },
     logoSize: {
         width: moderateScale(300),
         height: moderateScaleVertical(300),
     },
     BusinessDetailsTitle: {
-        alignSelf: 'center'
+        alignSelf: 'center',
     },
     BusinessDetailsText: {
         fontSize: textScale(20),
-        marginTop: moderateScaleVertical(-50),
+        marginTop: moderateScaleVertical(10),
         textAlign: "center",
         color: "black",
         // fontFamily: 'HurmeGeometricSans1SemiBold',

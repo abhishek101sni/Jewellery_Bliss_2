@@ -1,9 +1,10 @@
-import { View, Text, Image, TouchableOpacity, TextInput, Button, ScrollView, StyleSheet, Modal, ImageBackground, Dimensions } from "react-native";
+import { View, Text, Image, TouchableOpacity, TextInput, Button, ScrollView, StyleSheet, Modal, ImageBackground, Dimensions , SafeAreaView } from "react-native";
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from "../redux/action";
 import { height, moderateScale, moderateScaleVertical, textScale } from '../utils/responsive'
 import SimpleModal from "./SimpleModal";
+import { SafeAreaFrameContext } from "react-native-safe-area-context";
 
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT_MODAL = 150;
@@ -52,6 +53,7 @@ const Cart = ({ navigation }) => {
     }
 
     return (
+        <SafeAreaView style={{flex:1}}>
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <View style={{}}>
                 <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
@@ -187,6 +189,7 @@ const Cart = ({ navigation }) => {
       </ImageBackground>
 
         </ImageBackground>
+        </SafeAreaView>
     )
 }
 

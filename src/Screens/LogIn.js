@@ -80,7 +80,7 @@ const LogIn = ({ navigation,
                 </View>
             </ScrollView>
             <View >
-                <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} />
+                {/* <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStripBottom} /> */}
             </View>
         </ImageBackground>
         </SafeAreaView>
