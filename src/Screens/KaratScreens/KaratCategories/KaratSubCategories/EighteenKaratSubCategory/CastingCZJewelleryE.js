@@ -1,134 +1,145 @@
-import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, Modal, ImageBackground , SafeAreaView} from 'react-native'
-import { StyleSheet } from 'react-native';
-import {height, moderateScale, moderateScaleVertical, textScale } from "../../../../../utils/responsive"
+import React, {useState, useEffect} from 'react';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  FlatList,
+  Modal,
+  ImageBackground,
+  SafeAreaView,
+} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {
+  height,
+  moderateScale,
+  moderateScaleVertical,
+  textScale,
+} from '../../../../../utils/responsive';
 import SimpleModal from '../../../../SimpleModal';
-import { Axios } from 'axios';
+import {Axios} from 'axios';
 
-const CastingCZJewelleryE = ({ navigation }) => {
-
+const CastingCZJewelleryE = ({navigation}) => {
   const CastingCzData = [
     {
       // img: require('../../../../../assets/MoodShots/10.jpg'),
       img: require('../../../../../assets/MoodShots/10.jpg'),
       onPress: () => {
-        navigation.navigate("NeckLaceSetsSubSubCZE");
+        navigation.navigate('NeckLaceSetsSubSubCZE');
       },
-      title: "Necklace Sets"
-
+      title: 'Necklace Sets',
     },
     {
       img: require('../../../../../assets/MoodShots/14.jpg'),
       onPress: () => {
         navigation.navigate('MangalSutraSubSubCZE');
       },
-      title: "Mangal Sutra",
+      title: 'Mangal Sutra',
     },
     {
       img: require('../../../../../assets/MoodShots/6.jpg'),
       onPress: () => {
-        navigation.navigate("LadiesRingsSubSubCZE");
+        navigation.navigate('LadiesRingsSubSubCZE');
       },
-      title: "Ladies Rings",
+      title: 'Ladies Rings',
     },
     {
       img: require('../../../../../assets/MoodShots/11.jpg'),
       onPress: () => {
-        navigation.navigate("CockTailRingsSubSubCZ");
+        navigation.navigate('CockTailRingsSubSubCZ');
       },
-      title: "Cocktail Rings",
+      title: 'Cocktail Rings',
     },
     {
       img: require('../../../../../assets/MoodShots/2.jpg'),
       onPress: () => {
-        navigation.navigate("LadiesSolitaireRingsSubSubCZE");
+        navigation.navigate('LadiesSolitaireRingsSubSubCZE');
       },
-      title: "Ladies Solitaire Rings",
+      title: 'Ladies Solitaire Rings',
     },
     {
       img: require('../../../../../assets/MoodShots/1.jpg'),
       onPress: () => {
-        navigation.navigate("GentsRingsSubSubCZE");
+        navigation.navigate('GentsRingsSubSubCZE');
       },
-      title: "Gents Rings",
+      title: 'Gents Rings',
     },
     {
       img: require('../../../../../assets/MoodShots/3.jpg'),
       onPress: () => {
-        navigation.navigate("GentsSolitairRingsSubSubCZE");
+        navigation.navigate('GentsSolitairRingsSubSubCZE');
       },
-      title: "Gents Solitaire Rings",
+      title: 'Gents Solitaire Rings',
     },
     {
       img: require('../../../../../assets/MoodShots/8.jpg'),
       onPress: () => {
-        navigation.navigate("TopsSubSubCZE");
+        navigation.navigate('TopsSubSubCZE');
       },
-      title: "Tops",
+      title: 'Tops',
     },
     {
       img: require('../../../../../assets/MoodShots/7.jpg'),
       onPress: () => {
-        navigation.navigate("SolitaireTopsSubSubCZE");
+        navigation.navigate('SolitaireTopsSubSubCZE');
       },
-      title: "Solitaire Tops",
+      title: 'Solitaire Tops',
     },
     {
       img: require('../../../../../assets/MoodShots/12.jpg'),
       onPress: () => {
-        navigation.navigate("PendentSetsSubSubCZE");
+        navigation.navigate('PendentSetsSubSubCZE');
       },
-      title: "Pendent Sets",
+      title: 'Pendent Sets',
     },
     {
-      img: require('../../../../../assets/coming_soon.png'),
+      img: require('../../../../../assets/jlry1.png'),
       onPress: () => {
-        navigation.navigate("SolitairePendentSetsSubSubCZE");
+        navigation.navigate('SolitairePendentSetsSubSubCZE');
       },
-      title: "Solitaire Pendents Sets",
+      title: 'Solitaire Pendents Sets',
     },
     {
       img: require('../../../../../assets/charms.jpg'),
       onPress: () => {
-        navigation.navigate("CharmsSubSubCZE");
+        navigation.navigate('CharmsSubSubCZE');
       },
-      title: "Charms",
+      title: 'Charms',
     },
     {
       img: require('../../../../../assets/MoodShots/13.jpg'),
       onPress: () => {
-        navigation.navigate("GodPendentsSubSubCZE");
+        navigation.navigate('GodPendentsSubSubCZE');
       },
-      title: "God Pendents",
+      title: 'God Pendents',
     },
     {
-      img: require('../../../../../assets/coming_soon.png'),
+      img: require('../../../../../assets/jlry5.png'),
       onPress: () => {
-        navigation.navigate("BraceLetsSubSubCZE");
+        navigation.navigate('BraceLetsSubSubCZE');
       },
-      title: "Bracelets",
+      title: 'Bracelets',
     },
     {
       img: require('../../../../../assets/MoodShots/16.jpg'),
       onPress: () => {
-        navigation.navigate("BaliSubSubCZE");
+        navigation.navigate('BaliSubSubCZE');
       },
-      title: "Bali",
+      title: 'Bali',
     },
-
   ];
-       // WhatsApp
-  const [isModalVisible, setisModalVisible] = useState(false)
+  // WhatsApp
+  const [isModalVisible, setisModalVisible] = useState(false);
   const [chooseData, setChooseData] = useState();
 
-  const changeModalVisible = (bool) => {
-    setisModalVisible(bool)
-  }
+  const changeModalVisible = bool => {
+    setisModalVisible(bool);
+  };
 
-
-  const setData = (data) => {
-    setChooseData(data)
-  }
+  const setData = data => {
+    setChooseData(data);
+  };
   // WhatsApp
 
   const [category, setcategory] = useState([]);
@@ -144,103 +155,173 @@ const CastingCZJewelleryE = ({ navigation }) => {
     fetchProducts();
   }, []);
 
-
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('https://bliss-app-backend-production.up.railway.app/api/products', {
-        params: { category: 'chains' },
-      });
+      const response = await axios.get(
+        'https://bliss-app-backend-production.up.railway.app/api/products',
+        {
+          params: {category: 'chains'},
+        },
+      );
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
     }
   };
 
-
   return (
-   <SafeAreaView style={{ flex:1}}>
-<View style={{ backgroundColor: "#1A2228", flex: 1 }}>
-<View>
-  <Image source={require("../../../../../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip}/>
-</View>
-<ScrollView>
-<View style={{ marginBottom: moderateScaleVertical(50) }}>
-            <FlatList contentContainerStyle={{ alignItems: "center" }}
+    <SafeAreaView style={{flex: 1}}>
+      <View style={{backgroundColor: '#1A2228', flex: 1}}>
+        <View>
+          <Image
+            source={require('../../../../../assets/GOLDEN-STRIP.png')}
+            style={styles.goldenStrip}
+          />
+        </View>
+        <ScrollView>
+          <View style={{marginBottom: moderateScaleVertical(50)}}>
+            <FlatList
+              contentContainerStyle={{alignItems: 'center'}}
               data={CastingCzData}
               numColumns={2}
-              renderItem={({ item, index }) =>
+              renderItem={({item, index}) => (
                 <View key={index} style={styles.alignment}>
                   <View style={styles.View2}>
-                    <TouchableOpacity activeOpacity={.6} onPress={item.onPress}>
+                    <TouchableOpacity
+                      activeOpacity={0.6}
+                      onPress={item.onPress}>
                       <Image style={styles.ImageView} source={item.img} />
-                      <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../../../../assets/CompressedTexture3.jpg")}>
-                        <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>{item.title}</Text>
+                      <ImageBackground
+                        imageStyle={{
+                          borderBottomLeftRadius: 19,
+                          borderBottomRightRadius: 19,
+                        }}
+                        style={styles.View5}
+                        source={require('../../../../../assets/CompressedTexture3.jpg')}>
+                        <Text
+                          style={{
+                            color: 'black',
+                            fontFamily: 'HurmeGeometricSans1SemiBold',
+                            fontSize: textScale(13),
+                          }}>
+                          {item.title}
+                        </Text>
                       </ImageBackground>
                     </TouchableOpacity>
                   </View>
                 </View>
-              }
+              )}
             />
-            </View>
-</ScrollView>
- {/* Whatsapp start */}
- <View style={{ bottom: moderateScaleVertical(-35), position: 'absolute', right: moderateScale(5) }}>
-          <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
+          </View>
+        </ScrollView>
+        {/* Whatsapp start */}
+        <View
+          style={{
+            bottom: moderateScaleVertical(-35),
+            position: 'absolute',
+            right: moderateScale(5),
+          }}>
+          <TouchableOpacity
+            onPress={() => changeModalVisible(true)}
+            style={styles.HelpButtonAlignment}>
             <View style={styles.icontextAlignment}>
-              <Image source={require('../../../../../assets/whatsapp-white.png')} style={styles.whatsappIcon} />
+              <Image
+                source={require('../../../../../assets/whatsapp-white.png')}
+                style={styles.whatsappIcon}
+              />
               <Text style={styles.helpText}>Help</Text>
             </View>
           </TouchableOpacity>
 
-          <Modal transparent={true} animationType="fade" visible={isModalVisible} nRequestClose={() => changeModalVisible(false)}>
-            <SimpleModal changeModalVisible={changeModalVisible} setData={setData} />
+          <Modal
+            transparent={true}
+            animationType="fade"
+            visible={isModalVisible}
+            nRequestClose={() => changeModalVisible(false)}>
+            <SimpleModal
+              changeModalVisible={changeModalVisible}
+              setData={setData}
+            />
           </Modal>
-
         </View>
 
         {/* Whatsapp end */}
 
-         {/* BottomTabNavigator */}
-         <ImageBackground source={require('../../../../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) , marginTop:moderateScaleVertical(0) }}>
-          <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
-
-            <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
-              <Image source={require('../../../../../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
+        {/* BottomTabNavigator */}
+        <ImageBackground
+          source={require('../../../../../assets/CompressedTexture3.jpg')}
+          imageStyle={{
+            borderTopLeftRadius: 15,
+            borderTopRightRadius: 15,
+            borderBottomRightRadius: 15,
+            borderBottomLeftRadius: 15,
+            alignSelf: 'center',
+          }}
+          style={{
+            height: moderateScaleVertical(50),
+            width: moderateScale(370),
+            alignSelf: 'center',
+            marginBottom: moderateScale(4),
+            marginTop: moderateScaleVertical(0),
+          }}>
+          <View
+            style={{
+              marginTop: moderateScaleVertical(9),
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+            }}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Drawer');
+              }}>
+              <Image
+                source={require('../../../../../assets/home.png')}
+                style={{
+                  width: moderateScale(35),
+                  height: moderateScaleVertical(35),
+                }}
+              />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
-              <Image source={require('../../../../../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('cart');
+              }}>
+              <Image
+                source={require('../../../../../assets/cart.png')}
+                style={{
+                  width: moderateScale(35),
+                  height: moderateScaleVertical(35),
+                }}
+              />
             </TouchableOpacity>
-
           </View>
         </ImageBackground>
-</View>
-   </SafeAreaView>
-  )
-}
+      </View>
+    </SafeAreaView>
+  );
+};
 
-export default CastingCZJewelleryE
-
+export default CastingCZJewelleryE;
 
 const styles = StyleSheet.create({
   goldenStrip: {
-    width: "100%",
+    width: '100%',
     height: 3,
   },
   // flatlist Design
   alignment: {
-    flexDirection: "row",
-    justifyContent: "space-around",
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     marginHorizontal: moderateScale(20),
-    marginVertical:moderateScaleVertical(20)
-
+    marginVertical: moderateScaleVertical(20),
   },
   View2: {
     backgroundColor: 'white',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,  
+    borderBottomRightRadius: 20,
     width: moderateScale(153),
     height: moderateScaleVertical(200),
     // marginTop: moderateScaleVertical(40),
@@ -255,16 +336,14 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 0,
   },
   View5: {
-    alignItems: "center",
+    alignItems: 'center',
     height: moderateScaleVertical(40),
     width: moderateScale(153),
-    justifyContent: "center",
+    justifyContent: 'center',
     marginTop: moderateScaleVertical(160),
-    position: "absolute"
+    position: 'absolute',
   },
   // flatlist Design
-
-
 
   // Whatsapp style
 
@@ -295,5 +374,4 @@ const styles = StyleSheet.create({
     fontSize: textScale(13),
     fontWeight: 'bold',
   },
-
-})
+});

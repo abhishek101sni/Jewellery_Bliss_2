@@ -18,7 +18,7 @@ import {
 } from '../utils/responsive';
 import {SelectList} from 'react-native-dropdown-select-list';
 import axios from 'axios';
-import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import {launchImageLibrary} from 'react-native-image-picker';
 const CustomiseOrder = ({navigation}) => {
   const [category, setCategory] = useState(null);
   const [subcategory, setSubCategory] = useState(null);
@@ -202,7 +202,7 @@ const CustomiseOrder = ({navigation}) => {
                   dropdownTextStyles={{
                     fontSize: textScale(13),
                     fontFamily: 'HurmeGeometricSans1SemiBold',
-                    color: '#bc9954',
+                    color: 'black',
                   }}
                   inputStyles={{
                     padding: -10,
@@ -377,7 +377,7 @@ const CustomiseOrder = ({navigation}) => {
         </ScrollView>
 
         {/* BottomTabNavigator */}
-        <ImageBackground
+        {/* <ImageBackground
           source={require('../assets/CompressedTexture3.jpg')}
           imageStyle={{
             borderTopLeftRadius: 15,
@@ -423,9 +423,9 @@ const CustomiseOrder = ({navigation}) => {
                 }}
               />
             </TouchableOpacity>
-            {/* BottomTabNavigator end */}
           </View>
-        </ImageBackground>
+        </ImageBackground> */}
+            {/* BottomTabNavigator end */}
       </ImageBackground>
       
     </SafeAreaView>
@@ -447,8 +447,8 @@ const styles = StyleSheet.create({
     marginBottom: moderateScaleVertical(-55),
   },
   logoSize: {
-    width: moderateScale(200),
-    height: moderateScaleVertical(200),
+    width: moderateScale(160),
+    height: moderateScaleVertical(160),
   },
   LogInTitle: {
     flex: 0.5,
@@ -492,7 +492,7 @@ const styles = StyleSheet.create({
     fontSize: textScale(13),
     color: 'black',
     width: '80%',
-    marginTop: moderateScaleVertical(9),
+    marginTop: moderateScaleVertical(3),
     marginBottom: moderateScaleVertical(5),
     borderBottomWidth: moderateScale(1.5),
     borderBottomColor: '#bc9954',

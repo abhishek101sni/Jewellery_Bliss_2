@@ -68,14 +68,15 @@ const DropDown2 = ({ navigation }) => {
   const [selectCoins, setSelectedCoins] = useState("Select Items")
   const [isClicked, setIsClicked] = useState(false)
   return (
-    <SafeAreaView style={{flex:1}}>
+    // <SafeAreaView style={{flex:1}}>
+    
     <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
-
-
-      {/* <View style={{ flex: 1 }}> */}
-      <View style={{}}>
+ <View style={{height:moderateScaleVertical(10)}}>
         <Image source={require("../assets/GOLDEN-STRIP.png")} style={styles.goldenStrip} />
       </View>
+
+      <View style={{ flex: 1 }}>
+     
 
       <View style={{ flex: 0.7 }}>
         <TouchableOpacity style={styles.dropDownStyle} onPress={() => { setIsClicked(!isClicked) }}>
@@ -85,7 +86,7 @@ const DropDown2 = ({ navigation }) => {
             <Image source={require("../assets/drop-up.png")} style={styles.DropdownArrows} />
           ) : (<Image source={require("../assets/drop-down.png")} style={styles.DropdownArrows} />)}
         </TouchableOpacity>
-        {/* </View> */}
+      
 
         {isClicked ? (
           <View style={styles.dropDownArea}>
@@ -93,7 +94,7 @@ const DropDown2 = ({ navigation }) => {
               <Text style={styles.Goldtext}>Gold Coins</Text>
             </TouchableOpacity>
 
-            {/* <View style={styles.line}></View> */}
+          
 
             <TouchableOpacity style={styles.SilvercoinsItem} onPress={() => navigation.navigate('silverscreen')}>
               <Text style={styles.Silvertext}>Silver Coins</Text>
@@ -104,42 +105,15 @@ const DropDown2 = ({ navigation }) => {
             </TouchableOpacity>
           </View>) : null}
 
-        {/* <View style={styles.CarouselAlignment}>
-          <Carousel
-            ref={isCarousel}
-            data={data}
-            renderItem={SnapCarousel}
-            sliderWidth={SLIDER_WIDTH}
-            itemWidth={ITEM_WIDTH}
-            onSnapToItem={index => setIndex(index)}
-
-          />
-          <Pagination
-            dotsLength={data.length}
-            activeDotIndex={index}
-            carouselRef={isCarousel}
-            dotStyle={{
-              width: moderateScale(8),
-              height: moderateScaleVertical(8),
-              borderRadius: 10,
-              marginHorizontal: moderateScale(0),
-              backgroundColor: "#bc9954",
-            }}
-            inactiveDotStyle={{
-              backgroundColor: "black"
-            }}
-            containerStyle={{ paddingVertical: -10 }}
-          />
-        </View> */}
         <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: 10 }}>
           <Image source={require("../assets/gold-bars.png")} style={{ width: moderateScale(200), height: moderateScaleVertical(200), alignSelf: "center", marginTop: moderateScaleVertical(150) }} />
           <Image source={require("../assets/silver-Bars.png")} style={{ width: moderateScale(200), height: moderateScaleVertical(200), alignSelf: "center", marginTop: moderateScaleVertical(150) }} />
         </View>
       </View>
 
-      {/* Whatsapp start */}
-
-      <View style={{ bottom: moderateScaleVertical(-90), position: 'absolute', right: moderateScale(5) }}>
+    
+{/* Whatsapp start */}
+      <View style={{ bottom: moderateScaleVertical(-50), position: 'absolute', right: moderateScale(5) }}>
 
         <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
           <View style={styles.icontextAlignment}>
@@ -153,26 +127,12 @@ const DropDown2 = ({ navigation }) => {
         </Modal>
 
       </View>
-
       {/* Whatsapp end */}
 
-       {/* Background */}
-       {/* <ImageBackground source={require('../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) }}>
-        <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
 
-          <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
-            <Image source={require('../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
-            <Image source={require('../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
-          </TouchableOpacity>
-
-        </View>
-      </ImageBackground> */}
-
+</View>
     </ImageBackground>
-    </SafeAreaView>
+    // </SafeAreaView>
   )
 }
 
@@ -182,6 +142,7 @@ const styles = StyleSheet.create({
   goldenStrip: {
     width: "100%",
     height: 3,
+
   },
   dropDownStyle: {
     width: "90%",

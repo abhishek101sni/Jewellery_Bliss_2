@@ -83,7 +83,7 @@ const OurProduct = ({ navigation }) => {
                                     <TouchableOpacity activeOpacity={.6} onPress={item.onPress}>
                                         <Image style={styles.ImageView} source={item.img} />
                                         <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                                            <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>{item.title}</Text>
+                                            <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(14) }}>{item.title}</Text>
                                         </ImageBackground>
                                     </TouchableOpacity>
                                 </View>
@@ -94,7 +94,7 @@ const OurProduct = ({ navigation }) => {
 
               {/* Whatsapp start */}
 
-        <View style={{ bottom: moderateScaleVertical(-35), position: 'absolute', right: moderateScale(5) }}>
+        <View style={{ bottom: moderateScaleVertical(-65), position: 'absolute', right: moderateScale(5) }}>
 
 <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
   <View style={styles.icontextAlignment}>

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import SimpleModal from '../SimpleModal';
 import MarqueeView from 'react-native-marquee-view';
-import Carousel, { Pagination } from 'react-native-snap-carousel';
 import axios from 'axios';
 import { View, Text, Dimensions, ScrollView, StyleSheet, TouchableOpacity, Image, ImageBackground, Modal , SafeAreaView} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -19,15 +18,18 @@ const WelcomeScreen = () => {
 
   // GoldPriceApi
   const [apiDATA, setAPIdata] = useState([]);
-  const API_URL = 'https://rappid.in/apis/mcx.php?key=9015790532';
+  const API_URL = 'https://rappid.in/apis/mcx.php?key=januskoncepts-9015790532';
   const firstData = apiDATA.data && apiDATA.data[0];
+
+  console.log("firstdata" , firstData )
   const secondData = apiDATA.data && apiDATA.data[2];
-  const SpotG = apiDATA.data && apiDATA.data[22];
-  // console.log("Spot Gollddddddd" ,SpotG)
-  const SpotS = apiDATA.data && apiDATA.data[23];
-  // console.log("spot silverrrr" ,SpotS )
-  const Dollar = apiDATA.data && apiDATA.data[37];
-  // console.log("dollar" , Dollar)
+  console.log("seconddata" ,secondData )
+  const SpotG = apiDATA.data && apiDATA.data[23];
+  console.log("Spot Gollddddddd" ,SpotG)
+  const SpotS = apiDATA.data && apiDATA.data[24];
+  console.log("spot silverrrr" ,SpotS )
+  const Dollar = apiDATA.data && apiDATA.data[36];
+  console.log("dollar" , Dollar)
 
 
   const fetchAPIData = async () => {
@@ -158,8 +160,8 @@ const WelcomeScreen = () => {
 
       <ScrollView>
         <View>
-          <ImageBackground style={styles.MainBackGroundImage} imageStyle={{ borderRadius: 40 }} source={require('../../assets/CompressedTexture3.jpg')}>
-            <View style={{ marginLeft: moderateScale(25), marginTop: moderateScaleVertical(20) }}>
+          <ImageBackground style={styles.MainBackGroundImage} imageStyle={{ borderRadius:40 }} source={require('../../assets/CompressedTexture3.jpg')}>
+            <View style={{ marginLeft: moderateScale(15), marginTop: moderateScaleVertical(20) }}>
               <View style={{ flexDirection: 'row' }}>
                 <Text style={styles.WelcomeText}>Welcome , </Text>
                 <Text style={styles.UserName}>{userInfo?.name}</Text>
@@ -171,9 +173,7 @@ const WelcomeScreen = () => {
               <View style={{ marginTop: moderateScaleVertical(5) }}>
                 <Text style={styles.GoldenScreenBelowText}>Welcome to our app! We have thrilled to have you here.</Text>
                 <View style={{ flexDirection: 'row' }}>
-                  <Text style={styles.GoldenScreenBelowText2}>
-                    Enjoy Shopping!
-                  </Text>
+                  <Text style={styles.GoldenScreenBelowText2}>Enjoy Shopping!</Text> 
                   <Image source={require('../../assets/smiley.png')} style={styles.smileyEmoji} />
                 </View>
               </View>
@@ -187,7 +187,7 @@ const WelcomeScreen = () => {
               <MarqueeView>
                 <View style={styles.MarqueeAlignment}>
                   <Text style={{ color: "#404040", fontFamily: "HurmeGeometricSans1SemiBold" }}>
-                    Price 18K: | Fine rate: red | Gold MCX: Rs 50,000 995
+                   Gold MCX: BUY Rs 57,830 SELL Rs Silver MCX: BUY Rs 70,855 
                     rate: Rs 45,000 | Fine rate: rs720000 | Gold MCX: Rs 50,000
                   </Text>
                 </View>
@@ -196,11 +196,11 @@ const WelcomeScreen = () => {
           </View>
         </View> */}
 
-        <View style={styles.wholeAlignment}>
+      <View style={styles.wholeAlignment}>
           <View
             style={{
-              backgroundColor: '#F0F0F0',
-              height: moderateScaleVertical(25),
+              backgroundColor: '#E0E0E0',
+              height: moderateScaleVertical(35),
               marginTop: moderateScaleVertical(10),
               alignItems: 'center',
             }}>
@@ -210,25 +210,25 @@ const WelcomeScreen = () => {
                   <TouchableOpacity onPress={() => { navigation.navigate('GoldSilverPrice') }}>
                     <View key={index}>
                       <View style={{ flexDirection: 'row' , paddingTop: 7, paddingBottom:0, fontSize: textScale(20) }}>
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' , fontSize:textScale(13)}}> {firstData.Symbol} : </Text>
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}> Buy price : ₹ </Text>
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1SemiBold' }}>{firstData.BUY} , Sell price : ₹ {firstData.SELL}</Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' , fontSize:textScale(15)}}>     {firstData.Symbol} MCX : </Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold', fontSize:textScale(15) }}> Buy price : ₹ </Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold',  fontSize:textScale(15)  }}>{firstData.BUY} , Sell price : ₹ {firstData.SELL}</Text>
 
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' ,fontSize:textScale(13)}}>     {secondData.Symbol} : </Text>
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}>Buy Price : ₹ </Text>
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1SemiBold' }}>{secondData.BUY} , Sell price : ₹  {secondData.SELL}</Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' ,fontSize:textScale(15)}}>     {secondData.Symbol} : </Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' , fontSize:textScale(15)}}>Buy Price : ₹ </Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold', fontSize:textScale(15) }}>{secondData.BUY} , Sell price : ₹ {secondData.SELL}</Text>
                         
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' , fontSize:textScale(13)}}>     {SpotG.Symbol} : </Text>
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}>LTP Price : ₹ </Text>
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1SemiBold' }}>{SpotG.LTP}</Text>
+                       <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' , fontSize:textScale(15)}}>     {SpotG.Symbol} : </Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold', fontSize:textScale(15) }}>LTP Price : ₹ </Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold', fontSize:textScale(15) }}>{SpotG.LTP}</Text>
 
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' , fontSize:textScale(13)}}>     {SpotS.Symbol} : </Text>
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}>LTP Price : ₹ </Text>
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1SemiBold' }}>{SpotS.LTP}</Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' , fontSize:textScale(15)}}>     {SpotS.Symbol} : </Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' , fontSize:textScale(15) }}>LTP Price : ₹ </Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' , fontSize:textScale(15) }}>{SpotS.LTP}</Text>
 
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' , fontSize:textScale(13)}}>     {Dollar.Symbol} : </Text>
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' }}>LTP Price : ₹ </Text>
-                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1SemiBold' }}>{Dollar.LTP}</Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' , fontSize:textScale(15)}}>     {Dollar.Symbol} : </Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' ,fontSize:textScale(15) }}>₹ </Text>
+                        <Text style={{ color: '#404040', fontFamily: 'HurmeGeometricSans1Bold' , fontSize:textScale(15) }}>{Dollar.LTP}</Text>
                       </View>
                     </View>
                   </TouchableOpacity>
@@ -286,7 +286,20 @@ const WelcomeScreen = () => {
                     </View> */}
         </View>
 
-        <View style={{ marginTop: moderateScale(2) }}>
+
+<View style={{backgroundColor:"#F0F0F0" ,marginTop:moderateScaleVertical(4) , height:moderateScaleVertical(250) }}>
+<View style={{marginTop:moderateScaleVertical(5)}}>
+  <View style={{flexDirection:"row", justifyContent:"space-between" }}>
+    <Text style={{marginLeft:moderateScale(10), color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13)}}>Categories</Text>
+    <TouchableOpacity onPress={()=> navigation.navigate("our")} >
+    <View style={{flexDirection: "row", marginHorizontal: moderateScale(-2), justifyContent: "space-between"}}>
+    <Text style={{marginRight:moderateScale(25), color: "black", fontFamily: "HurmeGeometricSans1", fontSize: textScale(13) , marginRight:moderateScale(1)}}>See More</Text>
+    <Image style={{height:moderateScaleVertical(17) , width:moderateScale(17) ,marginRight:moderateScale(16) , marginTop:moderateScaleVertical(1)}} source={require("../../assets/arrow-right.png")} />
+    </View>
+    </TouchableOpacity>
+  </View>
+</View>
+        <View style={{ marginTop: moderateScale(5) }}>
           <ScrollView horizontal={true} styles={styles.container} showsHorizontalScrollIndicator={false}>
             {/* 1 */}
             <View style={styles.card}>
@@ -294,7 +307,7 @@ const WelcomeScreen = () => {
                 <TouchableOpacity activeOpacity={.6} onPress={() => navigation.navigate('chains')}>
                   <Image style={styles.ImageView} source={require("../../assets/testingChain.png")} />
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>Chains</Text>
+                    <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(14) }}>Chains</Text>
                   </ImageBackground>
                 </TouchableOpacity>
               </View>
@@ -306,7 +319,7 @@ const WelcomeScreen = () => {
                 <TouchableOpacity activeOpacity={.6} onPress={() => navigation.navigate('CastingJwellery')}>
                   <Image style={styles.ImageView} source={require("../../assets/testingRing.png")} />
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>Casting Jewellery</Text>
+                    <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(14) }}>Casting Jewellery</Text>
                   </ImageBackground>
                 </TouchableOpacity>
               </View>
@@ -318,7 +331,7 @@ const WelcomeScreen = () => {
                 <TouchableOpacity activeOpacity={.6} onPress={() => navigation.navigate('CastingCzJwellery')}>
                   <Image style={styles.ImageView} source={require("../../assets/jlry6.png")} />
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>Casting CZ Jewellery</Text>
+                    <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(14) }}>Casting CZ Jewellery</Text>
                   </ImageBackground>
                 </TouchableOpacity>
               </View>
@@ -329,12 +342,13 @@ const WelcomeScreen = () => {
                 <TouchableOpacity activeOpacity={.6} onPress={() => navigation.navigate('PlainJwellery')}>
                   <Image style={styles.ImageView} source={require("../../assets/jlry2.png")} />
                   <ImageBackground imageStyle={{ borderBottomLeftRadius: 19, borderBottomRightRadius: 19 }} style={styles.View5} source={require("../../assets/CompressedTexture3.jpg")}>
-                    <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(13) }}>Plain Jewellery</Text>
+                    <Text style={{ color: "black", fontFamily: "HurmeGeometricSans1SemiBold", fontSize: textScale(14) }}>Plain Jewellery</Text>
                   </ImageBackground>
                 </TouchableOpacity>
               </View>
             </View>
           </ScrollView>
+        </View>
         </View>
         {/* Parallax */}
 
@@ -514,8 +528,8 @@ const styles = StyleSheet.create({
   },
   MainBackGroundImage: {
     marginTop: moderateScaleVertical(10),
-    width: moderateScale(355),
-    height: moderateScaleVertical(170),
+    width: moderateScale(390),
+    height: moderateScaleVertical(180),
     alignSelf: 'center',
     // flex:1,
   },
@@ -536,28 +550,31 @@ const styles = StyleSheet.create({
   },
   WelcomeText: {
     color: 'black',
-    fontSize: textScale(20),
+    fontSize: textScale(23),
     // fontWeight: "400",
     marginLeft: moderateScale(0),
     fontFamily: 'HurmeGeometricSans1',
   },
   UserName: {
     color: 'black',
-    fontSize: textScale(20),
+    fontSize: textScale(23),
     // fontWeight: "700",
-    fontFamily: 'HurmeGeometricSans1SemiBold',
+    fontFamily: 'HurmeGeometricSans1Bold',
   },
   UserBrandName: {
     color: 'black',
-    fontSize: textScale(14),
+    fontSize: textScale(16),
     fontWeight: '500',
-    fontFamily: 'HurmeGeometricSans1',
+    fontFamily: 'HurmeGeometricSans1SemiBold',
   },
   UserCount: {
     color: 'black',
-    fontSize: textScale(12),
+    fontSize: textScale(15),
     fontWeight: '500',
     marginLeft: moderateScale(2),
+    fontFamily: 'HurmeGeometricSans1SemiBold',
+    
+
   },
   userCountStyle: {
     // backgroundColor: "black",
@@ -575,21 +592,21 @@ const styles = StyleSheet.create({
     height: moderateScaleVertical(30),
   },
   GoldenScreenBelowText: {
-    marginTop: moderateScaleVertical(10),
+    marginTop: moderateScaleVertical(20),
     color: 'black',
-    fontSize: textScale(10),
+    fontSize: textScale(13),
     fontFamily: 'HurmeGeometricSans1SemiBold',
   },
   GoldenScreenBelowText2: {
     marginTop: moderateScaleVertical(1),
     color: 'black',
-    fontSize: textScale(10),
+    fontSize: textScale(13),
     fontFamily: 'HurmeGeometricSans1SemiBold',
   },
   smileyEmoji: {
-    marginTop: moderateScaleVertical(3),
-    width: moderateScale(12),
-    height: moderateScaleVertical(12),
+    marginTop: moderateScaleVertical(4),
+    width: moderateScale(14),
+    height: moderateScaleVertical(14.7),
   },
   MarqueeAlignment: {
     // marginTop: moderateScaleVertical(10),

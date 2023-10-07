@@ -109,9 +109,12 @@
                                 borderBottomRightRadius: 20,
                               }}
                               source={require('../../../../assets/CompressedTexture3.jpg')}>
-                              <Text style={{color: 'black', fontFamily:"HurmeGeometricSans1Bold" , fontSize:textScale(13)}}>
+                              <Text style={{color: 'black', fontFamily:"HurmeGeometricSans1SemiBold" , fontSize:textScale(14)}}>
                                 {item?.name}
                               </Text>
+                              <Text style={{color: 'black', fontFamily:"HurmeGeometricSans1SemiBold" , fontSize:textScale(10)}}>
+                       ( {item?.purity} KT )
+                      </Text>
                             </ImageBackground>
                           </View>
                         </TouchableOpacity>
@@ -142,7 +145,7 @@
                             marginLeft: moderateScale(0),
                             borderRadius: 40,
                             // paddingTop: moderateScaleVertical(3),
-                            fontFamily: 'HurmeGeometricSans1',
+                            fontFamily: 'HurmeGeometricSans1SemiBold',
                           }}>
                           Load more...
                         </Text>
@@ -153,7 +156,7 @@
                 
               {/* Whatsapp Help Button*/}
         
-              <View View style={{ bottom: -40, position: "absolute", right: 5 }}>
+              <View View style={{ bottom: -35, position: "absolute", right: 5 }}>
                 <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
                   <View style={styles.icontextAlignment}>
                     <Image source={require("../../../../assets/whatsapp-white.png")} style={styles.whatsappIcon} />

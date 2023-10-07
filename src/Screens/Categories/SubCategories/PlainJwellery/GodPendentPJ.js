@@ -42,6 +42,11 @@ const GodPendentPJ = ({ navigation }) => {
                 <Image style={styles.ImageView} source={{ uri: item.images[0] }} />
                 <ImageBackground style={styles.View5} imageStyle={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }} source={require("../../../../assets/CompressedTexture3.jpg")}>
                   <Text style={{ color: "black", fontWeight: "600", }}>{item?.name}</Text>
+                  <Text style={{color: 'black', fontFamily:"HurmeGeometricSans1SemiBold" , fontSize:textScale(10)}}>
+                       ( {item?.purity} KT )
+                      </Text>
+                  
+
                 </ImageBackground>
 
               </View>

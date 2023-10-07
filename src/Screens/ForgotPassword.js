@@ -56,7 +56,7 @@ const ForgotPassword = ({ navigation }) => {
                     </View>
                     <View style={{ alignItems: "center" }}>
                         <TextInput
-                            style={{ textAlign: "left", borderColor: "black", paddingLeft: 20, borderWidth: 2, width: moderateScale(350), borderRadius: 20, marginTop: moderateScaleVertical(30), alignItems: "center", fontFamily: "HurmeGeometricSans1", height:moderateScaleVertical(20)}}
+                            style={{ textAlign: "left", borderColor: "black", paddingLeft: 20, borderWidth: 2, width: moderateScale(350), borderRadius: 20, marginTop: moderateScaleVertical(30), alignItems: "center", fontFamily: "HurmeGeometricSans1", height:moderateScaleVertical(40)}}
                             autoCorrect={false}
                             placeholder="Enter your registered Email"
                             value={email}

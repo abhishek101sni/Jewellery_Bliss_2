@@ -9,21 +9,21 @@ export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.9);
 const data = [
     {
         id: 1,
-        name1: "BTB E- Commerce Store",
-        name2: "Streamline B2B jewellery procurement online.",
+        name1: "Simplify B2B Jewellery Buying Online",
+        name2: "Discover an exquisite variety of jewellery",
         img: require("../assets/banner-2.png"),
     },
 
     {
         id: 2,
-        name1: "BTB E- Commerce Store",
-        name2: "Discover an exquisite variety of jewellery.",
+        name1: "Effortless B2B Jewellery Buying Online",
+        name2: "Streamline B2B jewellery procurement online",
         img: require("../assets/banner-2.png"),
     },
     {
         id: 3,
-        name1: "BTB E- Commerce Store",
-        name2: "Elevate your style with customized elegance Create personalized jewellery masterpieces.",
+        name1: "Easy B2B Jewellery Purchases Online",
+        name2: "Elevate your style with customized elegance",
         img: require("../assets/banner-2.png"),
     },
 ]
@@ -52,12 +52,12 @@ const GetStarted = ({ navigation }) => {
         <ImageBackground style={{ flex: 1 }} source={require("../assets/background-image2.png")}>
             <View style={{ flex: 1 }}>
 
-                <View style={{ flex: 0.3, alignItems: "center", padding: 30, justifyContent: "center", }}>
-                    <Image source={require("../assets/logo.png")} style={{ height: moderateScaleVertical(250), width: moderateScale(250), alignSelf: 'center' }} />
+                <View style={{ flex: 0.3, alignItems: "center", justifyContent: "center",marginTop:moderateScaleVertical(60) , alignItems:"center"}}>
+                    <Image source={require("../assets/logo.png")} style={{ height: moderateScaleVertical(250), width: moderateScale(250)}} />
                 </View>
 
                 <View style={{ flex: 1 }}>
-                    <View style={{ alignItems: "center", flex: 1 }}>
+                    <View style={{ alignItems: "center", flex: 1 , marginTop:moderateScaleVertical(50)}}>
                         <Carousel
                             ref={isCarousel}
                             data={data}
@@ -88,9 +88,9 @@ const GetStarted = ({ navigation }) => {
 
                 <View style={{ flex: 0.5 }}>
 
-                    <TouchableOpacity onPress={() => { navigation.navigate('loginsignup') }} style={{ alignItems: "center" }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate('loginsignup') }} style={{ alignSelf: "center" }}>
                         <ImageBackground source={require("../assets/CompressedTexture3.jpg")} style={styles.GetStartedButton} imageStyle={{ borderRadius: 80 }}>
-                            <Text style={styles.signuptext2}>Get Started</Text>
+                            <Text style={styles.getStartedButton}>Get Started</Text>
                         </ImageBackground>
                     </TouchableOpacity>
                 </View>
@@ -129,33 +129,36 @@ const styles = StyleSheet.create({
     SnapCarouselText1: {
         marginTop: moderateScaleVertical(30),
         marginVertical: moderateScaleVertical(10),
-        fontSize: textScale(18),
+        fontSize: textScale(20),
         color: "#eec06b",
         fontFamily: "HurmeGeometricSans1SemiBold"
     },
     SnapCarouselText2: {
-        marginVertical: moderateScaleVertical(10),
-        fontSize: textScale(14),
+        marginVertical: moderateScaleVertical(0),
+        fontSize: textScale(17),
         // fontSize: textScale(18),
         color: "black",
-        fontFamily: "HurmeGeometricSans1"
+        fontFamily: "HurmeGeometricSans1zSemiBold"
     },
     GetStartedButton: {
         alignItems: "center",
-        padding: moderateScale(11),
+        padding: moderateScale(10),
         width: moderateScale(200),
         height: moderateScaleVertical(60),
         justifyContent: 'center',
         marginTop: moderateScaleVertical(40),
-        marginBottom: moderateScaleVertical(20)
+        // marginBottom: moderateScaleVertical(20)
     },
 
-    signuptext2: {
-        fontSize: textScale(20),
+    getStartedButton: {
+        fontSize: textScale(22),
         color: "black",
+        justifyContent:"center",
         // marginLeft: moderateScale(0),
         // borderRadius: 40,
         fontFamily: "HurmeGeometricSans1",
+        height:"100%"
+        ,paddingTop:5
     },
     goldenStripAlignment: {
         flex: 0.001,

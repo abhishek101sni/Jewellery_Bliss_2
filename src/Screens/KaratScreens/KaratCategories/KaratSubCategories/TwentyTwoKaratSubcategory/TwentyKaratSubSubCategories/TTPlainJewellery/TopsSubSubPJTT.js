@@ -49,7 +49,9 @@ const SilkyChainsC = ({ navigation }) => {
 
   const getAPIDATA = async () => {
     const url =
-      'https://jewellery-bliss.onrender.com/api/products?searchPurity=22&search=Tops';
+    // WRONG LINK -> LINK IS OF CZ TOPS
+      'https://jewellery-bliss.onrender.com/api/products?searchPurity=22&search=Tops';  
+      
 
     let result = await fetch(url);
     result = await result.json();

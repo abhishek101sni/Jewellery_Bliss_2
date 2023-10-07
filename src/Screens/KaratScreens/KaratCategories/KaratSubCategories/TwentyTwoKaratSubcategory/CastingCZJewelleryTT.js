@@ -69,7 +69,7 @@ const CastingCZJewelleryTT = ({ navigation }) => {
     {
       img: require('../../../../../assets/MoodShots/7.jpg'),
       onPress: () => {
-        navigation.navigate("SolitairePendentSetsSubSuT");
+        navigation.navigate("SolitairePendentSetsSubSubCZTT");
       },
       title: "Solitaire Tops",
     },
@@ -81,7 +81,7 @@ const CastingCZJewelleryTT = ({ navigation }) => {
       title: "Pendent Sets",
     },
     {
-      img: require('../../../../../assets/coming_soon.png'),
+      img: require('../../../../../assets/jlry1.png'),
       onPress: () => {
         navigation.navigate("SolitairePendentSetsSubSubCZTT");
       },
@@ -102,7 +102,7 @@ const CastingCZJewelleryTT = ({ navigation }) => {
       title: "God Pendents",
     },
     {
-      img: require('../../../../../assets/coming_soon.png'),
+      img: require('../../../../../assets/jlry5.png'),
       onPress: () => {
         navigation.navigate("BraceLetsSubSubCZTT");
       },

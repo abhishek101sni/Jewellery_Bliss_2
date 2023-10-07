@@ -117,9 +117,9 @@ const styles = StyleSheet.create({
   },
   AboutUsContent: {
     color: "#555555",
-    fontSize: textScale(17),
+    fontSize: textScale(14),
     lineHeight: 28,
-    fontFamily: "HurmeGeometricSans1",
+    fontFamily: "HurmeGeometricSans1SemiBold",
     // marginHorizontal: 10,
     marginLeft: moderateScale(20),
     marginBottom: moderateScaleVertical(-15),

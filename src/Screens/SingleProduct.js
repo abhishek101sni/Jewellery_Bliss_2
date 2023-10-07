@@ -154,7 +154,7 @@ const SingleProduct = ({ navigation }) => {
                 />
 
                 <View >
-                    <ImageBackground style={styles.MainBackGroundImage} imageStyle={{ borderRadius: 20, height: moderateScaleVertical(100) }} source={require("../assets/CompressedTexture3.jpg")} >
+                    <ImageBackground style={styles.MainBackGroundImage} imageStyle={{ borderRadius: 20, height: moderateScaleVertical(90) }} source={require("../assets/CompressedTexture3.jpg")} >
                         <View style={{ flexDirection: "row" }}>
                             <View style={{ flexDirection: "row", marginTop: moderateScaleVertical(3), marginLeft: moderateScale(20) }}>
                                 <View style={{ flexDirection: "column", marginVertical: moderateScaleVertical(5) }}>
@@ -174,13 +174,11 @@ const SingleProduct = ({ navigation }) => {
                                 </View>
                             </View>
                         </View>
-
                     </ImageBackground>
-
                 </View>
 
 
-                <View>
+                <View style={{marginTop: moderateScaleVertical(-15)}}>
                     <TouchableOpacity onPress={() => handlePress(activeItem)} style={styles.AddToCartButtonAlignment}>
                         <ImageBackground source={require("../assets/texture.png")} style={styles.AddToCartImageBackgroundStyle} imageStyle={{ borderRadius: 80 }}>
                             <Text style={styles.AddToCartButtonText}>ADD TO CART</Text>
@@ -192,23 +190,23 @@ const SingleProduct = ({ navigation }) => {
                 <View style={styles.ProductLogoBackground}>
                     <View style={{ flexDirection: "column" }}>
                         <View style={styles.ProductCodeAlignment}>
-                            <View style={{ flexDirection: "row", alignSelf: "center" }}>
+                            {/* <View style={{ flexDirection: "row", alignSelf: "center" }}>
                                 <Text style={styles.ProductCodeTextStyle}>Product Code : </Text>
                                 <Text style={styles.ProductCodeTextStyleCode}>{activeItem._id.slice(-4)}</Text>
-                            </View>
+                            </View> */}
                         </View>
                         <View style={styles.ProductPageLogoAlignment}>
                             <View style={{ alignItems: "center" }}>
                                 <Image source={require("../assets/certifiedJwellery.png")} style={styles.ProductPageLogoSize} />
-                                <Text style={{ color: "black", fontSize: textScale(10), fontFamily: "HurmeGeometricSans1SemiBold" }}>Certified Jewellery</Text>
+                                <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>Certified Jewellery</Text>
                             </View>
                             <View style={{ alignItems: "center" }}>
                                 <Image source={require("../assets/returnPolicy.png")} style={styles.ProductPageLogoSize} />
-                                <Text style={{ color: "black", fontSize: textScale(10), fontFamily: "HurmeGeometricSans1SemiBold" }}>Return Policy</Text>
+                                <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>Return Policy</Text>
                             </View>
                             <View style={{ alignItems: "center" }}>
                                 <Image source={require("../assets/insuredShipping.png")} style={styles.ProductPageLogoSize} />
-                                <Text style={{ color: "black", fontSize: textScale(10), fontFamily: "HurmeGeometricSans1SemiBold" }}>Insured Shipping</Text>
+                                <Text style={{ color: "black", fontSize: textScale(12), fontFamily: "HurmeGeometricSans1SemiBold" }}>Insured Shipping</Text>
                             </View>
 
                         </View>
@@ -222,41 +220,41 @@ const SingleProduct = ({ navigation }) => {
                     </View>
                 </View>
 
-                <View style={{ backgroundColor: "#d3d3d3", width: moderateScale(350), height: moderateScale(150), marginBottom: moderateScaleVertical(52), alignSelf: "center", borderRadius: 20 }}>
+                <View style={{ backgroundColor: "#d3d3d3", width: moderateScale(350), height: moderateScale(120), marginBottom: moderateScaleVertical(52), alignSelf: "center", borderRadius: 20 }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: 0 }}>
                         <View style={{ flexDirection: "column", marginTop: moderateScaleVertical(10) }}>
                             <Text style={{
                                 fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1SemiBold'
-                            }}>Gross Weight</Text>
+                            }}>Weight</Text>
                             <Text style={{
                                 fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1SemiBold',
-                            }}>Net Weight</Text>
-                            <Text style={{
+                            }}>Purity</Text>
+                            {/* <Text style={{
                                 fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1SemiBold',
-                            }}>Tunch</Text>
+                            }}>Tunch</Text> */}
                             <Text style={{
                                 fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1SemiBold',
                             }}>Wastage</Text>
                             <Text style={{
                                 fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1SemiBold',
-                            }}>Fine Weight</Text>
+                            }}>Product Code</Text>
                         </View>
                         <View style={{ flexDirection: "column", marginTop: moderateScaleVertical(10) }}>
                             <Text style={{
                                 fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
-                            }} >20.0 g</Text>
+                            }} >{activeItem.weight}</Text>
                             <Text style={{
                                 fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
-                            }}>2.0 g</Text>
+                            }}>{activeItem.purity} K</Text>
+                            {/* <Text style={{
+                                fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
+                            }}>{activeItem._id.slice(-4)}</Text> */}
                             <Text style={{
                                 fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
-                            }}>23.0 </Text>
+                            }}>{activeItem.mcharges}</Text>
                             <Text style={{
                                 fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
-                            }}>90.0 g</Text>
-                            <Text style={{
-                                fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
-                            }}>12.0 g</Text>
+                            }}>{activeItem._id.slice(-5).toUpperCase()}</Text>
                         </View>
                     </View>
                 </View>
@@ -397,7 +395,7 @@ const styles = StyleSheet.create({
         marginTop: moderateScaleVertical(20),
         flexDirection: "row",
         // marginHorizontal:20,
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         justifyContent: "space-around",
         marginHorizontal: moderateScale(10),
     },

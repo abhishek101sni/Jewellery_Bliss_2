@@ -75,7 +75,7 @@ const TwentyTwoParentCategory = ({navigation}) => {
             }
         />
     </ScrollView>
-    <View style={{ bottom: moderateScaleVertical(-35), position: 'absolute', right: moderateScale(5) }}>
+    <View style={{ bottom: moderateScaleVertical(-65), position: 'absolute', right: moderateScale(5) }}>
 
 <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
   <View style={styles.icontextAlignment}>

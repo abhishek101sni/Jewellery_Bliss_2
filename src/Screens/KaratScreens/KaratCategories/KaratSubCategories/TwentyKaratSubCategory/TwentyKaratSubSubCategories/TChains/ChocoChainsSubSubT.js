@@ -49,7 +49,7 @@ const SilkyChainsC = ({ navigation }) => {
 
   const getAPIDATA = async () => {
     const url =
-      'https://jewellery-bliss.onrender.com/api/products?searchPurity=20&search=Indo%20Choco%20Chains';
+      'https://jewellery-bliss.onrender.com/api/products?searchPurity=20&search=Choco%20Chains';
 
     let result = await fetch(url);
     result = await result.json();

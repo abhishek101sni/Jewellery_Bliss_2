@@ -81,7 +81,7 @@ const CastingCZJewelleryT = ({ navigation }) => {
       title: "Pendent Sets",
     },
     {
-      img: require('../../../../../assets/coming_soon.png'),
+      img: require('../../../../../assets/jlry1.png'),
       onPress: () => {
         navigation.navigate("SolitairePendentSetsSubSubCZT");
       },
@@ -102,7 +102,7 @@ const CastingCZJewelleryT = ({ navigation }) => {
       title: "God Pendents",
     },
     {
-      img: require('../../../../../assets/coming_soon.png'),
+      img: require('../../../../../assets/jlry5.png'),
       onPress: () => {
         navigation.navigate("BraceLetsSubSubCZT");
       },

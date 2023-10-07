@@ -109,8 +109,11 @@ const setData2 = (data) => {
                         borderBottomRightRadius: 20,
                       }}
                       source={require('../../../../assets/CompressedTexture3.jpg')}>
-                      <Text style={{color: 'black', fontFamily:"HurmeGeometricSans1Bold" , fontSize:textScale(13)}}>
+                      <Text style={{color: 'black', fontFamily:"HurmeGeometricSans1SemiBold" , fontSize:textScale(14)}}>
                         {item?.name}
+                      </Text>
+                      <Text style={{color: 'black', fontFamily:"HurmeGeometricSans1SemiBold" , fontSize:textScale(10)}}>
+                       ( {item?.purity} KT )
                       </Text>
                     </ImageBackground>
                   </View>
@@ -142,7 +145,7 @@ const setData2 = (data) => {
                     marginLeft: moderateScale(0),
                     borderRadius: 40,
                     // paddingTop: moderateScaleVertical(3),
-                    fontFamily: 'HurmeGeometricSans1',
+                    fontFamily: 'HurmeGeometricSans1SemiBold',
                   }}>
                   Load more...
                 </Text>
@@ -153,7 +156,7 @@ const setData2 = (data) => {
         
       {/* Whatsapp Help Button*/}
 
-      <View View style={{ bottom: -40, position: "absolute", right: 5 }}>
+      <View View style={{ bottom: -35, position: "absolute", right: 5 }}>
         <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
           <View style={styles.icontextAlignment}>
             <Image source={require("../../../../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
@@ -173,6 +176,23 @@ const setData2 = (data) => {
         </Modal>
       </View>
       </ImageBackground>
+
+
+
+        {/* BottomTabNavigator */}
+        <ImageBackground source={require('../../../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) , marginTop:moderateScaleVertical(0) }}>
+          <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
+
+            <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
+              <Image source={require('../../../../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
+              <Image source={require('../../../../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
+            </TouchableOpacity>
+
+          </View>
+        </ImageBackground>
     </SafeAreaView>
   );
 };

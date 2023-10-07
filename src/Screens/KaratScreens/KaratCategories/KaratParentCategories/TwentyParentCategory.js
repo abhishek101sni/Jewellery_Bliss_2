@@ -27,13 +27,13 @@ const TwentyParentCategory = ({navigation}) => {
         },
         title: "Casting Jewellery",
     },
-    {
-        img: require('../../../../assets/czParent.jpg'),
-        onPress: () => {
-            navigation.navigate("CastingCZJewelleryT");
-        },
-        title: "Casting Cz Jewellery",
-    },
+    // {
+    //     img: require('../../../../assets/czParent.jpg'),
+    //     onPress: () => {
+    //         navigation.navigate("CastingCZJewelleryT");
+    //     },
+    //     title: "Casting Cz Jewellery",
+    // },
 ];
    // WhatsApp
    const [isModalVisible, setisModalVisible] = useState(false)
@@ -75,7 +75,7 @@ const TwentyParentCategory = ({navigation}) => {
             }
         />
     </ScrollView>
-    <View style={{ bottom: moderateScaleVertical(-35), position: 'absolute', right: moderateScale(5) }}>
+    <View style={{ bottom: moderateScaleVertical(-65), position: 'absolute', right: moderateScale(5) }}>
 
 <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
   <View style={styles.icontextAlignment}>

@@ -21,8 +21,8 @@ const DrawerContent = (props) => {
                 <View>
                     <View style={styles.line}></View>
 
-                    <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("our") }}>
-                        <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(10) }}>
+                    <TouchableOpacity activeOpacity={0.9} style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("our") }}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", marginHorizontal: moderateScale(10) }}>
                             <Image source={require("../assets/drawerIcons/ourProducts.png")} style={styles.OurProductIcon} />
                             <Text style={styles.DrawerContentTitle}>Our Products</Text>
                         </View>
@@ -30,56 +30,62 @@ const DrawerContent = (props) => {
 
                     <View style={styles.line}></View>
 
-                    <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("Manage") }}>
-                        <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(10) }}>
+                    <TouchableOpacity activeOpacity={0.9} style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("Manage") }}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-betwenn", marginHorizontal: moderateScale(10) }}>
                             <Image source={require("../assets/drawerIcons/manageOrders.png")} style={styles.ManageOrderIcon} />
                             <Text style={styles.DrawerContentTitle}>Manage Order</Text>
                         </View>
                     </TouchableOpacity>
                     <View style={styles.line}></View>
 
-                    <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("pricelist") }} >
-                        <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(10), }}>
+                    <TouchableOpacity activeOpacity={0.9} style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("pricelist") }} >
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", marginHorizontal: moderateScale(10), }}>
                             <Image source={require("../assets/drawerIcons/coins.png")} style={styles.WastageChartIcon} />
                             <Text style={styles.DrawerContentTitle}>Wastage Chart</Text>
                         </View>
                     </TouchableOpacity>
                     <View style={styles.line}></View>
 
-                    <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("GoldSilverPrice") }} >
-                        <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(10), }}>
+                    <TouchableOpacity  activeOpacity={0.9} style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("GoldSilverPrice") }} >
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", marginHorizontal: moderateScale(10), }}>
                             <Image source={require("../assets/drawerIcons/rupee.png")} style={styles.WastageChartIcon} />
                             <Text style={styles.DrawerContentTitle}>Live Price</Text>
                         </View>
                     </TouchableOpacity>
                     <View style={styles.line}></View>
 
-                    <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("ServiceAvailable") }} >
-                        <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(10), }}>
+                    <TouchableOpacity activeOpacity={0.9} style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("ServiceAvailable") }} >
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", marginHorizontal: moderateScale(10), }}>
                             <Image source={require("../assets/drawerIcons/serviceAvailable.png")} style={styles.ServAvailIcon} />
                             <Text style={styles.DrawerContentTitle}>Service Available</Text>
                         </View>
                     </TouchableOpacity>
                     <View style={styles.line}></View>
 
-                    <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("about") }} >
-                        <View style={{ flexDirection: "row", justifyContent: "space-around", marginHorizontal: moderateScale(10), }}>
+                    <TouchableOpacity activeOpacity={0.9} style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("about") }} >
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", marginHorizontal: moderateScale(10), }}>
                             <Image source={require("../assets/drawerIcons/aboutus.png")} style={styles.AboutUsIcon} />
                             <Text style={styles.DrawerContentTitle}>About Us</Text>
                         </View>
                     </TouchableOpacity>
                     <View style={styles.line}></View>
 
-                    <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("privacypolicy") }} >
+                    <TouchableOpacity activeOpacity={0.9} style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("privacypolicy") }} >
+                    <View style={{ flexDirection: "row", justifyContent: "space-between", marginHorizontal: moderateScale(3), }}>
                         <Image source={require("../assets/drawerIcons/privacypolicy.png")} style={styles.PrivacyPolicyIcon} />
                         <Text style={styles.DrawerContentTitle}>Privacy Policy</Text>
+                        </View>
                     </TouchableOpacity>
+                   
                     <View style={styles.line}></View>
 
-                    <TouchableOpacity style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("tnc") }} >
+                    <TouchableOpacity activeOpacity={0.9} style={styles.DrawerContentTouch} onPress={() => { props.navigation.navigate("tnc") }} >
+                    <View style={{ flexDirection: "row", justifyContent: "space-between", marginHorizontal: moderateScale(6), }}>
                         <Image source={require("../assets/drawerIcons/termsandconditions.png")} style={styles.TermsAndCondIcon} />
                         <Text style={styles.DrawerContentTitle}>Terms & Conditions</Text>
+                        </View>
                     </TouchableOpacity>
+                   
                 </View>
 
 
@@ -159,7 +165,7 @@ const styles = StyleSheet.create({
 
     // },
     ViewProfileText: {
-        fontSize: 14,
+        fontSize: textScale(14),
         // fontWeight: "700",
         // color: "#F0F0F0",
         color: "#181818",
@@ -175,7 +181,7 @@ const styles = StyleSheet.create({
         // justifyContent: "space-around"
     },
     OurProductIcon: {
-        width: moderateScale(42),
+        width: moderateScale(40),
         height: moderateScaleVertical(42),
         // tintColor: "#F0F0F0",
         tintColor: "#181818",
@@ -183,21 +189,21 @@ const styles = StyleSheet.create({
     },
     ManageOrderIcon: {
         width: moderateScale(40),
-        height: moderateScaleVertical(41),
+        height: moderateScaleVertical(42),
         // tintColor: "#F0F0F0",
         tintColor: "#181818",
         marginLeft: moderateScale(13)
     },
     WastageChartIcon: {
-        width: moderateScale(41),
-        height: moderateScaleVertical(41),
+        width: moderateScale(42),
+        height: moderateScaleVertical(42),
         // tintColor: "#F0F0F0",
         tintColor: "#181818",
         marginLeft: moderateScale(12)
     },
     ServAvailIcon: {
         width: moderateScale(40),
-        height: moderateScaleVertical(41),
+        height: moderateScaleVertical(42),
         // tintColor: "#F0F0F0",
         tintColor: "#181818",
         marginLeft: moderateScale(12)
@@ -218,7 +224,7 @@ const styles = StyleSheet.create({
     },
     TermsAndCondIcon: {
         width: moderateScale(40),
-        height: moderateScaleVertical(40),
+        height: moderateScaleVertical(42),
         // tintColor: "#F0F0F0",
         tintColor: "#181818",
         marginLeft: moderateScale(24)
@@ -233,7 +239,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginTop: moderateScaleVertical(6),
         color: "#181818",
-        fontSize: textScale(16.5),
+        fontSize: textScale(18),
         marginLeft: moderateScale(20),
         // fontWeight: "700",
         // fontFamily:"HurmeGeometricSans1"

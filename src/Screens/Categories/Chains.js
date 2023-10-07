@@ -166,7 +166,7 @@ const Chains = ({ navigation }) => {
 
 
         {/* Whatsapp start */}
-        <View style={{ bottom: moderateScaleVertical(-35), position: 'absolute', right: moderateScale(5) }}>
+        <View style={{ bottom: moderateScaleVertical(-40), position: 'absolute', right: moderateScale(5) }}>
           <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment}>
             <View style={styles.icontextAlignment}>
               <Image source={require('../../assets/whatsapp-white.png')} style={styles.whatsappIcon} />

@@ -49,8 +49,7 @@ const SilkyChainsC = ({ navigation }) => {
 
   const getAPIDATA = async () => {
     const url =
-      'https://jewellery-bliss.onrender.com/api/products?searchPurity=18&search=Bali';
-
+      'https://jewellery-bliss.onrender.com/api/products?searchPurity=22&search=UV%20Shaped%20Bali';
     let result = await fetch(url);
     result = await result.json();
     setData(result);

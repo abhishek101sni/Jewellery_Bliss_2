@@ -275,6 +275,7 @@ const Navigation = () => {
                 {showSplashScreen ? (
                     <>
                         <Stack.Screen
+                        
                             name="splash"
                             component={Splash}
                             options={{ headerShown: false, title: 'My home' }} />
@@ -542,10 +543,10 @@ const Navigation = () => {
                             name="thank"
                             component={Thankyou}
                             options={{
-                                title: 'Thank You',
+                                title: '',
                                 headerShown: true,
-                                headerStyle: { backgroundColor: '#181818' },
-                                headerTintColor: '#bc9954',
+                                headerStyle: { backgroundColor: 'black' },
+                                headerTintColor: 'black',
                                 headerTitleStyle: { color: '#bc9954' }
                             }} />
                         <Stack.Screen
@@ -859,7 +860,7 @@ const Navigation = () => {
                             name="HandmadeLadiesRing"
                             component={HandmadeLadiesRingPJ}
                             options={{
-                                title: 'Hand Made Ladies Ring',
+                                title: 'Handmade Ladies Ring',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#bc9954' },
                                 headerTintColor: 'black',
@@ -2728,7 +2729,7 @@ const Navigation = () => {
                             name="CockTailRingsSubSubCZTT"
                             component={CockTailRingsSubSubCZTT}
                             options={{
-                                title: 'CockyTail Rings',
+                                title: 'Cocktail Rings',
                                 headerShown: true,
                                 headerStyle: { backgroundColor: '#181818' },
                                 headerTintColor: '#bc9954',
@@ -2857,9 +2858,6 @@ const Navigation = () => {
                                 headerTintColor: '#bc9954',
                                 headerTitleStyle: { color: '#bc9954' }
                             }} />
-
-
-
                     </>
                 ) : null
                 }

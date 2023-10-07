@@ -15,7 +15,7 @@ const CastingJwellery = ({ navigation }) => {
       onPress: () => {
         navigation.navigate("LadiesRing");
       },
-      title: "Ladies Rings"
+      title: "Ladies Ringssss"
 
     },
     {
@@ -25,6 +25,14 @@ const CastingJwellery = ({ navigation }) => {
       },
       title: "Gents Rings",
     },
+    {
+      img: require('../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/tops.jpg'),
+      onPress: () => {
+        navigation.navigate("GodPendents");
+      },
+      title: "God Pendents",
+    },
+
     {
       img: require('../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/pendents.jpg'),
       onPress: () => {
@@ -39,14 +47,7 @@ const CastingJwellery = ({ navigation }) => {
       },
       title: "Tops",
     },
-    {
-      img: require('../../assets/PRODUCTS/CHAINS/Categories/castingJewellery/tops.jpg'),
-      onPress: () => {
-        navigation.navigate("GodPendents");
-      },
-      title: "God Pendents",
-    },
-
+  
   ];
   // WhatsApp
   const [isModalVisible, setisModalVisible] = useState(false)
@@ -65,12 +66,7 @@ const CastingJwellery = ({ navigation }) => {
   const [category, setcategory] = useState([]);
   const [products, setProducts] = useState([]);
 
-  // const getCategory = async () => {
-  //   const url = "http://localhost:5009/api/products?category=chains"
-  //   let result = await fetch(url);
-  //   result = await result.json();
-  //   setcategory(result);
-  // }
+
   useEffect(() => {
     fetchProducts();
   }, []);

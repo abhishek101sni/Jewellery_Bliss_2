@@ -46,10 +46,13 @@ const Cart = ({ navigation }) => {
 
     if (!cart.length) {
         return (
+            <SafeAreaView style={{flex:1}}>
             <ImageBackground source={require("../assets/background-image2.png")} style={{ flex: 1 }}>
                 <Image source={require("../assets/emptyCarting.gif")} style={styles.emptyCartSize} />
                 <Text style={{ fontSize: 25, color: "black", alignSelf: "center", fontWeight: "500" }}>Oops!! Cart is Empty... </Text>
-            </ImageBackground>)
+            </ImageBackground>
+            </SafeAreaView>
+            )
     }
 
     return (

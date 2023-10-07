@@ -154,6 +154,8 @@ const SignUp = ({navigation}) => {
                   value={isChecked}
                   onValueChange={setIsChecked}
                   style={styles.checkbox}
+                  tintColors={{ true: 'green', false: 'black' }}
+
                 />
                 <Text style={styles.checkboxLabel}>
                   I agree to the terms and conditions
