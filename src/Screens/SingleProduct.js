@@ -245,7 +245,7 @@ const SingleProduct = ({ navigation }) => {
                             }} >{activeItem.weight}</Text>
                             <Text style={{
                                 fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
-                            }}>{activeItem.purity} K</Text>
+                            }}>{activeItem.purity} KT</Text>
                             {/* <Text style={{
                                 fontSize: textScale(14), color: "black", marginVertical: moderateScaleVertical(3), fontFamily: 'HurmeGeometricSans1',
                             }}>{activeItem._id.slice(-4)}</Text> */}

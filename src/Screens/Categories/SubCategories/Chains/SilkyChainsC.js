@@ -357,7 +357,14 @@ const SilkyChainsC = ({navigation}) => {
   const handleSearch = text => {
     setSearchQuery(text);
     const filtered = data.filter(item =>
-      item.name.toLowerCase().includes(text.toLowerCase()),
+item.purity.toLowerCase().includes(text.toLowerCase()) ,
+    );
+    setFilteredData(filtered);
+  };
+  const handleSearch2 = text => {
+    setSearchQuery(text);
+    const filtered = data.filter(item =>
+      item.name.toLowerCase().includes(text.toLowerCase())
     );
     setFilteredData(filtered);
   };
@@ -387,8 +394,17 @@ const SilkyChainsC = ({navigation}) => {
 
         <TextInput
           style={styles.searchBar}
-          placeholder="Search products by weight"
+          placeholder="Search products by purity"
+          placeholderTextColor="#C7C7CD"
           onChangeText={handleSearch}
+          value={searchQuery}
+        />
+
+        <TextInput
+          style={styles.searchBar}
+          placeholder="Search products by weight"
+          placeholderTextColor="#C7C7CD"
+          onChangeText={handleSearch2}
           value={searchQuery}
         />
         <FlatList
@@ -427,7 +443,7 @@ const SilkyChainsC = ({navigation}) => {
                           fontFamily: 'HurmeGeometricSans1SemiBold',
                           fontSize: textScale(10),
                         }}>
-                        ( {item?.purity} KT )
+                         ( {item?.purity} KT )
                       </Text>
                     </ImageBackground>
                   </View>

@@ -1,29 +1,9 @@
-
-
-    const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Tops";
-  
-    import React, {useState, useEffect} from 'react';
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-  FlatList,
-  ImageBackground,
-  SafeAreaView,
-  Button,
-  Modal
-} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import { View, Text, Image, TouchableOpacity, ScrollView, FlatList, ImageBackground, SafeAreaView, Button, Modal} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {setActiveItem} from '../../../../redux/action';
 import {StyleSheet} from 'react-native';
-import {
-  height,
-  moderateScale,
-  moderateScaleVertical,
-  textScale,
-} from '../../../../utils/responsive';
+import {moderateScale, moderateScaleVertical, textScale, } from '../../../../utils/responsive';
 import SimpleModal from '../../../SimpleModal';
 
 

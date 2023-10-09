@@ -1,3 +1,7 @@
+
+
+   
+
 import React, {useState, useEffect} from 'react';
 import {
   View,
@@ -9,35 +13,36 @@ import {
   ImageBackground,
   SafeAreaView,
   Button,
-  Modal
+  Modal,
+  TextInput,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
 import {setActiveItem} from '../../../../redux/action';
 import {StyleSheet} from 'react-native';
 import {
-  height,
   moderateScale,
   moderateScaleVertical,
   textScale,
 } from '../../../../utils/responsive';
 import SimpleModal from '../../../SimpleModal';
 
-
 const ChokerSetsPJ = ({navigation}) => {
+  // WhatsApp
+  const [isModalVisible, setisModalVisible] = useState(false);
+  const [chooseData, setChooseData] = useState();
 
-// WhatsApp
-const [isModalVisible, setisModalVisible] = useState(false)
-const [chooseData, setChooseData] = useState();
+  const changeModalVisible = bool => {
+    setisModalVisible(bool);
+  };
+  const setData2 = data => {
+    setChooseData(data);
+  };
+  // WhatsApp
 
-const changeModalVisible = (bool) => {
-  setisModalVisible(bool)
-}
-
-
-const setData2 = (data) => {
-  setChooseData(data)
-}
-// WhatsApp
+  // Filter
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
+  // ------------
 
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
@@ -45,6 +50,7 @@ const setData2 = (data) => {
   // loadmore
   const [visibleData, setVisibleData] = useState([]);
   const [itemsToLoad, setItemsToLoad] = useState(10);
+  // ------
 
   const getAPIDATA = async () => {
     const url = "https://bliss-app-backend-production.up.railway.app/api/products/?search=Choker%20Sets";
@@ -52,6 +58,7 @@ const setData2 = (data) => {
     let result = await fetch(url);
     result = await result.json();
     setData(result);
+    console.log('resultttttt', result);
   };
 
   useEffect(() => {
@@ -71,7 +78,26 @@ const setData2 = (data) => {
   const loadMoreItems = () => {
     // Increase the number of items to load.
     setItemsToLoad(itemsToLoad + 5); // You can adjust the increment as needed.
+    // setSearchQuery('');
   };
+
+  // ---------------
+  const handleSearch = text => {
+    setSearchQuery(text);
+    const filtered = data.filter(item =>
+      item.name.toLowerCase().includes(text.toLowerCase()) || item.purity.toLowerCase().includes(text.toLowerCase()) ,
+    );
+    setFilteredData(filtered);
+  };
+
+  useEffect(() => {
+    if (searchQuery.trim() === '') {
+      setFilteredData(data);
+    } else {
+      handleSearch(searchQuery);
+    }
+  }, [data, searchQuery]);
+  // ------------------
 
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -87,9 +113,17 @@ const setData2 = (data) => {
           }}
         />
 
+        <TextInput
+          style={styles.searchBar}
+          placeholder="Search products by weight/purity"
+          placeholderTextColor="#C7C7CD"
+          onChangeText={handleSearch}
+          value={searchQuery}
+        />
         <FlatList
           contentContainerStyle={{alignItems: 'center'}}
-          data={visibleData} // Use the visibleData state to render items.
+          data={searchQuery === '' ? visibleData : filteredData}
+          // data={visibleData} // Use the visibleData state to render items.
           numColumns={2}
           renderItem={({item, index}) => (
             // <View style={{marginBottom:moderateScaleVertical(10)}}>
@@ -108,11 +142,21 @@ const setData2 = (data) => {
                         borderBottomRightRadius: 20,
                       }}
                       source={require('../../../../assets/CompressedTexture3.jpg')}>
-                      <Text style={{color: 'black', fontFamily:"HurmeGeometricSans1SemiBold" , fontSize:textScale(14)}}>
+                      <Text
+                        style={{
+                          color: 'black',
+                          fontFamily: 'HurmeGeometricSans1SemiBold',
+                          fontSize: textScale(14),
+                        }}>
                         {item?.name}
                       </Text>
-                      <Text style={{color: 'black', fontFamily:"HurmeGeometricSans1SemiBold" , fontSize:textScale(10)}}>
-                       ( {item?.purity} KT )
+                      <Text
+                        style={{
+                          color: 'black',
+                          fontFamily: 'HurmeGeometricSans1SemiBold',
+                          fontSize: textScale(10),
+                        }}>
+                         ( {item?.purity} KT )
                       </Text>
                     </ImageBackground>
                   </View>
@@ -135,7 +179,7 @@ const setData2 = (data) => {
                   height: moderateScaleVertical(40),
                   justifyContent: 'center',
                   marginTop: moderateScaleVertical(20),
-                  marginBottom:moderateScaleVertical(5)
+                  marginBottom: moderateScaleVertical(5),
                 }}>
                 <Text
                   style={{
@@ -152,45 +196,85 @@ const setData2 = (data) => {
             </TouchableOpacity>
           )}
         />
-        
-      {/* Whatsapp Help Button*/}
 
-      <View View style={{ bottom: -35, position: "absolute", right: 5 }}>
-        <TouchableOpacity onPress={() => changeModalVisible(true)} style={styles.HelpButtonAlignment} >
-          <View style={styles.icontextAlignment}>
-            <Image source={require("../../../../assets/whatsapp-white.png")} style={styles.whatsappIcon} />
-            <Text style={styles.helpText}>Help</Text>
-          </View>
-        </TouchableOpacity>
+        {/* Whatsapp Help Button*/}
 
-        <Modal
-          transparent={true}
-          animationType='fade'
-          visible={isModalVisible}
-          nRequestClose={() => changeModalVisible(false)}
-        >
-          <SimpleModal changeModalVisible={changeModalVisible}
-            setData={setData2}
-          />
-        </Modal>
-      </View>
+        <View View style={{bottom: -35, position: 'absolute', right: 5}}>
+          <TouchableOpacity
+            onPress={() => changeModalVisible(true)}
+            style={styles.HelpButtonAlignment}>
+            <View style={styles.icontextAlignment}>
+              <Image
+                source={require('../../../../assets/whatsapp-white.png')}
+                style={styles.whatsappIcon}
+              />
+              <Text style={styles.helpText}>Help</Text>
+            </View>
+          </TouchableOpacity>
+
+          <Modal
+            transparent={true}
+            animationType="fade"
+            visible={isModalVisible}
+            nRequestClose={() => changeModalVisible(false)}>
+            <SimpleModal
+              changeModalVisible={changeModalVisible}
+              setData={setData2}
+            />
+          </Modal>
+        </View>
       </ImageBackground>
 
-       {/* BottomTabNavigator */}
-       <ImageBackground source={require('../../../../assets/CompressedTexture3.jpg')} imageStyle={{ borderTopLeftRadius: 15, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderBottomLeftRadius: 15, alignSelf: "center" }} style={{ height: moderateScaleVertical(50), width: moderateScale(370), alignSelf: 'center', marginBottom: moderateScale(4) , marginTop:moderateScaleVertical(0) }}>
-          <View style={{ marginTop: moderateScaleVertical(9), flexDirection: 'row', justifyContent: 'space-around' }}>
+      {/* BottomTabNavigator */}
+      <ImageBackground
+        source={require('../../../../assets/CompressedTexture3.jpg')}
+        imageStyle={{
+          borderTopLeftRadius: 15,
+          borderTopRightRadius: 15,
+          borderBottomRightRadius: 15,
+          borderBottomLeftRadius: 15,
+          alignSelf: 'center',
+        }}
+        style={{
+          height: moderateScaleVertical(50),
+          width: moderateScale(370),
+          alignSelf: 'center',
+          marginBottom: moderateScale(4),
+          marginTop: moderateScaleVertical(0),
+        }}>
+        <View
+          style={{
+            marginTop: moderateScaleVertical(9),
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+          }}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Drawer');
+            }}>
+            <Image
+              source={require('../../../../assets/home.png')}
+              style={{
+                width: moderateScale(35),
+                height: moderateScaleVertical(35),
+              }}
+            />
+          </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => { navigation.navigate('Drawer') }}>
-              <Image source={require('../../../../assets/home.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => { navigation.navigate('cart'); }}>
-              <Image source={require('../../../../assets/cart.png')} style={{ width: moderateScale(35), height: moderateScaleVertical(35), }} />
-            </TouchableOpacity>
-
-          </View>
-        </ImageBackground>
-      
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('cart');
+            }}>
+            <Image
+              source={require('../../../../assets/cart.png')}
+              style={{
+                width: moderateScale(35),
+                height: moderateScaleVertical(35),
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
     </SafeAreaView>
   );
 };
@@ -203,7 +287,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginHorizontal: moderateScale(20),
-    marginVertical:moderateScaleVertical(20)
+    marginVertical: moderateScaleVertical(20),
   },
 
   View2: {
@@ -248,19 +332,19 @@ const styles = StyleSheet.create({
   // Whatsapp style
 
   HelpButtonAlignment: {
-    justifyContent: "center",
-    backgroundColor: "#25D366",
+    justifyContent: 'center',
+    backgroundColor: '#25D366',
     width: moderateScale(110),
     height: moderateScaleVertical(45),
     borderRadius: 40,
-    marginBottom: moderateScaleVertical(40)
+    marginBottom: moderateScaleVertical(40),
     // position: "fixed",
   },
   icontextAlignment: {
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-    justifyContent: "space-around",
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     paddingHorizontal: moderateScale(-30),
     marginHorizontal: moderateScale(25),
   },
@@ -272,6 +356,20 @@ const styles = StyleSheet.create({
   helpText: {
     color: 'white',
     fontSize: textScale(13),
-    fontWeight: "bold",
-  }
+    fontWeight: 'bold',
+  },
+  searchBar: {
+    fontSize: textScale(13),
+    color: 'black',
+    width: '80%',
+    marginTop: moderateScaleVertical(25),
+    marginBottom: moderateScaleVertical(5),
+    borderBottomWidth: moderateScale(1.5),
+    borderBottomColor: '#bc9954',
+    paddingBottom: moderateScaleVertical(0),
+    paddingLeft: moderateScale(0),
+    fontFamily: 'HurmeGeometricSans1',
+    paddingBottom: moderateScaleVertical(1),
+    alignSelf: 'center',
+  },
 });
